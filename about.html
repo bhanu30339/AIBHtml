@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Australia India Bridge Foundation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0C2340',
+                        secondary: '#D4AF37',
+                        accent: '#1E3A5F',
+                        light: '#F8F9FA'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(-30px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .animate-fade-in { animation: fadeIn 0.8s ease-out; }
+        .animate-slide-in { animation: slideIn 0.6s ease-out; }
+        .hover-lift { transition: transform 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-5px); }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #0C2340 0%, #1E3A5F 100%);
+        }
+        
+        .section-padding {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+        
+        @media (min-width: 1024px) {
+            .section-padding {
+                padding-top: 7rem;
+                padding-bottom: 7rem;
+            }
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #D4AF37, #0C2340);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, #0C2340, #D4AF37);
+        }
+    </style>
+</head>
+<body class="font-sans bg-light">
+    <!-- Header Included -->
+    <div data-include="components/header.html"></div>
+
+    <main class="min-h-screen">
+        <!-- Hero Section -->
+        <section class="relative pt-32 pb-20 overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2" 
+                     alt="About AIBF" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-accent/70"></div>
+            </div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl animate-fade-in">
+                    <div class="inline-flex items-center space-x-2 text-secondary font-semibold uppercase text-sm tracking-wider mb-4">
+                        <div class="w-2 h-2 bg-secondary rounded-full animate-pulse"></div>
+                        <span>About Us</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                        Bridging Nations,<br>
+                        <span class="text-secondary">Building Futures</span>
+                    </h1>
+                    <p class="text-xl text-white/80 leading-relaxed">
+                        The alliance is established to foster collaboration, mutual growth, and social impact between Australia and India. With a strategic focus on business and bilateral trade, political strengthening, and charitable causes, the alliance brings together businesses, investors, politicians, and philanthropists to drive positive change.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <div class="bg-secondary">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center group">
+                        <p class="text-3xl lg:text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform">500+</p>
+                        <p class="text-primary/80 font-medium">Member Organizations</p>
+                        <div class="mt-2 w-8 h-0.5 bg-primary/40 mx-auto group-hover:w-12 transition-all"></div>
+                    </div>
+                    <div class="text-center group">
+                        <p class="text-3xl lg:text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform">15+</p>
+                        <p class="text-primary/80 font-medium">Years of Service</p>
+                        <div class="mt-2 w-8 h-0.5 bg-primary/40 mx-auto group-hover:w-12 transition-all"></div>
+                    </div>
+                    <div class="text-center group">
+                        <p class="text-3xl lg:text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform">$2B+</p>
+                        <p class="text-primary/80 font-medium">Trade Facilitated</p>
+                        <div class="mt-2 w-8 h-0.5 bg-primary/40 mx-auto group-hover:w-12 transition-all"></div>
+                    </div>
+                    <div class="text-center group">
+                        <p class="text-3xl lg:text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform">200+</p>
+                        <p class="text-primary/80 font-medium">Annual Events</p>
+                        <div class="mt-2 w-8 h-0.5 bg-primary/40 mx-auto group-hover:w-12 transition-all"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mission & Vision Section -->
+        <section class="section-padding bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Mission Card -->
+                    <div class="gradient-bg rounded-2xl p-10 text-white hover-lift">
+                        <div class="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mb-6 hover:rotate-12 transition-transform">
+                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <circle cx="12" cy="12" r="6"></circle>
+                                <circle cx="12" cy="12" r="2"></circle>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Our Mission</h3>
+                        <div class="space-y-4 text-white/80 leading-relaxed text-lg">
+                            <p>Our mission is to strengthen the ties between Australia and India across three core pillars:</p>
+                            <ul class="space-y-3 pl-4">
+                                <li class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+                                    <span>Facilitate economic collaborations and partnerships</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+                                    <span>Promote political dialogue and strategic cooperation</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+                                    <span>Support charitable initiatives that uplift communities</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Vision Card -->
+                    <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-10 border border-gray-200 hover-lift">
+                        <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6 hover:rotate-12 transition-transform">
+                            <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary mb-4">Our Vision</h3>
+                        <p class="text-gray-600 leading-relaxed text-lg">
+                            The Australia India Bridge Foundation envisions a dynamic and harmonious partnership between Australia and India, transcending geographical boundaries. Our vision is to build a resilient and inclusive alliance that fosters sustainable growth, mutual prosperity, and social well-being for both nations. Through unwavering collaboration, we aim to create a shared future founded on trust, respect, and shared values, where Australia and India stand shoulder-to-shoulder as global leaders, driving positive change on the world stage.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Role Section -->
+        <section class="section-padding bg-gradient-to-br from-gray-50 to-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="animate-slide-in">
+                        <div class="max-w-3xl mb-12">
+                            <div class="inline-flex items-center space-x-2 text-secondary font-semibold uppercase text-sm tracking-wider mb-3">
+                                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                                <span>Our Role</span>
+                            </div>
+                            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-primary">
+                                Catalyzing Australia-India Collaboration
+                            </h2>
+                        </div>
+                        <div class="space-y-6 text-gray-600 leading-relaxed">
+                            <p>As Australia and India deepen their strategic partnership, the need for effective platforms to facilitate business, cultural, and diplomatic engagement has never been greater. The Australia India Bridge Foundation plays a crucial role in this ecosystem.</p>
+                            <p>We bring together diverse stakeholders—from multinational corporations to innovative startups, from government officials to academic institutions—creating an environment where ideas are exchanged, partnerships are formed, and opportunities are realized.</p>
+                            <p>Our work spans across sectors including technology, education, healthcare, agriculture, mining, and financial services. We organize high-level forums, facilitate business delegations, provide market intelligence, and advocate for policies that benefit both nations.</p>
+                        </div>
+                    </div>
+                    <div class="relative animate-fade-in">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" 
+                             alt="Collaboration" 
+                             class="rounded-2xl shadow-2xl w-full h-[500px] object-cover hover:scale-105 transition-transform duration-500">
+                        <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-secondary rounded-2xl flex items-center justify-center shadow-xl">
+                            <svg class="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Values Section -->
+        <section class="section-padding bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Section Header -->
+        <div class="max-w-3xl mb-16 text-center mx-auto">
+            <div class="inline-flex items-center space-x-2 text-secondary font-semibold uppercase text-sm tracking-wider mb-3">
+                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                <span>Core Values</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-primary">
+                What Guides Us
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-600">
+                At the Australia India Alliance, our mission is shaped by the following core values that define our work, our partnerships, and our commitment to meaningful impact.
+            </p>
+        </div>
+
+        <!-- Core Values Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <!-- 1. Integrity -->
+            <div class="text-center group hover-lift">
+                <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 
+                            group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-10 h-10 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                        <path d="M2 17l10 5 10-5"></path>
+                        <path d="M2 12l10 5 10-5"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-primary mb-3">Integrity</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    We uphold honesty, transparency, and ethical conduct in all our work, ensuring trust and credibility with our stakeholders, partners, and communities.
+                </p>
+            </div>
+
+            <!-- 2. Inclusivity -->
+            <div class="text-center group hover-lift">
+                <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 
+                            group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-10 h-10 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <circle cx="12" cy="7" r="4"></circle>
+                        <path d="M5.5 21a6.5 6.5 0 0 1 13 0"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-primary mb-3">Inclusivity</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    We celebrate diversity and embrace the richness of cultures, ideas, and perspectives from both nations, ensuring a welcoming and respectful environment for all.
+                </p>
+            </div>
+
+            <!-- 3. Collaboration -->
+            <div class="text-center group hover-lift">
+                <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 
+                            group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-10 h-10 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 16l-4-4 4-4"></path>
+                        <path d="M16 8l4 4-4 4"></path>
+                        <path d="M4 12h16"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-primary mb-3">Collaboration</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    We believe in the power of collective effort and actively build partnerships across sectors to create transformative and lasting impact.
+                </p>
+            </div>
+
+            <!-- 4. Innovation -->
+            <div class="text-center group hover-lift">
+                <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 
+                            group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-10 h-10 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2v4"></path>
+                        <path d="M12 18v4"></path>
+                        <path d="M4.93 4.93l2.83 2.83"></path>
+                        <path d="M16.24 16.24l2.83 2.83"></path>
+                        <circle cx="12" cy="12" r="5"></circle>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-primary mb-3">Innovation</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    We embrace creativity, new ideas, and emerging technologies to address complex challenges and drive forward-thinking solutions.
+                </p>
+            </div>
+
+            <!-- 5. Empowerment -->
+            <div class="text-center group hover-lift">
+                <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 
+                            group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-10 h-10 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 20l4-8h-8l4 8z"></path>
+                        <circle cx="12" cy="6" r="3"></circle>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-primary mb-3">Empowerment</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    We uplift individuals and communities through initiatives that enable them to grow, thrive, and build a brighter future.
+                </p>
+            </div>
+
+            <!-- 6. Sustainability -->
+            <div class="text-center group hover-lift">
+                <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 
+                            group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-10 h-10 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 22c4-2 8-6 8-12a8 8 0 1 0-16 0c0 6 4 10 8 12z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-primary mb-3">Sustainability</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    We are committed to environmental and social sustainability, ensuring that our work positively impacts future generations.
+                </p>
+            </div>
+
+            <!-- 7. Resilience -->
+            <div class="text-center group hover-lift">
+                <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 
+                            group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-10 h-10 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M4 14l8 6 8-6"></path>
+                        <path d="M4 10l8 6 8-6"></path>
+                        <path d="M4 6l8 6 8-6"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-primary mb-3">Resilience</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    We approach challenges with determination and adaptability, learning from obstacles and growing stronger through experience.
+                </p>
+            </div>
+
+            <!-- 8. Excellence -->
+            <div class="text-center group hover-lift">
+                <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 
+                            group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-10 h-10 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2l3 7h7l-5.5 4.5L18 22l-6-4-6 4 1.5-8.5L2 9h7l3-7z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-primary mb-3">Excellence</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    We maintain the highest standards of professionalism, quality, and impact in everything we do.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+       
+        
+
+        <!-- CTA Section -->
+        <section class="section-padding gradient-bg text-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-6">Join Our Mission</h2>
+                <p class="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
+                    Become part of a growing community dedicated to strengthening Australia-India relations. Together, we can build bridges that create lasting impact.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/contact.html" 
+                       class="bg-secondary text-primary px-8 py-4 rounded-lg font-semibold hover:bg-yellow-500 transition-colors shadow-lg inline-flex items-center justify-center space-x-2">
+                        <span>Get Involved</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                    <a href="/services.html" 
+                       class="bg-white/10 backdrop-blur-sm border border-white/30 px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-colors inline-flex items-center justify-center">
+                        Explore Our Services
+                    </a>
+                </div>
+            </div>
+        </section>
+        <div class="h-2"></div>
+    </main>
+
+    <!-- Footer Included -->
+    <div data-include="components/footer.html"></div>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.addEventListener('DOMContentLoaded', function() {
+            // Intersection Observer for animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            // Observe all animated elements
+            document.querySelectorAll('.animate-fade-in, .animate-slide-in').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+
+            // Hover effects for cards
+            document.querySelectorAll('.hover-lift').forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-5px)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+    <script src="js/include.js"></script>
+</body>
+</html>

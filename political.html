@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Political Strengthening | Australia India Bridge Foundation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        async function loadIncludes() {
+            const elements = document.querySelectorAll("[data-include]");
+            for (let el of elements) {
+                const file = el.getAttribute("data-include");
+                const response = await fetch(file);
+                const html = await response.text();
+                el.innerHTML = html;
+            }
+        }
+        document.addEventListener("DOMContentLoaded", loadIncludes);
+    </script>
+    <style>
+        :root {
+            --primary: #0C2340;
+            --secondary: #D4AF37;
+        }
+        
+        /* Custom Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        /* Card Styles */
+        .impact-card, .success-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            padding: 2rem;
+            border-radius: 1.5rem;
+            border: 1px solid rgba(229, 231, 235, 0.5);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .impact-card:hover, .success-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(12, 35, 64, 0.1);
+            border-color: var(--secondary);
+        }
+        
+        .impact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            border-radius: 1.5rem 1.5rem 0 0;
+        }
+        
+        .political-card, .growth-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6));
+            backdrop-filter: blur(10px);
+            color: var(--primary);
+            font-weight: 600;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(12, 35, 64, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .political-card:hover, .growth-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(12, 35, 64, 0.15);
+            border-color: var(--secondary);
+        }
+        
+        .trade-card {
+            background: linear-gradient(135deg, var(--primary), #1e3a5f);
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(12, 35, 64, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .trade-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(12, 35, 64, 0.3);
+            background: linear-gradient(135deg, #1e3a5f, var(--primary));
+        }
+        
+        .trade-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .trade-card:hover::after {
+            transform: translateX(100%);
+        }
+        
+        /* List Styles */
+        .impact-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+            color: #4b5563;
+            font-size: 0.875rem;
+        }
+        
+        .impact-list li::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--secondary);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        
+        /* Section Headers */
+        .section-header {
+            position: relative;
+            padding-bottom: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            border-radius: 2px;
+        }
+        
+        /* Stats Counter Animation */
+        .stat-number {
+            font-feature-settings: "tnum";
+            font-variant-numeric: tabular-nums;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header will be included here -->
+    <div data-include="components/header.html"></div>
+
+    <!-- Main Content -->
+    <main class="">
+        <!-- Hero Section -->
+        <section class="relative bg-gradient-to-br from-[#0C2340] to-[#1e3a5f] text-white overflow-hidden">
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute top-10 right-10 w-64 h-64 bg-[#D4AF37] rounded-full blur-3xl"></div>
+                <div class="absolute bottom-10 left-10 w-80 h-80 bg-[#D4AF37]/20 rounded-full blur-3xl"></div>
+            </div>
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20 relative">
+                <div class="max-w-4xl">
+                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6 animate-fade-in-up">
+                        <div class="w-2 h-2 bg-[#D4AF37] rounded-full animate-pulse"></div>
+                        <p class="text-[#D4AF37] text-sm font-semibold tracking-widest uppercase">Political Strengthening </p>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-fade-in-up" style="animation-delay: 0.1s">
+                        Building Bridges for<br>
+                        <span class="text-[#D4AF37]">Sustainable Impact</span>
+                    </h1>
+                    <p class="text-xl text-white/80 mb-8 animate-fade-in-up" style="animation-delay: 0.2s">
+                        Comprehensive services strengthening Australia-India relations through social impact, political cooperation, and economic partnerships.
+                    </p>
+                    <div class="flex gap-4 animate-fade-in-up" style="animation-delay: 0.3s">
+                        <a href="#contact" class="bg-[#D4AF37] text-[#0C2340] px-8 py-3 rounded-lg font-semibold hover:bg-[#e6c158] transition-colors shadow-lg">
+                            Partner With Us
+                        </a>
+                        <a href="#services" class="bg-white/10 backdrop-blur-sm text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/20 transition-colors border border-white/20">
+                            Explore Services
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Content -->
+        <section id="services" class="py-20 lg:py-28">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                
+                <!-- ========================= -->
+                <!-- SECTION 1: Charitable Causes -->
+                <!-- ========================= -->
+
+
+                <!-- ========================= -->
+                <!-- SECTION 2: Political Strengthening -->
+                <!-- ========================= -->
+                <div class="section-header text-center animate-fade-in-up" style="animation-delay: 0.1s">
+                    <div class="inline-flex items-center space-x-2 text-[#D4AF37] font-semibold uppercase text-sm tracking-wider mb-4">
+                        <div class="w-2 h-2 bg-[#D4AF37] rounded-full"></div>
+                        <span>Political Strengthening</span>
+                    </div>
+                    <h2 class="text-4xl font-bold text-[#0C2340] mb-4">Enhancing Strategic Political Cooperation</h2>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                        Strengthening the political bridge between Australia and India through targeted initiatives.
+                    </p>
+                </div>
+
+                <!-- Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+                    <div class="political-card animate-fade-in-up" style="animation-delay: 0.1s">Leadership Exchange Program</div>
+                    <div class="political-card animate-fade-in-up" style="animation-delay: 0.2s">Policy Forums & Seminars</div>
+                    <div class="political-card animate-fade-in-up" style="animation-delay: 0.3s">Joint Working Groups</div>
+                    <div class="political-card animate-fade-in-up" style="animation-delay: 0.4s">Cultural Diplomacy Initiatives</div>
+                    <div class="political-card animate-fade-in-up" style="animation-delay: 0.5s">Parliamentary Exchanges</div>
+                    <div class="political-card animate-fade-in-up" style="animation-delay: 0.6s">Youth Leadership Programs</div>
+                    <div class="political-card animate-fade-in-up" style="animation-delay: 0.7s">Track II Diplomacy</div>
+                    <div class="political-card animate-fade-in-up" style="animation-delay: 0.8s">Capacity Building Workshops</div>
+                </div>
+
+                <!-- ========================= -->
+                <!-- SECTION 3: Success Stories -->
+                <!-- ========================= -->
+                <div class="section-header text-center animate-fade-in-up" style="animation-delay: 0.1s">
+                    <h2 class="text-4xl font-bold text-[#0C2340] mb-4">Success Stories & Case Studies</h2>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                        Real partnerships making real impact across industries.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+                   
+                    <div class="success-card animate-fade-in-up" style="animation-delay: 0.1s">
+                        <div class="w-12 h-12 bg-gradient-to-br from-[#D4AF37]/20 to-[#D4AF37]/10 rounded-lg flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#D4AF37]">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-[#0C2340] mb-3">Healthcare Collaboration</h4>
+                        <p class="text-gray-600">
+                            Indian pharma + Australian research institute → Affordable vaccines benefiting over 2 million people across both nations.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-gray-100">
+                            <div class="text-sm text-gray-500">Impact: 2M+ lives improved</div>
+                        </div>
+                    </div>
+
+                    <div class="success-card animate-fade-in-up" style="animation-delay: 0.2s">
+                        <div class="w-12 h-12 bg-gradient-to-br from-[#D4AF37]/20 to-[#D4AF37]/10 rounded-lg flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#D4AF37]">
+                                <path d="M2 22V12a10 10 0 1 1 20 0v10"></path>
+                                <path d="M15 6.8v1.4a3 2.8 0 0 1-3 2.8h-4A3 2.8 0 0 1 5 8.2V6.8"></path>
+                                <path d="M10 20v-8"></path>
+                                <path d="M2 22h20"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-[#0C2340] mb-3">Agriculture Innovations</h4>
+                        <p class="text-gray-600">
+                            Australian agri-tech + Indian farmers → 30% higher crop yields & improved irrigation efficiency benefiting 50,000+ farmers.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-gray-100">
+                            <div class="text-sm text-gray-500">Impact: 50K+ farmers empowered</div>
+                        </div>
+                    </div>
+
+                    <div class="success-card animate-fade-in-up" style="animation-delay: 0.3s">
+                        <div class="w-12 h-12 bg-gradient-to-br from-[#D4AF37]/20 to-[#D4AF37]/10 rounded-lg flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#D4AF37]">
+                                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
+                                <path d="M8 7v6"></path>
+                                <path d="M16 7v6"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-[#0C2340] mb-3">Education Exchange</h4>
+                        <p class="text-gray-600">
+                            Student exchange programs enhancing cultural understanding for 1,000+ students, with 85% reporting improved career opportunities.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-gray-100">
+                            <div class="text-sm text-gray-500">Impact: 1K+ students exchanged</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================= -->
+                <!-- SECTION 4: Potential Growth Areas -->
+                <!-- ========================= -->
+                <div class="section-header text-center animate-fade-in-up" style="animation-delay: 0.1s">
+                    <h2 class="text-4xl font-bold text-[#0C2340] mb-4">Potential Areas for Growth & Collaboration</h2>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                        Emerging sectors with significant potential for bilateral cooperation and investment.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+                    <div class="growth-card animate-fade-in-up" style="animation-delay: 0.1s">
+                        <div class="text-3xl mb-2">⛏️</div>
+                        Minerals & Resources
+                    </div>
+                    <div class="growth-card animate-fade-in-up" style="animation-delay: 0.2s">
+                        <div class="text-3xl mb-2">🎓</div>
+                        Education & Research
+                    </div>
+                    <div class="growth-card animate-fade-in-up" style="animation-delay: 0.3s">
+                        <div class="text-3xl mb-2">💻</div>
+                        IT & Innovation
+                    </div>
+                    <div class="growth-card animate-fade-in-up" style="animation-delay: 0.4s">
+                        <div class="text-3xl mb-2">🌾</div>
+                        Agribusiness
+                    </div>
+                    <div class="growth-card animate-fade-in-up" style="animation-delay: 0.5s">
+                        <div class="text-3xl mb-2">🍎</div>
+                        Food Security
+                    </div>
+                    <div class="growth-card animate-fade-in-up" style="animation-delay: 0.6s">
+                        <div class="text-3xl mb-2">⚡</div>
+                        Renewable Energy
+                    </div>
+                    <div class="growth-card animate-fade-in-up" style="animation-delay: 0.7s">
+                        <div class="text-3xl mb-2">🌱</div>
+                        Sustainability
+                    </div>
+                    <div class="growth-card animate-fade-in-up" style="animation-delay: 0.8s">
+                        <div class="text-3xl mb-2">🏥</div>
+                        Healthcare Tech
+                    </div>
+                </div>
+
+                <!-- ========================= -->
+                <!-- SECTION 5: Bilateral Trade -->
+                <!-- ========================= -->
+                <div class="section-header text-center animate-fade-in-up" style="animation-delay: 0.1s">
+                    <h2 class="text-4xl font-bold text-[#0C2340] mb-4">Bilateral Trade & Economic Relations</h2>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                        Comprehensive overview of Australia-India trade dynamics and economic partnership.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+
+                    <div class="trade-card animate-fade-in-up" style="animation-delay: 0.1s">
+                        <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">Total Trade Volume (2021)</h4>
+                        <p class="text-3xl font-bold">$15 Billion</p>
+                        <p class="text-white/80 text-sm mt-2">USD</p>
+                    </div>
+
+                    <div class="trade-card animate-fade-in-up" style="animation-delay: 0.2s">
+                        <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 5v14M5 12h14"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">Australia → India Exports</h4>
+                        <p class="text-3xl font-bold">$8 Billion</p>
+                        <p class="text-white/80 text-sm mt-2">53% of total trade</p>
+                    </div>
+
+                    <div class="trade-card animate-fade-in-up" style="animation-delay: 0.3s">
+                        <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 5v14M5 12h14"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">India → Australia Exports</h4>
+                        <p class="text-3xl font-bold">$7 Billion</p>
+                        <p class="text-white/80 text-sm mt-2">47% of total trade</p>
+                    </div>
+
+                    <div class="trade-card animate-fade-in-up" style="animation-delay: 0.4s">
+                        <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">Top Australian Exports</h4>
+                        <p class="text-xl font-bold">Minerals, Ores, Agriculture, Education</p>
+                        <p class="text-white/80 text-sm mt-2">65% of exports</p>
+                    </div>
+
+                    <div class="trade-card animate-fade-in-up" style="animation-delay: 0.5s">
+                        <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">Top Indian Exports</h4>
+                        <p class="text-xl font-bold">Textiles, Pharma, Automotive Parts</p>
+                        <p class="text-white/80 text-sm mt-2">70% of exports</p>
+                    </div>
+
+                    <div class="trade-card animate-fade-in-up" style="animation-delay: 0.6s">
+                        <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">Growth Potential</h4>
+                        <p class="text-3xl font-bold">+45%</p>
+                        <p class="text-white/80 text-sm mt-2">By 2025</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="contact" class="py-20 lg:py-28 bg-gradient-to-br from-[#0C2340] to-[#1e3a5f] text-white">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-bold mb-6">Ready to Strengthen Australia-India Relations?</h2>
+                <p class="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+                    Join us in building sustainable partnerships that create lasting impact across communities, economies, and cultures.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/contact.html" class="bg-[#D4AF37] text-[#0C2340] px-8 py-4 rounded-lg font-semibold hover:bg-[#e6c158] transition-colors shadow-lg">
+                        Start a Partnership
+                    </a>
+                    <a href="/about.html" class="bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-colors border border-white/20">
+                        Learn More About Us
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div data-include="components/footer.html"></div>
+
+    <!-- <script>
+        // Simple animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all cards
+            document.querySelectorAll('.impact-card, .political-card, .success-card, .growth-card, .trade-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script> -->
+    <!-- <script src="js/include.js"></script> -->
+</body>
+</html>

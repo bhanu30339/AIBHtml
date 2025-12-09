@@ -1,0 +1,1879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Australia India Bridge Foundation - Strengthening Bilateral Relations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0C2340',
+                        secondary: '#D4AF37',
+                        accent: '#1E3A5F',
+                        light: '#F8F9FA'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(-30px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .animate-fade-in { animation: fadeIn 0.8s ease-out; }
+        .animate-slide-in { animation: slideIn 0.6s ease-out; }
+        .hover-lift { transition: transform 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-5px); }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #0C2340 0%, #1E3A5F 100%);
+        }
+        
+        .section-padding {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+        
+        @media (min-width: 1024px) {
+            .section-padding {
+                padding-top: 7rem;
+                padding-bottom: 7rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans bg-light">
+    <div data-include="components/header.html"></div>
+
+    <!-- Hero Section -->
+    <!-- HERO SECTION WITH AUTO-SCROLL + ZOOM BACKGROUND -->
+<!-- HERO SECTION WITH AUTO-SCROLL + ZOOM BACKGROUND -->
+<section class="relative overflow-hidden text-white h-[90vh] flex items-center">
+
+    <!-- BACKGROUND SLIDER -->
+    <div class="absolute inset-0 z-0">
+        <div class="background-slider w-full h-full"></div>
+    </div>
+
+    <!-- OVERLAY -->
+    <div class="absolute inset-0 bg-black/40 z-10"></div>
+
+    <!-- CONTENT -->
+    <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl">
+
+            <!-- SUBTITLE -->
+            <div class="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6 animate-text-1">
+                <span class="text-sm font-medium">Strengthening Bilateral Relations Since 2010</span>
+            </div>
+
+            <!-- HEADING -->
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-text-2">
+                Building Bridges Between
+                <span class="text-secondary block">Australia & India</span>
+            </h1>
+
+            <!-- PARAGRAPH -->
+            <p class="text-xl opacity-90 mb-8 max-w-xl animate-text-3">
+                Connecting leaders, fostering partnerships, and driving economic growth through strategic collaboration between two of the world's most dynamic democracies.
+            </p>
+
+            <!-- BUTTONS -->
+            <div class="flex flex-col sm:flex-row gap-4 animate-text-4">
+                <a href="/services.html" 
+                   class="bg-secondary text-primary px-8 py-4 rounded-lg font-semibold hover:bg-yellow-500 transition-all shadow-lg inline-flex items-center justify-center space-x-2">
+                    <span>Explore Our Services</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+
+                <a href="/about.html" 
+                   class="bg-white/10 backdrop-blur-sm border border-white/30 px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-all inline-flex items-center justify-center">
+                    Learn About Us
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CSS FOR BACKGROUND SLIDER + ANIMATIONS -->
+<style>
+    .background-slider {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        animation: slideShow 18s infinite linear;
+    }
+
+    /* 3 images rotating with zoom effect */
+    @keyframes slideShow {
+        0% {
+            background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1920&q=80');
+            transform: scale(1);
+            opacity: 1;
+        }
+        33% {
+            background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80');
+            transform: scale(1.15);
+            opacity: 1;
+        }
+        66% {
+            background-image: url('https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1920&q=80');
+            transform: scale(1.1);
+            opacity: 1;
+        }
+        100% {
+            background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1920&q=80');
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    /* Text fade + slide animation */
+    @keyframes fadeSlide {
+        0% { opacity: 0; transform: translateY(25px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Staggered animation delays */
+    .animate-text-1 { animation: fadeSlide 1s ease-out forwards; animation-delay: 0.3s; }
+    .animate-text-2 { animation: fadeSlide 1s ease-out forwards; animation-delay: 0.6s; }
+    .animate-text-3 { animation: fadeSlide 1s ease-out forwards; animation-delay: 0.9s; }
+    .animate-text-4 { animation: fadeSlide 1s ease-out forwards; animation-delay: 1.2s; }
+</style>
+
+
+<!-- CSS FOR BACKGROUND SLIDER + ANIMATIONS -->
+<style>
+    .background-slider {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        animation: slideShow 18s infinite linear;
+    }
+
+    /* 3 images rotating with zoom effect */
+    @keyframes slideShow {
+        0% {
+            background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1920&q=80');
+            transform: scale(1);
+            opacity: 1;
+        }
+        33% {
+            background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80');
+            transform: scale(1.15);
+            opacity: 1;
+        }
+        66% {
+            background-image: url('https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1920&q=80');
+            transform: scale(1.1);
+            opacity: 1;
+        }
+        100% {
+            background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1920&q=80');
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    /* Text animation */
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in-up {
+        animation: fadeInUp 1.2s ease-out both;
+    }
+</style>
+
+
+    <!-- Mission Section -->
+    <!-- MODERN CORE VALUES SECTION -->
+<section class="py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Main Container with Side-by-Side Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+            
+            <!-- Side Heading Column -->
+            <div class="lg:col-span-3">
+                <div class="sticky top-24">
+                    <!-- Accent Line -->
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-0.5 bg-gradient-to-r from-blue-600 text-secondary to-purple-600"></div>
+                        <span class="ml-3 text-xs font-semibold tracking-wider text-gray-500 text-secondary uppercase">Our Foundation</span>
+                    </div>
+                    
+                    <!-- Main Heading -->
+                    <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                        Core<br><span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Values</span>
+                    </h2>
+                    
+                    <!-- Subheading -->
+                    <p class="mt-6 text-gray-600 text-lg leading-relaxed">
+                        The guiding principles that shape our mission and define our impact across Australia and India.
+                    </p>
+                    
+                    <!-- Decorative Element -->
+                    <div class="mt-10 hidden lg:block">
+                        <div class="w-32 h-32 bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl rotate-12"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Content Column -->
+            <div class="lg:col-span-9">
+                <!-- Values Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Value Card 1 -->
+                    <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:border-blue-100">
+                        <div class="flex items-start mb-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-50 rounded-xl flex items-center justify-center">
+                                <span class="text-blue-600 font-bold text-xl">01</span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Integrity</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Building trust through honest, transparent, and ethical actions in every interaction.
+                        </p>
+                    </div>
+                    
+                    <!-- Value Card 2 -->
+                    <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:border-purple-100">
+                        <div class="flex items-start mb-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-100 to-purple-50 rounded-xl flex items-center justify-center">
+                                <span class="text-purple-600 font-bold text-xl">02</span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Inclusivity</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Celebrating diversity and ensuring every voice is valued across both nations.
+                        </p>
+                    </div>
+                    
+                    <!-- Value Card 3 -->
+                    <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:border-green-100">
+                        <div class="flex items-start mb-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-green-100 to-green-50 rounded-xl flex items-center justify-center">
+                                <span class="text-green-600 font-bold text-xl">03</span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Collaboration</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Cultivating partnerships across governments, businesses, and communities for meaningful impact.
+                        </p>
+                    </div>
+                    
+                    <!-- Value Card 4 -->
+                    <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:border-amber-100">
+                        <div class="flex items-start mb-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-amber-100 to-amber-50 rounded-xl flex items-center justify-center">
+                                <span class="text-amber-600 font-bold text-xl">04</span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Innovation</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Embracing new ideas and approaches to drive continuous improvement and growth.
+                        </p>
+                    </div>
+                    
+                    <!-- Value Card 5 -->
+                    <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:border-red-100">
+                        <div class="flex items-start mb-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-red-100 to-red-50 rounded-xl flex items-center justify-center">
+                                <span class="text-red-600 font-bold text-xl">05</span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Empowerment</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Uplifting individuals and communities to reach their fullest potential.
+                        </p>
+                    </div>
+                    
+                    <!-- Value Card 6 -->
+                    <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:border-emerald-100">
+                        <div class="flex items-start mb-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-emerald-100 to-emerald-50 rounded-xl flex items-center justify-center">
+                                <span class="text-emerald-600 font-bold text-xl">06</span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Sustainability</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Committing to long-lasting environmental and social impact for future generations.
+                        </p>
+                    </div>
+                    
+                    <!-- Value Card 7 -->
+                    <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:border-indigo-100">
+                        <div class="flex items-start mb-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-indigo-100 to-indigo-50 rounded-xl flex items-center justify-center">
+                                <span class="text-indigo-600 font-bold text-xl">07</span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Resilience</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Facing challenges with courage and maintaining perseverance in pursuing our mission.
+                        </p>
+                    </div>
+                    
+                    <!-- Value Card 8 -->
+                    <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:border-cyan-100">
+                        <div class="flex items-start mb-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-100 to-cyan-50 rounded-xl flex items-center justify-center">
+                                <span class="text-cyan-600 font-bold text-xl">08</span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Excellence</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Striving for the highest standards to ensure transformative outcomes in all endeavors.
+                        </p>
+                    </div>
+                    
+                </div>
+                
+                <!-- Optional Bottom Note -->
+                <div class="mt-10 pt-8 border-t border-gray-100">
+                    <p class="text-gray-500 text-sm italic">
+                        These values serve as the compass guiding our mission to strengthen Australia-India relations and create lasting impact.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+    <!-- Services Section -->
+    <section class="section-padding bg-gradient-to-br from-gray-50 to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Two Column Layout -->
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+            
+            <!-- Left Column: Text Content -->
+            <div class="space-y-8">
+                <div>
+                    <div class="inline-flex items-center space-x-2 text-secondary font-semibold uppercase text-sm tracking-wider mb-4">
+                        <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                        <span>Online Portal</span>
+                    </div>
+                    
+                    <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
+                        Explore our Online<br>
+                        <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                            Government Services
+                        </span>
+                        & Resources
+                    </h2>
+                    
+                    <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                        Aliquam viverna eroi. Denec aliquat bändit enim faujrat. Släpendisse id quan sed eros tiredunt kutus sit amet eu nsin egestas tempus turpis, sit amet mattis magna varius non.
+                    </p>
+                </div>
+                
+                <!-- Service List Grid -->
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Parking Permission</h4>
+                                <p class="text-gray-600 text-sm">Apply for residential or visitor parking</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">File a Tax Return</h4>
+                                <p class="text-gray-600 text-sm">Submit annual tax returns online</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Order Birth Certificate</h4>
+                                <p class="text-gray-600 text-sm">Request official birth certificates</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Get Building Permission</h4>
+                                <p class="text-gray-600 text-sm">Apply for construction permits</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-yellow-500/10 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Apply for Driving License</h4>
+                                <p class="text-gray-600 text-sm">New or renewal applications</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-red-500/10 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Report Solution</h4>
+                                <p class="text-gray-600 text-sm">Submit and track issue reports</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Discover More Button -->
+                <div class="pt-6">
+                    <button class="group inline-flex items-center bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-xl font-semibold hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                        <span>Discover More</span>
+                        <svg class="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Right Column: Stats Grid -->
+            <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 lg:p-12 shadow-2xl">
+                <div class="grid grid-cols-2 gap-8">
+                    <!-- Stat 1 -->
+                    <div class="text-center">
+                        <div class="text-5xl lg:text-6xl font-bold text-white mb-3">84k</div>
+                        <div class="text-gray-300 font-medium uppercase tracking-wider text-sm">Total People Lived</div>
+                        <div class="mt-4 h-1 w-12 mx-auto bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                    </div>
+                    
+                    <!-- Stat 2 -->
+                    <div class="text-center">
+                        <div class="text-5xl lg:text-6xl font-bold text-white mb-3">3.3k</div>
+                        <div class="text-gray-300 font-medium uppercase tracking-wider text-sm">Square Libraries</div>
+                        <div class="mt-4 h-1 w-12 mx-auto bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                    </div>
+                    
+                    <!-- Stat 3 -->
+                    <div class="text-center">
+                        <div class="text-5xl lg:text-6xl font-bold text-white mb-3">26%</div>
+                        <div class="text-gray-300 font-medium uppercase tracking-wider text-sm">Private B Domestic</div>
+                        <div class="mt-4 h-1 w-12 mx-auto bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                    </div>
+                    
+                    <!-- Stat 4 -->
+                    <div class="text-center">
+                        <div class="text-5xl lg:text-6xl font-bold text-white mb-3">4th</div>
+                        <div class="text-gray-300 font-medium uppercase tracking-wider text-sm">Average Costs of Home</div>
+                        <div class="mt-4 h-1 w-12 mx-auto bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                    </div>
+                </div>
+                
+                <!-- Visual Element -->
+                <div class="mt-12 relative">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-primary/20 rounded-full blur-xl"></div>
+                    <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-secondary/20 rounded-full blur-xl"></div>
+                    
+                    <div class="relative bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">Live Statistics</h4>
+                                <p class="text-gray-400 text-sm">Updated in real-time for accurate insights</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Info -->
+                <div class="mt-8 text-center">
+                    <p class="text-gray-400 text-sm">
+                        *Data reflects the most recent quarterly report and is subject to regular updates.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.hover-lift {
+    transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+</style>
+
+    <!-- Stats Section -->
+    <section class="gradient-bg text-white section-padding">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <p class="text-4xl lg:text-5xl font-bold mb-2">15+</p>
+                    <p class="text-secondary font-semibold">Years of Excellence</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-4xl lg:text-5xl font-bold mb-2">500+</p>
+                    <p class="text-secondary font-semibold">Leaders Connected</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-4xl lg:text-5xl font-bold mb-2">100+</p>
+                    <p class="text-secondary font-semibold">Successful Partnerships</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-4xl lg:text-5xl font-bold mb-2">$2B+</p>
+                    <p class="text-secondary font-semibold">Trade Facilitated</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ENHANCED BILATERAL TRADE DASHBOARD -->
+<section class="py-20 bg-gradient-to-b from-white to-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header Section -->
+        <div class="text-center mb-16">
+            <div class="inline-flex items-center mb-4">
+                <div class="flex items-center">
+                    <span class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
+                        <span class="text-white text-xs font-bold">AU</span>
+                    </span>
+                    <svg class="w-8 h-8 text-gray-400 mx-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/>
+                    </svg>
+                    <span class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                        <span class="text-white text-xs font-bold">IN</span>
+                    </span>
+                </div>
+                <span class="ml-4 text-sm font-semibold text-gray-600 uppercase text-secondary  tracking-wider">Strategic Partnership</span>
+            </div>
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Australia-India <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Trade Relations</span> 
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                A comprehensive overview of bilateral trade dynamics, export-import patterns, and economic synergy
+            </p>
+        </div>
+
+        <!-- Enhanced Dashboard Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            
+            <!-- Total Trade Volume Card with Interactive Chart -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 lg:col-span-2">
+                <div class="flex items-center justify-between mb-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900">Total Bilateral Trade</h3>
+                        <p class="text-gray-600 mt-2">2021 Trade Volume Analysis</p>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="px-4 py-2 bg-blue-50 rounded-full">
+                            <span class="text-blue-600 font-bold">$15B</span>
+                        </div>
+                        <div class="px-3 py-1 bg-green-50 rounded-lg">
+                            <span class="text-green-600 text-sm">+12% YoY</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Interactive Trade Flow Visualization -->
+                <div class="relative">
+                    <!-- Trade Flow Diagram -->
+                    <div class="flex items-center justify-between mb-12">
+                        <!-- Australia Side -->
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                                <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="text-lg font-bold text-blue-600">Australia</div>
+                            <div class="text-sm text-gray-600">Exports: $8B</div>
+                        </div>
+                        
+                        <!-- Trade Flow Arrows -->
+                        <div class="flex-1 px-6">
+                            <div class="relative">
+                                <!-- Forward Flow -->
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="h-2 bg-gradient-to-r from-blue-400 to-blue-300 rounded-l-full flex-1"></div>
+                                    <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
+                                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                        </svg>
+                                    </div>
+                                    <div class="h-2 bg-gradient-to-r from-blue-300 to-blue-200 rounded-r-full flex-1"></div>
+                                </div>
+                                
+                                <!-- Trade Volume Display -->
+                                <div class="text-center py-2 px-4 bg-gradient-to-r from-blue-50 to-green-50 rounded-lg border border-gray-200">
+                                    <div class="text-sm text-gray-600">Total Trade</div>
+                                    <div class="text-2xl font-bold text-gray-900">$15B</div>
+                                </div>
+                                
+                                <!-- Reverse Flow -->
+                                <div class="flex items-center justify-between mt-4">
+                                    <div class="h-2 bg-gradient-to-r from-green-200 to-green-300 rounded-l-full flex-1"></div>
+                                    <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                                        </svg>
+                                    </div>
+                                    <div class="h-2 bg-gradient-to-r from-green-300 to-green-400 rounded-r-full flex-1"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- India Side -->
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-gradient-to-br from-green-100 to-green-50 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                                <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="text-lg font-bold text-green-600">India</div>
+                            <div class="text-sm text-gray-600">Exports: $7B</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Detailed Breakdown -->
+                    <div class="grid grid-cols-2 gap-6 mt-8">
+                        <div class="bg-blue-50 rounded-xl p-4 border border-blue-100">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-semibold text-gray-900">Australian Exports</span>
+                                <span class="text-2xl font-bold text-blue-600">$8B</span>
+                            </div>
+                            <div class="h-2 bg-blue-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full w-8/12"></div>
+                            </div>
+                            <div class="text-sm text-gray-600 mt-2">53% of total trade volume</div>
+                        </div>
+                        
+                        <div class="bg-green-50 rounded-xl p-4 border border-green-100">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-semibold text-gray-900">Indian Exports</span>
+                                <span class="text-2xl font-bold text-green-600">$7B</span>
+                            </div>
+                            <div class="h-2 bg-green-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-green-400 to-green-600 rounded-full w-7/12"></div>
+                            </div>
+                            <div class="text-sm text-gray-600 mt-2">47% of total trade volume</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trade Composition Analysis -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8">Trade Composition</h3>
+                
+                <!-- Pie Chart Visualization -->
+                <div class="relative h-64 mb-8">
+                    <div class="absolute inset-0">
+                        <!-- Pie Chart -->
+                        <svg class="w-full h-full" viewBox="0 0 100 100">
+                            <!-- Blue segment (65% of $8B) -->
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="#3b82f6" stroke-width="20" 
+                                    stroke-dasharray="65 100" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
+                            <!-- Blue-light segment (35% of $8B) -->
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="#93c5fd" stroke-width="20" 
+                                    stroke-dasharray="35 100" stroke-dashoffset="-65" transform="rotate(-90 50 50)"/>
+                        </svg>
+                        
+                        <!-- India Pie Chart -->
+                        <svg class="w-full h-full absolute top-0 left-0" viewBox="0 0 100 100">
+                            <!-- Green segment (70% of $7B) -->
+                            <circle cx="50" cy="50" r="25" fill="none" stroke="#10b981" stroke-width="15" 
+                                    stroke-dasharray="70 100" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
+                            <!-- Green-light segment (30% of $7B) -->
+                            <circle cx="50" cy="50" r="25" fill="none" stroke="#86efac" stroke-width="15" 
+                                    stroke-dasharray="30 100" stroke-dashoffset="-70" transform="rotate(-90 50 50)"/>
+                        </svg>
+                    </div>
+                    
+                    <!-- Center Text -->
+                    <div class="absolute inset-0 flex flex-col items-center justify-center">
+                        <div class="text-center">
+                            <div class="text-lg font-bold text-gray-900">Major Categories</div>
+                            <div class="text-sm text-gray-600">Share of Top Products</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Legend -->
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-blue-500 rounded mr-3"></div>
+                            <div>
+                                <div class="font-semibold text-gray-900">Australia Top Categories</div>
+                                <div class="text-sm text-gray-600">65% of exports</div>
+                            </div>
+                        </div>
+                        <span class="font-bold text-blue-600">$5.2B</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-green-500 rounded mr-3"></div>
+                            <div>
+                                <div class="font-semibold text-gray-900">India Top Categories</div>
+                                <div class="text-sm text-gray-600">70% of exports</div>
+                            </div>
+                        </div>
+                        <span class="font-bold text-green-600">$4.9B</span>
+                    </div>
+                </div>
+                
+                <!-- Insights -->
+                <div class="mt-8 p-4 bg-gradient-to-r from-blue-50 to-green-50 rounded-xl">
+                    <div class="flex items-start">
+                        <svg class="w-5 h-5 text-blue-600 mt-0.5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                        </svg>
+                        <div class="text-sm text-gray-700">
+                            Major trade categories account for significant portions of bilateral trade, indicating focused economic synergies.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enhanced Categories Breakdown -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+    
+    <!-- Combined Trade Breakdown Card -->
+    <div class="bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-xl p-8 border border-blue-100 lg:col-span-2">
+        <!-- Header -->
+        <div class="text-center mb-10">
+            <div class="inline-flex items-center mb-4">
+                <div class="flex items-center space-x-2">
+                    <span class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                        <span class="text-white text-sm font-bold">AU</span>
+                    </span>
+                    <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/>
+                    </svg>
+                    <span class="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+                        <span class="text-white text-sm font-bold">IN</span>
+                    </span>
+                </div>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">Bilateral Trade Composition</h3>
+            <p class="text-gray-600">Breakdown of Top Export Categories by Country</p>
+        </div>
+
+        <!-- Combined Trade Visualization -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- Australia Exports -->
+            <div class="bg-white rounded-xl border border-gray-200 p-6">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 bg-gradient-to-r from-blue-100 to-blue-50 rounded-lg flex items-center justify-center mr-4">
+                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 text-lg">Australia Exports</h4>
+                        <div class="text-sm text-gray-600">Total: $8B USD</div>
+                    </div>
+                </div>
+                
+                <!-- Progress Bars -->
+                <div class="space-y-5">
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                                <span class="font-semibold text-gray-900">Minerals & Ores</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="font-bold text-blue-600">30%</span>
+                                <span class="text-sm text-gray-600 ml-2">$2.4B</span>
+                            </div>
+                        </div>
+                        <div class="h-2 bg-blue-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full" style="width: 30%"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                                <span class="font-semibold text-gray-900">Agricultural Products</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="font-bold text-blue-600">25%</span>
+                                <span class="text-sm text-gray-600 ml-2">$2.0B</span>
+                            </div>
+                        </div>
+                        <div class="h-2 bg-blue-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full" style="width: 25%"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                                <span class="font-semibold text-gray-900">Educational Services</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="font-bold text-blue-600">10%</span>
+                                <span class="text-sm text-gray-600 ml-2">$0.8B</span>
+                            </div>
+                        </div>
+                        <div class="h-2 bg-blue-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full" style="width: 10%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Australia Summary -->
+                <div class="mt-6 pt-6 border-t border-gray-100">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <div class="text-sm text-gray-600">Top 3 Categories Share</div>
+                            <div class="text-xl font-bold text-blue-600">65%</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm text-gray-600">Combined Value</div>
+                            <div class="text-lg font-bold text-gray-900">$5.2B USD</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- India Exports -->
+            <div class="bg-white rounded-xl border border-gray-200 p-6">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 bg-gradient-to-r from-green-100 to-green-50 rounded-lg flex items-center justify-center mr-4">
+                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 text-lg">India Exports</h4>
+                        <div class="text-sm text-gray-600">Total: $7B USD</div>
+                    </div>
+                </div>
+                
+                <!-- Progress Bars -->
+                <div class="space-y-5">
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                <span class="font-semibold text-gray-900">Textiles & Apparel</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="font-bold text-green-600">35%</span>
+                                <span class="text-sm text-gray-600 ml-2">$2.45B</span>
+                            </div>
+                        </div>
+                        <div class="h-2 bg-green-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-green-400 to-green-600 rounded-full" style="width: 35%"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                <span class="font-semibold text-gray-900">Pharmaceuticals</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="font-bold text-green-600">25%</span>
+                                <span class="text-sm text-gray-600 ml-2">$1.75B</span>
+                            </div>
+                        </div>
+                        <div class="h-2 bg-green-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-green-400 to-green-600 rounded-full" style="width: 25%"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                <span class="font-semibold text-gray-900">Automotive Parts</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="font-bold text-green-600">10%</span>
+                                <span class="text-sm text-gray-600 ml-2">$0.7B</span>
+                            </div>
+                        </div>
+                        <div class="h-2 bg-green-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-green-400 to-green-600 rounded-full" style="width: 10%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- India Summary -->
+                <div class="mt-6 pt-6 border-t border-gray-100">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <div class="text-sm text-gray-600">Top 3 Categories Share</div>
+                            <div class="text-xl font-bold text-green-600">70%</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm text-gray-600">Combined Value</div>
+                            <div class="text-lg font-bold text-gray-900">$4.9B USD</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Combined Insights -->
+        <div class="mt-8 pt-8 border-t border-gray-200">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="text-center p-4 bg-gradient-to-r from-blue-50 to-white rounded-lg">
+                    <div class="text-2xl font-bold text-blue-600">65%</div>
+                    <div class="text-sm text-gray-600 mt-1">AU Top 3 Share</div>
+                </div>
+                <div class="text-center p-4 bg-gradient-to-r from-green-50 to-white rounded-lg">
+                    <div class="text-2xl font-bold text-green-600">70%</div>
+                    <div class="text-sm text-gray-600 mt-1">IN Top 3 Share</div>
+                </div>
+                <div class="text-center p-4 bg-gradient-to-r from-purple-50 to-white rounded-lg">
+                    <div class="text-2xl font-bold text-purple-600">$10.1B</div>
+                    <div class="text-sm text-gray-600 mt-1">Combined Value</div>
+                </div>
+            </div>
+            <p class="text-center text-gray-600 text-sm mt-4">
+                The top 3 categories from each country account for significant portions of their total exports, 
+                highlighting focused trade specializations and economic complementarity.
+            </p>
+        </div>
+    </div>
+
+    <!-- Side Image/Visual Section -->
+    <div class="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-xl p-8 border border-gray-100 overflow-hidden">
+        <!-- Image Header -->
+        <div class="text-center mb-6">
+            <h4 class="text-xl font-bold text-gray-900">Trade Partnership Visual</h4>
+            <p class="text-gray-600 text-sm">Australia-India Economic Synergy</p>
+        </div>
+        
+        <!-- Main Image/Graphic -->
+        <div class="relative h-80 rounded-xl overflow-hidden mb-6">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-100 via-white to-green-100 flex items-center justify-center">
+                <!-- Interactive Trade Flow Graphic -->
+                <div class="relative w-full h-full">
+                    <!-- Australia Flag/Icon -->
+                    <div class="absolute top-1/4 left-4 transform -translate-y-1/2">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <div class="mt-2 text-center">
+                            <div class="text-sm font-semibold text-blue-600">Australia</div>
+                            <div class="text-xs text-gray-600">Exports: $8B</div>
+                        </div>
+                    </div>
+                    
+                    <!-- India Flag/Icon -->
+                    <div class="absolute bottom-1/4 right-4 transform translate-y-1/2">
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-lg">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div class="mt-2 text-center">
+                            <div class="text-sm font-semibold text-green-600">India</div>
+                            <div class="text-xs text-gray-600">Exports: $7B</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Trade Flow Arrows -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <!-- Forward Arrow -->
+                        <div class="w-2/3 h-1 bg-gradient-to-r from-blue-400 to-blue-300 rounded-full"></div>
+                        <div class="absolute left-1/3 transform -translate-x-1/2">
+                            <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center shadow-md">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </div>
+                        </div>
+                        
+                        <!-- Reverse Arrow -->
+                        <div class="w-2/3 h-1 bg-gradient-to-l from-green-400 to-green-300 rounded-full mt-12"></div>
+                        <div class="absolute right-1/3 transform translate-x-1/2 mt-12">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center shadow-md">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Center Total Trade -->
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl border-2 border-blue-100">
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-gray-900">$15B</div>
+                                <div class="text-xs text-gray-600">Total Trade</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Key Insights -->
+        <div class="space-y-4">
+            <div class="flex items-start">
+                <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                    <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                    </svg>
+                </div>
+                <div>
+                    <h5 class="font-semibold text-gray-900">Strong Growth Trends</h5>
+                    <p class="text-sm text-gray-600">12% year-over-year growth indicates robust economic partnership expansion.</p>
+                </div>
+            </div>
+            
+            <div class="flex items-start">
+                <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                    <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <div>
+                    <h5 class="font-semibold text-gray-900">Complementary Economies</h5>
+                    <p class="text-sm text-gray-600">Different export specializations create natural trade synergy between nations.</p>
+                </div>
+            </div>
+            
+            <div class="flex items-start">
+                <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                    <svg class="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+                <div>
+                    <h5 class="font-semibold text-gray-900">Future Opportunities</h5>
+                    <p class="text-sm text-gray-600">Significant potential in technology, renewable energy, and services trade.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Call to Action -->
+        <div class="mt-6 pt-6 border-t border-gray-200 text-center">
+            <a href="#" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold text-sm">
+                Explore Detailed Trade Report
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+        <!-- Conclusion & Insights -->
+        <div class="bg-gradient-to-r from-blue-50 via-white to-green-50 rounded-2xl shadow-lg p-8 border border-gray-200">
+            <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">Trade Outlook & Strategic Insights</h3>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    The Australia-India trade relationship demonstrates strong complementarity with significant potential for expansion.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center p-6 bg-white rounded-xl border border-gray-100">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-100 to-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-gray-900 mb-2">Growth Momentum</h4>
+                    <p class="text-gray-600 text-sm">
+                        12% year-over-year growth indicates robust trade momentum and expanding economic ties.
+                    </p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-xl border border-gray-100">
+                    <div class="w-12 h-12 bg-gradient-to-r from-purple-100 to-purple-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-gray-900 mb-2">Trade Balance</h4>
+                    <p class="text-gray-600 text-sm">
+                        $1B surplus in Australia's favor creates opportunities for balanced trade expansion.
+                    </p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-xl border border-gray-100">
+                    <div class="w-12 h-12 bg-gradient-to-r from-green-100 to-green-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-gray-900 mb-2">Future Potential</h4>
+                    <p class="text-gray-600 text-sm">
+                        Diversification opportunities exist in technology, renewable energy, and digital services.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Final CTA -->
+            <div class="mt-8 text-center">
+                <a href="#" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-green-500 text-white font-semibold rounded-xl hover:opacity-90 transition-all duration-300">
+                    Explore Trade Opportunities
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- ========================= -->
+<!-- SUCCESS STORIES - INNOVATIVE SECTION -->
+<!-- ========================= -->
+
+<section class="py-20 bg-gray-50 relative overflow-hidden">
+
+    <!-- Floating Gradient Shapes -->
+    <div class="absolute top-0 left-0 w-72 h-72 bg-[#D4AF37]/20 blur-3xl rounded-full -z-10"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-[#0C2340]/10 blur-3xl rounded-full -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+        <!-- Header -->
+        <div class="text-center mb-16">
+            <div class="inline-flex items-center space-x-2 text-[#D4AF37] font-semibold uppercase text-sm tracking-wider mb-4">
+                <div class="w-2 h-2 bg-[#D4AF37] rounded-full"></div>
+                <span>Success Stories</span>
+            </div>
+            <h2 class="text-4xl lg:text-5xl font-bold text-[#0C2340] leading-tight">
+                Transforming Lives Through Partnership
+            </h2>
+            <p class="text-gray-600 text-lg max-w-3xl mx-auto mt-4">
+                Real collaborations between Australia and India delivering impact across healthcare, agriculture, and education.
+            </p>
+        </div>
+
+        <!-- ===================== -->
+        <!-- CASE STUDY 1 - HEALTHCARE -->
+        <!-- ===================== -->
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
+            <!-- Left: Image -->
+            <div class="relative group">
+                <img src="images/Hsp.png" alt="Healthcare Collaboration"
+                     class="rounded-2xl shadow-xl w-full group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-br from-[#0C2340]/40 to-transparent rounded-2xl"></div>
+
+                <!-- Floating Badge -->
+                <div class="absolute bottom-4 left-4 bg-white/80 backdrop-blur-md px-4 py-2 rounded-lg shadow-md">
+                    <p class="text-sm font-semibold text-[#0C2340]">2M+ Lives Impacted</p>
+                </div>
+            </div>
+
+            <!-- Right: Content -->
+            <div>
+                <h3 class="text-3xl font-bold text-[#0C2340] mb-4">Healthcare Collaboration</h3>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                    A leading Indian pharmaceutical company partnered with an Australian research institute to develop 
+                    affordable vaccines for infectious diseases—positively impacting over 
+                    <span class="font-bold text-[#D4AF37]">2 million people</span> across both nations.
+                </p>
+
+                <a class="inline-flex items-center text-[#0C2340] font-semibold hover:text-[#D4AF37] transition-colors cursor-pointer">
+                    Learn More
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- ===================== -->
+        <!-- CASE STUDY 2 - AGRICULTURE -->
+        <!-- ===================== -->
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center mb-20 lg:flex-row-reverse">
+
+            <!-- Right: Image -->
+            <div class="relative group order-last lg:order-first">
+                <img src="images/Arg.png" alt="Agriculture Innovation"
+                     class="rounded-2xl shadow-xl w-full group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/40 to-transparent rounded-2xl"></div>
+
+                <!-- Floating badge -->
+                <div class="absolute bottom-4 left-4 bg-white/80 backdrop-blur-md px-4 py-2 rounded-lg shadow-md">
+                    <p class="text-sm font-semibold text-[#0C2340]">30% Higher Crop Yields</p>
+                </div>
+            </div>
+
+            <!-- Left: Content -->
+            <div>
+                <h3 class="text-3xl font-bold text-[#0C2340] mb-4">Agriculture Innovations</h3>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                    An Australian agri-tech firm collaborated with Indian farmers to implement innovative irrigation technologies—resulting in 
+                    <span class="font-bold text-[#D4AF37]">30% higher crop yields</span> and improved water efficiency across farming communities.
+                </p>
+
+                <a class="inline-flex items-center text-[#0C2340] font-semibold hover:text-[#D4AF37] transition-colors cursor-pointer">
+                    Learn More
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- ===================== -->
+        <!-- CASE STUDY 3 - EDUCATION EXCHANGE -->
+        <!-- ===================== -->
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+            <!-- Left: Image -->
+            <div class="relative group">
+                <img src="images/Edu.png" alt="Education Exchange"
+                     class="rounded-2xl shadow-xl w-full group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-br from-[#0C2340]/40 to-transparent rounded-2xl"></div>
+
+                <!-- Floating Badge -->
+                <div class="absolute bottom-4 left-4 bg-white/80 backdrop-blur-md px-4 py-2 rounded-lg shadow-md">
+                    <p class="text-sm font-semibold text-[#0C2340]">1,000+ Students Benefited</p>
+                </div>
+            </div>
+
+            <!-- Right: Content -->
+            <div>
+                <h3 class="text-3xl font-bold text-[#0C2340] mb-4">Education Exchange</h3>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                    Australian and Indian universities launched student exchange programs enhancing cultural understanding and academic excellence. 
+                    More than <span class="font-bold text-[#D4AF37]">1,000 students</span> have benefited from this cross-border educational initiative.
+                </p>
+
+                <a class="inline-flex items-center text-[#0C2340] font-semibold hover:text-[#D4AF37] transition-colors cursor-pointer">
+                    Learn More
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    
+
+
+
+    <!-- Partners Section -->
+    <section class="section-padding bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Decorative Background Elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-secondary/10 to-primary/10 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="relative">
+            <!-- Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center justify-center gap-3 mb-6">
+                    <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-secondary to-transparent"></div>
+                    <span class="text-secondary font-bold uppercase tracking-widest text-sm">Strategic Alliances</span>
+                    <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-secondary to-transparent"></div>
+                </div>
+                
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                    Trusted by
+                    <span class="relative">
+                        <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Global Leaders</span>
+                        <div class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary/30 to-secondary/30 rounded-full"></div>
+                    </span>
+                </h2>
+                
+                <p class="text-gray-600 text-lg leading-relaxed">
+                    We collaborate with government bodies, industry associations, and corporate leaders 
+                    from both nations to drive meaningful partnerships.
+                </p>
+            </div>
+            
+            <!-- Partner Logos Grid -->
+            <div class="relative">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+                    <!-- Austrade -->
+                    <div class="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 flex items-center justify-center h-36 hover-lift border border-gray-200 hover:border-primary/20 hover:shadow-xl transition-all duration-300">
+                        <div class="text-center">
+                            <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <span class="text-primary font-bold text-2xl group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-secondary group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">A</span>
+                            </div>
+                            <span class="text-gray-900 font-bold text-lg">Austrade</span>
+                            <div class="mt-2 h-0.5 w-8 mx-auto bg-gradient-to-r from-transparent via-gray-300 to-transparent group-hover:via-primary transition-all duration-300"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Invest India -->
+                    <div class="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 flex items-center justify-center h-36 hover-lift border border-gray-200 hover:border-primary/20 hover:shadow-xl transition-all duration-300">
+                        <div class="text-center">
+                            <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <span class="text-primary font-bold text-2xl group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-secondary group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">I</span>
+                            </div>
+                            <span class="text-gray-900 font-bold text-lg">Invest India</span>
+                            <div class="mt-2 h-0.5 w-8 mx-auto bg-gradient-to-r from-transparent via-gray-300 to-transparent group-hover:via-primary transition-all duration-300"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- DFAT -->
+                    <div class="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 flex items-center justify-center h-36 hover-lift border border-gray-200 hover:border-primary/20 hover:shadow-xl transition-all duration-300">
+                        <div class="text-center">
+                            <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <span class="text-primary font-bold text-2xl group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-secondary group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">D</span>
+                            </div>
+                            <span class="text-gray-900 font-bold text-lg">DFAT</span>
+                            <div class="mt-2 h-0.5 w-8 mx-auto bg-gradient-to-r from-transparent via-gray-300 to-transparent group-hover:via-primary transition-all duration-300"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- FICCI -->
+                    <div class="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 flex items-center justify-center h-36 hover-lift border border-gray-200 hover:border-primary/20 hover:shadow-xl transition-all duration-300">
+                        <div class="text-center">
+                            <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <span class="text-primary font-bold text-2xl group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-secondary group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">F</span>
+                            </div>
+                            <span class="text-gray-900 font-bold text-lg">FICCI</span>
+                            <div class="mt-2 h-0.5 w-8 mx-auto bg-gradient-to-r from-transparent via-gray-300 to-transparent group-hover:via-primary transition-all duration-300"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- CII -->
+                    <div class="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 flex items-center justify-center h-36 hover-lift border border-gray-200 hover:border-primary/20 hover:shadow-xl transition-all duration-300">
+                        <div class="text-center">
+                            <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <span class="text-primary font-bold text-2xl group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-secondary group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">C</span>
+                            </div>
+                            <span class="text-gray-900 font-bold text-lg">CII</span>
+                            <div class="mt-2 h-0.5 w-8 mx-auto bg-gradient-to-r from-transparent via-gray-300 to-transparent group-hover:via-primary transition-all duration-300"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- AIBC -->
+                    <div class="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 flex items-center justify-center h-36 hover-lift border border-gray-200 hover:border-primary/20 hover:shadow-xl transition-all duration-300">
+                        <div class="text-center">
+                            <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <span class="text-primary font-bold text-2xl group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-secondary group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">A</span>
+                            </div>
+                            <span class="text-gray-900 font-bold text-lg">AIBC</span>
+                            <div class="mt-2 h-0.5 w-8 mx-auto bg-gradient-to-r from-transparent via-gray-300 to-transparent group-hover:via-primary transition-all duration-300"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Partner Logos (Optional Scroll) -->
+                <div class="mt-10 pt-10 border-t border-gray-200">
+                    <div class="flex flex-wrap justify-center items-center gap-6 md:gap-10">
+                        <div class="text-gray-400 font-medium text-sm">Also partnering with:</div>
+                        <div class="flex items-center gap-4 md:gap-8">
+                            <span class="text-gray-600 font-medium opacity-75 hover:opacity-100 transition-opacity duration-300">Ministry of Commerce</span>
+                            <span class="text-gray-600 font-medium opacity-75 hover:opacity-100 transition-opacity duration-300">State Governments</span>
+                            <span class="text-gray-600 font-medium opacity-75 hover:opacity-100 transition-opacity duration-300">Industry Chambers</span>
+                            <span class="text-gray-600 font-medium opacity-75 hover:opacity-100 transition-opacity duration-300">Corporate Leaders</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Stats Bar -->
+                <div class="mt-12 bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 rounded-2xl p-8">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-primary mb-2">50+</div>
+                            <div class="text-gray-700 font-medium">Active Partnerships</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-secondary mb-2">12</div>
+                            <div class="text-gray-700 font-medium">Government Bodies</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-gray-900 mb-2">100%</div>
+                            <div class="text-gray-700 font-medium">Successful Collaborations</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="mt-12 text-center">
+                    <button class="group inline-flex items-center bg-gradient-to-r from-primary to-secondary text-white px-10 py-4 rounded-xl font-semibold hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                        </svg>
+                        Become a Partner
+                        <svg class="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </button>
+                    <p class="mt-4 text-gray-600 text-sm">
+                        Join our network of trusted organizations driving Australia-India relations
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.backdrop-blur-sm {
+    backdrop-filter: blur(8px);
+}
+</style>
+
+<!-- MODERN BENEFITS SECTION -->
+<section class="py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header Section -->
+        <div class="text-center mb-16">
+            <div class="inline-flex items-center mb-4">
+                <div class="flex items-center space-x-2">
+                    <span class="w-3 h-3 text-secondary  rounded-full animate-pulse"></span>
+                    <span class="text-sm font-semibold text-gray-600 text-secondary  uppercase tracking-wider">Strategic Advantages</span>
+                </div>
+            </div>
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Why Join the <span class="bg-gradient-to-r to-secondary from-blue-600 to-green-600 bg-clip-text text-transparent">Australia India Alliance</span>
+            </h2>
+            <p class="text-xl  text-gray-600 max-w-3xl mx-auto">
+                Unlock exclusive opportunities and create lasting impact through strategic bilateral partnership
+            </p>
+        </div>
+
+        <!-- Benefits Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Benefit 1: Business Opportunities -->
+            <div class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-50 to-blue-100 rounded-bl-full transform translate-x-8 -translate-y-8"></div>
+                <div class="p-8 relative z-10">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="text-sm font-semibold text-blue-600 uppercase tracking-wider">Benefit 01</span>
+                            <h3 class="text-xl font-bold text-gray-900 mt-1">Business Opportunities</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=600&q=80" 
+                             alt="Business Networking" 
+                             class="w-full h-48 object-cover rounded-xl shadow-md group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Access to cross-border trade opportunities</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Priority access to government contracts</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Exclusive market insights and intelligence</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Benefit 2: Political & Diplomatic Ties -->
+            <div class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-purple-50 to-purple-100 rounded-bl-full transform translate-x-8 -translate-y-8"></div>
+                <div class="p-8 relative z-10">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="text-sm font-semibold text-purple-600 uppercase tracking-wider">Benefit 02</span>
+                            <h3 class="text-xl font-bold text-gray-900 mt-1">Political & Diplomatic Ties</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <img src="https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&fit=crop&w=600&q=80" 
+                             alt="Diplomatic Relations" 
+                             class="w-full h-48 object-cover rounded-xl shadow-md group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Direct access to government stakeholders</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Participation in bilateral dialogues</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Influence policy discussions and decisions</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Benefit 3: Philanthropic Impact -->
+            <div class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-green-50 to-green-100 rounded-bl-full transform translate-x-8 -translate-y-8"></div>
+                <div class="p-8 relative z-10">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="text-sm font-semibold text-green-600 uppercase tracking-wider">Benefit 03</span>
+                            <h3 class="text-xl font-bold text-gray-900 mt-1">Philanthropic Impact</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=600&q=80" 
+                             alt="Social Responsibility" 
+                             class="w-full h-48 object-cover rounded-xl shadow-md group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Opportunity for meaningful social impact</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Corporate Social Responsibility initiatives</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Community development projects</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Benefit 4: Knowledge Exchange -->
+            <div class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-amber-50 to-amber-100 rounded-bl-full transform translate-x-8 -translate-y-8"></div>
+                <div class="p-8 relative z-10">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="text-sm font-semibold text-amber-600 uppercase tracking-wider">Benefit 04</span>
+                            <h3 class="text-xl font-bold text-gray-900 mt-1">Knowledge Exchange</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=600&q=80" 
+                             alt="Innovation & Research" 
+                             class="w-full h-48 object-cover rounded-xl shadow-md group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Access to cutting-edge research and innovation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Collaborative R&D opportunities</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Technology transfer and best practices</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Benefit 5: Brand Visibility -->
+            <div class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-red-50 to-red-100 rounded-bl-full transform translate-x-8 -translate-y-8"></div>
+                <div class="p-8 relative z-10">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19l-7-7m0 0l7-7m-7 7h18"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="text-sm font-semibold text-red-600 uppercase tracking-wider">Benefit 05</span>
+                            <h3 class="text-xl font-bold text-gray-900 mt-1">Brand Visibility</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" 
+                             alt="Brand Recognition" 
+                             class="w-full h-48 object-cover rounded-xl shadow-md group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Enhanced brand reputation and credibility</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Media exposure and public recognition</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Industry leadership positioning</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Benefit 6: Network Expansion -->
+            <div class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-bl-full transform translate-x-8 -translate-y-8"></div>
+                <div class="p-8 relative z-10">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="text-sm font-semibold text-indigo-600 uppercase tracking-wider">Benefit 06</span>
+                            <h3 class="text-xl font-bold text-gray-900 mt-1">Network Expansion</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=600&q=80" 
+                             alt="Professional Networking" 
+                             class="w-full h-48 object-cover rounded-xl shadow-md group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Access to elite business and government networks</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Exclusive networking events and forums</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Peer-to-peer mentorship opportunities</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="mt-20 text-center">
+            <div class="bg-gradient-to-r from-blue-50 to-green-50 rounded-2xl p-12 border border-gray-200 shadow-lg">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Ready to Join the Alliance?</h3>
+                <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                    Become part of a powerful bilateral partnership driving economic growth, innovation, and social impact between Australia and India.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#" class="px-8 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-xl hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl">
+                        Apply for Membership
+                    </a>
+                    <a href="#" class="px-8 py-4 bg-white text-gray-900 font-semibold rounded-xl border border-gray-300 hover:bg-gray-50 transition-all duration-300">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- CTA Section -->
+    <!-- <section class="section-padding gradient-bg text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-6">Ready to Connect?</h2>
+            <p class="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
+                Join us in building stronger ties between Australia and India. Whether you're a business leader, government official, or industry professional, we're here to help.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/contact" 
+                   class="bg-secondary text-primary px-8 py-4 rounded-lg font-semibold hover:bg-yellow-500 transition-colors shadow-lg inline-flex items-center justify-center space-x-2">
+                    <span>Contact Us Today</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+                <a href="/about" 
+                   class="bg-white/10 backdrop-blur-sm border border-white/30 px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-colors inline-flex items-center justify-center">
+                    Learn More About Us
+                </a>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Footer -->
+    <div data-include="components/footer.html"></div>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('button.lg\\:hidden').addEventListener('click', function() {
+            // Implement mobile menu functionality here
+            console.log('Mobile menu clicked');
+        });
+        
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+    <script src="js/include.js"></script>
+</body>
+</html>
