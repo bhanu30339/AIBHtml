@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Australia India Bridge Council - Footer</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Custom animations and styles */
         .hover-lift {
@@ -38,65 +39,139 @@
         .link-hover-effect:hover::after {
             width: 100%;
         }
+        
+        /* Scroll to top button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #0C2340;
+            color: white;
+            border: 2px solid #D4AF37;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .scroll-to-top:hover {
+            background: #D4AF37;
+            transform: translateY(-5px);
+        }
+        
+        .scroll-to-bottom {
+            position: fixed;
+            bottom: 30px;
+            right: 90px;
+            width: 50px;
+            height: 50px;
+            background: #0C2340;
+            color: white;
+            border: 2px solid #D4AF37;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .scroll-to-bottom:hover {
+            background: #D4AF37;
+            transform: translateY(-5px);
+        }
+        
+        /* Newsletter input focus */
+        .newsletter-input:focus {
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
     </style>
 </head>
 <body class="bg-gray-50">
     
+    <!-- Scroll to top button -->
+    <div class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+    
+    <!-- Scroll to bottom button -->
+    <div class="scroll-to-bottom" id="scrollToBottom">
+        <i class="fas fa-chevron-down"></i>
+    </div>
 
     <!-- Footer Section -->
-    <footer class="bg-[#0C2340] text-white">
+    <footer class="bg-[#0C2340] text-white" id="footer">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <!-- Main Footer Content -->
+            <div class="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
                 
                 <!-- Brand/Logo Column -->
-                <div class="lg:col-span-1">
+                <div class="lg:col-span-2">
                     <div class="flex items-center gap-3 mb-6 hover-lift">
-                        <!-- <div class="w-12 h-12 bg-gradient-to-br from-[#D4AF37] to-[#b8973a] rounded-lg flex items-center justify-center">
-                            <span class="text-[#0C2340] font-bold text-lg">AB</span>
-                        </div>
-                        <div>
-                            <p class="font-bold text-lg">Australia India</p>
-                            <p class="text-gray-400 text-xs tracking-widest uppercase">Bridge Council</p>
-                        </div> -->
                         <a href="index.html" class="flex items-center space-x-3">
-                    <div class="w-36 rounded-lg overflow-hidden">
-                        <img src="images/Logo.png " class="w-full h-full bg-white object-cover">
-                    </div>
-                </a>
+                            <div class="w-48 rounded-lg overflow-hidden">
+                                <img src="images/Logo.png" alt="Australia India Bridge Council Logo" class="w-full h-full bg-white object-cover">
+                            </div>
+                        </a>
                     </div>
                     
                     <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                        Building bridges between Australian and Indian leaders through diplomacy, trade, and cultural exchange since 2010.
+                        Building bridges between Australian and Indian leaders through diplomacy, trade, and cultural exchange since 2010. Fostering stronger bilateral relations through strategic partnerships and collaborative initiatives.
                     </p>
                     
-                    <div class="flex gap-4">
+                    <div class="flex gap-3">
                         <!-- LinkedIn -->
-                        <a href="#" 
-                           class="social-icon-hover w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#D4AF37] transition-colors"
+                        <a href="https://www.linkedin.com/company/australia-india-bridge-council" 
+                           target="_blank"
+                           class="social-icon-hover w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#0077B5] transition-colors"
                            aria-label="LinkedIn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                <rect width="4" height="12" x="2" y="9"></rect>
-                                <circle cx="4" cy="4" r="2"></circle>
-                            </svg>
+                            <i class="fab fa-linkedin-in"></i>
                         </a>
                         
-                        <!-- Twitter -->
-                        <a href="#" 
-                           class="social-icon-hover w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#D4AF37] transition-colors"
-                           aria-label="Twitter">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-                            </svg>
+                        <!-- Twitter/X -->
+                        <a href="https://twitter.com/AI_BridgeCouncil" 
+                           target="_blank"
+                           class="social-icon-hover w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-black transition-colors"
+                           aria-label="Twitter/X">
+                            <i class="fab fa-x-twitter"></i>
                         </a>
                         
-                        <!-- Facebook (Additional) -->
-                        <a href="#" 
-                           class="social-icon-hover w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#D4AF37] transition-colors"
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/AustraliaIndiaBridgeCouncil" 
+                           target="_blank"
+                           class="social-icon-hover w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#1877F2] transition-colors"
                            aria-label="Facebook">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                            </svg>
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/aibridgecouncil" 
+                           target="_blank"
+                           class="social-icon-hover w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-gradient-to-r from-purple-500 to-pink-500 transition-colors"
+                           aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        
+                        <!-- YouTube -->
+                        <a href="https://www.youtube.com/@AustraliaIndiaBridgeCouncil" 
+                           target="_blank"
+                           class="social-icon-hover w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#FF0000] transition-colors"
+                           aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        
+                        <!-- Threads -->
+                        <a href="https://www.threads.net/@aibridgecouncil" 
+                           target="_blank"
+                           class="social-icon-hover w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-black transition-colors"
+                           aria-label="Threads">
+                            <i class="fab fa-threads"></i>
                         </a>
                     </div>
                 </div>
@@ -110,34 +185,38 @@
                     <ul class="space-y-3">
                         <li>
                             <a class="link-hover-effect text-gray-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2" href="/">
-                                <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
+                                <i class="fas fa-chevron-right text-[#D4AF37] text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
                                 Home
                             </a>
                         </li>
                         <li>
                             <a class="link-hover-effect text-gray-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2" href="/services">
-                                <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
+                                <i class="fas fa-chevron-right text-[#D4AF37] text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
                                 Services
                             </a>
                         </li>
                         <li>
                             <a class="link-hover-effect text-gray-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2" href="/about">
-                                <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
+                                <i class="fas fa-chevron-right text-[#D4AF37] text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
                                 About Us
                             </a>
                         </li>
                         <li>
                             <a class="link-hover-effect text-gray-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2" href="/story">
-                                <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
+                                <i class="fas fa-chevron-right text-[#D4AF37] text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
                                 Our Story
+                            </a>
+                        </li>
+                        <li>
+                            <a class="link-hover-effect text-gray-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2" href="/partners">
+                                <i class="fas fa-chevron-right text-[#D4AF37] text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                                Strategic Partners
+                            </a>
+                        </li>
+                        <li>
+                            <a class="link-hover-effect text-gray-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2" href="/events">
+                                <i class="fas fa-chevron-right text-[#D4AF37] text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                                Events
                             </a>
                         </li>
                     </ul>
@@ -151,52 +230,53 @@
                     </h4>
                     <ul class="space-y-3">
                         <li>
-                            <a class="link-hover-effect text-gray-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2" href="/brands">
-                                <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
-                                Partners
+                            <a class="link-hover-effect text-gray-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2" href="/reports">
+                                <i class="fas fa-chevron-right text-[#D4AF37] text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                                Research & Reports
                             </a>
                         </li>
                         <li>
-                            <a class="link-hover-effect text-gray-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2" href="/contact">
-                                <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
-                                Contact
+                            <a class="link-hover-effect text-gray-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2" href="/publications">
+                                <i class="fas fa-chevron-right text-[#D4AF37] text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                                Publications
                             </a>
                         </li>
                         <li>
-                            <a class="link-hover-effect text-gray-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2" href="#">
-                                <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
-                                News &amp; Events
+                            <a class="link-hover-effect text-gray-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2" href="/news">
+                                <i class="fas fa-chevron-right text-[#D4AF37] text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                                News & Insights
                             </a>
                         </li>
                         <li>
-                            <a class="link-hover-effect text-gray-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2" href="#">
-                                <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
-                                Reports
+                            <a class="link-hover-effect text-gray-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2" href="/blog">
+                                <i class="fas fa-chevron-right text-[#D4AF37] text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                                AIBC Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a class="link-hover-effect text-gray-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2" href="/media">
+                                <i class="fas fa-chevron-right text-[#D4AF37] text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                                Media Center
+                            </a>
+                        </li>
+                        <li>
+                            <a class="link-hover-effect text-gray-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2" href="/careers">
+                                <i class="fas fa-chevron-right text-[#D4AF37] text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                                Careers
                             </a>
                         </li>
                     </ul>
                 </div>
                 
-                <!-- Contact Column -->
-                <div>
+                <!-- Contact & Newsletter Column -->
+                <div class="lg:col-span-1">
                     <h4 class="font-semibold text-lg mb-6 relative inline-block">
                         Contact Us
                         <span class="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#D4AF37] rounded-full"></span>
                     </h4>
-                    <ul class="space-y-4">
+                    <ul class="space-y-4 mb-8">
                         <li class="flex items-start gap-3 group">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#D4AF37] mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform">
-                                <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
+                            <i class="fas fa-map-marker-alt text-[#D4AF37] mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform"></i>
                             <span class="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">
                                 Level 12, 123 Collins Street<br>
                                 Melbourne, VIC 3000, Australia
@@ -204,55 +284,91 @@
                         </li>
                         
                         <li class="flex items-center gap-3 group">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#D4AF37] flex-shrink-0 group-hover:scale-110 transition-transform">
-                                <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path>
-                            </svg>
+                            <i class="fas fa-phone text-[#D4AF37] flex-shrink-0 group-hover:scale-110 transition-transform"></i>
                             <a href="tel:+61390000000" class="text-gray-400 text-sm hover:text-[#D4AF37] transition-colors">
                                 +61 3 9000 0000
                             </a>
                         </li>
                         
                         <li class="flex items-center gap-3 group">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#D4AF37] flex-shrink-0 group-hover:scale-110 transition-transform">
-                                <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
-                                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                            </svg>
+                            <i class="fas fa-mobile-alt text-[#D4AF37] flex-shrink-0 group-hover:scale-110 transition-transform"></i>
+                            <a href="tel:+61400000000" class="text-gray-400 text-sm hover:text-[#D4AF37] transition-colors">
+                                +61 400 000 000
+                            </a>
+                        </li>
+                        
+                        <li class="flex items-center gap-3 group">
+                            <i class="fas fa-envelope text-[#D4AF37] flex-shrink-0 group-hover:scale-110 transition-transform"></i>
                             <a href="mailto:info@aibc.org.au" class="text-gray-400 text-sm hover:text-[#D4AF37] transition-colors">
                                 info@aibc.org.au
                             </a>
                         </li>
+                        
+                        <li class="flex items-center gap-3 group">
+                            <i class="fas fa-envelope text-[#D4AF37] flex-shrink-0 group-hover:scale-110 transition-transform"></i>
+                            <a href="mailto:partnerships@aibc.org.au" class="text-gray-400 text-sm hover:text-[#D4AF37] transition-colors">
+                                partnerships@aibc.org.au
+                            </a>
+                        </li>
                     </ul>
                     
-                    <!-- Newsletter Signup (Optional Addition) -->
-                    <div class="mt-8 pt-8 border-t border-white/10">
-                        <p class="text-gray text-16 mb-3">New's Letter</p>
-                        <div class="flex gap-2">
+                    <!-- Newsletter Signup -->
+                    <div class="pt-6 border-t border-white/10">
+                        <h5 class="font-medium mb-3 text-white">Stay Updated</h5>
+                        <p class="text-gray-400 text-sm mb-4">Subscribe to our newsletter for latest updates</p>
+                        <div class="space-y-3">
                             <!-- <input type="email" 
-                                   placeholder="Your email" 
-                                   class="flex-1 px-3 py-2 bg-white/10 border border-white/20 rounded text-sm focus:outline-none focus:border-[#D4AF37] text-white placeholder-gray-400"> -->
-                            <button class="px-4 py-2 bg-blue-300 text-gray-900 rounded text-sm font-medium hover:bg-blue-200 transition-colors">
-                                Subscribe
+                                   placeholder="Your email address" 
+                                   class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-sm focus:outline-none focus:border-[#D4AF37] text-white placeholder-gray-400 newsletter-input"> -->
+                            <button class="w-full px-4 py-3 bg-gradient-to-r from-[#D4AF37] to-[#b8973a] text-gray-900 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity">
+                                <i class="fas fa-paper-plane mr-2"></i> Subscribe Now
                             </button>
                         </div>
+                        <p class="text-gray-500 text-xs mt-3">By subscribing, you agree to our Privacy Policy</p>
                     </div>
                 </div>
             </div>
             
-            <!-- Bottom Bar -->
-            <div class="py-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-gray-400 text-sm">
-                    © 2025 Australia India Bridge Council. All rights reserved.
-                </p>
+            <!-- Divider -->
+            <div class="border-t border-white/10"></div>
+            
+            <!-- Bottom Section with Logo, Copyright and Legal Links -->
+            <div class="py-8 flex flex-col lg:flex-row justify-between items-center gap-6">
+                <!-- Logo and Copyright -->
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <div class="w-32">
+                        <img src="images/Logo.png" alt="AIBC Logo" class="w-full h-auto">
+                    </div>
+                    <div class="text-center md:text-left">
+                        <p class="text-gray-400 text-sm">
+                            © <span id="currentYear"></span> Australia India Bridge Council. All rights reserved.
+                        </p>
+                        <p class="text-gray-500 text-xs mt-1">ABN: 12 345 678 901 | Registered Charity</p>
+                    </div>
+                </div>
                 
-                <div class="flex gap-6">
-                    <a class="link-hover-effect text-gray-400 hover:text-white text-sm" href="#">
+                <!-- Legal Links -->
+                <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+                    <a class="link-hover-effect text-gray-400 hover:text-white text-sm" href="/privacy-policy">
                         Privacy Policy
                     </a>
-                    <a class="link-hover-effect text-gray-400 hover:text-white text-sm" href="#">
-                        Terms of Service
+                    <a class="link-hover-effect text-gray-400 hover:text-white text-sm" href="/terms-conditions">
+                        Terms & Conditions
                     </a>
-                    <a class="link-hover-effect text-gray-400 hover:text-white text-sm" href="#">
-                        Cookie Policy
+                    <a class="link-hover-effect text-gray-400 hover:text-white text-sm" href="/disclaimer">
+                        Disclaimer
+                    </a>
+                    <a class="link-hover-effect text-gray-400 hover:text-white text-sm" href="/transparency">
+                        Transparency Report
+                    </a>
+                    <a class="link-hover-effect text-gray-400 hover:text-white text-sm" href="/disclosure">
+                        Disclosure
+                    </a>
+                    <a class="link-hover-effect text-gray-400 hover:text-white text-sm" href="/sitemap">
+                        Sitemap
+                    </a>
+                    <a class="link-hover-effect text-gray-400 hover:text-white text-sm" href="/accessibility">
+                        Accessibility
                     </a>
                 </div>
             </div>
@@ -263,28 +379,83 @@
         // Add hover effect to list items
         document.querySelectorAll('.link-hover-effect').forEach(link => {
             link.addEventListener('mouseenter', function() {
-                const svg = this.querySelector('svg');
-                if (svg) {
-                    svg.classList.remove('opacity-0');
-                    svg.classList.add('opacity-100');
+                const icon = this.querySelector('i.fa-chevron-right');
+                if (icon) {
+                    icon.classList.remove('opacity-0');
+                    icon.classList.add('opacity-100');
                 }
             });
             
             link.addEventListener('mouseleave', function() {
-                const svg = this.querySelector('svg');
-                if (svg) {
-                    svg.classList.remove('opacity-100');
-                    svg.classList.add('opacity-0');
+                const icon = this.querySelector('i.fa-chevron-right');
+                if (icon) {
+                    icon.classList.remove('opacity-100');
+                    icon.classList.add('opacity-0');
                 }
             });
         });
 
-        // Add current year to copyright
+        // Set current year in copyright
         document.addEventListener('DOMContentLoaded', function() {
-            const yearElement = document.querySelector('footer p.text-gray-400.text-sm');
-            if (yearElement) {
-                const currentYear = new Date().getFullYear();
-                yearElement.innerHTML = yearElement.innerHTML.replace('2025', currentYear);
+            const currentYear = new Date().getFullYear();
+            document.getElementById('currentYear').textContent = currentYear;
+            
+            // Show/hide scroll buttons
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+            const scrollToBottomBtn = document.getElementById('scrollToBottom');
+            
+            // Show buttons on scroll
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    scrollToTopBtn.style.display = 'flex';
+                    scrollToBottomBtn.style.display = 'flex';
+                } else {
+                    scrollToTopBtn.style.display = 'none';
+                    scrollToBottomBtn.style.display = 'none';
+                }
+            });
+            
+            // Scroll to top functionality
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Scroll to bottom functionality
+            scrollToBottomBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Newsletter subscription
+            const newsletterBtn = document.querySelector('footer button.bg-gradient-to-r');
+            const newsletterInput = document.querySelector('.newsletter-input');
+            
+            newsletterBtn.addEventListener('click', function() {
+                if (newsletterInput.value && isValidEmail(newsletterInput.value)) {
+                    // In a real application, you would send this to your backend
+                    alert('Thank you for subscribing to our newsletter!');
+                    newsletterInput.value = '';
+                } else {
+                    alert('Please enter a valid email address.');
+                    newsletterInput.focus();
+                }
+            });
+            
+            // Enter key to submit newsletter
+            newsletterInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    newsletterBtn.click();
+                }
+            });
+            
+            function isValidEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
             }
         });
     </script>

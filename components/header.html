@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIBF Header</title>
+    <title>Australia India Bridge Foundation - Strengthening Bilateral Relations</title>
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -16,12 +16,20 @@
                 extend: {
                     colors: {
                         primary: "#0C2340",
-                        secondary: "#F5C642"
+                        secondary: "#F5C642",
+                        accent: "#1E3A5F",
+                        light: "#F8F9FA"
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* Smooth theme fade */
@@ -54,6 +62,7 @@
             color: #0C2340;
             position: relative;
             transition: .3s;
+            font-weight: 500;
         }
         .nav-link:hover {
             color: #F5C642;
@@ -111,6 +120,24 @@
             display: block;
         }
 
+        /* Search dropdown */
+        .search-dropdown {
+            display: none;
+        }
+        .search-dropdown.open {
+            display: block;
+            animation: fadeSlide .2s ease-out;
+        }
+
+        /* Language dropdown */
+        .language-dropdown {
+            display: none;
+        }
+        .language-dropdown.open {
+            display: block;
+            animation: fadeSlide .2s ease-out;
+        }
+
         /* DARK MODE OVERRIDES */
         .dark body {
             background-color: #111827 !important;
@@ -133,17 +160,29 @@
         .dark .nav-link:hover {
             color: #F5C642 !important;
         }
+
+        /* SSL Certificate Indicator */
+        .ssl-indicator {
+            font-size: 0.7rem;
+            background: linear-gradient(45deg, #10b981, #34d399);
+        }
+
+        /* Domain Badge */
+        .domain-badge {
+            font-size: 0.65rem;
+            background: rgba(255,255,255,0.1);
+        }
     </style>
 </head>
 
-<body class="bg-white theme-transition">
+<body class="bg-white theme-transition font-sans">
 
     <!-- TOP INFO BAR -->
-    <div class="bg-gradient-to-br from-gray-900 to-gray-800 text-white text-sm py-2 theme-transition">
+    <div class="bg-gradient-to-br from-primary to-accent text-white text-sm py-2 theme-transition">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col sm:flex-row justify-between items-center">
                 
-                <div class="flex items-center space-x-4 mb-2 sm:mb-0">
+                <div class="flex items-center space-x-6 mb-2 sm:mb-0">
                     <div class="flex items-center space-x-2">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -157,114 +196,316 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"></path>
                         </svg>
-                        <span>info@aibc.org.au</span>
+                        <span>contact@ausindiabridge.org</span>
+                    </div>
+
+                    <!-- SSL Certificate Indicator -->
+                    <div class="hidden lg:flex items-center space-x-2">
+                        <div class="ssl-indicator px-2 py-1 rounded-full flex items-center space-x-1">
+                            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>SSL Secured</span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="flex items-center space-x-4">
-                    <a href="#" class="hover:text-secondary">Media</a>
-                    <a href="#" class="hover:text-secondary">Careers</a>
-                    <a href="#" class="hover:text-secondary">Accessibility</a>
+                    <a href="foundation.html" class="hover:text-secondary">Foundation</a>
+                    <a href="news.html" class="hover:text-secondary">News</a>
+                    <a href="media.html" class="hover:text-secondary">Media</a>
+                    <span class="hidden md:inline">|</span>
+                    <div class="flex items-center space-x-2">
+                        <a href="https://ausindiabridge.org" class="domain-badge px-2 py-1 rounded hover:bg-white/20">.org</a>
+                        <a href="https://ausindiabridge.org.au" class="domain-badge px-2 py-1 rounded hover:bg-white/20">.org.au</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- NAVIGATION BAR -->
+    <!-- MAIN NAVIGATION BAR -->
     <nav class="sticky top-0 z-50 bg-white shadow-lg theme-transition">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
+        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
 
-                <a href="index.html" class="flex items-center space-x-3">
-                    <div class="w-36 rounded-lg overflow-hidden">
-                        <img src="images/Logo.png" class="w-full h-full object-cover">
+                <!-- LEFT: Logo with Full Organization Name -->
+                <a href="index.html" class="flex items-center space-x-4">
+                    <div class="w-32 h-full rounded-lg overflow-hidden">
+                        <img src="images/Logo.png" alt="AIBF Logo" class="w-full h-full object-cover">
                     </div>
+                    <!-- <div class="hidden lg:block">
+                        <div class="font-bold text-lg text-primary">Australia India Bridge Foundation</div>
+                        <div class="text-xs text-gray-600 dark:text-gray-400">
+                            Strengthening Bilateral Relations Since 2010
+                        </div>
+                    </div> -->
                 </a>
 
-                <!-- DESKTOP MENU -->
-                <div class="hidden lg:flex items-center space-x-8 font-medium">
-
+                <!-- CENTER: Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-5">
                     <a href="index.html" class="nav-link group">Home <span class="underline-hover"></span></a>
-                    <a href="about.html" class="nav-link group">About <span class="underline-hover"></span></a>
-                    <a href="political.html" class="nav-link group">Political <span class="underline-hover"></span></a>
-                    <a href="strategicapproach.html" class="nav-link group">Strategic Approach <span class="underline-hover"></span></a>
-                    <a href="charitablecause.html" class="nav-link group">Charity <span class="underline-hover"></span></a>
-                    <a href="leadership.html" class="nav-link group">Leadership <span class="underline-hover"></span></a>
+                    <a href="about.html" class="nav-link group">About Us <span class="underline-hover"></span></a>
+                    <a href="news.html" class="nav-link group">News <span class="underline-hover"></span></a>
+                    <a href="contact.html" class="nav-link group">Contact Us <span class="underline-hover"></span></a>
+                    <div class="relative group">
+    <button class="nav-link flex items-center space-x-1">
+        <span><a href="political.html" class="nav-link group">
+            Political
+        </a></span>
+        <svg class="w-4 h-4 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19 9l-7 7-7-7" />
+        </svg>
+        <span class="underline-hover"></span>
+    </button>
 
-                    <a href="contact.html"
-                        class="bg-gradient-to-br from-gray-900 to-gray-800 text-white px-6 py-2.5 rounded-lg shadow-md hover:bg-yellow-500">
+    <!-- Dropdown -->
+    <div class="absolute left-0 mt-3 w-56 bg-white rounded-lg shadow-xl border
+                opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                transition-all duration-200 z-50">
+        <a href="strategicapproach.html" class="block px-5 py-3 hover:bg-gray-100 text-sm">
+            Strategic Approach
+        </a>
+        <a href="charitablecause.html" class="block px-5 py-3 hover:bg-gray-100 text-sm">
+            Charity
+        </a>
+        <a href="leadership.html" class="block px-5 py-3 hover:bg-gray-100 text-sm">
+            Leadership
+        </a>
+    </div>
+</div>
+
+                    <a href="foundation.html" class="nav-link group">Foundation <span class="underline-hover"></span></a>
+                    <a href="team.html" class="nav-link group">Board & Team <span class="underline-hover"></span></a>
+                </div>
+
+                <!-- RIGHT: Search, Translation, and Contact Button -->
+                <div class="flex items-center space-x-4">
+                    <!-- Search Button with Dropdown -->
+                    <div class="relative">
+                        <button id="searchBtn" class="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors" aria-label="Search">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </button>
+                        <div id="searchDropdown" class="search-dropdown absolute right-0 mt-2 w-80 bg-white dark:bg-gray-800 rounded-lg shadow-xl border dark:border-gray-700 z-50">
+                            <div class="p-4">
+                                <div class="relative">
+                                    <input type="text" placeholder="Search website..." 
+                                           class="w-full px-4 py-3 pl-10 bg-gray-50 dark:bg-gray-900 border dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary">
+                                    <svg class="absolute left-3 top-3 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                    </svg>
+                                </div>
+                                <div class="mt-2 text-xs text-gray-500 dark:text-gray-400">
+                                    Press Enter to search
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Translation Button with Dropdown -->
+                    <div class="relative">
+                        <button id="languageBtn" class="flex items-center space-x-1 p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+                            </svg>
+                            <span class="text-sm">EN</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="languageDropdown" class="language-dropdown absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-xl border dark:border-gray-700 z-50">
+                            <div class="py-2">
+                                <div class="px-4 py-2 text-xs text-gray-500 dark:text-gray-400 border-b dark:border-gray-700">Select Language</div>
+                                <button class="w-full text-left px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2">
+                                    <span class="font-medium">English</span>
+                                    <span class="text-xs text-gray-500">(EN)</span>
+                                </button>
+                                <button class="w-full text-left px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2">
+                                    <span>हिन्दी</span>
+                                    <span class="text-xs text-gray-500">(HI)</span>
+                                </button>
+                                <button class="w-full text-left px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2">
+                                    <span>中文</span>
+                                    <span class="text-xs text-gray-500">(ZH)</span>
+                                </button>
+                                <button class="w-full text-left px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2">
+                                    <span>Español</span>
+                                    <span class="text-xs text-gray-500">(ES)</span>
+                                </button>
+                                <button class="w-full text-left px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2">
+                                    <span>العربية</span>
+                                    <span class="text-xs text-gray-500">(AR)</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Get in Touch Button -->
+                    <a href="contact.html" class="hidden lg:block bg-gradient-to-br from-primary to-accent text-white px-6 py-2.5 rounded-lg shadow-md hover:from-secondary hover:to-yellow-500 transition-all duration-300 font-medium">
                         Get in Touch
                     </a>
 
-                    <!-- DESKTOP THEME BUTTON -->
-                    <button id="themeToggle" class="theme-toggle-btn ml-4" aria-label="Toggle Theme">
-                        <svg class="theme-icon-light w-6 h-6" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
+                    <!-- Theme Toggle -->
+                    <!-- <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                        <svg class="theme-icon-light w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <circle cx="12" cy="12" r="5"></circle>
                             <path d="M12 1v2M12 21v2M1 12h2M21 12h2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
                         </svg>
-
-                        <svg class="theme-icon-dark w-6 h-6 text-yellow-400" fill="currentColor"
-                            viewBox="0 0 24 24">
+                        <svg class="theme-icon-dark w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"></path>
                         </svg>
+                    </button> -->
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileBtn" class="lg:hidden p-2 text-primary dark:text-white">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
                     </button>
-
                 </div>
-
-                <!-- MOBILE MENU BUTTON -->
-                <button id="mobileBtn" class="lg:hidden p-2 text-primary">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-
             </div>
         </div>
     </nav>
 
     <!-- MOBILE MENU -->
-    <div id="mobileMenu"
-        class="mobile-menu absolute top-20 left-0 w-full bg-white shadow-lg lg:hidden z-50 theme-transition">
-
+    <div id="mobileMenu" class="mobile-menu absolute top-20 left-0 w-full bg-white dark:bg-gray-800 shadow-lg lg:hidden z-50 theme-transition border-t dark:border-gray-700">
         <a href="index.html" class="mobile-item">Home</a>
-        <a href="about.html" class="mobile-item">About</a>
+        <a href="about.html" class="mobile-item">About Us</a>
+        <a href="news.html" class="mobile-item">News</a>
+        <a href="contact.html" class="mobile-item">Contact Us</a>
+        <a href="foundation.html" class="mobile-item">Foundation</a>
+        <a href="team.html" class="mobile-item">Board & Team</a>
         <a href="political.html" class="mobile-item">Political</a>
         <a href="strategicapproach.html" class="mobile-item">Strategic Approach</a>
         <a href="charitablecause.html" class="mobile-item">Charity</a>
         <a href="leadership.html" class="mobile-item">Leadership</a>
-        <a href="contact.html" class="mobile-item">Contact</a>
 
-        <!-- MOBILE THEME BUTTON -->
-        <button id="themeToggleMobile" class="theme-toggle-btn mx-auto my-4">
-            <svg class="theme-icon-light w-6 h-6" fill="none" stroke="currentColor"
-                viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="5"></circle>
-                <path d="M12 1v2M12 21v2M1 12h2M21 12h2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-            </svg>
-
-            <svg class="theme-icon-dark w-6 h-6 text-yellow-400" fill="currentColor"
-                viewBox="0 0 24 24">
-                <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"></path>
-            </svg>
-        </button>
+        <!-- Mobile Search and Language -->
+        <div class="p-4 border-t dark:border-gray-700">
+            <div class="flex space-x-2 mb-3">
+                <input type="text" placeholder="Search..." class="flex-1 px-3 py-2 bg-gray-50 dark:bg-gray-900 border dark:border-gray-700 rounded">
+                <button class="px-4 py-2 bg-primary text-white rounded">Go</button>
+            </div>
+            
+            <div class="flex items-center justify-between">
+                <select class="px-3 py-2 bg-gray-50 dark:bg-gray-900 border dark:border-gray-700 rounded text-sm">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="zh">中文</option>
+                    <option value="es">Español</option>
+                </select>
+                
+                <button id="themeToggleMobile" class="theme-toggle-btn">
+                    <svg class="theme-icon-light w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <path d="M12 1v2M12 21v2M1 12h2M21 12h2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                    </svg>
+                    <svg class="theme-icon-dark w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
     </div>
 
     <!-- SCRIPTS -->
     <script>
+        // Mobile Menu Toggle
         const mobileBtn = document.getElementById("mobileBtn");
         const mobileMenu = document.getElementById("mobileMenu");
 
         mobileBtn.addEventListener("click", () => {
             mobileMenu.classList.toggle("open");
+            // Close other dropdowns when mobile menu opens
+            searchDropdown.classList.remove("open");
+            languageDropdown.classList.remove("open");
+        });
+
+        // Search Dropdown Toggle
+        const searchBtn = document.getElementById("searchBtn");
+        const searchDropdown = document.getElementById("searchDropdown");
+
+        searchBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            searchDropdown.classList.toggle("open");
+            languageDropdown.classList.remove("open");
+        });
+
+        // Language Dropdown Toggle
+        const languageBtn = document.getElementById("languageBtn");
+        const languageDropdown = document.getElementById("languageDropdown");
+
+        languageBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            languageDropdown.classList.toggle("open");
+            searchDropdown.classList.remove("open");
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!searchBtn.contains(e.target) && !searchDropdown.contains(e.target)) {
+                searchDropdown.classList.remove('open');
+            }
+            if (!languageBtn.contains(e.target) && !languageDropdown.contains(e.target)) {
+                languageDropdown.classList.remove('open');
+            }
+            if (!mobileBtn.contains(e.target) && !mobileMenu.contains(e.target) && !e.target.closest('.mobile-item')) {
+                mobileMenu.classList.remove('open');
+            }
+        });
+
+        // Language Selection
+        document.querySelectorAll('#languageDropdown button').forEach(button => {
+            button.addEventListener('click', () => {
+                const lang = button.textContent.split('(')[1].replace(')', '').trim();
+                const langName = button.querySelector('span:first-child').textContent;
+                languageBtn.querySelector('span:nth-child(2)').textContent = lang;
+                // In a real implementation, you would change the language here
+                console.log(`Language changed to: ${langName} (${lang})`);
+                languageDropdown.classList.remove('open');
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.querySelector('#searchDropdown input');
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const query = searchInput.value;
+                if (query.trim()) {
+                    // In a real implementation, you would redirect to search results
+                    console.log(`Searching for: ${query}`);
+                    window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+                }
+            }
         });
     </script>
 
-    <!-- Dark mode logic handled in js/dark-mode.js -->
-    <script src="js/dark-mode.js"></script>
+    <!-- Dark mode script -->
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const themeToggleMobile = document.getElementById('themeToggleMobile');
+        const html = document.documentElement;
+
+        // Check for saved theme or prefer-color-scheme
+        const savedTheme = localStorage.getItem('theme') || 
+                         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        
+        if (savedTheme === 'dark') {
+            html.classList.add('dark');
+        }
+
+        function toggleTheme() {
+            html.classList.toggle('dark');
+            const isDark = html.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        themeToggle.addEventListener('click', toggleTheme);
+        themeToggleMobile.addEventListener('click', toggleTheme);
+    </script>
 
 </body>
-
 </html>

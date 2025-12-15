@@ -59,18 +59,20 @@
 <body class="font-sans bg-light">
     <div data-include="components/header.html"></div>
 
-    <!-- Hero Section -->
-    <!-- HERO SECTION WITH AUTO-SCROLL + ZOOM BACKGROUND -->
-<!-- HERO SECTION WITH AUTO-SCROLL + ZOOM BACKGROUND -->
+ <!-- Hero Section with Melbourne Video -->
 <section class="relative overflow-hidden text-white h-[90vh] flex items-center">
 
-    <!-- BACKGROUND SLIDER -->
+    <!-- VIDEO BACKGROUND -->
     <div class="absolute inset-0 z-0">
-        <div class="background-slider w-full h-full"></div>
+        <video autoplay muted loop playsinline class="w-full h-full object-cover">
+            <source src="/videos/Melbourne City.mp4" type="video/mp4">
+            <!-- Fallback image if video doesn't load -->
+            <img src="https://images.unsplash.com/photo-1545048702-79362596cdc9?auto=format&fit=crop&w=1920&q=80" 
+                 alt="Melbourne Skyline" class="w-full h-full object-cover">
+        </video>
+        <!-- Dark overlay for better text readability -->
+        <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/30"></div>
     </div>
-
-    <!-- OVERLAY -->
-    <div class="absolute inset-0 bg-black/40 z-10"></div>
 
     <!-- CONTENT -->
     <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -78,13 +80,16 @@
 
             <!-- SUBTITLE -->
             <div class="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6 animate-text-1">
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                </svg>
                 <span class="text-sm font-medium">Strengthening Bilateral Relations Since 2010</span>
             </div>
 
             <!-- HEADING -->
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-text-2">
-                Building Bridge Between
-                <span class="text-slate-300 block">Australia & India</span>
+                Building Bridges Between
+                <span class="text-[secondary] block">Australia & India</span>
             </h1>
 
             <!-- PARAGRAPH -->
@@ -95,122 +100,116 @@
             <!-- BUTTONS -->
             <div class="flex flex-col sm:flex-row gap-4 animate-text-4">
                 <a href="/services.html" 
-                   class="bg-gradient-to-br from-gray-900 to-gray-800 text-primary px-8 py-4 rounded-lg font-semibold hover:bg-yellow-500 transition-all shadow-lg inline-flex items-center justify-center space-x-2">
-                    <span class="text-white">Explore Our Services</span>
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                   class="bg-gradient-to-br from-primary to-accent text-white px-8 py-4 rounded-lg font-semibold hover:bg-secondary hover:scale-105 transition-all duration-300 shadow-lg inline-flex items-center justify-center space-x-2 group">
+                    <span>Explore Our Services</span>
+                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                     </svg>
                 </a>
 
                 <a href="/about.html" 
-                   class="bg-white/10 backdrop-blur-sm border border-white/30 px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-all inline-flex items-center justify-center">
+                   class="bg-white/10 backdrop-blur-sm border border-white/30 px-8 py-4 rounded-lg font-semibold hover:bg-white/20 hover:border-white/50 transition-all inline-flex items-center justify-center group">
                     Learn About Us
+                    <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
                 </a>
+            </div>
+
+            <!-- VIDEO CONTROLS (Optional) -->
+            <div class="mt-12 flex items-center space-x-4 animate-text-5">
+                <button id="muteBtn" class="flex items-center space-x-2 text-white/70 hover:text-white transition-colors">
+                    <svg id="volumeOn" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z" clip-rule="evenodd"/>
+                    </svg>
+                    <svg id="volumeOff" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM12.293 7.293a1 1 0 011.414 0L15 8.586l1.293-1.293a1 1 0 111.414 1.414L16.414 10l1.293 1.293a1 1 0 01-1.414 1.414L15 11.414l-1.293 1.293a1 1 0 01-1.414-1.414L13.586 10l-1.293-1.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-sm">Toggle Sound</span>
+                </button>
+                
+                <span class="text-white/50 text-sm">|</span>
+                
+                <div class="text-sm text-white/70">
+                    <span class="font-medium">Melbourne</span>, Australia
+                </div>
             </div>
 
         </div>
     </div>
+
+    <!-- SCROLL INDICATOR -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+        <a href="#content" class="text-white/70 hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </a>
+    </div>
 </section>
 
-<!-- CSS FOR BACKGROUND SLIDER + ANIMATIONS -->
 <style>
-    .background-slider {
-        position: absolute;
-        inset: 0;
-        background-size: cover;
-        background-position: center;
-        animation: slideShow 18s infinite linear;
+    /* Ensure video covers entire section */
+    video {
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
     }
 
-    /* 3 images rotating with zoom effect */
-    @keyframes slideShow {
-        0% {
-            background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1920&q=80');
-            transform: scale(1);
-            opacity: 1;
-        }
-        33% {
-            background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80');
-            transform: scale(1.15);
-            opacity: 1;
-        }
-        66% {
-            background-image: url('https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1920&q=80');
-            transform: scale(1.1);
-            opacity: 1;
-        }
-        100% {
-            background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1920&q=80');
-            transform: scale(1);
-            opacity: 1;
-        }
-    }
-
-    /* Text fade + slide animation */
+    /* Text animations */
     @keyframes fadeSlide {
         0% { opacity: 0; transform: translateY(25px); }
         100% { opacity: 1; transform: translateY(0); }
     }
 
-    /* Staggered animation delays */
     .animate-text-1 { animation: fadeSlide 1s ease-out forwards; animation-delay: 0.3s; }
     .animate-text-2 { animation: fadeSlide 1s ease-out forwards; animation-delay: 0.6s; }
     .animate-text-3 { animation: fadeSlide 1s ease-out forwards; animation-delay: 0.9s; }
     .animate-text-4 { animation: fadeSlide 1s ease-out forwards; animation-delay: 1.2s; }
-</style>
+    .animate-text-5 { animation: fadeSlide 1s ease-out forwards; animation-delay: 1.5s; }
 
-
-<!-- CSS FOR BACKGROUND SLIDER + ANIMATIONS -->
-<style>
-    .background-slider {
-        position: absolute;
-        inset: 0;
-        background-size: cover;
-        background-position: center;
-        animation: slideShow 18s infinite linear;
-    }
-
-    /* 3 images rotating with zoom effect */
-    @keyframes slideShow {
-        0% {
-            background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1920&q=80');
-            transform: scale(1);
-            opacity: 1;
-        }
-        33% {
-            background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80');
-            transform: scale(1.15);
-            opacity: 1;
-        }
-        66% {
-            background-image: url('https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1920&q=80');
-            transform: scale(1.1);
-            opacity: 1;
-        }
-        100% {
-            background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1920&q=80');
-            transform: scale(1);
-            opacity: 1;
-        }
-    }
-
-    /* Text animation */
-    @keyframes fadeInUp {
-        0% {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .animate-fade-in-up {
-        animation: fadeInUp 1.2s ease-out both;
+    /* Video controls */
+    #muteBtn:hover svg {
+        transform: scale(1.1);
+        transition: transform 0.3s;
     }
 </style>
 
+<script>
+    // Video controls
+    document.addEventListener('DOMContentLoaded', function() {
+        const video = document.querySelector('video');
+        const muteBtn = document.getElementById('muteBtn');
+        const volumeOn = document.getElementById('volumeOn');
+        const volumeOff = document.getElementById('volumeOff');
+        
+        if (video && muteBtn) {
+            muteBtn.addEventListener('click', function() {
+                video.muted = !video.muted;
+                
+                if (video.muted) {
+                    volumeOn.classList.add('hidden');
+                    volumeOff.classList.remove('hidden');
+                } else {
+                    volumeOn.classList.remove('hidden');
+                    volumeOff.classList.add('hidden');
+                }
+            });
+        }
+
+        // Scroll to content
+        const scrollIndicator = document.querySelector('a[href="#content"]');
+        if (scrollIndicator) {
+            scrollIndicator.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector('#content')?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        }
+    });
+</script>
 
     <!-- Mission Section -->
     <!-- MODERN CORE VALUES SECTION -->
