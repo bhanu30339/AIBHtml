@@ -1,9 +1,9 @@
 // /js/language-manager.js
-class LanguageManager {
+class SimpleLanguageManager {
     constructor() {
+        console.log('LanguageManager initialized');
         this.translations = {
-            'en': {
-                // Navigation
+            'EN': {
                 'home': 'Home',
                 'about': 'About',
                 'political': 'Political',
@@ -12,13 +12,13 @@ class LanguageManager {
                 'leadership': 'Leadership',
                 'board': 'Board',
                 'getInTouch': 'Get in Touch',
-                
-                // Page specific - can be extended per page
-                'welcome': 'Welcome to AIBF',
-                'mission': 'Our Mission',
-                'vision': 'Our Vision'
+                'foundation': 'Foundation',
+                'news': 'News',
+                'media': 'Media',
+                'searchPlaceholder': 'Search website...',
+                'selectLanguage': 'Select Language'
             },
-            'hi': {
+            'HI': {
                 'home': 'होम',
                 'about': 'हमारे बारे में',
                 'political': 'राजनीतिक',
@@ -27,26 +27,13 @@ class LanguageManager {
                 'leadership': 'नेतृत्व',
                 'board': 'बोर्ड',
                 'getInTouch': 'संपर्क करें',
-                
-                'welcome': 'एआईबीएफ में आपका स्वागत है',
-                'mission': 'हमारा मिशन',
-                'vision': 'हमारी दृष्टि'
+                'foundation': 'फाउंडेशन',
+                'news': 'समाचार',
+                'media': 'मीडिया',
+                'searchPlaceholder': 'वेबसाइट खोजें...',
+                'selectLanguage': 'भाषा चुनें'
             },
-            'zh': {
-                'home': '首页',
-                'about': '关于我们',
-                'political': '政治',
-                'strategic': '战略方针',
-                'charity': '慈善',
-                'leadership': '领导',
-                'board': '董事会',
-                'getInTouch': '联系我们',
-                
-                'welcome': '欢迎来到 AIBF',
-                'mission': '我们的使命',
-                'vision': '我们的愿景'
-            },
-            'es': {
+            'ES': {
                 'home': 'Inicio',
                 'about': 'Acerca de',
                 'political': 'Político',
@@ -55,65 +42,70 @@ class LanguageManager {
                 'leadership': 'Liderazgo',
                 'board': 'Junta',
                 'getInTouch': 'Contáctenos',
-                
-                'welcome': 'Bienvenido a AIBF',
-                'mission': 'Nuestra Misión',
-                'vision': 'Nuestra Visión'
-            },
-            'ar': {
-                'home': 'الصفحة الرئيسية',
-                'about': 'معلومات عنا',
-                'political': 'السياسية',
-                'strategic': 'النهج الاستراتيجي',
-                'charity': 'الجمعية الخيرية',
-                'leadership': 'القيادة',
-                'board': 'المجلس',
-                'getInTouch': 'تواصل معنا',
-                
-                'welcome': 'مرحبًا بكم في AIBF',
-                'mission': 'مهمتنا',
-                'vision': 'رؤيتنا'
+                'foundation': 'Fundación',
+                'news': 'Noticias',
+                'media': 'Medios',
+                'searchPlaceholder': 'Buscar en el sitio web...',
+                'selectLanguage': 'Seleccionar idioma'
             }
         };
         
-        this.currentLang = localStorage.getItem('preferredLanguage') || 'en';
+        this.currentLang = localStorage.getItem('preferredLanguage') || 'EN';
         this.init();
     }
     
     init() {
+        console.log('LanguageManager init, current lang:', this.currentLang);
+        
         // Listen for language change events
         document.addEventListener('languageChange', (e) => {
+            console.log('Language change event received:', e.detail);
             this.setLanguage(e.detail.code);
         });
         
         // Initial translation
-        this.translatePage();
+        setTimeout(() => this.translatePage(), 100);
     }
     
     setLanguage(langCode) {
-        if (this.translations[langCode]) {
-            this.currentLang = langCode;
-            localStorage.setItem('preferredLanguage', langCode);
+        const normalizedLang = langCode.toUpperCase();
+        console.log('Setting language to:', normalizedLang);
+        
+        if (this.translations[normalizedLang]) {
+            this.currentLang = normalizedLang;
+            localStorage.setItem('preferredLanguage', normalizedLang);
             this.translatePage();
+        } else {
+            console.error('Language not found:', normalizedLang);
         }
     }
     
     translatePage() {
+        console.log('Translating page to:', this.currentLang);
+        
+        // Update HTML lang attribute
+        document.documentElement.lang = this.currentLang.toLowerCase();
+        
         // Translate all elements with data-translate attribute
         document.querySelectorAll('[data-translate]').forEach(el => {
             const key = el.getAttribute('data-translate');
-            if (this.translations[this.currentLang] && this.translations[this.currentLang][key]) {
-                el.textContent = this.translations[this.currentLang][key];
+            const translation = this.translations[this.currentLang]?.[key];
+            
+            if (translation) {
+                if (el.tagName === 'INPUT' && el.type === 'text') {
+                    el.placeholder = translation;
+                } else {
+                    el.textContent = translation;
+                }
+                console.log(`Translated ${key} to ${translation}`);
             }
         });
         
-        // Update HTML lang attribute
-        document.documentElement.lang = this.currentLang;
-        
-        // Dispatch event for other components to react
-        document.dispatchEvent(new CustomEvent('pageTranslated', {
-            detail: { language: this.currentLang }
-        }));
+        // Update language dropdown title
+        const dropdownTitle = document.querySelector('.language-dropdown .px-4.py-2.text-xs');
+        if (dropdownTitle && this.translations[this.currentLang]?.selectLanguage) {
+            dropdownTitle.textContent = this.translations[this.currentLang].selectLanguage;
+        }
     }
     
     getTranslation(key) {
@@ -121,5 +113,5 @@ class LanguageManager {
     }
 }
 
-// Initialize language manager
-window.languageManager = new LanguageManager();
+// Initialize language manager immediately
+window.languageManager = new SimpleLanguageManager();
