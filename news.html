@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Australian Independence Bureau - News & Events</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/language-manager.js" defer></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0C2340',
+                        secondary: '#D4AF37',
+                        accent: '#1E3A5F',
+                        light: '#F8F9FA',
+                        saffron: '#FF9933'  // Added saffron color
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .news-gallery img {
+            transition: transform 0.3s ease;
+        }
+        
+        .news-gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .prev {
+            left: 20px;
+        }
+        
+        .next {
+            right: 20px;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Header would go here -->
+    <div data-include="components/header.html"></div>
+
+    <div class="min-h-screen">
+        <!-- Page Header -->
+        <!-- <section class="bg-gradient-to-r from-teal-800 to-blue-900 text-white py-16 md:py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">News & Events</h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto">
+                    Stay updated on our latest initiatives, events, and partnership announcements
+                </p>
+            </div>
+        </section> -->
+<!-- Hero Section -->
+        <section class="relative pt-32 pb-20 overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="images/Aus-ind-Ab.jpg" 
+                     alt="About AIBF" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-accent/70"></div>
+            </div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl animate-fade-in">
+                    <div class="inline-flex items-center space-x-2 text-saffron font-semibold uppercase text-sm tracking-wider mb-4">
+                        <span>News</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                        News &
+                        <br>
+                        <span class="text-saffron"> Events</span>
+                    </h1>
+                    <p class="text-xl text-white/80 leading-relaxed">
+                        Stay updated on our latest initiatives, events, and partnership announcements                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- News Events -->
+        
+        <section class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-12 md:mb-16 animate-fade-in">
+                <div class="inline-flex items-center mb-4">
+                    <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-[#FF9933] to-transparent"></div>
+                    <span class="mx-3 text-sm font-semibold uppercase tracking-wider text-[#FF9933]">Media & Updates</span>
+                    <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-[#FF9933] to-transparent"></div>
+                </div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    Latest News & Announcements
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Stay informed about the latest developments, partnerships, and initiatives from the Australia India Business Council.
+                </p>
+            </div>
+
+            <!-- News Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- News Item 1 -->
+                <article class="news-card bg-white rounded-xl p-6 shadow-sm animate-fade-in stagger-delay-1 opacity-0">
+                    <div class="mb-4">
+                        <span class="date-badge text-sm text-gray-500 font-medium">23 September 2025</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 leading-tight">
+                        <a href="" 
+                           target="_blank" 
+                           class="hover:text-[#FF9933] transition-colors duration-200">
+                            CPA Australia signs MoU with Australia India Business Council at conference celebrating benefits of global trade
+                        </a>
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        CPA Australia and the Australia India Business Council today signed a Memorandum of Understanding (MoU) as a sign of future collaboration to strengthen business ties between the two nations.
+                    </p>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                        <a href="" 
+                           target="_blank"
+                           class="read-more text-[#FF9933] font-semibold text-sm flex items-center">
+                            Read Full Article
+                            <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                        <span class="text-xs text-gray-400 px-3 py-1 bg-gray-50 rounded-full">
+                            Partnership
+                        </span>
+                    </div>
+                </article>
+
+                <!-- News Item 2 -->
+                <article class="news-card bg-white rounded-xl p-6 shadow-sm animate-fade-in stagger-delay-2 opacity-0">
+                    <div class="mb-4">
+                        <span class="date-badge text-sm text-gray-500 font-medium">8 March 2025</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 leading-tight">
+                        <a href="" 
+                           target="_blank" 
+                           class="hover:text-[#FF9933] transition-colors duration-200">
+                            AIBF Celebrates International Women's Day: Recognising Women Driving Change Across Australia and India
+                        </a>
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        The Australia India Business Council Ltd (AIBF) proudly joins the global celebration of International Women's Day, recognising the remarkable contributions of women leaders across business sectors.
+                    </p>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                        <a href="" 
+                           target="_blank"
+                           class="read-more text-[#FF9933] font-semibold text-sm flex items-center">
+                            Read Full Article
+                            <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                        <span class="text-xs text-gray-400 px-3 py-1 bg-gray-50 rounded-full">
+                            Events
+                        </span>
+                    </div>
+                </article>
+
+                <!-- News Item 3 -->
+                <article class="news-card bg-white rounded-xl p-6 shadow-sm animate-fade-in stagger-delay-3 opacity-0">
+                    <div class="mb-4">
+                        <span class="date-badge text-sm text-gray-500 font-medium">Media Statement</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 leading-tight">
+                        <a href="" 
+                           target="_blank" 
+                           class="hover:text-[#FF9933] transition-colors duration-200">
+                            National Chair Media Statement
+                        </a>
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        The Australia India Business Council (AIBF) acknowledges DFAT's recent travel advisory updates for certain regions of India. We respect DFAT's role in ensuring Australian travelers' safety.
+                    </p>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                        <a href="" 
+                           target="_blank"
+                           class="read-more text-[#FF9933] font-semibold text-sm flex items-center">
+                            Read Full Article
+                            <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                        <span class="text-xs text-gray-400 px-3 py-1 bg-gray-50 rounded-full">
+                            Statement
+                        </span>
+                    </div>
+                </article>
+
+                <!-- News Item 4 -->
+                <article class="news-card bg-white rounded-xl p-6 shadow-sm animate-fade-in stagger-delay-4 opacity-0">
+                    <div class="mb-4">
+                        <span class="date-badge text-sm text-gray-500 font-medium">Leadership Update</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 leading-tight">
+                        <a href="" 
+                           target="_blank" 
+                           class="hover:text-[#FF9933] transition-colors duration-200">
+                            Australia India Business Council Announces Election of New National Chair and National Vice Chair
+                        </a>
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        The Australia India Business Council (AIBF), the leading organization dedicated to enhancing trade and investment between Australia and India, is pleased to announce new leadership appointments.
+                    </p>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                        <a href="" 
+                           target="_blank"
+                           class="read-more text-[#FF9933] font-semibold text-sm flex items-center">
+                            Read Full Article
+                            <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                        <span class="text-xs text-gray-400 px-3 py-1 bg-gray-50 rounded-full">
+                            Leadership
+                        </span>
+                    </div>
+                </article>
+
+                <!-- News Item 5 -->
+                <article class="news-card bg-white rounded-xl p-6 shadow-sm animate-fade-in stagger-delay-5 opacity-0">
+                    <div class="mb-4">
+                        <span class="date-badge text-sm text-gray-500 font-medium">Partnership</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 leading-tight">
+                        <a href="" 
+                           target="_blank" 
+                           class="hover:text-[#FF9933] transition-colors duration-200">
+                            AIBF and Indian Council of Arbitration (ICA) sign MOU to facilitate trade arbitration
+                        </a>
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        As bilateral trade between Australia and India currently exceeds $50 Billion and continues to grow, this MOU establishes frameworks for dispute resolution in business engagements.
+                    </p>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                        <a href="" 
+                           target="_blank"
+                           class="read-more text-[#FF9933] font-semibold text-sm flex items-center">
+                            Read Full Article
+                            <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                        <span class="text-xs text-gray-400 px-3 py-1 bg-gray-50 rounded-full">
+                            Arbitration
+                        </span>
+                    </div>
+                </article>
+
+                <!-- News Item 6 -->
+                <article class="news-card bg-white rounded-xl p-6 shadow-sm animate-fade-in stagger-delay-6 opacity-0">
+                    <div class="mb-4">
+                        <span class="date-badge text-sm text-gray-500 font-medium">20 March 2024</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 leading-tight">
+                        <a href="" 
+                           target="_blank" 
+                           class="hover:text-[#FF9933] transition-colors duration-200">
+                            "Holi in the House" hosted by AIBF celebrating the Launch of NSW Parliamentary Friends of India
+                        </a>
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        The NSW Parliamentary Friends of India will encourage collaborations, fostering of relations and friendships between the people of both countries.
+                    </p>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                        <a href="" 
+                           target="_blank"
+                           class="read-more text-[#FF9933] font-semibold text-sm flex items-center">
+                            Read Full Article
+                            <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                        <span class="text-xs text-gray-400 px-3 py-1 bg-gray-50 rounded-full">
+                            Cultural Event
+                        </span>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Pagination -->
+            <nav class="flex justify-center items-center space-x-2 mt-12 animate-fade-in" aria-label="Pagination">
+                <span aria-current="page" class="pagination-item w-10 h-10 flex items-center justify-center rounded-lg font-medium active">
+                    1
+                </span>
+                <a href="" 
+                   class="pagination-item w-10 h-10 flex items-center justify-center rounded-lg font-medium text-gray-700 hover:text-[#FF9933]">
+                    2
+                </a>
+                <a href="" 
+                   class="pagination-item w-10 h-10 flex items-center justify-center rounded-lg font-medium text-gray-700 hover:text-[#FF9933]">
+                    3
+                </a>
+                <a href="" 
+                   class="pagination-item w-10 h-10 flex items-center justify-center rounded-lg font-medium text-gray-700 hover:text-[#FF9933]">
+                    4
+                </a>
+                <a href="" 
+                   class="pagination-item w-10 h-10 flex items-center justify-center rounded-lg font-medium text-gray-700 hover:text-[#FF9933]">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </nav>
+
+            
+        </div>
+    </section>
+
+    <!-- JavaScript for animations and interactions -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            // Observe all animated elements
+            document.querySelectorAll('.animate-fade-in').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Add click effect for news cards
+            document.querySelectorAll('.news-card').forEach(card => {
+                card.addEventListener('click', function(e) {
+                    // Only trigger if not clicking on a link directly
+                    if (!e.target.closest('a')) {
+                        const link = this.querySelector('a[href]');
+                        if (link) {
+                            window.open(link.href, '_blank');
+                        }
+                    }
+                });
+                
+                // Add cursor pointer to entire card
+                card.style.cursor = 'pointer';
+            });
+
+            // Pagination hover effects
+            document.querySelectorAll('.pagination-item').forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    if (!this.classList.contains('active')) {
+                        this.style.transform = 'scale(1.1)';
+                    }
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+
+            // Newsletter subscription
+            const subscribeBtn = document.querySelector('button[class*="bg-\\[\\#FF9933\\]"]');
+            const emailInput = document.querySelector('input[type="email"]');
+            
+            if (subscribeBtn && emailInput) {
+                subscribeBtn.addEventListener('click', function() {
+                    const email = emailInput.value.trim();
+                    if (email && email.includes('@')) {
+                        alert('Thank you for subscribing to our newsletter!');
+                        emailInput.value = '';
+                    } else {
+                        alert('Please enter a valid email address.');
+                        emailInput.focus();
+                    }
+                });
+                
+                // Allow Enter key to subscribe
+                emailInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        subscribeBtn.click();
+                    }
+                });
+            }
+        });
+    </script>
+
+    </div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <span class="modal-nav prev" onclick="prevImage()">&#10094;</span>
+        <span class="modal-nav next" onclick="nextImage()">&#10095;</span>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="" class="w-full h-auto">
+            <div id="modalCaption" class="text-white text-center mt-4 text-lg"></div>
+        </div>
+    </div>
+    <section class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-12 md:mb-16 animate-fade-in">
+                <div class="inline-flex items-center mb-4">
+                    <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-[#FF9933] to-transparent"></div>
+                    <span class="mx-3 text-sm font-semibold uppercase tracking-wider text-[#FF9933]">Updates & Announcements</span>
+                    <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-[#FF9933] to-transparent"></div>
+                </div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    Latest Updates & Partnerships
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+                    Stay current with our latest partnerships, initiatives, and announcements driving Australia-India collaboration.
+                </p>
+                
+                <!-- Category Filter -->
+                <div class="flex flex-wrap justify-center gap-2 mb-6">
+                    <button class="category-tag px-4 py-2 bg-white text-[#FF9933] font-medium rounded-lg border border-[#FF9933] hover:bg-[#FF9933] hover:text-white">
+                        All Updates
+                    </button>
+                    <button class="category-tag px-4 py-2 bg-gray-100 text-gray-600 font-medium rounded-lg hover:bg-gray-200">
+                        Partnerships
+                    </button>
+                    <button class="category-tag px-4 py-2 bg-gray-100 text-gray-600 font-medium rounded-lg hover:bg-gray-200">
+                        Events
+                    </button>
+                    <button class="category-tag px-4 py-2 bg-gray-100 text-gray-600 font-medium rounded-lg hover:bg-gray-200">
+                        Leadership
+                    </button>
+                    <button class="category-tag px-4 py-2 bg-gray-100 text-gray-600 font-medium rounded-lg hover:bg-gray-200">
+                        Trade News
+                    </button>
+                </div>
+            </div>
+
+            <!-- Updates Grid -->
+            <div id="updatesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Updates will be loaded here dynamically -->
+            </div>
+
+            <!-- Pagination -->
+            <div id="pagination" class="flex justify-center items-center space-x-2 mt-12 animate-fade-in">
+                <!-- Pagination will be loaded here dynamically -->
+            </div>
+
+            <!-- No Results State -->
+            <div id="noResults" class="hidden text-center py-12">
+                <div class="empty-state max-w-md mx-auto rounded-2xl p-8 text-white mb-6">
+                    <i class="fas fa-search text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">No Updates Found</h3>
+                    <p class="opacity-90">Try adjusting your search or filter to find what you're looking for.</p>
+                </div>
+                <button id="resetFilters" class="px-6 py-3 bg-[#FF9933] text-white font-semibold rounded-lg hover:bg-[#e6892e] transition-colors">
+                    Reset All Filters
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript for dynamic content -->
+    <script>
+        // All updates data
+        const updatesData = {
+            page1: [
+                {
+                    id: 1,
+                    title: "Toy Biz International B2B Exhibition 2025",
+                    excerpt: "The Australia India Business Council is pleased to inform our members about an exciting opportunity in the toy manufacturing industry. The Toy Association of India ...",
+                    link: "https://aibc.org.au/toy-biz-international-b2b-exhibition-2025/",
+                    categories: ["Events", "Trade"],
+                    date: "Exhibition"
+                },
+                {
+                    id: 2,
+                    title: "Announcing Our Strategic National Partnership with the Commonwealth Bank of Australia",
+                    excerpt: "We are excited to announce a strategic partnership between Australia India Business Council (AIBC) and the Commonwealth Bank of Australia (CBA), a leader in banking ...",
+                    link: "https://aibc.org.au/strategic-national-partnership-with-the-commonwealth-bank-of-australia/",
+                    categories: ["Partnerships", "Banking"],
+                    date: "Partnership"
+                },
+                {
+                    id: 3,
+                    title: "Cricket Diplomacy and Beyond: Strengthening Australia-India Relations",
+                    excerpt: "As the First Test of the Border Gavaskar Trophy begins Molina Asthana GAICD Industry Chapter Head Sports, Arts & Culture, at the Australia India Business Council ...",
+                    link: "https://aibc.org.au/cricket-diplomacy-and-beyond-strengthening-australia-india-relations/",
+                    categories: ["Sports", "Culture"],
+                    date: "Diplomacy"
+                },
+                {
+                    id: 4,
+                    title: "In Memory of Ratan Tata: His Vision Will Guide Us Forever.",
+                    excerpt: "The Australia India Business Council Remembers Ratan Tata It is with deep sadness that we at the Australia India Business Council (AIBC) reflect on the ...",
+                    link: "https://aibc.org.au/in-memory-of-ratan-tata-his-vision-will-guide-us-forever/",
+                    categories: ["Tribute", "Leadership"],
+                    date: "Tribute"
+                },
+                {
+                    id: 5,
+                    title: "Neetu Bhaagotia is first Indian Consul General in Brisbane",
+                    excerpt: "AIBC welcomes Neetu Bhaagotia as the first Consul General of India in Brisbane. The announcement for a Consulate General of India in Brisbane had been made ...",
+                    link: "https://aibc.org.au/neetu-bhaagotia-is-first-indian-consul-general-in-brisbane/",
+                    categories: ["Diplomacy", "Leadership"],
+                    date: "Appointment"
+                },
+                {
+                    id: 6,
+                    title: "AIBC MoU with India's Sports Goods Export Promotion Council",
+                    excerpt: "AIBC has signed a Memorandum of Understanding (MOU) with India's Sports Goods Export Promotion Council (SGEPC), in March 2024 at the India Sporting Goods ...",
+                    link: "https://aibc.org.au/aibc-mou-with-indias-sports-goods-export-promotion-council/",
+                    categories: ["Partnerships", "Sports"],
+                    date: "Agreement"
+                }
+            ],
+            page2: [
+                {
+                    id: 7,
+                    title: "AIBC inducts Jim Varghese as life member",
+                    excerpt: "The board of directors of AIBC have inducted Jim Varghese, immediate past national chair as an AIBC life member. Life membership is an exceptional and ...",
+                    link: "https://aibc.org.au/aibc-inducts-jim-varghese-as-life-member/",
+                    categories: ["Leadership", "Recognition"],
+                    date: "Honor"
+                },
+                {
+                    id: 8,
+                    title: "New Consular appointments in India",
+                    excerpt: "On 20 January 2024, the Australia Foreign Minister, Senator the Honorable Penny Wong, announced the following diplomatic appointments for India Mr Paul Murphy as Australia's ...",
+                    link: "https://aibc.org.au/new-consul-general-appointments-in-india/",
+                    categories: ["Diplomacy", "Leadership"],
+                    date: "Appointment"
+                },
+                {
+                    id: 9,
+                    title: "AIBC signs MOU with ASSOCHAM",
+                    excerpt: "AIBC has signed an MOU with ASSOCHAM (The Associated Chambers of Commerce and Industry of India), India's oldest apex industry chamber. ASSOCHAM has a network ...",
+                    link: "https://aibc.org.au/aibc-signs-mou-with-assocham/",
+                    categories: ["Partnerships", "Chamber"],
+                    date: "Agreement"
+                },
+                {
+                    id: 10,
+                    title: "AIBC, CGI Perth partner to farewell Manpreet Vohra",
+                    excerpt: "Australia India Business Council partnered with CGI Perth last week to thank and bid farewell to Manpreet Vohra, India's high commissioner to Australia, who completes his assignment in Australia ...",
+                    link: "https://aibc.org.au/aibc-cgi-perth-partner-to-farewell-manpreet-vohra/",
+                    categories: ["Events", "Diplomacy"],
+                    date: "Farewell"
+                },
+                {
+                    id: 11,
+                    title: "AIBC farewells Manpreet Vohra, Indian High Commissioner to Australia",
+                    excerpt: "AIBC bid a fond goodbye to Manpreet Vohra, Indian High Commissioner to #Australia, with a farewell reception for him and wife Naseem at the Parliament of NSW in #sydney on ...",
+                    link: "https://aibc.org.au/aibc-farewells-manpreet-vohra-indian-high-commissioner-to-australia/",
+                    categories: ["Events", "Diplomacy"],
+                    date: "Farewell"
+                },
+                {
+                    id: 12,
+                    title: "AIBC's First Nations Roadmap 2023-26 launched",
+                    excerpt: "The Australia India Business Council launched our First Nations Roadmap in Sydney on 21 November at the 2023 NSW Australia India Address and Gala Dinner. ...",
+                    link: "https://aibc.org.au/aibcs-first-nations-roadmap-2023-26-launched/",
+                    categories: ["Strategy", "Indigenous"],
+                    date: "Launch"
+                }
+            ],
+            page3: [
+                {
+                    id: 13,
+                    title: "AIBC supports CAIR in Start-Up initiative",
+                    excerpt: "AIBC is supporting the Centre for Australia-India Relations (CAIR)-led initiative to accelerate the startup and entrepreneurial ecosystem connections and scale-up pathways between Australia and India. ...",
+                    link: "https://aibc.org.au/aibc-supports-cair-in-start-up-initiative/",
+                    categories: ["Startups", "Innovation"],
+                    date: "Support"
+                },
+                {
+                    id: 14,
+                    title: "AIBC leaders at 2023 Horasis India meeting in Adelaide",
+                    excerpt: "Over 300 business leaders from India, Australia and the world came together for the 2023 Horasis India Meeting in Adelaide on 26-27 November 2023. AIBC ...",
+                    link: "https://aibc.org.au/aibc-leaders-at-2023-horasis-india-meeting-in-adelaide/",
+                    categories: ["Events", "Leadership"],
+                    date: "Meeting"
+                },
+                {
+                    id: 15,
+                    title: "Message from the National Chair",
+                    excerpt: "01 June 2023 2023 is turning out to be a landmark year for the rapidly growing Australia-India relationship. The year started with the Economic Cooperation ...",
+                    link: "https://aibc.org.au/message-from-the-national-chair-june-2023/",
+                    categories: ["Leadership", "Message"],
+                    date: "June 2023"
+                },
+                {
+                    id: 16,
+                    title: "Jodi McKay, National Chair, selected on Advisory board of Centre for Australia-India Relations (CAIR)",
+                    excerpt: "AIBC National Chair, Jodi McKay has been appointed to the inaugural Advisory Board of the Centre for Australia-India Relations (CAIR). Prime Minister Anthony Albanese recently ...",
+                    link: "https://aibc.org.au/updates-on-aibc-website-jodi-mckay-national-chair-selected-on-advisory-board-of-centre-for-australia-india-relations-cair/",
+                    categories: ["Leadership", "Appointment"],
+                    date: "Board"
+                },
+                {
+                    id: 17,
+                    title: "Ratan Tata honoured with Order of Australia (AO)",
+                    excerpt: "Ratan Tata, Chairman Emeritus, Tata Group, has been conferred with Australia's highest civilian award, the Order of Australia (AO), for his outstanding contributions to Australia-India ...",
+                    link: "https://aibc.org.au/tata-honoured-with-order-of-australia-ao/",
+                    categories: ["Honor", "Leadership"],
+                    date: "Award"
+                },
+                {
+                    id: 18,
+                    title: "AIBC signs MoU with Smart Energy Council",
+                    excerpt: "AIBC has signed a Memorandum of Understanding (MoU) with the Smart Energy Council, the independent body for the Australian smart energy industry, for collaborating on ...",
+                    link: "https://aibc.org.au/aibc-signs-mou-with-the-smart-energy-council-for-joint-bilateral-opportunities/",
+                    categories: ["Partnerships", "Energy"],
+                    date: "Agreement"
+                }
+            ],
+            page4: [
+                {
+                    id: 19,
+                    title: "Spotlight on Queensland's India Strategy",
+                    excerpt: "AIBC National Chair, Jodi McKay and our Queensland President, Nik Senapati have participated in the consultation process with Queensland Treasurer and Minister for Trade and ...",
+                    link: "https://aibc.org.au/spotlight-on-queenslands-india-strategy/",
+                    categories: ["Strategy", "State"],
+                    date: "Strategy"
+                },
+                {
+                    id: 20,
+                    title: "Welcome to AIBC's new brand",
+                    excerpt: "Our refreshed logo reflects the vitality and energy in the evolving Australia-India relationship and the leadership role which AIBC plays for advancing this strategic business ...",
+                    link: "https://aibc.org.au/welcme-to-aibcs-new-brand/",
+                    categories: ["Branding", "Rebrand"],
+                    date: "Launch"
+                },
+                {
+                    id: 21,
+                    title: "AIBC signs MoU with the Indian Electrical & Electronics Manufacturers Association (IEEMA)",
+                    excerpt: "AIBC has signed an MoU with the Indian Electrical & Electronics Manufacturers Association (IEEMA) to promote business connections in the electrical industry – this is particularly ...",
+                    link: "https://aibc.org.au/aibc-signs-mou-with-the-indian-electrical-electronics-manufacturers-association-ieema/",
+                    categories: ["Partnerships", "Electronics"],
+                    date: "Agreement"
+                },
+                {
+                    id: 22,
+                    title: "Diaspora engagement helps to secure Nexport-JBM partnership",
+                    excerpt: "AIBC enabled a business to business outcome with the partnership between Nexport, a leading Sydney based EV manufacturer, and the JBM Group, one of India's ...",
+                    link: "https://aibc.org.au/how-diaspora-engagement-helps-to-secure-nexport-jbm-partnership/",
+                    categories: ["Partnerships", "Automotive"],
+                    date: "Success"
+                },
+                {
+                    id: 23,
+                    title: "AIBC congratulates Swati Dave for being appointed as the first Chair for the Centre of Australia-India Relations (CAIR)",
+                    excerpt: "The Australia India Business Council (AIBC) has congratulated Swati Dave on her appointment as the first Chair for the Centre of Australia-India Relations. Swati is ...",
+                    link: "https://aibc.org.au/aibc-congratulates-swati-dave-for-being-appointed-as-the-first-chair-for-the-centre-of-australia-india-relations-cair/",
+                    categories: ["Leadership", "Appointment"],
+                    date: "Congratulations"
+                },
+                {
+                    id: 24,
+                    title: "Western Australia trade body sees 2023 as the 'sweet spot' year in bilateral business relations",
+                    excerpt: "The Chamber of Commerce and Industry Western Australia celebrated the historic Australia-India Economic Cooperation and Trade Agreement coming into force today. It represents a huge ...",
+                    link: "https://aibc.org.au/aibc-wa-cciwa-say-2023-the-sweet-spot-year-for-wa-india-trade/",
+                    categories: ["Trade", "State"],
+                    date: "Milestone"
+                }
+            ],
+            page5: [
+                {
+                    id: 25,
+                    title: "South Australian Minister sees many opportunities in ECTA",
+                    excerpt: "South Australian businesses will be boosted by a free trade agreement with India that will cut tariffs on 85 per cent of Australia's exports to ...",
+                    link: "https://aibc.org.au/trade-agreement-sees-ties-growing-between-australia-and-india/",
+                    categories: ["Trade", "State"],
+                    date: "Opportunity"
+                },
+                {
+                    id: 26,
+                    title: "Western Australia Business Delegation to India",
+                    excerpt: "AIBC Western Australia Chapter was part of the WA Government's largest ever business delegation on an Invest and Trade WA mission to India in July, ...",
+                    link: "https://aibc.org.au/wa-business-delegation-to-india/",
+                    categories: ["Delegation", "State"],
+                    date: "Mission"
+                },
+                {
+                    id: 27,
+                    title: "AIBC hosts Indian Minister of Parliamentary Affairs, Coal and Mines of India in Sydney",
+                    excerpt: "The Australia India Business Council Ltd was delighted to host the Indian Minister of Parliamentary Affairs, Coal and Mines of India, Shri Prahalad Joshi on his visit ...",
+                    link: "https://aibc.org.au/aibc-hosts-indian-minster-of-parliamentary-affairs-coal-and-mines-of-india-in-sydney/",
+                    categories: ["Diplomacy", "Events"],
+                    date: "Hosting"
+                },
+                {
+                    id: 28,
+                    title: "Brand Australia launched for business",
+                    excerpt: "The Australia India Business Council is pleased to announce that the Minister for Trade, Tourism and Investment, the Hon Dan Tehan, unveiled Australia's Nation Brand to ...",
+                    link: "https://aibc.org.au/brand-australia-launched-for-business/",
+                    categories: ["Branding", "Launch"],
+                    date: "Launch"
+                }
+            ]
+        };
+
+        // State management
+        let currentPage = 1;
+        let currentCategory = 'All Updates';
+        let allUpdates = [];
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Flatten all updates
+            for (let page in updatesData) {
+                allUpdates = [...allUpdates, ...updatesData[page]];
+            }
+            
+            // Load initial data
+            renderUpdates(updatesData.page1);
+            renderPagination();
+            
+            // Setup category filter buttons
+            setupCategoryFilters();
+            
+            // Setup reset button
+            document.getElementById('resetFilters').addEventListener('click', function() {
+                currentCategory = 'All Updates';
+                currentPage = 1;
+                renderUpdates(updatesData.page1);
+                renderPagination();
+                updateCategoryButtons();
+                document.getElementById('noResults').classList.add('hidden');
+            });
+        });
+
+        // Render updates to the grid
+        function renderUpdates(updates) {
+            const grid = document.getElementById('updatesGrid');
+            grid.innerHTML = '';
+            
+            if (updates.length === 0) {
+                document.getElementById('noResults').classList.remove('hidden');
+                return;
+            }
+            
+            document.getElementById('noResults').classList.add('hidden');
+            
+            updates.forEach((update, index) => {
+                const card = document.createElement('article');
+                card.className = `update-card bg-white rounded-xl p-6 shadow-sm animate-fade-in stagger-delay-${(index % 6) + 1} opacity-0`;
+                card.style.animationDelay = `${(index % 6) * 0.1}s`;
+                
+                card.innerHTML = `
+                    <div class="mb-4 flex justify-between items-start">
+                        <span class="text-sm text-[#FF9933] font-medium px-3 py-1 bg-[#FF9933]/10 rounded-full">
+                            ${update.date}
+                        </span>
+                        <div class="flex flex-wrap gap-1">
+                            ${update.categories.map(cat => `
+                                <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">
+                                    ${cat}
+                                </span>
+                            `).join('')}
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 leading-tight">
+                        <a href="${update.link}" 
+                           target="_blank" 
+                           class="hover:text-[#FF9933] transition-colors duration-200">
+                            ${update.title}
+                        </a>
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        ${update.excerpt}
+                    </p>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                        <a href="${update.link}" 
+                           target="_blank"
+                           class="read-more text-[#FF9933] font-semibold text-sm flex items-center">
+                            Read Full Article
+                            <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                        <span class="text-xs text-gray-400">
+                            #${String(update.id).padStart(2, '0')}
+                        </span>
+                    </div>
+                `;
+                
+                grid.appendChild(card);
+            });
+            
+            // Add animation observers
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.animate-fade-in').forEach(el => observer.observe(el));
+        }
+
+        // Render pagination
+        function renderPagination() {
+            const pagination = document.getElementById('pagination');
+            const totalPages = 5;
+            
+            let html = '';
+            
+            // Previous button
+            if (currentPage > 1) {
+                html += `<button onclick="changePage(${currentPage - 1})" class="pagination-item w-10 h-10 flex items-center justify-center rounded-lg font-medium text-gray-700 hover:text-[#FF9933]">
+                            <i class="fas fa-chevron-left"></i>
+                         </button>`;
+            }
+            
+            // Page numbers
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === currentPage) {
+                    html += `<span class="pagination-item w-10 h-10 flex items-center justify-center rounded-lg font-medium active">
+                                ${i}
+                             </span>`;
+                } else {
+                    html += `<button onclick="changePage(${i})" class="pagination-item w-10 h-10 flex items-center justify-center rounded-lg font-medium text-gray-700 hover:text-[#FF9933]">
+                                ${i}
+                             </button>`;
+                }
+            }
+            
+            // Next button
+            if (currentPage < totalPages) {
+                html += `<button onclick="changePage(${currentPage + 1})" class="pagination-item w-10 h-10 flex items-center justify-center rounded-lg font-medium text-gray-700 hover:text-[#FF9933]">
+                            <i class="fas fa-chevron-right"></i>
+                         </button>`;
+            }
+            
+            pagination.innerHTML = html;
+        }
+
+        // Change page
+        window.changePage = function(page) {
+            currentPage = page;
+            const pageData = updatesData[`page${page}`];
+            
+            // Filter by category if needed
+            let filteredData = pageData;
+            if (currentCategory !== 'All Updates') {
+                filteredData = pageData.filter(update => 
+                    update.categories.some(cat => 
+                        cat.toLowerCase().includes(currentCategory.toLowerCase())
+                    )
+                );
+            }
+            
+            renderUpdates(filteredData);
+            renderPagination();
+            window.scrollTo({ top: document.getElementById('updatesGrid').offsetTop - 100, behavior: 'smooth' });
+        }
+
+        // Setup category filters
+        function setupCategoryFilters() {
+            document.querySelectorAll('.category-tag').forEach(button => {
+                button.addEventListener('click', function() {
+                    const category = this.textContent.trim();
+                    currentCategory = category;
+                    currentPage = 1;
+                    
+                    // Filter updates
+                    let filteredData = updatesData.page1;
+                    if (category !== 'All Updates') {
+                        filteredData = updatesData.page1.filter(update => 
+                            update.categories.some(cat => 
+                                cat.toLowerCase().includes(category.toLowerCase())
+                            )
+                        );
+                    }
+                    
+                    renderUpdates(filteredData);
+                    renderPagination();
+                    updateCategoryButtons();
+                    
+                    // Show/hide no results
+                    if (filteredData.length === 0) {
+                        document.getElementById('noResults').classList.remove('hidden');
+                    } else {
+                        document.getElementById('noResults').classList.add('hidden');
+                    }
+                });
+            });
+        }
+
+        // Update category button states
+        function updateCategoryButtons() {
+            document.querySelectorAll('.category-tag').forEach(button => {
+                const category = button.textContent.trim();
+                if (category === currentCategory) {
+                    button.classList.remove('bg-gray-100', 'text-gray-600', 'hover:bg-gray-200');
+                    button.classList.add('bg-[#FF9933]', 'text-white', 'border', 'border-[#FF9933]');
+                } else if (category === 'All Updates') {
+                    button.classList.remove('bg-[#FF9933]', 'text-white');
+                    button.classList.add('bg-white', 'text-[#FF9933]', 'border', 'border-[#FF9933]', 'hover:bg-[#FF9933]', 'hover:text-white');
+                } else {
+                    button.classList.remove('bg-[#FF9933]', 'text-white');
+                    button.classList.add('bg-gray-100', 'text-gray-600', 'hover:bg-gray-200');
+                }
+            });
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        .update-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid transparent;
+        }
+        
+        .update-card:hover {
+            transform: translateY(-5px);
+            border-color: #FF9933;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .update-card:hover .read-more {
+            color: #FF9933;
+            transform: translateX(5px);
+        }
+        
+        .read-more {
+            transition: all 0.3s ease;
+        }
+        
+        .pagination-item {
+            transition: all 0.2s ease;
+        }
+        
+        .pagination-item:hover:not(.active) {
+            background-color: #f3f4f6;
+            transform: scale(1.1);
+        }
+        
+        .pagination-item.active {
+            background-color: #FF9933;
+            color: white;
+        }
+        
+        .category-tag {
+            transition: all 0.2s ease;
+        }
+        
+        .category-tag:hover {
+            background-color: #FF9933;
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .empty-state {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .stagger-delay-1 { animation-delay: 0.1s; }
+        .stagger-delay-2 { animation-delay: 0.2s; }
+        .stagger-delay-3 { animation-delay: 0.3s; }
+        .stagger-delay-4 { animation-delay: 0.4s; }
+        .stagger-delay-5 { animation-delay: 0.5s; }
+        .stagger-delay-6 { animation-delay: 0.6s; }
+    </style>
+<!-- Newsletter Subscription -->
+            <div class="mt-16 mb-10 pt-12 border-t border-gray-200">
+                <div class="max-w-2xl mx-auto text-center animate-fade-in">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-[#FF9933] to-saffron flex items-center justify-center">
+                        <i class="fas fa-newspaper text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Stay Updated</h3>
+                    <p class="text-gray-600 mb-8">
+                        Subscribe to our newsletter to receive the latest news, event invitations, and insights directly to your inbox.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                        <input type="email" 
+                               placeholder="Your email address" 
+                               class="flex-grow px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent">
+                        <button class="px-6 py-3 bg-[#FF9933] text-white font-semibold rounded-lg hover:bg-[#e6892e] transition-colors shadow-md">
+                            Subscribe
+                        </button>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-3">
+                        We respect your privacy. Unsubscribe at any time.
+                    </p>
+                </div>
+            </div>
+    <!-- Footer would go here -->
+    <footer data-include="components/footer.html"></footer>
+<script src="/_next/static/chunks/webpack-a7f1c6512654c8e1.js" async=""></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/include.js"></script>
+
+    <script>
+        // Modal functionality
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const modalCaption = document.getElementById('modalCaption');
+        
+        // Sample gallery data (in a real app, this would come from a database)
+        const galleries = {
+            'summit1.jpg': { src: 'summit1.jpg', alt: 'Opening ceremony of the Australia-India Summit' },
+            'summit2.jpg': { src: 'summit2.jpg', alt: 'Panel discussion on economic cooperation' },
+            'summit3.jpg': { src: 'summit3.jpg', alt: 'Signing of partnership agreements' },
+            'culture1.jpg': { src: 'culture1.jpg', alt: 'Traditional dance performance at launch event' },
+            'culture2.jpg': { src: 'culture2.jpg', alt: 'Students participating in workshop' },
+            'culture3.jpg': { src: 'culture3.jpg', alt: 'Exhibition of collaborative artworks' },
+            'report1.jpg': { src: 'report1.jpg', alt: 'Press conference for report launch' },
+            'report2.jpg': { src: 'report2.jpg', alt: 'Research team presenting findings' },
+            'report3.jpg': { src: 'report3.jpg', alt: 'Distribution of report copies' }
+        };
+        
+        let currentGallery = [];
+        let currentIndex = 0;
+        
+        function openModal(imageKey, caption) {
+            // Create array of all gallery images for navigation
+            currentGallery = Object.keys(galleries);
+            currentIndex = currentGallery.indexOf(imageKey);
+            
+            // Set modal content
+            modalImg.src = `https://via.placeholder.com/800x600/4F46E5/FFFFFF?text=${encodeURIComponent(caption)}`;
+            modalCaption.textContent = caption;
+            
+            // Show modal
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        function prevImage() {
+            if (currentGallery.length > 0) {
+                currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+                const imageKey = currentGallery[currentIndex];
+                const image = galleries[imageKey];
+                modalImg.src = `https://via.placeholder.com/800x600/4F46E5/FFFFFF?text=${encodeURIComponent(image.alt)}`;
+                modalCaption.textContent = image.alt;
+            }
+        }
+        
+        function nextImage() {
+            if (currentGallery.length > 0) {
+                currentIndex = (currentIndex + 1) % currentGallery.length;
+                const imageKey = currentGallery[currentIndex];
+                const image = galleries[imageKey];
+                modalImg.src = `https://via.placeholder.com/800x600/4F46E5/FFFFFF?text=${encodeURIComponent(image.alt)}`;
+                modalCaption.textContent = image.alt;
+            }
+        }
+        
+        // Close modal when clicking outside the image
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (modal.classList.contains('active')) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                } else if (e.key === 'ArrowLeft') {
+                    prevImage();
+                } else if (e.key === 'ArrowRight') {
+                    nextImage();
+                }
+            }
+        });
+        
+        // Newsletter subscription
+        document.querySelector('button[class*="from-teal-600"]').addEventListener('click', function() {
+            const emailInput = document.querySelector('input[type="email"]');
+            if (emailInput.value && emailInput.value.includes('@')) {
+                alert('Thank you for subscribing to our newsletter!');
+                emailInput.value = '';
+            } else {
+                alert('Please enter a valid email address.');
+                emailInput.focus();
+            }
+        });
+    </script>
+</body>
+</html>

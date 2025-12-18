@@ -16,7 +16,8 @@
                         primary: "#0C2340",
                         secondary: "#F5C642",
                         accent: "#1E3A5F",
-                        light: "#F8F9FA"
+                        light: "#F8F9FA",
+                         saffron: '#FF9933'
                     },
                     fontFamily: {
                         sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -28,8 +29,29 @@
     </head>
     <body class="">
     <div data-include="components/header.html"></div>
+    <section class="relative pt-32 pb-20 overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="images/Aus-ind-Ab.jpg" 
+                     alt="About AIBF" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-accent/70"></div>
+            </div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl animate-fade-in">
+                    <div class="inline-flex items-center space-x-2 text-saffron font-semibold uppercase text-sm tracking-wider mb-4">
+                        <span>Contact Us</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                        Let's Start a ,<br>
+                        <span class="text-saffron">Conversation</span>
+                    </h1>
+                    <p class="text-xl text-white/80 leading-relaxed">
+                        Whether you're looking to expand into new markets,
+                        find strategic partners, or learn more about our services, we're here to help.                    </p>
+                </div>
+            </div>
+        </section>
     <main class="min-h-screen">
-        <section class="relative pt-32 pb-20 bg-[#0C2340] overflow-hidden">
+        <!-- <section class="relative pt-32 pb-20 bg-[#0C2340] overflow-hidden">
             <div class="absolute inset-0 opacity-20">
                 <div class="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/20 to-transparent"></div>
             </div>
@@ -42,7 +64,7 @@
                         find strategic partners, or learn more about our services, we're here to help.</p>
                 </div>
             </div>
-        </section>
+        </section> -->
         <section id="" class="py-20 lg:py-28 bg-white ">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid lg:grid-cols-5 gap-12">
@@ -59,7 +81,7 @@
                                     class="w-12 h-12 bg-[#0C2340] rounded-lg flex items-center justify-center flex-shrink-0">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-map-pin w-5 h-5 text-orange-500"
+                                        stroke-linejoin="round" class="lucide lucide-map-pin w-5 h-5 text-saffron"
                                         aria-hidden="true">
                                         <path
                                             d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
@@ -78,7 +100,7 @@
                                     class="w-12 h-12 bg-[#0C2340] rounded-lg flex items-center justify-center flex-shrink-0">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-phone w-5 h-5 text-orange-500"
+                                        stroke-linejoin="round" class="lucide lucide-phone w-5 h-5 text-saffron"
                                         aria-hidden="true">
                                         <path
                                             d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384">
@@ -86,8 +108,8 @@
                                     </svg></div>
                                 <div>
                                     <h3 class="font-semibold text-[#0C2340] mb-1">Call Us</h3>
-                                    <p class="text-gray-600 text-sm">+61 3 9000 0000</p>
-                                    <p class="text-gray-600 text-sm">+61 3 9000 0001 (Fax)</p>
+                                    <!-- <p class="text-gray-600 text-sm">+61 3 9000 0000</p> -->
+                                    <!-- <p class="text-gray-600 text-sm">+61 3 9000 0001 (Fax)</p> -->
                                 </div>
                             </div>
                             <div class="flex items-start gap-4">
@@ -95,15 +117,15 @@
                                     class="w-12 h-12 bg-[#0C2340] rounded-lg flex items-center justify-center flex-shrink-0">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-mail w-5 h-5 text-orange-500"
+                                        stroke-linejoin="round" class="lucide lucide-mail w-5 h-5 text-saffron"
                                         aria-hidden="true">
                                         <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
                                         <rect x="2" y="4" width="20" height="16" rx="2"></rect>
                                     </svg></div>
                                 <div>
                                     <h3 class="font-semibold text-[#0C2340] mb-1">Email Us</h3>
-                                    <p class="text-gray-600 text-sm">info@aibc.org.au</p>
-                                    <p class="text-gray-600 text-sm">membership@aibc.org.au</p>
+                                    <p class="text-gray-600 text-sm">info@ausindbridge.org.au</p>
+                                    <!-- <p class="text-gray-600 text-sm">membership@aibc.org.au</p> -->
                                 </div>
                             </div>
                             <div class="flex items-start gap-4">
@@ -111,7 +133,7 @@
                                     class="w-12 h-12 bg-[#0C2340] rounded-lg flex items-center justify-center flex-shrink-0">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-clock w-5 h-5 text-orange-500"
+                                        stroke-linejoin="round" class="lucide lucide-clock w-5 h-5 text-saffron"
                                         aria-hidden="true">
                                         <circle cx="12" cy="12" r="10"></circle>
                                         <polyline points="12 6 12 12 16 14"></polyline>
@@ -127,14 +149,14 @@
                             <div class="flex items-center gap-3 mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24"
                                     height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round"
-                                    class="lucide lucide-message-circle w-6 h-6 text-orange-500" aria-hidden="true">
+                                    class="lucide lucide-message-circle w-6 h-6 text-saffron" aria-hidden="true">
                                     <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
                                 </svg>
                                 <h3 class="font-semibold text-white">Quick Connect</h3>
                             </div>
                             <p class="text-white/70 text-sm mb-4">Need an immediate response? Our team typically replies
                                 within 24 hours on business days.</p><a href="mailto:info@aibc.org.au"
-                                class="inline-block bg-orange-500 text-[#0C2340] px-6 py-2 rounded-lg font-semibold text-sm hover:bg-[#e5c347] transition-colors">Email
+                                class="inline-block bg-saffron text-[#0C2340] px-6 py-2 rounded-lg font-semibold text-sm hover:bg-[#e5c347] transition-colors">Email
                                 Now</a>
                         </div>
                     </div>
@@ -204,6 +226,7 @@
 </section>
 
     </main>
+    
     <div data-include="components/footer.html"></div>
     <script src="/_next/static/chunks/webpack-a7f1c6512654c8e1.js" async=""></script>
     <script src="https://cdn.tailwindcss.com"></script>

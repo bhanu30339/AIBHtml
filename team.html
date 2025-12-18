@@ -14,7 +14,8 @@
                         primary: "#0C2340",
                         secondary: "#F5C642",
                         accent: "#1E3A5F",
-                        light: "#F8F9FA"
+                        light: "#F8F9FA",
+                        saffron: '#FF9933'
                     },
                     fontFamily: {
                         sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -28,7 +29,7 @@
 <body class="bg-white text-gray-800">
 
 <!-- ================= HERO ================= -->
-<section class="relative py-24 bg-[#0C2340] text-white">
+<!-- <section class="relative py-24 bg-[#0C2340] text-white">
   <div class="max-w-7xl mx-auto px-6 text-center">
     <h1 class="text-4xl lg:text-5xl font-bold mb-6">
       Our Leadership & Governance
@@ -38,17 +39,40 @@
       to strengthening Australia–India relations through collaboration and impact.
     </p>
   </div>
-</section>
+</section> -->
+
+<!-- Hero Section -->
+        <section class="relative pt-32 pb-20 overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="images/Aus-ind-Ab.jpg" 
+                     alt="About AIBF" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-accent/70"></div>
+            </div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl animate-fade-in">
+                    <div class="inline-flex items-center space-x-2 text-saffron font-semibold uppercase text-sm tracking-wider mb-4">
+                        <span>About Us</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                        Our Leadership & <br>
+                        <span class="text-saffron">Governance</span>
+                    </h1>
+                    <p class="text-xl text-white/80 leading-relaxed">
+                        Guided by experienced leaders, policymakers, and professionals committed
+      to strengthening Australia–India relations through collaboration and impact.                    </p>
+                </div>
+            </div>
+        </section>
 
 <!-- ================= LEADERSHIP TEAM ================= -->
-<section class="py-20">
+<!-- <section class="py-20">
   <div class="max-w-7xl mx-auto px-6">
 
     <h2 class="text-3xl font-bold mb-12 text-center">Executive Leadership</h2>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
 
-      <!-- Leader Card -->
+     
       <div class="text-center">
         <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1"
              class="w-48 h-48 mx-auto rounded-full object-cover mb-6"
@@ -86,17 +110,17 @@
 
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- ================= BOARD MEMBERS ================= -->
-<section class="py-20 bg-gray-50">
+<!-- <section class="py-20 bg-gray-50">
   <div class="max-w-7xl mx-auto px-6">
 
     <h2 class="text-3xl font-bold mb-12 text-center">Board Members</h2>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
-      <!-- Board Card -->
+      
       <div class="text-center">
         <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a"
              class="w-40 h-40 mx-auto rounded-full object-cover mb-4"
@@ -139,6 +163,327 @@
 
     </div>
   </div>
+</section> -->
+
+<style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        .team-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .team-card:hover .team-image {
+            transform: scale(1.05);
+        }
+        
+        .team-image {
+            transition: transform 0.5s ease;
+        }
+        
+        .gradient-overlay {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+        }
+        
+        .linkedin-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .linkedin-icon:hover {
+            transform: scale(1.1);
+            color: #0077b5;
+        }
+        
+        .stagger-delay-1 { animation-delay: 0.1s; }
+        .stagger-delay-2 { animation-delay: 0.2s; }
+        .stagger-delay-3 { animation-delay: 0.3s; }
+        .stagger-delay-4 { animation-delay: 0.4s; }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Team Section -->
+     <section class="py-20">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+
+    <img src="images/F&C.jpg"
+         alt="Deepak Vinayak OAM JP"
+         class="w-56 h-56 mx-auto rounded-full object-cover mb-6">
+
+    <h2 class="text-2xl font-bold">Deepak Vinayak OAM JP</h2>
+    <p class="text-sm text-gray-600 mb-4">
+      Founder & Chairperson
+    </p>
+
+    <p class="text-gray-700 leading-relaxed max-w-3xl mx-auto">
+      Deepak Vinayak OAM JP is the Founder and Chairperson of the Australia India
+      Bridge Foundation. He has played a significant role in shaping Australia–India
+      engagement, including contributions aligned with Victoria’s long-term India
+      Strategy. His leadership reflects a commitment to inclusive growth, community
+      empowerment, and strengthening people-to-people ties between Victoria and India.
+    </p>
+
+  </div>
+</section>
+
+    <section class="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-12 md:mb-16 animate-fade-in-up">
+                <div class="inline-flex items-center mb-4">
+                    <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-saffron to-transparent"></div>
+                    <span class="mx-3 text-sm font-semibold uppercase tracking-wider text-saffron">Our Advisory Board</span>
+                    <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-saffron to-transparent"></div>
+                </div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    Distinguished Leadership
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Meet our esteemed advisory board members who bring decades of experience, expertise, and vision to guide our mission.
+                </p>
+            </div>
+
+            <!-- Team Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <!-- Member 1: Jodi McKay -->
+                <div class="team-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl animate-fade-in-up stagger-delay-1 opacity-0">
+                    <div class="relative overflow-hidden h-72">
+                        <img 
+                            src="https://aibc.org.au/wp-content/uploads/2022/06/Jodi-McKay2.jpg" 
+                            alt="Jodi McKay"
+                            class="team-image w-full h-full object-cover object-center"
+                        >
+                        <div class="absolute inset-0 gradient-overlay opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6 w-full">
+                                <a href="https://www.linkedin.com/in/jodimckaymp/" 
+                                   target="_blank" 
+                                   class="inline-flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-lg linkedin-icon">
+                                    <i class="fab fa-linkedin-in text-gray-700 text-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Jodi McKay</h3>
+                        <p class="text-gray-500 text-sm mb-4">Former NSW Shadow Minister</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Experienced parliamentarian with extensive background in trade, investment, and community development.
+                        </p>
+                        <div class="mt-6 pt-4 border-t border-gray-100 flex justify-between items-center">
+                            <a href="https://www.linkedin.com/in/jodimckaymp/" 
+                               target="_blank"
+                               class="text-sm text-saffron font-medium hover:text-saffron/80 transition-colors flex items-center">
+                                Connect on LinkedIn
+                                <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 2: Jim Varghese AM -->
+                <div class="team-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl animate-fade-in-up stagger-delay-2 opacity-0">
+                    <div class="relative overflow-hidden h-72">
+                        <img 
+                            src="https://aibc.org.au/wp-content/uploads/2023/12/Jim-Varghese-Am-e1656499523462.png" 
+                            alt="Jim Varghese AM"
+                            class="team-image w-full h-full object-cover object-center"
+                        >
+                        <div class="absolute inset-0 gradient-overlay opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6 w-full">
+                                <a href="https://www.linkedin.com/in/jim-varghese-am-062b3110/" 
+                                   target="_blank" 
+                                   class="inline-flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-lg linkedin-icon">
+                                    <i class="fab fa-linkedin-in text-gray-700 text-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Jim Varghese AM</h3>
+                        <p class="text-gray-500 text-sm mb-4">Chair & Strategic Advisor</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Awarded Member of the Order of Australia for significant service to public administration and multicultural affairs.
+                        </p>
+                        <div class="mt-6 pt-4 border-t border-gray-100 flex justify-between items-center">
+                            <a href="https://www.linkedin.com/in/jim-varghese-am-062b3110/" 
+                               target="_blank"
+                               class="text-sm text-saffron font-medium hover:text-saffron/80 transition-colors flex items-center">
+                                Connect on LinkedIn
+                                <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 3: Sheba Nandkeolyar -->
+                <div class="team-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl animate-fade-in-up stagger-delay-3 opacity-0">
+                    <div class="relative overflow-hidden h-72">
+                        <img 
+                            src="https://aibc.org.au/wp-content/uploads/2023/12/Sheba-Nandeolyar-e1703220012690.jpg" 
+                            alt="Sheba Nandkeolyar"
+                            class="team-image w-full h-full object-cover object-center"
+                        >
+                        <div class="absolute inset-0 gradient-overlay opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6 w-full">
+                                <a href="https://www.linkedin.com/in/shebanandkeolyar3/" 
+                                   target="_blank" 
+                                   class="inline-flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-lg linkedin-icon">
+                                    <i class="fab fa-linkedin-in text-gray-700 text-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Sheba Nandkeolyar</h3>
+                        <p class="text-gray-500 text-sm mb-4">CEO & Business Leader</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Award-winning entrepreneur and business leader with expertise in Australia-India business relations and digital transformation.
+                        </p>
+                        <div class="mt-6 pt-4 border-t border-gray-100 flex justify-between items-center">
+                            <a href="https://www.linkedin.com/in/shebanandkeolyar3/" 
+                               target="_blank"
+                               class="text-sm text-saffron font-medium hover:text-saffron/80 transition-colors flex items-center">
+                                Connect on LinkedIn
+                                <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 4: Dipen Rughani -->
+                <div class="team-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl animate-fade-in-up stagger-delay-4 opacity-0">
+                    <div class="relative overflow-hidden h-72">
+                        <img 
+                            src="https://aibc.org.au/wp-content/uploads/2023/12/Dipen-Rughani-e1656653848523.png" 
+                            alt="Dipen Rughani"
+                            class="team-image w-full h-full object-cover object-center"
+                        >
+                        <div class="absolute inset-0 gradient-overlay opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6 w-full">
+                                <a href="https://www.linkedin.com/in/dipen-rughani-gaicd-6522093/" 
+                                   target="_blank" 
+                                   class="inline-flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-lg linkedin-icon">
+                                    <i class="fab fa-linkedin-in text-gray-700 text-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Dipen Rughani</h3>
+                        <p class="text-gray-500 text-sm mb-4">GAICD, Business Strategist</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Governance and strategy expert with deep experience in cross-border investments and international business development.
+                        </p>
+                        <div class="mt-6 pt-4 border-t border-gray-100 flex justify-between items-center">
+                            <a href="https://www.linkedin.com/in/dipen-rughani-gaicd-6522093/" 
+                               target="_blank"
+                               class="text-sm text-saffron font-medium hover:text-saffron/80 transition-colors flex items-center">
+                                Connect on LinkedIn
+                                <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= GOVERNANCE NOTE ================= -->
+<section class="py-16 bg-[#0C2340] text-white">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+    <h3 class="text-2xl font-bold mb-4">Commitment to Governance & Transparency</h3>
+    <p class="text-white/85 text-sm leading-relaxed">
+      The Australia India Bridge Foundation operates with strong governance
+      principles, transparency, and accountability. Our leadership and advisory
+      bodies work collaboratively to ensure integrity, inclusivity, and long-term
+      impact across all initiatives.
+    </p>
+  </div>
+</section>
+
+    <!-- JavaScript for animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            // Observe all animated elements
+            document.querySelectorAll('.animate-fade-in-up').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Add hover effect for team cards
+            document.querySelectorAll('.team-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Smooth scroll for contact link
+            document.querySelector('a[href="#contact"]')?.addEventListener('click', function(e) {
+                e.preventDefault();
+                const contactSection = document.querySelector('#contact');
+                if (contactSection) {
+                    contactSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                } else {
+                    window.location.href = '/contact.html';
+                }
+            });
+        });
+    </script>
+
+    <section class="py-20">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+
+    <img src="images/Ach.jpg"
+         class="w-48 h-48 mx-auto rounded-full object-cover mb-6">
+
+    <h3 class="text-2xl font-bold">Dr. Achyuta Samanta</h3>
+    <p class="text-sm text-gray-600 mb-4">
+      Founder – KIIT & KISS | Former Hon’ble MP (Lok Sabha), India
+    </p>
+
+    <p class="text-gray-700 leading-relaxed">
+      Dr. Achyuta Samanta brings deep expertise in education, social development,
+      and institutional leadership, contributing valuable guidance to the
+      Foundation’s community and social impact initiatives.
+    </p>
+
+  </div>
 </section>
 
 <!-- ================= ADVISORY COUNCIL ================= -->
@@ -169,43 +514,10 @@
   </div>
 </section>
 
-<!-- ================= GOVERNANCE NOTE ================= -->
-<section class="py-16 bg-[#0C2340] text-white">
-  <div class="max-w-5xl mx-auto px-6 text-center">
-    <h3 class="text-2xl font-bold mb-4">Commitment to Governance & Transparency</h3>
-    <p class="text-white/85 text-sm leading-relaxed">
-      The Australia India Bridge Foundation operates with strong governance
-      principles, transparency, and accountability. Our leadership and advisory
-      bodies work collaboratively to ensure integrity, inclusivity, and long-term
-      impact across all initiatives.
-    </p>
-  </div>
-</section>
-<section class="py-20">
-  <div class="max-w-5xl mx-auto px-6 text-center">
 
-    <img src="images/deepak-vinayak.jpg"
-         alt="Deepak Vinayak OAM JP"
-         class="w-56 h-56 mx-auto rounded-full object-cover mb-6">
-
-    <h2 class="text-2xl font-bold">Deepak Vinayak OAM JP</h2>
-    <p class="text-sm text-gray-600 mb-4">
-      Founder & Chairperson
-    </p>
-
-    <p class="text-gray-700 leading-relaxed max-w-3xl mx-auto">
-      Deepak Vinayak OAM JP is the Founder and Chairperson of the Australia India
-      Bridge Foundation. He has played a significant role in shaping Australia–India
-      engagement, including contributions aligned with Victoria’s long-term India
-      Strategy. His leadership reflects a commitment to inclusive growth, community
-      empowerment, and strengthening people-to-people ties between Victoria and India.
-    </p>
-
-  </div>
-</section>
 
 <!-- ================= EXECUTIVE OFFICE ================= -->
-<section class="py-20 bg-gray-50">
+<!-- <section class="py-20 bg-gray-50">
   <div class="max-w-7xl mx-auto px-6">
 
     <h2 class="text-3xl font-bold text-center mb-12">Executive Office</h2>
@@ -238,10 +550,10 @@
 
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- ================= BOARD MEMBERS ================= -->
-<section class="py-20">
+<!-- <section class="py-20">
   <div class="max-w-7xl mx-auto px-6">
 
     <h2 class="text-3xl font-bold text-center mb-12">Board Members</h2>
@@ -268,7 +580,7 @@
 
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- ================= ADVISORY COUNCIL ================= -->
 <section class="py-20 bg-gray-50">
@@ -279,19 +591,19 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
 
       <div>
-        <img src="images/iwan-walters.jpg" class="w-36 h-36 mx-auto rounded-full object-cover mb-4">
+        <img src="images/Iwan-Walters-MP-20234.webp" class="w-36 h-36 mx-auto rounded-full object-cover mb-4">
         <h4 class="font-semibold">Iwan Walters MP</h4>
         <p class="text-xs text-gray-600">Former MP · Victoria</p>
       </div>
 
       <div>
-        <img src="images/dr-tien-kieu.jpg" class="w-36 h-36 mx-auto rounded-full object-cover mb-4">
+        <img src="images/Tien Kieu.webp" class="w-36 h-36 mx-auto rounded-full object-cover mb-4">
         <h4 class="font-semibold">Dr. Tien Kieu</h4>
         <p class="text-xs text-gray-600">Former MP · Victoria</p>
       </div>
 
       <div>
-        <img src="images/sujeet-kumar.jpg" class="w-36 h-36 mx-auto rounded-full object-cover mb-4">
+        <img src="images/sujjet-500x500.jpg" class="w-36 h-36 mx-auto rounded-full object-cover mb-4">
         <h4 class="font-semibold">Shri Sujeet Kumar</h4>
         <p class="text-xs text-gray-600">
           Hon’ble MP (Rajya Sabha), Parliament of India
@@ -299,7 +611,7 @@
       </div>
 
       <div>
-        <img src="images/luba-grigorovitch.jpg" class="w-36 h-36 mx-auto rounded-full object-cover mb-4">
+        <img src="images/Grigorovitch.jpg" class="w-36 h-36 mx-auto rounded-full object-cover mb-4">
         <h4 class="font-semibold">Luba Grigorovitch MP</h4>
         <p class="text-xs text-gray-600">Member of Parliament · Victoria</p>
       </div>
@@ -309,25 +621,7 @@
 </section>
 
 <!-- ================= SPECIAL ADVISOR ================= -->
-<section class="py-20">
-  <div class="max-w-5xl mx-auto px-6 text-center">
 
-    <img src="images/achyuta-samanta.jpg"
-         class="w-48 h-48 mx-auto rounded-full object-cover mb-6">
-
-    <h3 class="text-2xl font-bold">Dr. Achyuta Samanta</h3>
-    <p class="text-sm text-gray-600 mb-4">
-      Founder – KIIT & KISS | Former Hon’ble MP (Lok Sabha), India
-    </p>
-
-    <p class="text-gray-700 leading-relaxed">
-      Dr. Achyuta Samanta brings deep expertise in education, social development,
-      and institutional leadership, contributing valuable guidance to the
-      Foundation’s community and social impact initiatives.
-    </p>
-
-  </div>
-</section>
 
 <!-- ================= STRATEGIC CONTEXT ================= -->
 <section class="py-20 bg-[#0C2340] text-white">

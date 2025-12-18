@@ -14,7 +14,8 @@
                         primary: '#0C2340',
                         secondary: '#D4AF37',
                         accent: '#1E3A5F',
-                        light: '#F8F9FA'
+                        light: '#F8F9FA',
+                        saffron: '#FF9933'
                     },
                     fontFamily: {
                         sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -387,15 +388,498 @@
 
 
 
+<!-- ================= FLOATING CHAT ================= -->
+<div class="chat-wrapper">
 
-    <!-- Services Section -->
-    <section class="relative py-20  text-[#0C2340]">
+  <!-- Toggle Button -->
+  <button id="chatToggle" class="chat-toggle">
+    >
+  </button>
+
+  <!-- Chat Box -->
+  <div id="chatBox" class="chat-box closed">
+
+    <!-- Header -->
+    <div class="chat-header">
+      <span>Chat with Us</span>
+      <button id="chatClose" class="chat-close">&lt;</button>
+    </div>
+
+    <!-- Body -->
+    <div class="chat-body">
+      <p class="chat-text">How can we help you?</p>
+
+      <div class="quick-questions">
+        <button>What services do you offer?</button>
+        <button>How can I contact your team?</button>
+        <button>Do you support partnerships?</button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="chat-footer">
+      <input type="text" placeholder="Type your question..." />
+      <button class="send-btn">Send</button>
+    </div>
+
+  </div>
+</div>
+<style>
+/* ================= CHAT WRAPPER ================= */
+.chat-wrapper {
+  position: fixed;
+  right: 0;
+  bottom: 20px;
+  z-index: 9999;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+/* ================= TOGGLE BUTTON ================= */
+.chat-toggle {
+  position: fixed;
+  right: 0;
+  bottom: 40%;
+  background: #0C2340;
+  color: #fff;
+  border: none;
+  padding: 12px 14px;
+  border-radius: 8px 0 0 8px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: -4px 6px 15px rgba(0,0,0,0.2);
+}
+
+/* ================= CHAT BOX ================= */
+.chat-box {
+  position: fixed;
+  right: 0;
+  bottom: 20px;
+  width: 320px;
+  height: 420px;
+  background: #ffffff;
+  border-radius: 14px 0 0 14px;
+  box-shadow: -10px 15px 40px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.35s ease-in-out;
+}
+
+/* OPEN STATE */
+.chat-box.open {
+  transform: translateX(0);
+}
+
+/* CLOSED STATE */
+.chat-box.closed {
+  transform: translateX(100%);
+}
+
+/* ================= HEADER ================= */
+.chat-header {
+  background: #0C2340;
+  color: white;
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* CLOSE BUTTON */
+.chat-close {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* ================= BODY ================= */
+.chat-body {
+  padding: 14px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.chat-text {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+/* QUICK QUESTIONS */
+.quick-questions button {
+  display: block;
+  width: 100%;
+  background: #F1F4F8;
+  border: 1px solid #E2E8F0;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.quick-questions button:hover {
+  background: #E6ECF5;
+}
+
+/* ================= FOOTER ================= */
+.chat-footer {
+  padding: 12px;
+  border-top: 1px solid #E5E7EB;
+  display: flex;
+  gap: 8px;
+}
+
+.chat-footer input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #CBD5E1;
+  outline: none;
+}
+
+.send-btn {
+  background: #0C2340;
+  color: white;
+  border: none;
+  padding: 0 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+</style>
+
+    <!-- Founder Section -->
+
+<section class="py-20">
+    <div class="flex items-center justify-center mb-6">
+                        <!-- <div class="w-12 h-0.5 bg-gradient-to-r from-blue-600 text-secondary to-purple-600"></div> -->
+                         <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-secondary to-transparent"></div>
+                        <span class="ml-3 text-xs font-semibold tracking-wider text-gray-900  uppercase">Founder</span>
+                        <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-secondary to-transparent"></div>
+                    </div>
+  <div class="max-w-5xl mx-auto px-6 text-center"><br>
+
+    <img src="images/F&C.jpg"
+         alt="Deepak Vinayak OAM JP"
+         class="w-56 h-56 mx-auto rounded-full object-cover mb-6">
+
+    <h2 class="text-2xl font-bold">Deepak Vinayak OAM JP</h2>
+    <p class="text-sm text-gray-600 mb-4">
+      Founder & Chairperson
+    </p>
+
+    <p class="text-gray-700 leading-relaxed max-w-3xl mx-auto">
+      Deepak Vinayak OAM JP is the Founder and Chairperson of the Australia India
+      Bridge Foundation. He has played a significant role in shaping Australia–India
+      engagement, including contributions aligned with Victoria’s long-term India
+      Strategy. His leadership reflects a commitment to inclusive growth, community
+      empowerment, and strengthening people-to-people ties between Victoria and India.
+    </p>
+
+  </div>
+</section>
+
+<section class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-12 md:mb-16 animate-fade-in">
+                <div class="inline-flex items-center mb-4">
+                    <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-[#FF9933] to-transparent"></div>
+                    <span class="mx-3 text-sm font-semibold uppercase tracking-wider text-[#FF9933]">Media & Updates</span>
+                    <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-[#FF9933] to-transparent"></div>
+                </div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    Latest News & Announcements
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Stay informed about the latest developments, partnerships, and initiatives from the Australia India Business Council.
+                </p>
+            </div>
+
+            <!-- News Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- News Item 1 -->
+                <article class="news-card bg-white rounded-xl p-6 shadow-sm animate-fade-in stagger-delay-1 opacity-0">
+                    <div class="mb-4">
+                        <span class="date-badge text-sm text-gray-500 font-medium">23 September 2025</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4 leading-tight">
+                        <a href="" 
+                           target="_blank" 
+                           class="hover:text-[#FF9933] transition-colors duration-200">
+                            CPA Australia signs MoU with Australia India Business Council at conference celebrating benefits of global trade
+                        </a>
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        CPA Australia and the Australia India Business Council today signed a Memorandum of Understanding (MoU) as a sign of future collaboration to strengthen business ties between the two nations.
+                    </p>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                        <a href="" 
+                           target="_blank"
+                           class="read-more text-[#FF9933] font-semibold text-sm flex items-center">
+                            Read Full Article
+                            <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                        <span class="text-xs text-gray-400 px-3 py-1 bg-gray-50 rounded-full">
+                            Partnership
+                        </span>
+                    </div>
+                </article>
+
+                <!-- News Item 2 -->
+                <article class="news-card bg-white rounded-xl p-6 shadow-sm animate-fade-in stagger-delay-2 opacity-0">
+                    <div class="mb-4">
+                        <span class="date-badge text-sm text-gray-500 font-medium">8 March 2025</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4 leading-tight">
+                        <a href="" 
+                           target="_blank" 
+                           class="hover:text-[#FF9933] transition-colors duration-200">
+                            AIBF Celebrates International Women's Day: Recognising Women Driving Change Across Australia and India
+                        </a>
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        The Australia India Business Council Ltd (AIBF) proudly joins the global celebration of International Women's Day, recognising the remarkable contributions of women leaders across business sectors.
+                    </p>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                        <a href="" 
+                           target="_blank"
+                           class="read-more text-[#FF9933] font-semibold text-sm flex items-center">
+                            Read Full Article
+                            <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                        <span class="text-xs text-gray-400 px-3 py-1 bg-gray-50 rounded-full">
+                            Events
+                        </span>
+                    </div>
+                </article>
+
+                <!-- News Item 3 -->
+                <article class="news-card bg-white rounded-xl p-6 shadow-sm animate-fade-in stagger-delay-3 opacity-0">
+                    <div class="mb-4">
+                        <span class="date-badge text-sm text-gray-500 font-medium">Media Statement</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4 leading-tight">
+                        <a href="" 
+                           target="_blank" 
+                           class="hover:text-[#FF9933] transition-colors duration-200">
+                            National Chair Media Statement
+                        </a>
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        The Australia India Business Council (AIBF) acknowledges DFAT's recent travel advisory updates for certain regions of India. We respect DFAT's role in ensuring Australian travelers' safety.
+                    </p>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                        <a href="" 
+                           target="_blank"
+                           class="read-more text-[#FF9933] font-semibold text-sm flex items-center">
+                            Read Full Article
+                            <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                        <span class="text-xs text-gray-400 px-3 py-1 bg-gray-50 rounded-full">
+                            Statement
+                        </span>
+                    </div>
+                </article>
+
+                <!-- News Item 4 -->
+                <article class="news-card bg-white rounded-xl p-6 shadow-sm animate-fade-in stagger-delay-4 opacity-0">
+                    <div class="mb-4">
+                        <span class="date-badge text-sm text-gray-500 font-medium">Leadership Update</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4 leading-tight">
+                        <a href="" 
+                           target="_blank" 
+                           class="hover:text-[#FF9933] transition-colors duration-200">
+                            Australia India Business Council Announces Election of New National Chair and National Vice Chair
+                        </a>
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        The Australia India Business Council (AIBF), the leading organization dedicated to enhancing trade and investment between Australia and India, is pleased to announce new leadership appointments.
+                    </p>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                        <a href="" 
+                           target="_blank"
+                           class="read-more text-[#FF9933] font-semibold text-sm flex items-center">
+                            Read Full Article
+                            <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                        <span class="text-xs text-gray-400 px-3 py-1 bg-gray-50 rounded-full">
+                            Leadership
+                        </span>
+                    </div>
+                </article>
+
+                <!-- News Item 5 -->
+                <article class="news-card bg-white rounded-xl p-6 shadow-sm animate-fade-in stagger-delay-5 opacity-0">
+                    <div class="mb-4">
+                        <span class="date-badge text-sm text-gray-500 font-medium">Partnership</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4 leading-tight">
+                        <a href="" 
+                           target="_blank" 
+                           class="hover:text-[#FF9933] transition-colors duration-200">
+                            AIBF and Indian Council of Arbitration (ICA) sign MOU to facilitate trade arbitration
+                        </a>
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        As bilateral trade between Australia and India currently exceeds $50 Billion and continues to grow, this MOU establishes frameworks for dispute resolution in business engagements.
+                    </p>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                        <a href="" 
+                           target="_blank"
+                           class="read-more text-[#FF9933] font-semibold text-sm flex items-center">
+                            Read Full Article
+                            <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                        <span class="text-xs text-gray-400 px-3 py-1 bg-gray-50 rounded-full">
+                            Arbitration
+                        </span>
+                    </div>
+                </article>
+
+                <!-- News Item 6 -->
+                <article class="news-card bg-white rounded-xl p-6 shadow-sm animate-fade-in stagger-delay-6 opacity-0">
+                    <div class="mb-4">
+                        <span class="date-badge text-sm text-gray-500 font-medium">20 March 2024</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4 leading-tight">
+                        <a href="" 
+                           target="_blank" 
+                           class="hover:text-[#FF9933] transition-colors duration-200">
+                            "Holi in the House" hosted by AIBF celebrating the Launch of NSW Parliamentary Friends of India
+                        </a>
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        The NSW Parliamentary Friends of India will encourage collaborations, fostering of relations and friendships between the people of both countries.
+                    </p>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                        <a href="" 
+                           target="_blank"
+                           class="read-more text-[#FF9933] font-semibold text-sm flex items-center">
+                            Read Full Article
+                            <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                        <span class="text-xs text-gray-400 px-3 py-1 bg-gray-50 rounded-full">
+                            Cultural Event
+                        </span>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Pagination -->
+            <nav class="flex justify-center items-center space-x-2 mt-12 animate-fade-in" aria-label="Pagination">
+                <span aria-current="page" class="pagination-item w-10 h-10 flex items-center justify-center rounded-lg font-medium active">
+                    1
+                </span>
+                <a href="" 
+                   class="pagination-item w-10 h-10 flex items-center justify-center rounded-lg font-medium text-gray-700 hover:text-[#FF9933]">
+                    2
+                </a>
+                <a href="" 
+                   class="pagination-item w-10 h-10 flex items-center justify-center rounded-lg font-medium text-gray-700 hover:text-[#FF9933]">
+                    3
+                </a>
+                <a href="" 
+                   class="pagination-item w-10 h-10 flex items-center justify-center rounded-lg font-medium text-gray-700 hover:text-[#FF9933]">
+                    4
+                </a>
+                <a href="" 
+                   class="pagination-item w-10 h-10 flex items-center justify-center rounded-lg font-medium text-gray-700 hover:text-[#FF9933]">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </nav>
+
+            
+        </div>
+    </section>
+
+    <!-- JavaScript for animations and interactions -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            // Observe all animated elements
+            document.querySelectorAll('.animate-fade-in').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Add click effect for news cards
+            document.querySelectorAll('.news-card').forEach(card => {
+                card.addEventListener('click', function(e) {
+                    // Only trigger if not clicking on a link directly
+                    if (!e.target.closest('a')) {
+                        const link = this.querySelector('a[href]');
+                        if (link) {
+                            window.open(link.href, '_blank');
+                        }
+                    }
+                });
+                
+                // Add cursor pointer to entire card
+                card.style.cursor = 'pointer';
+            });
+
+            // Pagination hover effects
+            document.querySelectorAll('.pagination-item').forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    if (!this.classList.contains('active')) {
+                        this.style.transform = 'scale(1.1)';
+                    }
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+
+            // Newsletter subscription
+            const subscribeBtn = document.querySelector('button[class*="bg-\\[\\#FF9933\\]"]');
+            const emailInput = document.querySelector('input[type="email"]');
+            
+            if (subscribeBtn && emailInput) {
+                subscribeBtn.addEventListener('click', function() {
+                    const email = emailInput.value.trim();
+                    if (email && email.includes('@')) {
+                        alert('Thank you for subscribing to our newsletter!');
+                        emailInput.value = '';
+                    } else {
+                        alert('Please enter a valid email address.');
+                        emailInput.focus();
+                    }
+                });
+                
+                // Allow Enter key to subscribe
+                emailInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        subscribeBtn.click();
+                    }
+                });
+            }
+        });
+    </script>
+
+
+    <!-- Services Section Potential Grwth -->
+    <!-- <section class="relative py-20  text-[#0C2340]">
   <div class="max-w-7xl mx-auto px-6 lg:px-12">
 
-    <!-- Section Heading -->
+    
     <div class="max-w-3xl mb-14">
         <div class="flex items-center mb-6">
-                        <!-- <div class="w-12 h-0.5 bg-gradient-to-r from-blue-600 text-secondary to-purple-600"></div> -->
+                        
                          <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-secondary to-transparent"></div>
                         <span class="ml-3 text-xs font-semibold tracking-wider text-gray-900  uppercase">Potential Growth</span>
                         <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-secondary to-transparent"></div>
@@ -409,10 +893,10 @@
       </p>
     </div>
 
-    <!-- Cards Grid -->
+   
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-      <!-- Card 1 -->
+      
       <div class="group rounded-2xl overflow-hidden bg-white/5 backdrop-blur border border-white/10 hover:border-[#C9A24D]/40 transition">
         <img src="images/coal.webp"
              class="h-48 w-full object-cover group-hover:scale-105 transition duration-500"
@@ -426,7 +910,7 @@
         </div>
       </div>
 
-      <!-- Card 2 -->
+      
       <div class="group rounded-2xl overflow-hidden bg-white/5 backdrop-blur border border-white/10 hover:border-[#C9A24D]/40 transition">
         <img src="images/Edu1.jpg"
              class="h-48 w-full object-cover group-hover:scale-105 transition duration-500"
@@ -440,7 +924,7 @@
         </div>
       </div>
 
-      <!-- Card 3 -->
+      
       <div class="group rounded-2xl overflow-hidden bg-white/5 backdrop-blur border border-white/10 hover:border-[#C9A24D]/40 transition">
         <img src="images/It.jpg"
              class="h-48 w-full object-cover group-hover:scale-105 transition duration-500"
@@ -454,7 +938,7 @@
         </div>
       </div>
 
-      <!-- Card 4 -->
+    
       <div class="group rounded-2xl overflow-hidden bg-white/5 backdrop-blur border border-white/10 hover:border-[#C9A24D]/40 transition">
         <img src="images/Plant.jpg"
              class="h-48 w-full object-cover group-hover:scale-105 transition duration-500"
@@ -468,7 +952,7 @@
         </div>
       </div>
 
-      <!-- Card 5 -->
+    
       <div class="group rounded-2xl overflow-hidden bg-white/5 backdrop-blur border border-white/10 hover:border-[#C9A24D]/40 transition">
         <img src="images/solar.jpg"
              class="h-48 w-full object-cover group-hover:scale-105 transition duration-500"
@@ -482,7 +966,7 @@
         </div>
       </div>
 
-      <!-- Card 6 -->
+      
       <div class="group rounded-2xl overflow-hidden bg-white/5 backdrop-blur border border-white/10 hover:border-[#C9A24D]/40 transition">
         <img src="images/Lead.jpg"
              class="h-48 w-full object-cover group-hover:scale-105 transition duration-500"
@@ -498,45 +982,20 @@
 
     </div>
   </div>
-</section>
+</section> -->
 
-
-    <!-- Stats Section -->
-    <!-- <section class="bg-gray-900 to-white text-white section-padding">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <p class="text-4xl lg:text-5xl font-bold mb-2">15+</p>
-                    <p class="text-gray-500 font-semibold">Years of Excellence</p>
-                </div>
-                <div class="text-center">
-                    <p class="text-4xl lg:text-5xl font-bold mb-2">500+</p>
-                    <p class="text-gray-500 font-semibold">Leaders Connected</p>
-                </div>
-                <div class="text-center">
-                    <p class="text-4xl lg:text-5xl font-bold mb-2">100+</p>
-                    <p class="text-gray-500 font-semibold">Successful Partnerships</p>
-                </div>
-                <div class="text-center">
-                    <p class="text-4xl lg:text-5xl font-bold mb-2">$2B+</p>
-                    <p class="text-gray-500 font-semibold">Trade Facilitated</p>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-
-<section class="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <!-- trade relation -->
+<!-- <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <!-- Header Section -->
+       
          
          
         <div class="text-center mb-16">
             
             <div class="inline-flex items-center space-x-2 text-gray  font-semibold uppercase text-xs tracking-wider mb-4">
-                <!-- <div class="w-2 h-2 bg-gray-900 rounded-full"></div> -->
+                
                  <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-secondary to-transparent"></div>
                 <span>Trade Relations</span>
                 <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-secondary to-transparent"></div>
@@ -567,15 +1026,15 @@
             </p>
         </div>
 
-        <!-- Main Content Grid -->
+        
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
 
-            <!-- Trade Composition (Pie Chart) -->
+            
             <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-200">
                 <h3 class="text-2xl font-bold text-gray-900 mb-8">Trade Composition</h3>
 
                 <div class="relative h-64 mb-8">
-                    <!-- Australia Pie Chart -->
+                   
                     <svg class="absolute w-full h-full" viewBox="0 0 100 100">
                         <circle cx="50" cy="50" r="40" fill="none" stroke="#1e3a8a" stroke-width="20"
                                 stroke-dasharray="65 100" transform="rotate(-90 50 50)" />
@@ -584,7 +1043,7 @@
                                 transform="rotate(-90 50 50)" />
                     </svg>
 
-                    <!-- India Pie Chart (Inner) -->
+                   
                     <svg class="absolute w-full h-full" viewBox="0 0 100 100">
                         <circle cx="50" cy="50" r="25" fill="none" stroke="#111827" stroke-width="15"
                                 stroke-dasharray="70 100" transform="rotate(-90 50 50)" />
@@ -601,7 +1060,7 @@
                     </div>
                 </div>
 
-                <!-- Legend -->
+               
                 <div class="space-y-6">
                     <div class="flex items-center justify-between">
                         <div class="flex items-center">
@@ -627,7 +1086,7 @@
                 </div>
             </div>
 
-            <!-- Category Breakdown -->
+        
             <div class="lg:col-span-2 bg-white rounded-2xl shadow-xl p-8 border border-gray-200">
 
                 <div class="text-center mb-10">
@@ -637,7 +1096,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-                    <!-- Australia Exports -->
+                   
                     <div class="bg-white rounded-xl border border-gray-200 p-6">
                         <h4 class="font-bold text-gray-900 mb-4">Australia</h4>
 
@@ -680,8 +1139,7 @@
                         </div>
                     </div>
 
-                    <!-- India Exports -->
-                    <!-- India Exports -->
+                    
 <div class="bg-white rounded-xl border border-gray-200 p-6">
     <h4 class="font-bold text-gray-900 mb-4">India</h4>
 
@@ -727,7 +1185,7 @@
 
                 </div>
 
-                <!-- Combined Stats -->
+                
                 <div class="mt-10 grid grid-cols-3 gap-3 text-center">
                     <div class="bg-blue-50 p-4 rounded-lg">
                         <div class="text-xl font-bold text-blue-900">65%</div>
@@ -746,7 +1204,6 @@
             </div>
         </div>
 
-        <!-- Conclusion -->
         <div class="mt-16 bg-gradient-to-r from-blue-50 via-white to-gray-50 p-10 rounded-2xl shadow-lg border border-gray-200">
             <h3 class="text-2xl font-bold text-gray-900 text-center mb-3">
                 Strategic Trade Outlook
@@ -765,27 +1222,24 @@
         </div>
 
     </div>
-</section>
-
-
-
+</section> -->
 
     <!-- ========================= -->
 <!-- SUCCESS STORIES - INNOVATIVE SECTION -->
 <!-- ========================= -->
 
-<section class="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+<!-- <section class="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
 
-    <!-- Floating Gradient Shapes -->
+    
     <div class="absolute top-0 left-0 w-72 h-72 bg-[#D4AF37]/20 blur-3xl rounded-full -z-10"></div>
     <div class="absolute bottom-0 right-0 w-96 h-96 bg-[#0C2340]/10 blur-3xl rounded-full -z-10"></div>
 
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
 
-        <!-- Header -->
+        
         <div class="text-center mb-16">
             <div class="inline-flex items-center space-x-2 text-gray  font-semibold uppercase text-sm tracking-wider mb-4">
-                <!-- <div class="w-2 h-2 bg-gray-900 rounded-full"></div> -->
+                
                  <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-secondary to-transparent"></div>
                 <span>Success Stories</span>
                 <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-secondary to-transparent"></div>
@@ -800,25 +1254,22 @@
 
         
 
-        <!-- ===================== -->
-        <!-- CASE STUDY 2 - AGRICULTURE -->
-        <!-- ===================== -->
-
+        
         <div class="grid lg:grid-cols-2 gap-12 items-center mb-20 lg:flex-row-reverse">
 
-            <!-- Right: Image -->
+            
             <div class="relative group order-last lg:order-first">
                 <img src="images/Arg.png" alt="Agriculture Innovation"
                      class="rounded-2xl shadow-xl w-full group-hover:scale-105 transition-transform duration-500">
                 <div class="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/40 to-transparent rounded-2xl"></div>
 
-                <!-- Floating badge -->
+                
                 <div class="absolute bottom-4 left-4 bg-white/80 backdrop-blur-md px-4 py-2 rounded-lg shadow-md">
                     <p class="text-sm font-semibold text-orange-500">30% Higher Crop Yields</p>
                 </div>
             </div>
 
-            <!-- Left: Content -->
+            
             <div>
                 <h3 class="text-3xl font-bold text-[#0C2340] mb-4">Agriculture Innovations</h3>
                 <p class="text-gray-600 text-lg leading-relaxed mb-6">
@@ -835,25 +1286,22 @@
             </div>
         </div>
 
-        <!-- ===================== -->
-        <!-- CASE STUDY 3 - EDUCATION EXCHANGE -->
-        <!-- ===================== -->
-
+        
         <div class="grid lg:grid-cols-2 gap-12 items-center">
 
-            <!-- Left: Image -->
+            
             <div class="relative group">
                 <img src="images/Edu.png" alt="Education Exchange"
                      class="rounded-2xl shadow-xl w-full group-hover:scale-105 transition-transform duration-500">
                 <div class="absolute inset-0 bg-gradient-to-br from-[#0C2340]/40 to-transparent rounded-2xl"></div>
 
-                <!-- Floating Badge -->
+               
                 <div class="absolute bottom-4 left-4 bg-white/80 backdrop-blur-md px-4 py-2 rounded-lg shadow-md">
                     <p class="text-sm font-semibold text-orange-500">1,000+ Students Benefited</p>
                 </div>
             </div>
 
-            <!-- Right: Content -->
+            
             <div>
                 <h3 class="text-3xl font-bold text-[#0C2340] mb-4">Education Exchange</h3>
                 <p class="text-gray-600 text-lg leading-relaxed mb-6">
@@ -870,24 +1318,22 @@
             </div>
         </div>
 
-        <!-- ===================== -->
-        <!-- CASE STUDY 1 - HEALTHCARE -->
-        <!-- ===================== -->
+       
 
         <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
-            <!-- Left: Image -->
+            
             <div class="relative group">
                 <img src="images/Hsp.png" alt="Healthcare Collaboration"
                      class="rounded-2xl shadow-xl w-full group-hover:scale-105 transition-transform duration-500">
                 <div class="absolute inset-0 bg-gradient-to-br from-[#0C2340]/40 to-transparent rounded-2xl"></div>
 
-                <!-- Floating Badge -->
+                
                 <div class="absolute bottom-4 left-4 bg-white/80 backdrop-blur-md px-4 py-2 rounded-lg shadow-md">
                     <p class="text-sm font-semibold text-orange-500">2M+ Lives Impacted</p>
                 </div>
             </div>
 
-            <!-- Right: Content -->
+            
             <div>
                 <h3 class="text-3xl font-bold text-[#0C2340] mb-4">Healthcare Collaboration</h3>
                 <p class="text-gray-600 text-lg leading-relaxed mb-6">
@@ -906,23 +1352,20 @@
         </div>
 
     </div>
-</section>
-
-    
-
+</section> -->
 
 
     <!-- Partners Section -->
-    <section class="section-padding bg-gradient-to-br from-gray-50 to-white">
+    <!-- <section class="section-padding bg-gradient-to-br from-gray-50 to-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Decorative Background Elements -->
+        
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
             <div class="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full blur-3xl"></div>
             <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-secondary/10 to-primary/10 rounded-full blur-3xl"></div>
         </div>
         
         <div class="relative">
-            <!-- Header -->
+            
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <div class="inline-flex items-center justify-center gap-3 mb-6">
                     <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-secondary to-transparent"></div>
@@ -944,10 +1387,10 @@
                 </p>
             </div>
             
-            <!-- Partner Logos Grid -->
+            
             <div class="relative">
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
-                    <!-- Austrade -->
+                    
                     <div class="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 flex items-center justify-center h-36 hover-lift border border-gray-200 hover:border-primary/20 hover:shadow-xl transition-all duration-300">
                         <div class="text-center">
                             <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -958,7 +1401,7 @@
                         </div>
                     </div>
                     
-                    <!-- Invest India -->
+                    
                     <div class="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 flex items-center justify-center h-36 hover-lift border border-gray-200 hover:border-primary/20 hover:shadow-xl transition-all duration-300">
                         <div class="text-center">
                             <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -969,7 +1412,7 @@
                         </div>
                     </div>
                     
-                    <!-- DFAT -->
+                    
                     <div class="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 flex items-center justify-center h-36 hover-lift border border-gray-200 hover:border-primary/20 hover:shadow-xl transition-all duration-300">
                         <div class="text-center">
                             <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -980,7 +1423,7 @@
                         </div>
                     </div>
                     
-                    <!-- FICCI -->
+                    
                     <div class="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 flex items-center justify-center h-36 hover-lift border border-gray-200 hover:border-primary/20 hover:shadow-xl transition-all duration-300">
                         <div class="text-center">
                             <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -991,7 +1434,7 @@
                         </div>
                     </div>
                     
-                    <!-- CII -->
+                    
                     <div class="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 flex items-center justify-center h-36 hover-lift border border-gray-200 hover:border-primary/20 hover:shadow-xl transition-all duration-300">
                         <div class="text-center">
                             <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -1002,7 +1445,7 @@
                         </div>
                     </div>
                     
-                    <!-- AIBC -->
+                    
                     <div class="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 flex items-center justify-center h-36 hover-lift border border-gray-200 hover:border-primary/20 hover:shadow-xl transition-all duration-300">
                         <div class="text-center">
                             <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -1014,7 +1457,7 @@
                     </div>
                 </div>
                 
-                <!-- Additional Partner Logos (Optional Scroll) -->
+                
                 <div class="mt-10 pt-10 border-t border-gray-200">
                     <div class="flex flex-wrap justify-center items-center gap-6 md:gap-10">
                         <div class="text-gray-400 font-medium text-sm">Also partnering with:</div>
@@ -1027,7 +1470,7 @@
                     </div>
                 </div>
                 
-                <!-- Stats Bar -->
+                
                 <div class="mt-12 bg-gradient-to-r from-primary/50 via-secondary/1 to-primary/50 rounded-2xl p-8">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div class="text-center">
@@ -1045,7 +1488,7 @@
                     </div>
                 </div>
                 
-                <!-- CTA Button -->
+                
                 <div class="mt-12 text-center">
                     <button class="group inline-flex items-center bg-orange-500 text-white px-10 py-4 rounded-xl font-semibold hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                         <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1078,13 +1521,13 @@
 .backdrop-blur-sm {
     backdrop-filter: blur(8px);
 }
-</style>
+</style> -->
 
 <!-- MODERN BENEFITS SECTION -->
-<section class="py-24 bg-bg-gradient-to-br from-gray-50 to-white">
+<!-- <section class="py-24 bg-bg-gradient-to-br from-gray-50 to-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <!-- Header Section -->
+        
         <div class="text-center mb-16">
             <div class="inline-flex items-center mb-4">
                 <div class="flex items-center space-x-2">
@@ -1102,10 +1545,10 @@
             </p>
         </div>
 
-        <!-- Benefits Grid -->
+        
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <!-- Benefit 1: Business Opportunities -->
+            
             <div class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden">
                 <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-50 to-blue-100 rounded-bl-full transform translate-x-8 -translate-y-8"></div>
                 <div class="p-8 relative z-10">
@@ -1150,7 +1593,7 @@
                 </div>
             </div>
 
-            <!-- Benefit 2: Political & Diplomatic Ties -->
+           
             <div class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden">
                 <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-purple-50 to-purple-100 rounded-bl-full transform translate-x-8 -translate-y-8"></div>
                 <div class="p-8 relative z-10">
@@ -1195,7 +1638,7 @@
                 </div>
             </div>
 
-            <!-- Benefit 3: Philanthropic Impact -->
+            
             <div class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden">
                 <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-green-50 to-green-100 rounded-bl-full transform translate-x-8 -translate-y-8"></div>
                 <div class="p-8 relative z-10">
@@ -1240,7 +1683,7 @@
                 </div>
             </div>
 
-            <!-- Benefit 4: Knowledge Exchange -->
+           
             <div class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden">
                 <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-amber-50 to-amber-100 rounded-bl-full transform translate-x-8 -translate-y-8"></div>
                 <div class="p-8 relative z-10">
@@ -1285,7 +1728,7 @@
                 </div>
             </div>
 
-            <!-- Benefit 5: Brand Visibility -->
+            
             <div class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden">
                 <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-red-50 to-red-100 rounded-bl-full transform translate-x-8 -translate-y-8"></div>
                 <div class="p-8 relative z-10">
@@ -1330,7 +1773,7 @@
                 </div>
             </div>
 
-            <!-- Benefit 6: Network Expansion -->
+            
             <div class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden">
                 <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-bl-full transform translate-x-8 -translate-y-8"></div>
                 <div class="p-8 relative z-10">
@@ -1376,7 +1819,7 @@
             </div>
         </div>
 
-        <!-- CTA Section -->
+        
         <div class="mt-20 text-center">
             <div class="bg-gray-200 from-blue-50 to-green-50 rounded-2xl p-12 border border-gray-200 shadow-lg">
                 <h3 class="text-3xl font-bold text-gray-900 mb-4">Ready to Join the Alliance?</h3>
@@ -1394,7 +1837,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
     <!-- CTA Section -->
     <!-- <section class="section-padding gradient-bg text-white">
@@ -1444,5 +1887,24 @@
         });
     </script>
     <script src="js/include.js"></script>
+
+    <script>
+  const chatToggle = document.getElementById('chatToggle');
+  const chatBox = document.getElementById('chatBox');
+  const chatClose = document.getElementById('chatClose');
+
+  chatToggle.addEventListener('click', () => {
+    chatBox.classList.remove('closed');
+    chatBox.classList.add('open');
+    chatToggle.style.display = 'none';
+  });
+
+  chatClose.addEventListener('click', () => {
+    chatBox.classList.remove('open');
+    chatBox.classList.add('closed');
+    chatToggle.style.display = 'block';
+  });
+</script>
+
 </body>
 </html>
