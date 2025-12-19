@@ -5,12 +5,12 @@ class SimpleLanguageManager {
         this.translations = {
             'EN': {
                 'home': 'Home',
-                'about': 'About',
+                'about us': 'About Us',
                 'political': 'Political',
                 'strategic': 'Strategic Approach',
                 'charity': 'Charity',
                 'leadership': 'Leadership',
-                'board': 'Board',
+                'Team': 'Team',
                 'getInTouch': 'Get in Touch',
                 'foundation': 'Foundation',
                 'news': 'News',

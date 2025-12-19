@@ -1,0 +1,22 @@
+<!-- Scroll Navigation Controls -->
+<div id="scroll-controls" class="fixed right-6 bottom-24 z-50 flex flex-col gap-3">
+
+  <!-- Scroll Up -->
+  <button
+    onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+    class="w-12 h-12 rounded-full bg-[#0C2340] text-white shadow-lg hover:bg-[#1E3A5F] transition"
+    aria-label="Scroll Up"
+  >
+    ↑
+  </button>
+
+  <!-- Scroll Down -->
+  <button
+    onclick="window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })"
+    class="w-12 h-12 rounded-full bg-[#0C2340] text-white shadow-lg hover:bg-[#1E3A5F] transition"
+    aria-label="Scroll Down"
+  >
+    ↓
+  </button>
+
+</div>

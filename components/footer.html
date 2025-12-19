@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Australia India Bridge Council - Footer</title>
+    <title>Australia India Bridge Foundation - Footer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Custom animations and styles */
         .hover-lift {
@@ -22,7 +20,7 @@
         }
         .social-icon-hover:hover {
             transform: scale(1.1);
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 4px 12px rgba(255, 153, 51, 0.3);
         }
         
         .link-hover-effect {
@@ -35,7 +33,7 @@
             height: 1px;
             bottom: -2px;
             left: 0;
-            background-color: #D4AF37;
+            background-color: #FF9933;
             transition: width 0.3s ease;
         }
         .link-hover-effect:hover::after {
@@ -51,7 +49,7 @@
             height: 50px;
             background: #0C2340;
             color: white;
-            border: 2px solid #D4AF37;
+            border: 2px solid #FF9933;
             border-radius: 50%;
             cursor: pointer;
             display: none;
@@ -62,7 +60,7 @@
         }
         
         .scroll-to-top:hover {
-            background: #D4AF37;
+            background: #FF9933;
             transform: translateY(-5px);
         }
         
@@ -74,7 +72,7 @@
             height: 50px;
             background: #0C2340;
             color: white;
-            border: 2px solid #D4AF37;
+            border: 2px solid #FF9933;
             border-radius: 50%;
             cursor: pointer;
             display: none;
@@ -85,13 +83,24 @@
         }
         
         .scroll-to-bottom:hover {
-            background: #D4AF37;
+            background: #FF9933;
             transform: translateY(-5px);
         }
         
         /* Newsletter input focus */
         .newsletter-input:focus {
-            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 0 0 3px rgba(255, 153, 51, 0.2);
+        }
+        
+        /* Custom colors */
+        .text-saffron {
+            color: #FF9933;
+        }
+        .bg-saffron {
+            background-color: #FF9933;
+        }
+        .border-saffron {
+            border-color: #FF9933;
         }
     </style>
     <script>
@@ -100,7 +109,7 @@
                 extend: {
                     colors: {
                         primary: "#0C2340",
-                        secondary: "#F5C642",
+                        secondary: "#FF9933",
                         accent: "#1E3A5F",
                         light: "#F8F9FA"
                     },
@@ -113,6 +122,7 @@
     </script>
 </head>
 <body class="bg-gray-50">
+    
     
     <!-- Scroll to top button -->
     <div class="scroll-to-top" id="scrollToTop">
@@ -127,38 +137,97 @@
     <!-- Footer Section -->
     <footer class="bg-[#0C2340] text-white" id="footer">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Main Footer Content -->
-            <div class="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+            <!-- Main Footer Content - 4 Columns -->
+            <div class="py-16 grid grid-cols-1 lg:grid-cols-4 gap-10">
                 
-                <!-- Brand/Logo Column -->
-                <div class="lg:col-span-2">
-                    <div class="flex items-center gap-3 mb-6 hover-lift">
-                        <a href="index.html" class="flex items-center space-x-3">
-                            <div class="w-48 rounded-lg overflow-hidden">
-                                <img src="images/LogoHz.png" alt="Australia India Bridge Council Logo" class="w-full h-full bg-white object-cover">
+                <!-- Column 1: Logo and Description -->
+                <div class="text-center lg:text-left">
+                    <div class="flex justify-center lg:justify-start mb-6 hover-lift">
+                        <a href="index.html" class="flex items-center">
+                            <div class="w-56 rounded-lg overflow-hidden">
+                                <img src="images/LogoHz.png" alt="Australia India Bridge Foundation Logo" class="w-full h-full bg-white object-cover p-2">
                             </div>
                         </a>
                     </div>
                     
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                        Building bridges between Australian and Indian leaders through diplomacy, trade, and cultural exchange since 2010. Fostering stronger bilateral relations through strategic partnerships and collaborative initiatives.
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Building bridges between Australian and Indian leaders through diplomacy, trade, and cultural exchange. Fostering stronger bilateral relations through strategic partnerships and collaborative initiatives.
                     </p>
+                </div>
+                
+                <!-- Column 2: Quick Links -->
+                <div class="text-center lg:text-left">
+                    <h4 class="font-semibold text-lg mb-6 relative inline-block">
+                        Quick Links
+                        <span class="absolute -bottom-2 left-0 w-12 h-0.5 bg-gradient-to-r from-[#FF9933] to-transparent rounded-full"></span>
+                    </h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="index.html">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="about.html">
+                                About Us
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="team.html">
+                                Team
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="#news-section">
+                                News
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="contact.html">
+                                Contact Us
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3: Contact Information -->
+                <div class="text-center lg:text-left">
+                    <h4 class="font-semibold text-lg mb-6 relative inline-block">
+                        Contact Information
+                        <span class="absolute -bottom-2 left-0 w-12 h-0.5 bg-gradient-to-r from-[#FF9933] to-transparent rounded-full"></span>
+                    </h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-center gap-3 lg:justify-start justify-center">
+                            <i class="fas fa-envelope text-[#FF9933] text-base"></i>
+                            <a href="mailto:info@ausindbridge.org.au" class="hover:text-[#FF9933] transition-colors break-words">
+                                info@ausindbridge.org.au
+                            </a>
+                        </li>
+                        <li class="flex items-center gap-3 lg:justify-start justify-center">
+                            <i class="fas fa-phone text-[#FF9933] text-base"></i>
+                            <span>Phone: Coming Soon</span>
+                        </li>
+                        <li class="flex items-center gap-3 lg:justify-start justify-center">
+                            <i class="fas fa-map-marker-alt text-[#FF9933] text-base"></i>
+                            <span>Melbourne, Victoria, Australia – 3000</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4: Social Media -->
+                <div class="text-center lg:text-left">
+                    <h4 class="font-semibold text-lg mb-6 relative inline-block">
+                        Connect With Us
+                        <span class="absolute -bottom-2 left-0 w-12 h-0.5 bg-gradient-to-r from-[#FF9933] to-transparent rounded-full"></span>
+                    </h4>
                     
-                    <div class="flex gap-3">
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-3 mb-8">
                         <!-- LinkedIn -->
                         <a href="https://www.linkedin.com/company/ausindbridgeorg" 
                            target="_blank"
                            class="social-icon-hover w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#0077B5] transition-colors"
                            aria-label="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        
-                        <!-- Twitter/X -->
-                        <a href="https://x.com/ausindbridgeorg" 
-                           target="_blank"
-                           class="social-icon-hover w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-black transition-colors"
-                           aria-label="Twitter/X">
-                            <i class="fab fa-x-twitter"></i>
                         </a>
                         
                         <!-- Facebook -->
@@ -169,20 +238,20 @@
                             <i class="fab fa-facebook-f"></i>
                         </a>
                         
+                        <!-- X (Twitter) -->
+                        <a href="https://x.com/ausindbridgeorg" 
+                           target="_blank"
+                           class="social-icon-hover w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-black transition-colors"
+                           aria-label="X (Twitter)">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        
                         <!-- Instagram -->
                         <a href="https://www.instagram.com/ausindbridgeorg" 
                            target="_blank"
                            class="social-icon-hover w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-gradient-to-r from-purple-500 to-pink-500 transition-colors"
                            aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
-                        </a>
-                        
-                        <!-- YouTube -->
-                        <a href="https://m.youtube.com/@ausindbridgeorg" 
-                           target="_blank"
-                           class="social-icon-hover w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#FF0000] transition-colors"
-                           aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
                         </a>
                         
                         <!-- Threads -->
@@ -192,161 +261,21 @@
                            aria-label="Threads">
                             <i class="fab fa-threads"></i>
                         </a>
+                        
+                        <!-- YouTube -->
+                        <a href="https://m.youtube.com/@ausindbridgeorg" 
+                           target="_blank"
+                           class="social-icon-hover w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#FF0000] transition-colors"
+                           aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
                     </div>
-                </div>
-                
-                <!-- Navigation Column -->
-                <div>
-                    <h4 class="font-semibold text-lg mb-6 relative inline-block">
-                        Navigation
-                        <span class="absolute -bottom-2 left-0 w-8 h-0.5 bg-gradient-to-br from-orange-700 to-blue-50 rounded-full"></span>
-                    </h4>
-                    <ul class="space-y-3">
-                        <li>
-                            <a class=" text-gray-400 hover:text-saffron transition-colors text-sm flex items-center gap-2" href="/">
-                                <i class="fas fa-chevron-right text-saffron text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <!-- <a class=" text-gray-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2" href="/services">
-                                <i class="fas fa-chevron-right text-[#D4AF37] text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                Services
-                            </a> -->
-                        </li>
-                        <li>
-                            <a class=" text-gray-400 hover:text-saffron transition-colors text-sm flex items-center gap-2" href="/about">
-                                <i class="fas fa-chevron-right text-[#D4AF37] text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                About Us
-                            </a>
-                        </li>
-                        <li>
-                            <a class="text-gray-400 hover:text-saffron transition-colors text-sm flex items-center gap-2" href="/story">
-                                <i class="fas fa-chevron-right text-[#D4AF37] text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                Our Story
-                            </a>
-                        </li>
-                        <li>
-                            <a class=" text-gray-400 hover:text-saffron transition-colors text-sm flex items-center gap-2" href="/partners">
-                                <i class="fas fa-chevron-right text-[#D4AF37] text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                Strategic Partners
-                            </a>
-                        </li>
-                        <li>
-                            <a class=" text-gray-400 hover:text-saffron transition-colors text-sm flex items-center gap-2" href="/events">
-                                <i class="fas fa-chevron-right text-[#D4AF37] text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                Events
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Resources Column -->
-                <div>
-                    <h4 class="font-semibold text-lg mb-6 relative inline-block">
-                        Resources
-                        <!-- <span class="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#D4AF37] rounded-full"></span> -->
-                         <span class="absolute -bottom-2 left-0 w-8 h-0.5 bg-gradient-to-br from-orange-700 to-blue-50 rounded-full"></span>
-
-                    </h4>
-                    <ul class="space-y-3">
-                        <li>
-                            <a class=" text-gray-400 hover:text-saffron transition-colors text-sm flex items-center gap-2" href="/reports">
-                                <i class="fas fa-chevron-right text-[#D4AF37] text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                Research & Reports
-                            </a>
-                        </li>
-                        <li>
-                            <a class=" text-gray-400 hover:text-saffron transition-colors text-sm flex items-center gap-2" href="/publications">
-                                <i class="fas fa-chevron-right text-[#D4AF37] text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                Publications
-                            </a>
-                        </li>
-                        <li>
-                            <a class=" text-gray-400 hover:text-saffron transition-colors text-sm flex items-center gap-2" href="/news">
-                                <i class="fas fa-chevron-right text-[#D4AF37] text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                News & Insights
-                            </a>
-                        </li>
-                        <li>
-                            <a class=" text-gray-400 hover:text-saffron transition-colors text-sm flex items-center gap-2" href="/blog">
-                                <i class="fas fa-chevron-right text-[#D4AF37] text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                AIBC Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a class=" text-gray-400 hover:text-saffron transition-colors text-sm flex items-center gap-2" href="/media">
-                                <i class="fas fa-chevron-right text-[#D4AF37] text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                Media Center
-                            </a>
-                        </li>
-                        <li>
-                            <a class=" text-gray-400 hover:text-saffron transition-colors text-sm flex items-center gap-2" href="/careers">
-                                <i class="fas fa-chevron-right text-[#D4AF37] text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                Careers
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Contact & Newsletter Column -->
-                <div class="lg:col-span-1">
-                    <h4 class="font-semibold text-lg mb-6 relative inline-block">
-                        Contact Us
-                        <!-- <span class="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#D4AF37] rounded-full"></span> -->
-                         <span class="absolute -bottom-2 left-0 w-8 h-0.5 bg-gradient-to-br from-orange-700 to-blue-50 rounded-full"></span>
-                    </h4>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-start gap-3 group">
-                            <i class="fas fa-map-marker-alt text-saffron mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform"></i>
-                            <span class="text-gray-400 text-sm group-hover:text-saffron transition-colors">
-                                Level 12, 123 Collins Street<br>
-                                Melbourne, VIC 3000, Australia
-                            </span>
-                        </li>
-                        
-                        <li class="flex items-center gap-3 group">
-                            <i class="fas fa-phone text-saffron flex-shrink-0 group-hover:scale-110 transition-transform"></i>
-                            <a href="tel:+61390000000" class="text-gray-400 text-sm hover:text-saffron transition-colors">
-                                +61 3 9000 0000
-                            </a>
-                        </li>
-                        
-                        <li class="flex items-center gap-3 group">
-                            <i class="fas fa-mobile-alt text-saffron flex-shrink-0 group-hover:scale-110 transition-transform"></i>
-                            <a href="tel:+61400000000" class="text-gray-400 text-sm hover:text-saffron transition-colors">
-                                +61 400 000 000
-                            </a>
-                        </li>
-                        
-                        <li class="flex items-center gap-3 group">
-                            <i class="fas fa-envelope text-saffron flex-shrink-0 group-hover:scale-110 transition-transform"></i>
-                            <a href="mailto:info@aibc.org.au" class="text-gray-400 text-sm hover:text-saffron transition-colors">
-                                info@aibc.org.au
-                            </a>
-                        </li>
-                        
-                        <li class="flex items-center gap-3 group">
-                            <i class="fas fa-envelope text-saffron flex-shrink-0 group-hover:scale-110 transition-transform"></i>
-                            <a href="mailto:partnerships@aibc.org.au" class="text-gray-400 text-sm hover:text-saffron transition-colors">
-                                partnerships@aibc.org.au
-                            </a>
-                        </li>
-                    </ul>
                     
-                    <!-- Newsletter Signup -->
-                    <div class="pt-6 border-t border-white/10">
-                        <h5 class="font-medium mb-3 text-white">Stay Updated</h5>
-                        <p class="text-gray-400 text-sm mb-4">Subscribe to our newsletter for latest updates</p>
-                        <div class="space-y-3">
-                            <!-- <input type="email" 
-                                   placeholder="Your email address" 
-                                   class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-sm focus:outline-none focus:border-[#D4AF37] text-white placeholder-gray-400 newsletter-input"> -->
-                            <button class="w-full px-4 py-3 bg-saffron text-gray-900 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity">
-                                <i class="fas fa-paper-plane mr-2"></i> Subscribe Now
-                            </button>
-                        </div>
-                        <p class="text-gray-500 text-xs mt-3">By subscribing, you agree to our Privacy Policy</p>
+                    <!-- Copyright - Moved to bottom section but keeping here for mobile -->
+                    <div class="lg:hidden mt-8 pt-8 border-t border-white/10">
+                        <p class="text-gray-400 text-sm">
+                            © <span id="currentYear"></span> Australia India Bridge Foundation. All rights reserved.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -354,69 +283,39 @@
             <!-- Divider -->
             <div class="border-t border-white/10"></div>
             
-            <!-- Bottom Section with Logo, Copyright and Legal Links -->
-            <div class="py-8 flex flex-col lg:flex-row justify-between items-center gap-6">
-                <!-- Logo and Copyright -->
-                <div class="flex flex-col md:flex-row items-center gap-6">
-                    <div class="w-32">
-                        <img src="images/Logo.png" alt="AIBC Logo" class="w-full h-auto">
-                    </div>
-                    <div class="text-center md:text-left">
-                        <p class="text-gray-400 text-sm">
-                            © <span id="currentYear"></span> Australia India Bridge Council. All rights reserved.
-                        </p>
-                        <p class="text-gray-500 text-xs mt-1">ABN: 12 345 678 901 | Registered Charity</p>
-                    </div>
+            <!-- Bottom Section with Copyright and Legal Links -->
+            <div class="py-8 flex flex-col md:flex-row justify-between items-center gap-6">
+                <!-- Copyright - Hidden on mobile, shown in footer above -->
+                <div class="hidden lg:block text-center md:text-left">
+                    <p class="text-gray-400 text-sm">
+                        © <span id="currentYear"></span> Australia India Bridge Foundation. All rights reserved.
+                    </p>
                 </div>
                 
                 <!-- Legal Links -->
                 <div class="flex flex-wrap justify-center gap-4 md:gap-6">
-                    <a class="link-hover-effect text-gray-400 hover:text-white text-sm" href="/privacy-policy">
+                    <a class="link-hover-effect text-gray-400 hover:text-white text-sm" href="privacy-policy.html">
                         Privacy Policy
                     </a>
-                    <a class="link-hover-effect text-gray-400 hover:text-white text-sm" href="/terms-conditions">
+                    <a class="link-hover-effect text-gray-400 hover:text-white text-sm" href="terms-conditions.html">
                         Terms & Conditions
                     </a>
-                    <a class="link-hover-effect text-gray-400 hover:text-white text-sm" href="/disclaimer">
+                    <a class="link-hover-effect text-gray-400 hover:text-white text-sm" href="disclaimer.html">
                         Disclaimer
                     </a>
-                    <a class="link-hover-effect text-gray-400 hover:text-white text-sm" href="/transparency">
-                        Transparency Report
+                    <a class="link-hover-effect text-gray-400 hover:text-white text-sm" href="transparency.html">
+                        Transparency & Disclosure
                     </a>
-                    <a class="link-hover-effect text-gray-400 hover:text-white text-sm" href="/disclosure">
-                        Disclosure
-                    </a>
-                    <a class="link-hover-effect text-gray-400 hover:text-white text-sm" href="/sitemap">
-                        Sitemap
-                    </a>
-                    <a class="link-hover-effect text-gray-400 hover:text-white text-sm" href="/accessibility">
-                        Accessibility
-                    </a>
+                    <span class="text-gray-600 text-sm hidden md:inline">|</span>
+                    <span class="text-gray-400 text-sm">
+                        Melbourne, Victoria, Australia – 3000
+                    </span>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Add hover effect to list items
-        document.querySelectorAll('.link-hover-effect').forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                const icon = this.querySelector('i.fa-chevron-right');
-                if (icon) {
-                    icon.classList.remove('opacity-0');
-                    icon.classList.add('opacity-100');
-                }
-            });
-            
-            link.addEventListener('mouseleave', function() {
-                const icon = this.querySelector('i.fa-chevron-right');
-                if (icon) {
-                    icon.classList.remove('opacity-100');
-                    icon.classList.add('opacity-0');
-                }
-            });
-        });
-
         // Set current year in copyright
         document.addEventListener('DOMContentLoaded', function() {
             const currentYear = new Date().getFullYear();
@@ -453,31 +352,34 @@
                 });
             });
             
-            // Newsletter subscription
-            const newsletterBtn = document.querySelector('footer button.bg-gradient-to-r');
-            const newsletterInput = document.querySelector('.newsletter-input');
-            
-            newsletterBtn.addEventListener('click', function() {
-                if (newsletterInput.value && isValidEmail(newsletterInput.value)) {
-                    // In a real application, you would send this to your backend
-                    alert('Thank you for subscribing to our newsletter!');
-                    newsletterInput.value = '';
-                } else {
-                    alert('Please enter a valid email address.');
-                    newsletterInput.focus();
-                }
+            // Add click effects to social icons
+            document.querySelectorAll('.social-icon-hover').forEach(icon => {
+                icon.addEventListener('click', function(e) {
+                    // Add click animation
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
             });
             
-            // Enter key to submit newsletter
-            newsletterInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    newsletterBtn.click();
-                }
+            // Add click effects to navigation links
+            document.querySelectorAll('.link-hover-effect').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Add click animation
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
             });
             
-            function isValidEmail(email) {
-                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return re.test(email);
+            // Newsletter subscription placeholder
+            const newsletterBtn = document.querySelector('footer button.bg-saffron');
+            if (newsletterBtn) {
+                newsletterBtn.addEventListener('click', function() {
+                    alert('Newsletter subscription feature will be added soon!');
+                });
             }
         });
     </script>
