@@ -1,4 +1,4 @@
-    async function includeHTML() {
+async function includeHTML() {
         const elements = document.querySelectorAll("[data-include]");
 
         for (let el of elements) {
@@ -68,18 +68,18 @@
 //         });
 //     }
 
-//     // Language Dropdown Toggle
-//     const languageBtn = document.getElementById("languageBtn");
-//     const languageDropdown = document.getElementById("languageDropdown");
+    // Language Dropdown Toggle
+    // const languageBtn = document.getElementById("languageBtn");
+    // const languageDropdown = document.getElementById("languageDropdown");
 
-//     if (languageBtn && languageDropdown) {
-//         languageBtn.addEventListener("click", (e) => {
-//             e.stopPropagation();
-//             languageDropdown.classList.toggle("open");
-//             const searchDropdown = document.getElementById("searchDropdown");
-//             if (searchDropdown) searchDropdown.classList.remove("open");
-//         });
-//     }
+    // if (languageBtn && languageDropdown) {
+    //     languageBtn.addEventListener("click", (e) => {
+    //         e.stopPropagation();
+    //         languageDropdown.classList.toggle("open");
+    //         const searchDropdown = document.getElementById("searchDropdown");
+    //         if (searchDropdown) searchDropdown.classList.remove("open");
+    //     });
+    // }
 
 //     // Language Selection Functionality
 //     const languageButtons = document.querySelectorAll('#languageDropdown button');

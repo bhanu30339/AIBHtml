@@ -258,18 +258,6 @@
         News <span class="underline-hover"></span>
     </a>
 
-    <!-- <a href="political.html" class="nav-link group"  data-translate="political">
-        Political <span class="underline-hover"></span>
-    </a>
-
-    <a href="strategicapproach.html" class="nav-link group"  data-translate=" Strategic Approach">
-        Strategic Approach <span class="underline-hover"></span>
-    </a>
-
-    <a href="charitablecause.html" class="nav-link group" data-translate="charity">
-        Charity <span class="underline-hover"></span>
-    </a> -->
-
     <a href="media.html" class="nav-link group" data-translate="Media">
         Media <span class="underline-hover"></span>
     </a> 
@@ -346,13 +334,9 @@
                         </div>
                     </div>
 
-                    <!-- Get in Touch Button -->
-                    <!-- <a href="contact.html" data-translate="get  InTouch" class="hidden lg:block bg-orange-500 text-white px-6 py-2.5 rounded-lg shadow-md hover:from-secondary hover:to-yellow-500 transition-all duration-300 font-medium">
-                        Get in Touch
-                    </a> -->
 
                     <!-- Mobile Menu Button -->
-                    <button id="mobileBtn" class="lg:hidden p-2 text-primary dark:text-white">
+                    <button id="mobileBtn" class="lg:hidden p-2 text-primary dark:text-gray-900">
                         <svg class="w-7 h-7" fill="none" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
@@ -366,16 +350,11 @@
     <div id="mobileMenu" class="mobile-menu absolute top-20 left-0 w-full bg-white dark:bg-gray-800 shadow-lg lg:hidden z-50 theme-transition border-t dark:border-gray-700">
         <a href="index.html" class="mobile-item">Home</a>
         <a href="about.html" class="mobile-item">About Us</a>
-        <!-- <a href="news.html" class="mobile-item">News</a> -->
-        <!-- <a href="contact.html" class="mobile-item">Contact Us</a> -->
-        <!-- <a href="foundation.html" class="mobile-item">Foundation</a> -->
+        
         <a href="team.html" class="mobile-item">Team</a>
         <a href="news.html" class="mobile-item">News</a>
         <a href="contact.html" class="mobile-item">Contact Us</a>
-        <!-- <a href="political.html" class="mobile-item">Political</a> -->
-        <!-- <a href="strategicapproach.html" class="mobile-item">Strategic Approach</a> -->
-        <!-- <a href="charitablecause.html" class="mobile-item">Charity</a> -->
-        <!-- <a href="leadership.html" class="mobile-item">Leadership</a> -->
+       
 
         <!-- Mobile Search and Language -->
         <div class="p-4 border-t dark:border-gray-700">
@@ -407,76 +386,67 @@
     
 
     <!-- SCRIPTS -->
-    <script>
-        // Mobile Menu Toggle
-        const mobileBtn = document.getElementById("mobileBtn");
-        const mobileMenu = document.getElementById("mobileMenu");
+   <script>
+(function () {
 
-        mobileBtn.addEventListener("click", () => {
-            mobileMenu.classList.toggle("open");
-            // Close other dropdowns when mobile menu opens
-            searchDropdown.classList.remove("open");
-            languageDropdown.classList.remove("open");
-        });
+  function initHeaderMenu() {
 
-        // Search Dropdown Toggle
-        const searchBtn = document.getElementById("searchBtn");
-        const searchDropdown = document.getElementById("searchDropdown");
+    const mobileBtn = document.getElementById('mobileBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const searchBtn = document.getElementById('searchBtn');
+    const searchDropdown = document.getElementById('searchDropdown');
+    const languageBtn = document.getElementById('languageBtn');
+    const languageDropdown = document.getElementById('languageDropdown');
 
-        searchBtn.addEventListener("click", (e) => {
-            e.stopPropagation();
-            searchDropdown.classList.toggle("open");
-            languageDropdown.classList.remove("open");
-        });
+    if (!mobileBtn || !mobileMenu) return;
 
-        // Language Dropdown Toggle
-        const languageBtn = document.getElementById("languageBtn");
-        const languageDropdown = document.getElementById("languageDropdown");
+    /* MOBILE MENU */
+    mobileBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      mobileMenu.classList.toggle('open');
+      searchDropdown?.classList.remove('open');
+      languageDropdown?.classList.remove('open');
+    });
 
-        languageBtn.addEventListener("click", (e) => {
-            e.stopPropagation();
-            languageDropdown.classList.toggle("open");
-            searchDropdown.classList.remove("open");
-        });
+    /* SEARCH */
+    searchBtn?.addEventListener('click', function (e) {
+      e.stopPropagation();
+      searchDropdown.classList.toggle('open');
+      languageDropdown?.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
 
-        // Close dropdowns when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!searchBtn.contains(e.target) && !searchDropdown.contains(e.target)) {
-                searchDropdown.classList.remove('open');
-            }
-            if (!languageBtn.contains(e.target) && !languageDropdown.contains(e.target)) {
-                languageDropdown.classList.remove('open');
-            }
-            if (!mobileBtn.contains(e.target) && !mobileMenu.contains(e.target) && !e.target.closest('.mobile-item')) {
-                mobileMenu.classList.remove('open');
-            }
-        });
+    /* LANGUAGE */
+    languageBtn?.addEventListener('click', function (e) {
+      e.stopPropagation();
+      languageDropdown.classList.toggle('open');
+      searchDropdown?.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
 
-        // Language Selection
-        document.querySelectorAll('#languageDropdown button').forEach(button => {
-            button.addEventListener('click', () => {
-                const lang = button.textContent.split('(')[1].replace(')', '').trim();
-                const langName = button.querySelector('span:first-child').textContent;
-                languageBtn.querySelector('span:nth-child(2)').textContent = lang;
-                // In a real implementation, you would change the language here
-                console.log(`Language changed to: ${langName} (${lang})`);
-                languageDropdown.classList.remove('open');
-            });
-        });
+    /* OUTSIDE CLICK */
+    document.addEventListener('click', function (e) {
+      if (!mobileMenu.contains(e.target) && !mobileBtn.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+      }
+      if (searchDropdown && !searchDropdown.contains(e.target) && !searchBtn?.contains(e.target)) {
+        searchDropdown.classList.remove('open');
+      }
+      if (languageDropdown && !languageDropdown.contains(e.target) && !languageBtn?.contains(e.target)) {
+        languageDropdown.classList.remove('open');
+      }
+    });
+  }
 
-        // Search functionality
-        const searchInput = document.querySelector('#searchDropdown input');
-        searchInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                const query = searchInput.value;
-                if (query.trim()) {
-                    // In a real implementation, you would redirect to search results
-                    console.log(`Searching for: ${query}`);
-                    window.location.href = `search.html?q=${encodeURIComponent(query)}`;
-                }
-            }
-        });
-    </script>
+   initHeaderMenu();
+
+  // 🔥 WAIT FOR HEADER TO BE INJECTED
+  document.addEventListener('includesLoaded', initHeaderMenu);
+
+})();
+</script>
+
+
     
 </body>
 </html>
