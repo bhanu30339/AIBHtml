@@ -347,7 +347,7 @@
     </nav>
 
     <!-- MOBILE MENU -->
-    <div id="mobileMenu" class="mobile-menu absolute top-20 left-0 w-full bg-white dark:bg-gray-800 shadow-lg lg:hidden z-50 theme-transition border-t dark:border-gray-700">
+    <div id="mobileMenu" class="mobile-menu fixed top-20 left-0 w-full bg-white dark:bg-gray-800 shadow-lg lg:hidden z-50 theme-transition border-t dark:border-gray-700">
         <a href="index.html" class="mobile-item">Home</a>
         <a href="about.html" class="mobile-item">About Us</a>
         
@@ -393,58 +393,63 @@
 
     const mobileBtn = document.getElementById('mobileBtn');
     const mobileMenu = document.getElementById('mobileMenu');
+
     const searchBtn = document.getElementById('searchBtn');
     const searchDropdown = document.getElementById('searchDropdown');
+
     const languageBtn = document.getElementById('languageBtn');
     const languageDropdown = document.getElementById('languageDropdown');
 
-    if (!mobileBtn || !mobileMenu) return;
-
-    /* MOBILE MENU */
-    mobileBtn.addEventListener('click', function (e) {
+    /* ---------- MOBILE MENU ---------- */
+    mobileBtn?.addEventListener('click', function (e) {
       e.stopPropagation();
       mobileMenu.classList.toggle('open');
+
       searchDropdown?.classList.remove('open');
       languageDropdown?.classList.remove('open');
     });
 
-    /* SEARCH */
+    /* ---------- SEARCH ---------- */
     searchBtn?.addEventListener('click', function (e) {
       e.stopPropagation();
-      searchDropdown.classList.toggle('open');
+      searchDropdown?.classList.toggle('open');
+
       languageDropdown?.classList.remove('open');
-      mobileMenu.classList.remove('open');
+      mobileMenu?.classList.remove('open');
     });
 
-    /* LANGUAGE */
+    /* ---------- LANGUAGE ---------- */
     languageBtn?.addEventListener('click', function (e) {
       e.stopPropagation();
-      languageDropdown.classList.toggle('open');
+      languageDropdown?.classList.toggle('open');
+
       searchDropdown?.classList.remove('open');
-      mobileMenu.classList.remove('open');
+      mobileMenu?.classList.remove('open');
     });
 
-    /* OUTSIDE CLICK */
+    /* ---------- CLICK OUTSIDE ---------- */
     document.addEventListener('click', function (e) {
-      if (!mobileMenu.contains(e.target) && !mobileBtn.contains(e.target)) {
+
+      if (mobileMenu && !mobileMenu.contains(e.target) && !mobileBtn?.contains(e.target)) {
         mobileMenu.classList.remove('open');
       }
+
       if (searchDropdown && !searchDropdown.contains(e.target) && !searchBtn?.contains(e.target)) {
         searchDropdown.classList.remove('open');
       }
+
       if (languageDropdown && !languageDropdown.contains(e.target) && !languageBtn?.contains(e.target)) {
         languageDropdown.classList.remove('open');
       }
     });
   }
 
-   initHeaderMenu();
-
-  // 🔥 WAIT FOR HEADER TO BE INJECTED
-  document.addEventListener('includesLoaded', initHeaderMenu);
+  /* Init once DOM is ready */
+  document.addEventListener('DOMContentLoaded', initHeaderMenu);
 
 })();
 </script>
+
 
 
     

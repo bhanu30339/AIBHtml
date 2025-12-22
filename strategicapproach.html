@@ -13,7 +13,8 @@
                         primary: "#0C2340",
                         secondary: "#F5C642",
                         accent: "#1E3A5F",
-                        light: "#F8F9FA"
+                        light: "#F8F9FA",
+                        saffron: '#FF9933'
                     },
                     fontFamily: {
                         sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -27,7 +28,8 @@
     <style>
         :root {
             --primary: #0C2340;
-            --secondary: #f97316; /* Changed to orange-500 */
+            --secondary: #FF9933; /* Changed to saffron */
+            --saffron: #FF9933;
         }
         
         /* Professional Minimal Animations */
@@ -53,7 +55,7 @@
         }
         
         .professional-card:hover {
-            border-color: #f97316; /* orange-500 */
+            border-color: #FF9933; /* saffron */
             box-shadow: 0 10px 25px rgba(12, 35, 64, 0.08);
         }
         
@@ -66,7 +68,7 @@
         
         .step-card {
             background: #f8fafc;
-            border-left: 4px solid #f97316; /* orange-500 */
+            border-left: 4px solid #FF9933; /* saffron */
             border-radius: 8px;
             padding: 1.5rem;
         }
@@ -85,7 +87,7 @@
             left: 0;
             width: 60px;
             height: 4px;
-            background: #f97316; 
+            background: #FF9933; 
             border-radius: 2px;
         } */
         
@@ -98,7 +100,7 @@
         .icon-container {
             width: 56px;
             height: 56px;
-            background: rgba(249, 115, 22, 0.1); /* orange-500 with opacity */
+            background: rgba(255, 153, 51, 0.1); /* saffron with opacity */
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -108,7 +110,7 @@
         
         .icon-container i {
             font-size: 1.5rem;
-            color: #f97316; /* orange-500 */
+            color: #FF9933; /* saffron */
         }
         
         /* List Styles */
@@ -122,7 +124,7 @@
         
         .clean-list li::before {
             content: '✓';
-            color: #f97316; /* orange-500 */
+            color: #FF9933; /* saffron */
             font-weight: bold;
             flex-shrink: 0;
             margin-top: 0.1rem;
@@ -176,12 +178,12 @@
             <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-20">
                 <div class="max-w-3xl">
                     <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-                        <p class="text-orange-500 text-sm font-semibold tracking-widest uppercase">Strategic Approach</p>
+                        <p class="text-saffron text-sm font-semibold tracking-widest uppercase">Strategic Approach</p>
                     </div>
                     
                     <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
                         Strategic Framework for<br>
-                        <span class="text-orange-500">Sustainable Partnership</span>
+                        <span class="text-saffron">Sustainable Partnership</span>
                     </h1>
                     
                     <p class="text-xl text-white/90 mb-10">
@@ -189,7 +191,7 @@
                     </p>
                     
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#collaborate" class="bg-orange-500 text-[#0C2340] px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-colors duration-200 shadow-lg text-center">
+                        <a href="#collaborate" class="bg-saffron text-[#0C2340] px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-colors duration-200 shadow-lg text-center">
                             Start Collaborating
                         </a>
                         <a href="#approach" class="bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-colors duration-200 border border-white/20 text-center">
@@ -205,7 +207,7 @@
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
                 <!-- Section Header -->
                 <div class="section-header centered-header text-center mb-16">
-                    <div class="inline-flex items-center space-x-2 text-orange-500 font-semibold uppercase text-sm tracking-wider mb-4">
+                    <div class="inline-flex items-center space-x-2 text-saffron font-semibold uppercase text-sm tracking-wider mb-4">
                         <span>Strategic Framework</span>
                     </div>
                     <h2 class="text-4xl font-bold text-[#0C2340] mb-4">Our Strategic Approach</h2>
@@ -310,7 +312,7 @@
 
                 <!-- Collaboration Opportunities with Image -->
                 <div class="section-header text-center mb-16">
-                    <div class="inline-flex items-center space-x-2 text-orange-500 font-semibold uppercase text-sm tracking-wider mb-4">
+                    <div class="inline-flex items-center space-x-2 text-saffron font-semibold uppercase text-sm tracking-wider mb-4">
                         <i class="fas fa-briefcase"></i>
                         <span>Collaboration Opportunities</span>
                     </div>
@@ -323,7 +325,7 @@
                 <div class="grid lg:grid-cols-3 gap-8 mb-24">
                     <div class="professional-card fade-in">
                         <div class="flex items-center gap-3 mb-6">
-                            <div class="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center">
+                            <div class="w-10 h-10 bg-saffron rounded-lg flex items-center justify-center">
                                 <i class="fas fa-project-diagram text-white"></i>
                             </div>
                             <h3 class="text-xl font-bold text-[#0C2340]">Partnership Opportunities</h3>
@@ -339,7 +341,7 @@
 
                     <div class="professional-card fade-in">
                         <div class="flex items-center gap-3 mb-6">
-                            <div class="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center">
+                            <div class="w-10 h-10 bg-saffron rounded-lg flex items-center justify-center">
                                 <i class="fas fa-calendar-check text-white"></i>
                             </div>
                             <h3 class="text-xl font-bold text-[#0C2340]">Events & Conferences</h3>
@@ -355,7 +357,7 @@
 
                     <div class="professional-card fade-in">
                         <div class="flex items-center gap-3 mb-6">
-                            <div class="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center">
+                            <div class="w-10 h-10 bg-saffron rounded-lg flex items-center justify-center">
                                 <i class="fas fa-lightbulb text-white"></i>
                             </div>
                             <h3 class="text-xl font-bold text-[#0C2340]">Research & Innovation</h3>
@@ -380,32 +382,32 @@
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
                     <div class="professional-card text-center fade-in">
-                        <div class="w-16 h-16 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-building text-orange-500 text-2xl"></i>
+                        <div class="w-16 h-16 bg-saffron/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-building text-saffron text-2xl"></i>
                         </div>
                         <h4 class="font-bold text-lg mb-2">Businesses & Investors</h4>
                         <p class="text-sm text-gray-600">Drive bilateral trade, innovation, investments, and technology transfer.</p>
                     </div>
                     
                     <div class="professional-card text-center fade-in">
-                        <div class="w-16 h-16 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-landmark text-orange-500 text-2xl"></i>
+                        <div class="w-16 h-16 bg-saffron/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-landmark text-saffron text-2xl"></i>
                         </div>
                         <h4 class="font-bold text-lg mb-2">Government Agencies</h4>
                         <p class="text-sm text-gray-600">Support diplomacy, policymaking, and strategic cooperation frameworks.</p>
                     </div>
                     
                     <div class="professional-card text-center fade-in">
-                        <div class="w-16 h-16 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-graduation-cap text-orange-500 text-2xl"></i>
+                        <div class="w-16 h-16 bg-saffron/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-graduation-cap text-saffron text-2xl"></i>
                         </div>
                         <h4 class="font-bold text-lg mb-2">Educational Institutions</h4>
                         <p class="text-sm text-gray-600">Enable knowledge exchange, research partnerships, and academic collaboration.</p>
                     </div>
                     
                     <div class="professional-card text-center fade-in">
-                        <div class="w-16 h-16 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-hands-helping text-orange-500 text-2xl"></i>
+                        <div class="w-16 h-16 bg-saffron/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-hands-helping text-saffron text-2xl"></i>
                         </div>
                         <h4 class="font-bold text-lg mb-2">Nonprofits & Communities</h4>
                         <p class="text-sm text-gray-600">Support social impact projects and community development initiatives.</p>
@@ -423,8 +425,8 @@
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
                     <div class="professional-card fade-in">
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center flex-shrink: 0">
-                                <i class="fas fa-globe-asia text-orange-500"></i>
+                            <div class="w-12 h-12 bg-saffron/10 rounded-lg flex items-center justify-center flex-shrink: 0">
+                                <i class="fas fa-globe-asia text-saffron"></i>
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold text-[#0C2340] mb-2">Access to Business Opportunities</h4>
@@ -435,8 +437,8 @@
 
                     <div class="professional-card fade-in">
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center flex-shrink: 0">
-                                <i class="fas fa-handshake-angle text-orange-500"></i>
+                            <div class="w-12 h-12 bg-saffron/10 rounded-lg flex items-center justify-center flex-shrink: 0">
+                                <i class="fas fa-handshake-angle text-saffron"></i>
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold text-[#0C2340] mb-2">Enhanced Political & Diplomatic Ties</h4>
@@ -447,8 +449,8 @@
 
                     <div class="professional-card fade-in">
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center flex-shrink: 0">
-                                <i class="fas fa-heart text-orange-500"></i>
+                            <div class="w-12 h-12 bg-saffron/10 rounded-lg flex items-center justify-center flex-shrink: 0">
+                                <i class="fas fa-heart text-saffron"></i>
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold text-[#0C2340] mb-2">Philanthropic Impact</h4>
@@ -554,7 +556,7 @@
                         </p>
                         
                         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="/contact.html" class="bg-orange-500 text-[#0C2340] px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-colors duration-200 shadow-lg text-center">
+                            <a href="/contact.html" class="bg-saffron text-[#0C2340] px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-colors duration-200 shadow-lg text-center">
                                 Start Collaborating Today
                             </a>
                             <a href="/contact.html" class="bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-colors duration-200 border border-white/20 text-center">
