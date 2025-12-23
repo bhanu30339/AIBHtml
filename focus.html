@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Focus Areas | Australia India Alliance</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #0C2340;
+      --secondary: #D4AF37;
+      --accent: #1E3A5F;
+      --saffron: #FF9933;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #FF9933 0%, #D4AF37 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(12, 35, 64, 0.15);
+    }
+
+    .feature-icon {
+      background: linear-gradient(135deg, rgba(255, 153, 51, 0.1) 0%, rgba(212, 175, 55, 0.1) 100%);
+      border: 1px solid rgba(255, 153, 51, 0.2);
+    }
+
+    .gradient-bg {
+      background: linear-gradient(135deg, #0C2340 0%, #1E3A5F 100%);
+    }
+
+    .gradient-border {
+      position: relative;
+      border: 2px solid transparent;
+      background: linear-gradient(white, white) padding-box,
+                  linear-gradient(135deg, #FF9933, #D4AF37) border-box;
+    }
+
+    .pulse-dot {
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .stagger-animation > * {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.6s forwards;
+    }
+
+    .stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
+    .stagger-animation > *:nth-child(2) { animation-delay: 0.2s; }
+    .stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+  <div data-include="components/header.html"></div>
+
+  <!-- HERO SECTION -->
+  <section class="relative pt-32 pb-32 overflow-hidden">
+    <div class="absolute inset-0 gradient-bg">
+      <div class="absolute inset-0 bg-black/20"></div>
+      <div class="absolute top-0 left-0 w-64 h-64 bg-saffron/10 rounded-full -translate-x-32 -translate-y-32"></div>
+      <div class="absolute bottom-0 right-0 w-96 h-96 bg-secondary/10 rounded-full translate-x-48 translate-y-48"></div>
+    </div>
+    
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+      <div class="text-center max-w-3xl mx-auto">
+        <div class="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-8">
+          <span class="w-2 h-2 bg-saffron rounded-full"></span>
+          <span class="text-white font-medium text-sm tracking-wider">STRATEGIC PILLARS</span>
+        </div>
+        
+        <h1 class="text-5xl sm:text-6xl font-bold mb-6 leading-tight">
+          <span class="text-white">Our</span>
+          <span class="block gradient-text">Focus Areas</span>
+        </h1>
+        
+        <p class="text-xl text-white/90 leading-relaxed">
+          Strengthening Australia–India relations through strategic collaboration across trade, 
+          political cooperation, and social impact initiatives.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOCUS AREAS CARDS -->
+  <section class="py-20 relative">
+    <div class="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-gray-50 to-transparent"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-3 gap-8 lg:gap-12 stagger-animation">
+        
+        <!-- BILATERAL TRADE & BUSINESS -->
+        <div class="bg-white rounded-3xl p-8 card-hover shadow-xl border border-gray-100 relative overflow-hidden group">
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-saffron to-secondary"></div>
+          <div class="relative z-10">
+            <div class="w-16 h-16 feature-icon rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <i class="fas fa-chart-line text-2xl text-saffron"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Bilateral Trade & Business</h2>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              Enhancing economic ties between Australia and India by promoting trade, investment, innovation, 
+              and technology exchange through meaningful engagement between businesses, investors, and policymakers.
+            </p>
+            <div class="space-y-4 mb-6">
+              <div class="flex items-start space-x-3">
+                <div class="w-6 h-6 bg-saffron/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i class="fas fa-check text-saffron text-xs"></i>
+                </div>
+                <span class="text-gray-700">Facilitating trade partnerships and market access</span>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-6 h-6 bg-saffron/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i class="fas fa-check text-saffron text-xs"></i>
+                </div>
+                <span class="text-gray-700">Supporting innovation and technology collaboration</span>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-6 h-6 bg-saffron/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i class="fas fa-check text-saffron text-xs"></i>
+                </div>
+                <span class="text-gray-700">Business forums and trade delegations</span>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-6 h-6 bg-saffron/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i class="fas fa-check text-saffron text-xs"></i>
+                </div>
+                <span class="text-gray-700">Investment across key sectors</span>
+              </div>
+            </div>
+            <div class="pt-6 border-t border-gray-100">
+              <div class="flex items-center space-x-4">
+                <div class="px-4 py-2 bg-primary/10 rounded-lg">
+                  <span class="text-primary font-semibold text-sm">Trade</span>
+                </div>
+                <div class="px-4 py-2 bg-saffron/10 rounded-lg">
+                  <span class="text-saffron font-semibold text-sm">Innovation</span>
+                </div>
+                <div class="px-4 py-2 bg-secondary/10 rounded-lg">
+                  <span class="text-secondary font-semibold text-sm">Investment</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- POLITICAL STRENGTHENING -->
+        <div class="bg-white rounded-3xl p-8 card-hover shadow-xl border border-gray-100 relative overflow-hidden group">
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary to-primary"></div>
+          <div class="relative z-10">
+            <div class="w-16 h-16 feature-icon rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <i class="fas fa-handshake text-2xl text-primary"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Political Strengthening</h2>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              Promoting dialogue, diplomatic engagement, and mutual understanding between policymakers, 
+              parliamentarians, and institutions to strengthen long-term strategic cooperation and governance outcomes.
+            </p>
+            <div class="space-y-4 mb-6">
+              <div class="flex items-start space-x-3">
+                <div class="w-6 h-6 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i class="fas fa-check text-primary text-xs"></i>
+                </div>
+                <span class="text-gray-700">Parliamentary exchanges and leadership dialogue</span>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-6 h-6 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i class="fas fa-check text-primary text-xs"></i>
+                </div>
+                <span class="text-gray-700">Policy forums and strategic working groups</span>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-6 h-6 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i class="fas fa-check text-primary text-xs"></i>
+                </div>
+                <span class="text-gray-700">Cultural diplomacy and people-to-people engagement</span>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-6 h-6 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i class="fas fa-check text-primary text-xs"></i>
+                </div>
+                <span class="text-gray-700">Youth leadership and capacity-building</span>
+              </div>
+            </div>
+            <div class="pt-6 border-t border-gray-100">
+              <div class="flex items-center space-x-4">
+                <div class="px-4 py-2 bg-primary/10 rounded-lg">
+                  <span class="text-primary font-semibold text-sm">Diplomacy</span>
+                </div>
+                <div class="px-4 py-2 bg-saffron/10 rounded-lg">
+                  <span class="text-saffron font-semibold text-sm">Policy</span>
+                </div>
+                <div class="px-4 py-2 bg-secondary/10 rounded-lg">
+                  <span class="text-secondary font-semibold text-sm">Leadership</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CHARITABLE CAUSES & SOCIAL IMPACT -->
+        <div class="bg-white rounded-3xl p-8 card-hover shadow-xl border border-gray-100 relative overflow-hidden group">
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-saffron"></div>
+          <div class="relative z-10">
+            <div class="w-16 h-16 feature-icon rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <i class="fas fa-heart text-2xl text-secondary"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Social Impact & Charity</h2>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              Committed to philanthropy through education, healthcare, environmental sustainability, 
+              and community development initiatives that uplift underprivileged communities and create 
+              long-lasting positive change.
+            </p>
+            <div class="space-y-4 mb-6">
+              <div class="flex items-start space-x-3">
+                <div class="w-6 h-6 bg-secondary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i class="fas fa-check text-secondary text-xs"></i>
+                </div>
+                <span class="text-gray-700">Education empowerment and access to learning</span>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-6 h-6 bg-secondary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i class="fas fa-check text-secondary text-xs"></i>
+                </div>
+                <span class="text-gray-700">Healthcare access and community well-being</span>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-6 h-6 bg-secondary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i class="fas fa-check text-secondary text-xs"></i>
+                </div>
+                <span class="text-gray-700">Environmental conservation and sustainability</span>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-6 h-6 bg-secondary/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i class="fas fa-check text-secondary text-xs"></i>
+                </div>
+                <span class="text-gray-700">Skills training and livelihood development</span>
+              </div>
+            </div>
+            <div class="pt-6 border-t border-gray-100">
+              <div class="flex items-center space-x-4">
+                <div class="px-4 py-2 bg-primary/10 rounded-lg">
+                  <span class="text-primary font-semibold text-sm">Education</span>
+                </div>
+                <div class="px-4 py-2 bg-saffron/10 rounded-lg">
+                  <span class="text-saffron font-semibold text-sm">Healthcare</span>
+                </div>
+                <div class="px-4 py-2 bg-secondary/10 rounded-lg">
+                  <span class="text-secondary font-semibold text-sm">Community</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT STATISTICS -->
+  <section class="py-20 gradient-bg text-white relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full">
+      <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-white/5 rounded-full"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-48 h-48 bg-white/5 rounded-full"></div>
+    </div>
+    
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-6">Our Impact Across Pillars</h2>
+        <p class="text-white/80 text-lg max-w-2xl mx-auto">
+          Driving measurable outcomes through strategic initiatives and partnerships
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="glass-morphism bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/20">
+          <div class="text-4xl font-bold text-saffron mb-3">50+</div>
+          <div class="text-white/90 font-medium">Business Partnerships</div>
+          <div class="text-white/60 text-sm mt-2">Facilitating trade & investment</div>
+        </div>
+        
+        <div class="glass-morphism bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/20">
+          <div class="text-4xl font-bold text-saffron mb-3">100+</div>
+          <div class="text-white/90 font-medium">Policy Dialogues</div>
+          <div class="text-white/60 text-sm mt-2">Strengthening diplomatic ties</div>
+        </div>
+        
+        <div class="glass-morphism bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/20">
+          <div class="text-4xl font-bold text-saffron mb-3">25+</div>
+          <div class="text-white/90 font-medium">Social Initiatives</div>
+          <div class="text-white/60 text-sm mt-2">Community upliftment programs</div>
+        </div>
+        
+        <div class="glass-morphism bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/20">
+          <div class="text-4xl font-bold text-saffron mb-3">1000+</div>
+          <div class="text-white/90 font-medium">Lives Impacted</div>
+          <div class="text-white/60 text-sm mt-2">Through charitable causes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRATEGIC APPROACH -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-6">Strategic Approach to Impact</h2>
+        <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+          Our methodology combines strategic planning with practical implementation to create sustainable impact
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center p-6">
+          <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-saffron/10 to-secondary/10 rounded-2xl flex items-center justify-center">
+            <i class="fas fa-chess-board text-3xl text-saffron"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Strategic Planning</h3>
+          <p class="text-gray-600">
+            Identifying key opportunities and developing comprehensive frameworks for bilateral collaboration
+          </p>
+        </div>
+        
+        <div class="text-center p-6">
+          <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl flex items-center justify-center">
+            <i class="fas fa-users-gear text-3xl text-primary"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Partnership Building</h3>
+          <p class="text-gray-600">
+            Connecting stakeholders across sectors to foster collaboration and shared objectives
+          </p>
+        </div>
+        
+        <div class="text-center p-6">
+          <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-secondary/10 to-saffron/10 rounded-2xl flex items-center justify-center">
+            <i class="fas fa-chart-line text-3xl text-secondary"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Impact Measurement</h3>
+          <p class="text-gray-600">
+            Tracking outcomes and continuously improving our initiatives for maximum effectiveness
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION -->
+
+
+  <div data-include="components/footer.html"></div>
+  <script src="js/include.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Stagger animation on load
+      document.querySelectorAll('.stagger-animation > *').forEach((el, index) => {
+        el.style.animationDelay = `${index * 0.1}s`;
+      });
+      
+      // Add hover effects to cards
+      document.querySelectorAll('.card-hover').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          const rect = this.getBoundingClientRect();
+          const x = (rect.left + rect.right) / 2;
+          const y = (rect.top + rect.bottom) / 2;
+          
+          // Create ripple effect
+          const ripple = document.createElement('div');
+          ripple.style.position = 'absolute';
+          ripple.style.width = '100px';
+          ripple.style.height = '100px';
+          ripple.style.borderRadius = '50%';
+          ripple.style.background = 'radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%)';
+          ripple.style.left = `${x - rect.left - 50}px`;
+          ripple.style.top = `${y - rect.top - 50}px`;
+          ripple.style.pointerEvents = 'none';
+          ripple.style.zIndex = '1';
+          ripple.style.animation = 'ripple 0.6s ease-out forwards';
+          
+          this.style.position = 'relative';
+          this.appendChild(ripple);
+          
+          setTimeout(() => {
+            ripple.remove();
+          }, 600);
+        });
+      });
+      
+      // Add animation for stats counter (optional)
+      const counters = document.querySelectorAll('.glass-morphism .text-4xl');
+      counters.forEach(counter => {
+        const target = parseInt(counter.textContent);
+        let current = 0;
+        const increment = target / 50;
+        
+        const updateCounter = () => {
+          if (current < target) {
+            current += increment;
+            counter.textContent = Math.floor(current) + '+';
+            setTimeout(updateCounter, 30);
+          } else {
+            counter.textContent = target + '+';
+          }
+        };
+        
+        // Start counter when element is in viewport
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              updateCounter();
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.5 });
+        
+        observer.observe(counter.parentElement);
+      });
+    });
+    
+    // Add CSS for ripple animation
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes ripple {
+        0% {
+          transform: scale(0);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(4);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>

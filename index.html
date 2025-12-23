@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Australia India Bridge Foundation - Strengthening Bilateral Relations</title>
+    <title>AusInd Bridge Foundation</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="/js/language-manager.js" defer></script>
     <script>
@@ -266,32 +266,32 @@
 
     <!-- Mission Section -->
     <!-- MODERN CORE VALUES SECTION -->
-<section class="py-24 bg-gradient-to-br from-gray-50 to-white">
+<!-- <section class="py-24 bg-gradient-to-br from-gray-50 to-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Main Container with Side-by-Side Layout -->
+        
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
             
-            <!-- Side Heading Column -->
+          
             <div class="lg:col-span-3">
                 <div class="sticky top-24">
-                    <!-- Accent Line -->
+                   
                     <div class="flex items-center mb-6">
                         <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-secondary to-transparent"></div>
                         <span class="ml-3 text-xs font-semibold tracking-wider text-gray-900 uppercase">Core Values</span>
                         <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-secondary to-transparent"></div>
                     </div>
                     
-                    <!-- Main Heading -->
+                   
                     <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                         Core Values<br><span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"></span>
                     </h2>
                     
-                    <!-- Subheading -->
+                   
                     <p class="mt-6 text-gray-600 text-lg leading-relaxed">
                         The guiding principles that shape our mission and define our impact across Australia and India.
                     </p>
                     
-                    <!-- Decorative Element -->
+                  
                     <div class="mt-10 hidden lg:block">
                         <img src="/images/LogoHz.png"
                              alt="Organisation Logo"
@@ -300,21 +300,13 @@
                 </div>
             </div>
             
-            <!-- Content Column -->
+         
             <div class="lg:col-span-9">
-                <!-- Introductory Description -->
-                <!-- <div class="mb-10 p-6 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-100 shadow-sm">
-                    <p class="text-gray-700 text-lg leading-relaxed">
-                        We bring together leaders, partners, and communities to strengthen Australia–India relations,
-                        fostering collaboration, shared prosperity, and long-term impact built on trust, unity,
-                        and mutual respect.
-                    </p>
-                </div> -->
                 
-                <!-- Values Grid -->
+              
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     
-                    <!-- Value Card 1 -->
+                   
                     <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:border-blue-100">
                         <div class="flex items-start mb-4">
                             <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-50 rounded-xl flex items-center justify-center">
@@ -327,7 +319,7 @@
                         </p>
                     </div>
                     
-                    <!-- Value Card 2 -->
+                   
                     <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:border-purple-100">
                         <div class="flex items-start mb-4">
                             <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-orange-100 to-orange-50 rounded-xl flex items-center justify-center">
@@ -340,7 +332,7 @@
                         </p>
                     </div>
                     
-                    <!-- Value Card 3 -->
+                 
                     <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:border-green-100">
                         <div class="flex items-start mb-4">
                             <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-orange-100 to-orange-50 rounded-xl flex items-center justify-center">
@@ -353,7 +345,7 @@
                         </p>
                     </div>
                     
-                    <!-- Value Card 4 -->
+                    
                     <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:border-amber-100">
                         <div class="flex items-start mb-4">
                             <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-50 rounded-xl flex items-center justify-center">
@@ -379,10 +371,10 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- ================= BANNER SECTION ================= -->
-<section class="relative h-[100vh] flex items-center overflow-hidden">
+<section class="relative h-[70vh] flex items-center overflow-hidden">
 
   
   <div class="absolute inset-0">
@@ -409,27 +401,65 @@
 
     <!-- Header -->
     <div class="chat-header">
-      <span>Chat with Us</span>
+      <span>Send an Enquiry</span>
       <button id="chatClose" class="chat-close">✕</button>
     </div>
 
-    <!-- Body -->
+    <!-- Body - Contact Form -->
     <div class="chat-body">
-      <p class="chat-text">How can we help you?</p>
-
-      <div class="quick-questions">
-        <button>What services do you offer?</button>
-        <button>How can I contact your team?</button>
-        <button>Do you support partnerships?</button>
+      <p class="chat-text mb-4">For general enquiries only. Please fill out the form below.</p>
+      
+      <form id="chatForm" class="chat-form">
+        <!-- Name -->
+        <div class="form-group">
+          <label class="form-label">Full Name *</label>
+          <input type="text" name="name" placeholder="Your full name" required class="form-input">
+          <div class="error-message" id="nameError"></div>
+        </div>
+        
+        <!-- Email -->
+        <div class="form-group">
+          <label class="form-label">Email Address *</label>
+          <input type="email" name="email" placeholder="your@email.com" required class="form-input">
+          <div class="error-message" id="emailError"></div>
+        </div>
+        
+        <!-- Subject -->
+        <div class="form-group">
+          <label class="form-label">Subject *</label>
+          <input type="text" name="subject" placeholder="Brief description of your enquiry" required class="form-input">
+          <div class="error-message" id="subjectError"></div>
+        </div>
+        
+        <!-- Message -->
+        <div class="form-group">
+          <label class="form-label">Your Message *</label>
+          <textarea name="message" placeholder="Please provide details of your enquiry..." required rows="4" class="form-textarea"></textarea>
+          <div class="error-message" id="messageError"></div>
+        </div>
+        
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">
+          Submit Enquiry
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="send-icon">
+            <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path>
+            <path d="m21.854 2.147-10.94 10.939"></path>
+          </svg>
+        </button>
+        
+        <p class="privacy-note">
+          * Required fields. We respect your privacy and will only use your information to respond to your enquiry.
+        </p>
+      </form>
+      
+      <!-- Success Message (Hidden by default) -->
+      <div id="successMessage" class="success-message" style="display: none;">
+        <div class="success-icon">✓</div>
+        <h3>Thank You!</h3>
+        <p>Your enquiry has been submitted. We will respond within 1-2 business days.</p>
+        <button id="newEnquiry" class="new-enquiry-btn">Send Another Enquiry</button>
       </div>
     </div>
-
-    <!-- Footer -->
-    <div class="chat-footer">
-      <input type="text" placeholder="Type your question..." />
-      <button class="send-btn">Send</button>
-    </div>
-
   </div>
 </div>
 
@@ -454,6 +484,12 @@
   cursor: pointer;
   font-size: 22px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.chat-toggle:hover {
+  background: #1E3A5F;
+  transform: scale(1.05);
 }
 
 /* ================= CHAT BOX ================= */
@@ -461,8 +497,9 @@
   position: absolute;
   right: 0;
   bottom: 70px;
-  width: 320px;
-  height: 420px;
+  width: 380px;
+  max-width: 95vw;
+  max-height: 80vh;
   background: #ffffff;
   border-radius: 16px;
   box-shadow: 0 20px 50px rgba(0,0,0,0.3);
@@ -487,11 +524,16 @@
 .chat-header {
   background: #0C2340;
   color: white;
-  padding: 14px;
+  padding: 16px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: 16px 16px 0 0;
+}
+
+.chat-header span {
+  font-weight: 600;
+  font-size: 16px;
 }
 
 /* CLOSE BUTTON */
@@ -499,65 +541,366 @@
   background: transparent;
   border: none;
   color: white;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.chat-close:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* ================= BODY ================= */
 .chat-body {
-  padding: 14px;
+  padding: 20px;
   flex: 1;
   overflow-y: auto;
+  max-height: calc(80vh - 60px);
 }
 
 .chat-text {
   font-size: 14px;
-  margin-bottom: 12px;
+  color: #4B5563;
+  margin-bottom: 20px;
+  line-height: 1.5;
 }
 
-/* QUICK QUESTIONS */
-.quick-questions button {
-  display: block;
-  width: 100%;
-  background: #F1F4F8;
-  border: 1px solid #E2E8F0;
-  padding: 10px;
-  margin-bottom: 8px;
-  border-radius: 8px;
-  font-size: 13px;
-  cursor: pointer;
-}
-
-.quick-questions button:hover {
-  background: #E6ECF5;
-}
-
-/* ================= FOOTER ================= */
-.chat-footer {
-  padding: 12px;
-  border-top: 1px solid #E5E7EB;
+/* ================= FORM STYLES ================= */
+.chat-form {
   display: flex;
-  gap: 8px;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.chat-footer input {
-  flex: 1;
-  padding: 10px;
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0C2340;
+  margin-bottom: 6px;
+}
+
+.form-input, .form-textarea {
+  padding: 10px 12px;
+  border: 1px solid #D1D5DB;
   border-radius: 8px;
-  border: 1px solid #CBD5E1;
-  outline: none;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.send-btn {
+.form-input:focus, .form-textarea:focus {
+  outline: none;
+  border-color: #0C2340;
+  box-shadow: 0 0 0 3px rgba(12, 35, 64, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.error-message {
+  color: #DC2626;
+  font-size: 12px;
+  margin-top: 4px;
+  min-height: 16px;
+}
+
+.submit-btn {
   background: #0C2340;
   color: white;
   border: none;
-  padding: 0 14px;
+  padding: 12px 20px;
   border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: 8px;
 }
 
+.submit-btn:hover {
+  background: #1E3A5F;
+  transform: translateY(-1px);
+}
+
+.send-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.privacy-note {
+  font-size: 11px;
+  color: #6B7280;
+  text-align: center;
+  margin-top: 12px;
+  line-height: 1.4;
+}
+
+/* ================= SUCCESS MESSAGE ================= */
+.success-message {
+  text-align: center;
+  padding: 20px;
+  background: #F0F9FF;
+  border-radius: 12px;
+  border: 1px solid #BAE6FD;
+}
+
+.success-icon {
+  width: 50px;
+  height: 50px;
+  background: #10B981;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 auto 16px;
+}
+
+.success-message h3 {
+  color: #0C2340;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.success-message p {
+  color: #4B5563;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.new-enquiry-btn {
+  background: transparent;
+  color: #0C2340;
+  border: 1px solid #0C2340;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.new-enquiry-btn:hover {
+  background: #0C2340;
+  color: white;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 480px) {
+  .chat-box {
+    width: 340px;
+    right: 10px;
+  }
+  
+  .chat-body {
+    padding: 16px;
+  }
+}
+
+@media (max-height: 700px) {
+  .chat-body {
+    max-height: 60vh;
+  }
+}
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Get elements
+  const chatToggle = document.getElementById('chatToggle');
+  const chatBox = document.getElementById('chatBox');
+  const chatClose = document.getElementById('chatClose');
+  const chatForm = document.getElementById('chatForm');
+  const successMessage = document.getElementById('successMessage');
+  const newEnquiryBtn = document.getElementById('newEnquiry');
+  
+  // Toggle chat box
+  chatToggle.addEventListener('click', function() {
+    chatBox.classList.add('open');
+  });
+  
+  // Close chat box
+  chatClose.addEventListener('click', function() {
+    chatBox.classList.remove('open');
+  });
+  
+  // Close when clicking outside (only if chat is open)
+  document.addEventListener('click', function(event) {
+    if (chatBox.classList.contains('open')) {
+      const isClickInside = chatBox.contains(event.target) || chatToggle.contains(event.target);
+      if (!isClickInside) {
+        chatBox.classList.remove('open');
+      }
+    }
+  });
+  
+  // Escape key to close chat
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && chatBox.classList.contains('open')) {
+      chatBox.classList.remove('open');
+    }
+  });
+  
+  // Form validation
+  function validateEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+  
+  // Clear error messages
+  function clearErrors() {
+    const errorElements = document.querySelectorAll('.error-message');
+    errorElements.forEach(el => {
+      el.textContent = '';
+    });
+    
+    const inputs = document.querySelectorAll('.form-input, .form-textarea');
+    inputs.forEach(input => {
+      input.classList.remove('error');
+    });
+  }
+  
+  // Show error
+  function showError(inputId, message) {
+    const errorElement = document.getElementById(inputId + 'Error');
+    const inputElement = document.querySelector(`[name="${inputId}"]`);
+    
+    if (errorElement) {
+      errorElement.textContent = message;
+    }
+    
+    if (inputElement) {
+      inputElement.classList.add('error');
+      inputElement.style.borderColor = '#DC2626';
+    }
+  }
+  
+  // Form submission
+  chatForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    clearErrors();
+    
+    // Get form values
+    const name = chatForm.querySelector('[name="name"]').value.trim();
+    const email = chatForm.querySelector('[name="email"]').value.trim();
+    const subject = chatForm.querySelector('[name="subject"]').value.trim();
+    const message = chatForm.querySelector('[name="message"]').value.trim();
+    
+    let isValid = true;
+    
+    // Validate name
+    if (!name) {
+      showError('name', 'Please enter your full name');
+      isValid = false;
+    }
+    
+    // Validate email
+    if (!email) {
+      showError('email', 'Please enter your email address');
+      isValid = false;
+    } else if (!validateEmail(email)) {
+      showError('email', 'Please enter a valid email address');
+      isValid = false;
+    }
+    
+    // Validate subject
+    if (!subject) {
+      showError('subject', 'Please enter a subject for your enquiry');
+      isValid = false;
+    }
+    
+    // Validate message
+    if (!message) {
+      showError('message', 'Please enter your message');
+      isValid = false;
+    } else if (message.length < 10) {
+      showError('message', 'Please provide more details in your message');
+      isValid = false;
+    }
+    
+    if (isValid) {
+      // In a real application, you would send the data to your server here
+      // For demonstration, we'll simulate a successful submission
+      
+      // Show loading state
+      const submitBtn = chatForm.querySelector('.submit-btn');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = 'Sending...';
+      submitBtn.disabled = true;
+      
+      // Simulate API call
+      setTimeout(() => {
+        // Show success message
+        chatForm.style.display = 'none';
+        successMessage.style.display = 'block';
+        
+        // Reset form
+        chatForm.reset();
+        
+        // Restore button
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+        
+        // Auto-close after 5 seconds
+        setTimeout(() => {
+          chatBox.classList.remove('open');
+          
+          // Reset after closing
+          setTimeout(() => {
+            chatForm.style.display = 'flex';
+            successMessage.style.display = 'none';
+          }, 300);
+        }, 5000);
+      }, 1500);
+    }
+  });
+  
+  // New enquiry button
+  newEnquiryBtn.addEventListener('click', function() {
+    chatForm.style.display = 'flex';
+    successMessage.style.display = 'none';
+    chatForm.reset();
+    clearErrors();
+  });
+  
+  // Remove error styling on input
+  const formInputs = document.querySelectorAll('.form-input, .form-textarea');
+  formInputs.forEach(input => {
+    input.addEventListener('input', function() {
+      if (this.classList.contains('error')) {
+        this.classList.remove('error');
+        this.style.borderColor = '';
+      }
+      
+      const errorId = this.name + 'Error';
+      const errorElement = document.getElementById(errorId);
+      if (errorElement) {
+        errorElement.textContent = '';
+      }
+    });
+  });
+});
+</script>
 
     <!-- Founder Section -->
 
@@ -613,373 +956,342 @@
 
             <!-- Additional decorative element -->
             <div class="mt-12 pt-8 border-t border-gray-200 max-w-2xl mx-auto">
-                <p class="text-sm text-gray-500 italic">
-                    "Building bridges that connect hearts, minds, and opportunities between Australia and India."
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="py-16 md:py-24" id="news-section">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Section Header -->
-        <div class="text-center mb-12 md:mb-16">
-            <div class="inline-flex items-center mb-4">
-                <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-[#FF9933] to-transparent"></div>
-                <span class="mx-3 text-sm font-semibold uppercase tracking-wider text-gray-900">News & Updates</span>
-                <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-[#FF9933] to-transparent"></div>
-            </div>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-                Latest News & Announcements
-            </h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                Stay informed about the latest developments, partnerships, and initiatives from the Australia India Alliance Foundation.
+    <div class="text-center space-y-3">
+        <div class="relative">
+            <svg class="w-6 h-6 text-saffron mx-auto mb-3 opacity-70" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+            <p class="text-lg md:text-xl text-gray-700 italic px-4">
+                "Building bridges that connect hearts, minds, and opportunities between Australia and India."
             </p>
         </div>
-
-        <!-- News Container -->
-        <div id="news-container">
-            <!-- Page 1 Content will be loaded here -->
+        <div class="flex flex-col items-center space-y-1">
+            <span class="text-primary font-bold text-base">Deepak Vinayak OAM JP</span>
+            <span class="text-gray-600 text-sm">Founder & Chairperson</span>
         </div>
-
-        <!-- Pagination -->
-        <div class="flex justify-center items-center space-x-2 mt-12" id="pagination-container">
-            <!-- Pagination buttons will be dynamically generated -->
+    </div>
+</div>
         </div>
     </div>
 </section>
 
-<!-- JavaScript for pagination functionality -->
-<script>
-// News data for all pages
-const newsPages = {
-    1: [
-        {
-            date: "23 September 2025",
-            title: "CPA Australia signs MoU with Australia India Alliance Foundation at conference celebrating benefits of global trade",
-            excerpt: "CPA Australia and the Australia India Alliance Foundation today signed a Memorandum of Understanding (MoU) as a sign of future collaboration to strengthen business ties between the two nations.",
-            category: "Partnership",
-            link: "https://aibc.org.au/cpa-australia-signs-mou-with-australia-india-business-council-at-conference-celebrating-benefits-of-global-trade/"
-        },
-        {
-            date: "8 March 2025",
-            title: "AIBF Celebrates International Women's Day: Recognising Women Driving Change Across Australia and India",
-            excerpt: "The Australia India Alliance Foundation proudly joins the global celebration of International Women's Day, recognising the remarkable contributions of women leaders across business sectors.",
-            category: "Events",
-            link: "https://aibc.org.au/aibf-celebrates-international-womens-day-recognising-women-driving-change-across-australia-and-india/"
-        },
-        {
-            date: "Media Statement",
-            title: "National Chair Media Statement",
-            excerpt: "The Australia India Alliance Foundation (AIBF) acknowledges DFAT's recent travel advisory updates for certain regions of India. We respect DFAT's role in ensuring Australian travelers' safety.",
-            category: "Statement",
-            link: "https://aibc.org.au/national-chair-media-statement/"
-        },
-        {
-            date: "Leadership Update",
-            title: "Australia India Alliance Foundation Announces Election of New National Chair and National Vice Chair",
-            excerpt: "The Australia India Alliance Foundation (AIBF), the leading organization dedicated to enhancing trade and investment between Australia and India, is pleased to announce new leadership appointments.",
-            category: "Leadership",
-            link: "https://aibc.org.au/australia-india-business-council-announces-election-of-new-national-chair-and-national-vice-chair/"
-        },
-        {
-            date: "Partnership",
-            title: "AIBF and Indian Council of Arbitration (ICA) sign MOU to facilitate trade arbitration",
-            excerpt: "As bilateral trade between Australia and India currently exceeds $50 Billion and continues to grow, this MOU establishes frameworks for dispute resolution in business engagements.",
-            category: "Arbitration",
-            link: "https://aibc.org.au/aibf-and-indian-council-of-arbitration-ica-sign-mou-to-facilitate-trade-arbitration/"
-        },
-        {
-            date: "20 March 2024",
-            title: "'Holi in the House' hosted by AIBF celebrating the Launch of NSW Parliamentary Friends of India",
-            excerpt: "The NSW Parliamentary Friends of India will encourage collaborations, fostering of relations and friendships between the people of both countries.",
-            category: "Cultural Event",
-            link: "https://aibc.org.au/holi-in-the-house-hosted-by-aibf-celebrating-the-launch-of-nsw-parliamentary-friends-of-india/"
-        }
-    ],
-    2: [
-        {
-            date: "4 December 2023",
-            title: "The Australia India relationship has never been stronger, says Federal Minister for Trade and Tourism, Don Farrell",
-            excerpt: "The Australia India Alliance Foundation (AIBF) held its NSW Annual Australia India Address and Gala Dinner recently at the Commbank Stadium Parramatta.",
-            category: "Event",
-            link: "https://aibc.org.au/the-australia-india-relationship-has-never-been-stronger-says-federal-minister-for-trade-and-tourism-don-farrell/"
-        },
-        {
-            date: "11 August 2023",
-            title: "AIBF farewells Mr Manish Gupta, Consul General of India in Sydney",
-            excerpt: "Sydney, 11 August 2023: A grand farewell was organised in Sydney by the Australia India Alliance Foundation (AIBF) for Mr Manish Gupta, the Consul ...",
-            category: "Diplomacy",
-            link: "https://aibc.org.au/aibf-farewells-mr-manish-gupta-consul-general-of-india-in-sydney/"
-        },
-        {
-            date: "24 May 2023",
-            title: "AIBF welcomes announcement to establish Indian Consulate in Brisbane",
-            excerpt: "The Australia India Alliance Foundation (AIBF) has welcomed the announcement by Indian Prime Minister, Narendra Modi, to establish an Indian consulate in ...",
-            category: "Diplomacy",
-            link: "https://aibc.org.au/aibf-welcomes-announcement-to-establish-indian-consulate-in-brisbane/"
-        },
-        {
-            date: "8 March 2023",
-            title: "Women led Brand and Book Launch headline AIBF's International Women's Day",
-            excerpt: "Australia India Alliance Foundation (AIBF), the leading business council dedicated to promoting the bilateral trade and investment relationship between Australia and India, has chosen International ...",
-            category: "Events",
-            link: "https://aibc.org.au/women-led-brand-and-book-launch-headline-aibfs-international-womens-day-media-release/"
-        },
-        {
-            date: "Recent",
-            title: "We must seize the opportunities provided by ECTA - National Chair Jodi McKay in exclusive interview with CNBC-TV18",
-            excerpt: "A detailed interview discussing the opportunities presented by the Economic Cooperation and Trade Agreement between Australia and India.",
-            category: "Interview",
-            link: "https://aibc.org.au/we-must-seize-the-opportunities-provided-by-ecta-aibf-chair-jodi-mckay-in-exclusive-interview-with-cnbc-tv18/"
-        },
-        {
-            date: "Historic",
-            title: "History Made With All Women Team To Lead Australia India Alliance Foundation Ltd",
-            excerpt: "The country's leading Australia India business chamber will be led by former NSW Leader of the Opposition, Jodi McKay and Ravneet Pawha, Vice President (Global ...",
-            category: "Leadership",
-            link: "https://aibc.org.au/history-made-with-all-women-team-to-lead-australia-india-alliance-foundation-ltd/"
-        }
-    ],
-    3: [
-        {
-            date: "Recent",
-            title: "Indian states need to engage more in FTA with Australia, says AIBF Chair Jodi McKay in exclusive interview with The Economic Times",
-            excerpt: "The Indian authorities led by the Prime Minister Narendra Modi has been selling the enterprise relationship with Australia and the state governments have to ...",
-            category: "Interview",
-            link: "https://aibc.org.au/indian-states-need-to-engage-more-in-fta-with-australia-says-aibf-chair-jodi-mckay-in-exclusive-interview-with-the-economic-times/"
-        },
-        {
-            date: "Report",
-            title: "India, Australia trade pact to open new business avenues",
-            excerpt: "The Indian government has set a target of growing the two-way trade with Australia from the current $27 billion to ...",
-            category: "Trade",
-            link: "https://aibc.org.au/india-australia-trade-pact-to-open-new-biz-avenues/"
-        },
-        {
-            date: "29 December 2023",
-            title: "Australia India Alliance Foundation welcomes landmark trade agreement between Australia and India",
-            excerpt: "MEDIA RELEASE 29th December 2023 National Chair of the Australia India Alliance Foundation, Jodi McKay, today welcomed the finalisation of the Australia-India Economic Cooperation and ...",
-            category: "Trade",
-            link: "https://aibc.org.au/australia-india-alliance-foundation-welcomes-landmark-trade-agreement-between-australia-and-india/"
-        },
-        {
-            date: "Funding",
-            title: "AIBF welcomes Federal Government funding for CAIR",
-            excerpt: "The Australia India Alliance Foundation (AIBF) has welcomed the Albanese Government's commitment to establishing the Centre for Australia India Relations (CAIR) with an allocation of ...",
-            category: "Funding",
-            link: "https://aibc.org.au/aibf-welcomes-federal-government-funding-for-cair/"
-        },
-        {
-            date: "Summit",
-            title: "Senior Ministers, Industry and thought leaders converge at AIBF's first-ever Australia-India International Business Summit",
-            excerpt: "This year's Australia India Address marked the special celebration of 75 years of India's Independence. The gala dinner was the culmination of the three-day AIBF ...",
-            category: "Events",
-            link: "https://aibc.org.au/senior-ministers-industry-and-thought-leaders-converge-at-aibfs-first-ever-australia-india-international-business-summit/"
-        },
-        {
-            date: "Partnership",
-            title: "Peak Indian Industry Bodies Sign MoU With AIBF To Boost Bilateral Trade",
-            excerpt: "MEDIA RELEASE PEAK INDIAN INDUSTRY BODIES SIGN MoU WITH AIBF TO BOOST BILATERAL TRADE Aiming to promote and facilitate bilateral trade and business opportunities in accordance ...",
-            category: "Partnership",
-            link: "https://aibc.org.au/peak-indian-industry-bodies-sign-mou-with-aibf-to-boost-bilateral-trade/"
-        }
-    ],
-    4: [
-        {
-            date: "Defence",
-            title: "AIBF Welcomes Deputy Prime Minister and Defence Minister visit to India",
-            excerpt: "Australia India Alliance Foundation (AIBF) welcomes the initiative taken by the Anthony Albanese Government to keep the momentum on bilateral Defence and Security dialogue ...",
-            category: "Defence",
-            link: "https://aibc.org.au/aibf-welcomes-deputy-prime-minister-and-defence-minister-visit-to-india/"
-        },
-        {
-            date: "Election",
-            title: "Media Release - AIBF Congratulates New Australian Prime Minister",
-            excerpt: "The Australia India Alliance Foundation Ltd (AIBF) has congratulated the Hon Anthony Albanese MP on his election victory as Australia's 31st Prime Minister. Jim Varghese ...",
-            category: "Politics",
-            link: "https://aibc.org.au/media-release-aibf-congratulates-new-australian-prime-minister/"
-        },
-        {
-            date: "Agreement",
-            title: "AIBF welcomes historic Australia India ECTA Agreement",
-            excerpt: "'Time for celebration' AIBF welcomes historic Australia-India Economic and Trade Agreement (AI ECTA) The AI ECTA was signed today in a virtual ceremony by Australia's Trade ...",
-            category: "Trade",
-            link: "https://aibc.org.au/aibf-welcomes-historic-australia-india-ecta-agreement/"
-        },
-        {
-            date: "Flood Relief",
-            title: "AIBF supports flood relief donations to the Australian Red Cross",
-            excerpt: "The Australia India Alliance Foundation has expressed deep sympathy for all those affected by the ...",
-            category: "Charity",
-            link: "https://aibc.org.au/aibf-supports-flood-relief-donations-to-the-australian-red-cross/"
-        },
-        {
-            date: "Defence Launch",
-            title: "Defence Minister Peter Dutton and High Commissioner of India Manpreet Vohra jointly launch the Defence & Security Industry Chapter of the Australia India Alliance Foundation (AIBF)",
-            excerpt: "AIBF in collaboration with the ACT AIBF Chapter recently established their new Industry Chapter for Defence & Security at a time when the relationships between ...",
-            category: "Defence",
-            link: "https://aibc.org.au/defence-minister-peter-dutton-and-high-commissioner-of-india-manpreet-vohra-jointly-launch-the-defence-security-industry-chapter-of-the-australia-india-alliance-foundation-aibf/"
-        }
-    ]
-};
 
-// Function to render news items
-function renderNewsItems(pageNumber) {
-    const container = document.getElementById('news-container');
-    const newsItems = newsPages[pageNumber];
+
+
+<section>
     
-    let html = `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12" id="page-${pageNumber}">`;
-    
-    newsItems.forEach((item, index) => {
-        html += `
-            <article class="news-card bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 animate-fade-in" style="animation-delay: ${index * 100}ms">
-                <div class="mb-4">
-                    <span class="date-badge text-sm text-gray-500 font-medium">${item.date}</span>
+
+    <div class="min-h-screen">
+
+        <!-- Single Event Section -->
+        <section class="py-8 md:py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Section Header -->
+                <div class="text-center mb-12 md:mb-16">
+                    <div class="inline-flex items-center mb-4">
+                        <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-[#FF9933] to-transparent"></div>
+                        <span class="mx-3 text-sm font-semibold uppercase tracking-wider text-gray-900"> News & Latest Event</span>
+                        <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-[#FF9933] to-transparent"></div>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                        Parliamentarians Forum for Tech Diplomacy Launch
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Honouring Australian Parliamentarians & Launching Global Tech Diplomacy Initiative
+                    </p>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-4 leading-tight">
-                    <a href="${item.link}" 
-                       target="_blank" 
-                       class="hover:text-[#FF9933] transition-colors duration-200">
-                        ${item.title}
-                    </a>
-                </h3>
-                <p class="text-gray-600 mb-6 leading-relaxed">
-                    ${item.excerpt}
-                </p>
-                <div class="flex items-center justify-between pt-4 border-t border-gray-100">
-                    <a href="${item.link}" 
-                       target="_blank"
-                       class="read-more text-[#FF9933] font-semibold text-sm flex items-center hover:opacity-80 transition-opacity">
-                        Read Full Article
-                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg>
-                    </a>
-                    <span class="text-xs text-gray-400 px-3 py-1 bg-gray-50 rounded-full">
-                        ${item.category}
-                    </span>
+
+                <!-- Event Details -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                    <!-- Event Information -->
+                    <div class="animate-fade-in">
+                        <div class="mb-6">
+                            <span class="inline-block px-4 py-2 bg-[#FF9933] text-white font-semibold rounded-full text-sm mb-4">
+                                Recent Event
+                            </span>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                                Hosting Hon. Dylan Wight MP and Hon. Mathew Hilakari MP from Victoria, Australia
+                            </h3>
+                            <p class="text-gray-600 mb-4">
+                                I had the honour of hosting Hon. Dylan Wight MP and Hon. Mathew Hilakari MP from Victoria, Australia, as part of the Visiting Australian Delegation. Organised in collaboration with the AusInd Bridge Foundation, this gathering brought together policymakers, business leaders, academics, innovators & young changemakers from both our nations.
+                            </p>
+                            <p class="text-gray-600 mb-4">
+                                One of the most significant outcomes of the evening was the launch of the Parliamentarians Forum for Tech Diplomacy - a global initiative that aims to foster collaboration among legislators on the responsible and inclusive use of emerging technologies.
+                            </p>
+                            <p class="text-gray-600 mb-6">
+                                I emphasized how diplomacy today must go beyond convention and become participatory, and tech enabled. The next wave in diplomacy is in its democratization. As a fantastic case study, I highlighted how Hon'ble Prime Minister Narendra Modi ji's G20 model of Diplomacy ensured multi-stakeholder engagements across 60 cities and 28 states, stands as a powerful inspiration for inclusive global leadership.
+                            </p>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <div class="w-5 h-5 rounded-full bg-[#FF9933] flex items-center justify-center">
+                                            <div class="w-2 h-2 rounded-full bg-white"></div>
+                                        </div>
+                                    </div>
+                                    <p class="ml-3 text-gray-700">
+                                        Hosting Australian Parliamentarians Hon. Dylan Wight MP and Hon. Mathew Hilakari MP
+                                    </p>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <div class="w-5 h-5 rounded-full bg-[#FF9933] flex items-center justify-center">
+                                            <div class="w-2 h-2 rounded-full bg-white"></div>
+                                        </div>
+                                    </div>
+                                    <p class="ml-3 text-gray-700">
+                                        Launch of Parliamentarians Forum for Tech Diplomacy
+                                    </p>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <div class="w-5 h-5 rounded-full bg-[#FF9933] flex items-center justify-center">
+                                            <div class="w-2 h-2 rounded-full bg-white"></div>
+                                        </div>
+                                    </div>
+                                    <p class="ml-3 text-gray-700">
+                                        Multi-stakeholder engagement with policymakers, business leaders, academics & innovators
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8 p-6 bg-gray-50 rounded-lg">
+                                <p class="text-gray-600 mb-3 italic">
+                                    "My heartfelt thanks to Deepak Vinayak OAM JP, Founder, AusInd Bridge Foundation (Australia), Dr. Jasvinder Sidhu, Federation University (Australia) and Prof. Kamala Kanta Dash (कृष्णकृपा), Rajasthan Centre of Advanced Technology (R-CAT), for shaping this meaningful dialogue and building bridges that matter."
+                                </p>
+                                <p class="text-gray-700 font-medium">
+                                    The journey of #TechBridgeDiplomacy has just begun - and the road ahead is full of promise, purpose, and partnership.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <a href="https://www.linkedin.com/posts/sujeet-kumar-3652b61_techbridgediplomacy-australiaindiatechdialogue-activity-7320329213520027653-bz8-/" 
+                           target="_blank"
+                           class="inline-flex items-center px-6 py-3 bg-[#FF9933] text-white font-semibold rounded-lg hover:bg-[#e6892e] transition-colors">
+                            View on LinkedIn
+                            <i class="fab fa-linkedin ml-2"></i>
+                        </a>
+                        <button>
+                            <a href="news.html" 
+                               class="inline-flex items-center px-6 py-3 border-2 border-[#FF9933] text-[#FF9933] font-semibold rounded-lg hover:bg-[#FF9933] hover:text-white transition-colors ml-4">
+                                View All Events
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </button>
+                    </div>
+
+                    <!-- Event Photos Gallery -->
+                    <div class="animate-fade-in" style="animation-delay: 0.2s">
+                        <h4 class="text-xl font-bold text-gray-900 mb-6">Event Photos</h4>
+                        
+                        <div class="grid grid-cols-2 gap-4 news-gallery">
+                            <!-- Photo 1 - Replace with your actual event photos -->
+                            <div class="relative rounded-xl overflow-hidden shadow-lg cursor-pointer" 
+                                 onclick="openModal('event1', 'Hon. Dylan Wight MP and Hon. Mathew Hilakari MP with delegation')">
+                                <img src="images/drive-download-20251217T071050Z-1-001/DSC_4643.JPG" 
+                                     alt="Australian Parliamentarians with delegation" 
+                                     class="w-full h-64 object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                    <div class="absolute bottom-4 left-4 text-white">
+                                        <i class="fas fa-search-plus text-lg"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Photo 2 -->
+                            <div class="relative rounded-xl overflow-hidden shadow-lg cursor-pointer"
+                                 onclick="openModal('event2', 'Tech Diplomacy Forum discussion')">
+                                <img src="images/drive-download-20251217T071050Z-1-001/DSC_4646.JPG" 
+                                     alt="Tech Diplomacy Forum discussion" 
+                                     class="w-full h-64 object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                    <div class="absolute bottom-4 left-4 text-white">
+                                        <i class="fas fa-search-plus text-lg"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Photo 3 -->
+                            <div class="relative rounded-xl overflow-hidden shadow-lg cursor-pointer"
+                                 onclick="openModal('event3', 'Networking with business leaders and academics')">
+                                <img src="images/drive-download-20251217T071050Z-1-001/DSC_4648.JPG" 
+                                     alt="Networking session" 
+                                     class="w-full h-64 object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                    <div class="absolute bottom-4 left-4 text-white">
+                                        <i class="fas fa-search-plus text-lg"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Photo 4 -->
+                            <div class="relative rounded-xl overflow-hidden shadow-lg cursor-pointer"
+                                 onclick="openModal('event4', 'Multi-stakeholder engagement session')">
+                                <img src="images/drive-download-20251217T071050Z-1-001/DSC_4649.JPG" 
+                                     alt="Multi-stakeholder engagement" 
+                                     class="w-full h-64 object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                    <div class="absolute bottom-4 left-4 text-white">
+                                        <i class="fas fa-search-plus text-lg"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 text-center">
+                            <p class="text-sm text-gray-500">
+                                Click on any photo to view larger version
+                            </p>
+                        </div>
+                        
+                        <!-- Event Highlights -->
+                        <div class="mt-8 grid grid-cols-2 gap-4">
+                            <div class="text-center p-4 bg-white rounded-lg shadow-sm">
+                                <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-[#FF9933]/10 flex items-center justify-center">
+                                    <i class="fas fa-users text-[#FF9933]"></i>
+                                </div>
+                                <h5 class="font-bold text-gray-900 text-sm">Multi-Stakeholder</h5>
+                                <p class="text-xs text-gray-600">Policymakers, Business Leaders, Academics</p>
+                            </div>
+                            <div class="text-center p-4 bg-white rounded-lg shadow-sm">
+                                <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-[#FF9933]/10 flex items-center justify-center">
+                                    <i class="fas fa-laptop-code text-[#FF9933]"></i>
+                                </div>
+                                <h5 class="font-bold text-gray-900 text-sm">Tech Diplomacy</h5>
+                                <p class="text-xs text-gray-600">Parliamentarians Forum Launch</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </article>
-        `;
-    });
-    
-    html += '</div>';
-    container.innerHTML = html;
-    
-    // Update active pagination
-    updatePagination(pageNumber);
-}
+            </div>
+        </section>
 
-// Function to render pagination
-function renderPagination() {
-    const container = document.getElementById('pagination-container');
-    const totalPages = Object.keys(newsPages).length;
-    
-    let html = '';
-    
-    // Previous button
-    html += `
-        <button onclick="changePage(1)" class="pagination-item w-10 h-10 flex items-center justify-center rounded-lg font-medium text-gray-700 hover:text-[#FF9933] hover:bg-gray-50">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-            </svg>
-        </button>
-    `;
-    
-    // Page numbers
-    for (let i = 1; i <= totalPages; i++) {
-        if (i === 1) {
-            html += `<span aria-current="page" class="pagination-item w-10 h-10 flex items-center justify-center rounded-lg font-medium bg-[#FF9933] text-white active">
-                ${i}
-            </span>`;
-        } else {
-            html += `<button onclick="changePage(${i})" class="pagination-item w-10 h-10 flex items-center justify-center rounded-lg font-medium text-gray-700 hover:text-[#FF9933] hover:bg-gray-50">
-                ${i}
-            </button>`;
-        }
-    }
-    
-    // Next button
-    html += `
-        <button onclick="changePage(${totalPages})" class="pagination-item w-10 h-10 flex items-center justify-center rounded-lg font-medium text-gray-700 hover:text-[#FF9933] hover:bg-gray-50">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-        </button>
-    `;
-    
-    container.innerHTML = html;
-}
+        <!-- Upcoming Events Section -->
+        <!-- <section class="py-16 md:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center mb-4">
+                        <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-[#FF9933] to-transparent"></div>
+                        <span class="mx-3 text-sm font-semibold uppercase tracking-wider text-gray-900">Stay Connected</span>
+                        <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-[#FF9933] to-transparent"></div>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                        More Events Coming Soon
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Follow us for updates on upcoming initiatives, partnerships, and events
+                    </p>
+                </div>
+                
+                <div class="max-w-2xl mx-auto text-center">
+                    <div class="inline-flex items-center space-x-4">
+                        <a href="#" class="text-gray-700 hover:text-[#FF9933] transition-colors">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-700 hover:text-[#FF9933] transition-colors">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-700 hover:text-[#FF9933] transition-colors">
+                            <i class="fab fa-facebook text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-700 hover:text-[#FF9933] transition-colors">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+    </div>
 
-// Function to update active pagination
-function updatePagination(activePage) {
-    const buttons = document.querySelectorAll('#pagination-container button, #pagination-container span');
-    buttons.forEach((btn, index) => {
-        if (index === activePage) { // +1 for previous button
-            btn.classList.add('bg-[#FF9933]', 'text-white');
-            btn.classList.remove('text-gray-700', 'hover:text-[#FF9933]', 'hover:bg-gray-50');
-        } else if (btn.tagName === 'BUTTON') {
-            btn.classList.remove('bg-[#FF9933]', 'text-white');
-            btn.classList.add('text-gray-700', 'hover:text-[#FF9933]', 'hover:bg-gray-50');
-        }
-    });
-}
+    
+       
 
-// Function to change page
-function changePage(pageNumber) {
-    renderNewsItems(pageNumber);
-    
-    // Smooth scroll to top of news section
-    document.getElementById('news-section').scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-    });
-}
+ 
 
-// Initialize on page load
-document.addEventListener('DOMContentLoaded', function() {
-    renderNewsItems(1);
-    renderPagination();
-});
-
-// Add CSS for animations
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
     
-    .animate-fade-in {
-        animation: fadeIn 0.6s ease-out forwards;
-    }
-    
-    .news-card {
-        transition: all 0.3s ease;
-    }
-    
-    .news-card:hover {
-        transform: translateY(-4px);
-    }
-    
-    .pagination-item {
-        transition: all 0.2s ease;
-    }
-`;
-document.head.appendChild(style);
-</script>
-    <!-- JavaScript for animations and interactions -->
     <script>
+        // Gallery images data - Replace with your actual event photos
+        const galleryImages = [
+            {
+                id: 'event1',
+                src: 'images/drive-download-20251217T071050Z-1-001/DSC_4643.JPG',
+                caption: 'Hon. Dylan Wight MP and Hon. Mathew Hilakari MP with Australian delegation'
+            },
+            {
+                id: 'event2',
+                src: 'images/drive-download-20251217T071050Z-1-001/DSC_4646.JPG',
+                caption: 'Tech Diplomacy Forum discussion with parliamentarians'
+            },
+            {
+                id: 'event3',
+                src: 'images/drive-download-20251217T071050Z-1-001/DSC_4648.JPG',
+                caption: 'Networking session with business leaders and academics'
+            },
+            {
+                id: 'event4',
+                src: 'images/drive-download-20251217T071050Z-1-001/DSC_4649.JPG',
+                caption: 'Multi-stakeholder engagement during the event'
+            },
+            // Add more photos as needed
+        ];
+        
+        // Modal functionality
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const modalCaption = document.getElementById('modalCaption');
+        
+        let currentIndex = 0;
+        
+        function openModal(imageId, caption) {
+            const image = galleryImages.find(img => img.id === imageId);
+            if (image) {
+                currentIndex = galleryImages.findIndex(img => img.id === imageId);
+                modalImg.src = image.src;
+                modalCaption.textContent = caption || image.caption;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+            const image = galleryImages[currentIndex];
+            modalImg.src = image.src;
+            modalCaption.textContent = image.caption;
+        }
+        
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % galleryImages.length;
+            const image = galleryImages[currentIndex];
+            modalImg.src = image.src;
+            modalCaption.textContent = image.caption;
+        }
+        
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+        
+        document.addEventListener('keydown', function(e) {
+            if (modal.classList.contains('active')) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                } else if (e.key === 'ArrowLeft') {
+                    prevImage();
+                } else if (e.key === 'ArrowRight') {
+                    nextImage();
+                }
+            }
+        });
+        
+        // Animation on scroll
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize animations
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -991,67 +1303,43 @@ document.head.appendChild(style);
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
             });
-
-            // Observe all animated elements
+            
             document.querySelectorAll('.animate-fade-in').forEach(el => {
                 observer.observe(el);
             });
-
-            // Add click effect for news cards
-            document.querySelectorAll('.news-card').forEach(card => {
-                card.addEventListener('click', function(e) {
-                    // Only trigger if not clicking on a link directly
-                    if (!e.target.closest('a')) {
-                        const link = this.querySelector('a[href]');
-                        if (link) {
-                            window.open(link.href, '_blank');
-                        }
-                    }
-                });
-                
-                // Add cursor pointer to entire card
-                card.style.cursor = 'pointer';
-            });
-
-            // Pagination hover effects
-            document.querySelectorAll('.pagination-item').forEach(item => {
-                item.addEventListener('mouseenter', function() {
-                    if (!this.classList.contains('active')) {
-                        this.style.transform = 'scale(1.1)';
-                    }
-                });
-                
-                item.addEventListener('mouseleave', function() {
-                    this.style.transform = 'scale(1)';
-                });
-            });
-
-            // Newsletter subscription
-            const subscribeBtn = document.querySelector('button[class*="bg-\\[\\#FF9933\\]"]');
-            const emailInput = document.querySelector('input[type="email"]');
             
-            if (subscribeBtn && emailInput) {
-                subscribeBtn.addEventListener('click', function() {
-                    const email = emailInput.value.trim();
-                    if (email && email.includes('@')) {
-                        alert('Thank you for subscribing to our newsletter!');
-                        emailInput.value = '';
-                    } else {
-                        alert('Please enter a valid email address.');
-                        emailInput.focus();
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fadeIn {
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
                     }
-                });
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
                 
-                // Allow Enter key to subscribe
-                emailInput.addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter') {
-                        subscribeBtn.click();
-                    }
-                });
-            }
+                .animate-fade-in {
+                    animation: fadeIn 0.6s ease-out forwards;
+                    animation-play-state: paused;
+                    opacity: 0;
+                }
+                
+                .news-gallery img {
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+                
+                .news-gallery img:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+                }
+            `;
+            document.head.appendChild(style);
         });
     </script>
-
+</section>
 
    
 
@@ -1069,23 +1357,23 @@ document.head.appendChild(style);
       <!-- LEFT CONTENT -->
       <div>
         <span class="text-saffron uppercase text-sm font-semibold tracking-widest">
-          Contact Us
+          Get in Touch
         </span>
 
         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-4 mb-6">
-          Let’s Start a <br class="hidden sm:block">
-          <span class="text-saffron">Conversation</span>
+          Contact <br class="hidden sm:block">
+          <span class="text-saffron">Our Team</span>
         </h2>
 
         <p class="text-gray/80 text-lg mb-8 max-w-xl">
-          Whether you're looking to expand into new markets, build strategic
-          partnerships, or collaborate across borders, our team is here to help.
+          For general enquiries, information requests, or any questions you may have, 
+          our team is here to assist you during regular office hours.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="contact.html"
              class="inline-flex items-center justify-center bg-saffron text-[#0C2340] px-8 py-4 rounded-lg font-semibold hover:bg-[#e58b2a] transition">
-            Contact Us Now
+            Send Enquiry
           </a>
 
           <a href="mailto:info@ausindbridge.org.au"
@@ -1107,12 +1395,12 @@ document.head.appendChild(style);
             </svg>
           </div>
           <div>
-            <h4 class="font-semibold text-[#0C2340]">Melbourne Office</h4>
-            <p class="text-gray-600 text-sm">
-              Level 12, 123 Collins Street<br>
-              Melbourne, VIC 3000
-            </p>
-          </div>
+  <h4 class="font-semibold text-[#0C2340]">Melbourne Office</h4>
+  <p class="text-gray-600 text-sm">
+    Melbourne, VIC 3000
+  </p>
+</div>
+
         </div>
 
         <div class="flex items-start gap-4">
@@ -1126,6 +1414,7 @@ document.head.appendChild(style);
           <div>
             <h4 class="font-semibold text-[#0C2340]">Email</h4>
             <p class="text-gray-600 text-sm">info@ausindbridge.org.au</p>
+            <p class="text-gray-500 text-xs mt-1">For general enquiries</p>
           </div>
         </div>
 
@@ -1139,7 +1428,8 @@ document.head.appendChild(style);
           </div>
           <div>
             <h4 class="font-semibold text-[#0C2340]">Office Hours</h4>
-            <p class="text-gray-600 text-sm">Mon – Fri, 9:00 AM – 6:00 PM</p>
+            <p class="text-gray-600 text-sm">Monday – Friday, 9:00 AM – 5:00 PM</p>
+            <p class="text-gray-500 text-xs mt-1">AEST | Closed on weekends and public holidays</p>
           </div>
         </div>
 

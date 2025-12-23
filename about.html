@@ -15,72 +15,183 @@
                         secondary: '#D4AF37',
                         accent: '#1E3A5F',
                         light: '#F8F9FA',
-                        saffron: '#FF9933'  // Added saffron color
+                        saffron: '#FF9933',
+                        dark: '#0A1A2E'
                     },
                     fontFamily: {
                         sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'gradient': 'gradient 8s ease infinite',
+                        'shine': 'shine 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        },
+                        shine: {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(100%)' },
+                        }
                     }
                 }
             }
         }
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        :root {
+            --primary: #0C2340;
+            --secondary: #D4AF37;
+            --accent: #1E3A5F;
+            --saffron: #FF9933;
         }
-        
-        @keyframes slideIn {
-            from { transform: translateX(-30px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
+
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
-        .animate-fade-in { animation: fadeIn 0.8s ease-out; }
-        .animate-slide-in { animation: slideIn 0.6s ease-out; }
-        .hover-lift { transition: transform 0.3s ease; }
-        .hover-lift:hover { transform: translateY(-5px); }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, #0C2340 0%, #1E3A5F 100%);
+
+        .gradient-text {
+            background: linear-gradient(135deg, #D4AF37 0%, #FF9933 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        
-        .section-padding {
-            padding-top: 5rem;
-            padding-bottom: 5rem;
+
+        .gradient-border {
+            position: relative;
+            background: linear-gradient(white, white) padding-box,
+                        linear-gradient(135deg, #D4AF37, #FF9933) border-box;
+            border: 2px solid transparent;
         }
-        
-        @media (min-width: 1024px) {
-            .section-padding {
-                padding-top: 7rem;
-                padding-bottom: 7rem;
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(12, 35, 64, 0.15);
+        }
+
+        .shine-effect {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shine-effect::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 20%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(30deg);
+            transition: all 0.6s;
+        }
+
+        .shine-effect:hover::after {
+            left: 100%;
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .floating-shapes {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #D4AF37, #FF9933);
+            top: 10%;
+            right: 5%;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #0C2340, #1E3A5F);
+            bottom: 15%;
+            left: 5%;
+            animation: float 25s ease-in-out infinite reverse;
+        }
+
+        .stagger-animation > * {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.6s forwards;
+        }
+
+        .stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
+        .stagger-animation > *:nth-child(2) { animation-delay: 0.2s; }
+        .stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
+        .stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
+        .stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
-        
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
+
+        .gradient-bg-animated {
+            background: linear-gradient(-45deg, #0C2340, #1E3A5F, #0A1A2E, #0C2340);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
         }
-        
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 153, 51, 0.1);
+            pointer-events: none;
         }
-        
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(to bottom, #D4AF37, #0C2340);
-            border-radius: 4px;
+
+        @keyframes particle-float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(var(--tx), var(--ty)); }
         }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(to bottom, #0C2340, #D4AF37);
+
+        .text-gradient-primary {
+            background: linear-gradient(135deg, #0C2340 0%, #1E3A5F 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     </style>
 </head>
-<body class="font-sans bg-light">
+<body class="font-sans bg-light overflow-x-hidden">
     <!-- Header Included -->
     <div data-include="components/header.html"></div>
 
-    <main class="min-h-screen">
+    <main class="min-h-screen relative">
+        
+        <!-- Hero Section -->
+         <main class="min-h-screen">
         <!-- Hero Section -->
         <section class="relative pt-32 pb-20 overflow-hidden">
             <div class="absolute inset-0">
@@ -104,744 +215,484 @@
             </div>
         </section>
 
-        <!-- Mission & Vision Section -->
-        <section class="section-padding bg-white">
+        <!-- About Cards Section -->
+        <section class="py-20 relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-2 gap-12">
+                <div class="grid lg:grid-cols-3 gap-8 lg:gap-12">
                     <!-- Mission Card -->
-                    <div class="gradient-bg rounded-2xl p-10 text-white hover-lift">
-                        <div class="w-16 h-16 bg-saffron rounded-xl flex items-center justify-center mb-6 hover:rotate-12 transition-transform">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <circle cx="12" cy="12" r="6"></circle>
-                                <circle cx="12" cy="12" r="2"></circle>
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4">Our Mission</h3>
-                        <div class="space-y-4 text-white/80 leading-relaxed text-lg">
-                            <p>Our mission is to strengthen the ties between Australia and India across three core pillars:</p>
-                            <ul class="space-y-3 pl-4">
-                                <li class="flex items-start space-x-3">
-                                    <div class="w-2 h-2 bg-saffron rounded-full mt-2 flex-shrink-0"></div>
-                                    <span>Facilitate economic collaborations and partnerships</span>
-                                </li>
-                                <li class="flex items-start space-x-3">
-                                    <div class="w-2 h-2 bg-saffron rounded-full mt-2 flex-shrink-0"></div>
-                                    <span>Promote political dialogue and strategic cooperation</span>
-                                </li>
-                                <li class="flex items-start space-x-3">
-                                    <div class="w-2 h-2 bg-saffron rounded-full mt-2 flex-shrink-0"></div>
-                                    <span>Support charitable initiatives that uplift communities</span>
-                                </li>
-                            </ul>
+                    <div class="bg-white rounded-3xl p-8 card-hover shadow-lg border border-gray-100 relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-saffron to-secondary"></div>
+                        <div class="relative z-10">
+                            <div class="w-16 h-16 bg-gradient-to-br from-primary/10 to-saffron/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-bullseye text-2xl text-primary"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
+                            <p class="text-gray-600 leading-relaxed mb-6">
+                                Strengthen Australia-India ties across business & trade, political cooperation, and charitable causes to facilitate economic collaborations and uplift communities.
+                            </p>
+                            <div class="space-y-3">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-2 h-2 bg-saffron rounded-full"></div>
+                                    <span class="text-gray-700">Economic Collaborations</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-2 h-2 bg-saffron rounded-full"></div>
+                                    <span class="text-gray-700">Political Dialogue</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-2 h-2 bg-saffron rounded-full"></div>
+                                    <span class="text-gray-700">Community Support</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Vision Card -->
-                    <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-10 border border-gray-200 hover-lift">
-                        <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6 hover:rotate-12 transition-transform">
-                            <svg class="w-8 h-8 text-saffron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path>
-                                <circle cx="12" cy="12" r="3"></circle>
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-primary mb-4">Our Vision</h3>
-                        <p class="text-gray-600 leading-relaxed text-lg">
-                            The Australia India Bridge Foundation envisions a dynamic and harmonious partnership between Australia and India, transcending geographical boundaries. Our vision is to build a resilient and inclusive alliance that fosters sustainable growth, mutual prosperity, and social well-being for both nations. Through unwavering collaboration, we aim to create a shared future founded on trust, respect, and shared values, where Australia and India stand shoulder-to-shoulder as global leaders, driving positive change on the world stage.
-                        </p>
-                    </div>
-                    
-                    <!-- Purpose Card -->
-                    <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-10 border border-gray-200 hover-lift lg:col-span-2">
-                        <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6 hover:rotate-12 transition-transform">
-                            <svg class="w-8 h-8 text-saffron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path>
-                                <circle cx="12" cy="12" r="3"></circle>
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-primary mb-4">Our Purpose</h3>
-                        <p class="text-gray-600 leading-relaxed text-lg">
-                            The Australia India Bridge Foundation exists to transform dialogue into action.
-                            We serve as a trusted platform where policy discussions evolve into tangible
-                            outcomes through partnerships, leadership engagement, and community-driven
-                            initiatives that benefit both nations.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Our Role Section -->
-        <section class="section-padding bg-gradient-to-br from-gray-50 to-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
-                    <div class="animate-slide-in">
-                        <div class="max-w-3xl mb-12">
-                            <div class="inline-flex items-center space-x-2 text-gray font-semibold uppercase text-sm tracking-wider mb-4">
-                                <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-secondary to-transparent"></div>
-                                <span>Our Role</span>
-                                <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-secondary to-transparent"></div>
+                    <div class="bg-white rounded-3xl p-8 card-hover shadow-lg border border-gray-100 relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary to-primary"></div>
+                        <div class="relative z-10">
+                            <div class="w-16 h-16 bg-gradient-to-br from-primary/10 to-saffron/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-eye text-2xl text-primary"></i>
                             </div>
-                            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-primary">
-                                Catalyzing Australia-India Collaboration
-                            </h2>
-                        </div>
-                        <div class="space-y-6 text-gray-600 leading-relaxed">
-                            <p>
-                                Beyond dialogue, we focus on execution. Our role is to convert policy discussions,
-                                strategic intent, and bilateral agreements into actionable initiatives by enabling
-                                cross-sector collaboration, facilitating pilot programs, and supporting scalable
-                                outcomes that deliver real economic and social impact.
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Build a resilient, inclusive alliance that transcends boundaries, fostering sustainable growth and mutual prosperity where Australia and India stand as global leaders.
                             </p>
-                            <p>As Australia and India deepen their strategic partnership, the need for effective platforms to facilitate business, cultural, and diplomatic engagement has never been greater. The Australia India Bridge Foundation plays a crucial role in this ecosystem.</p>
-                            <p>We bring together diverse stakeholders—from multinational corporations to innovative startups, from government officials to academic institutions—creating an environment where ideas are exchanged, partnerships are formed, and opportunities are realized.</p>
-                            <p>Our work spans across sectors including technology, education, healthcare, agriculture, mining, and financial services. We organize high-level forums, facilitate business delegations, provide market intelligence, and advocate for policies that benefit both nations.</p>
+                            <div class="mt-6 p-4 bg-gradient-to-r from-primary/5 to-saffron/5 rounded-xl border border-primary/10">
+                                <div class="text-sm text-gray-600 italic">
+                                    "Creating a shared future founded on trust, respect, and shared values"
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="relative animate-fade-in">
-                        <img src="images/Dir.jpg" 
-                             alt="Collaboration" 
-                             class="rounded-2xl shadow-2xl w-full h-[680px] object-cover hover:scale-105 transition-transform duration-500">
-                        <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-saffron rounded-2xl flex items-center justify-center shadow-xl">
-                            <svg class="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                            </svg>
+
+                    <!-- Purpose Card -->
+                    <div class="bg-white rounded-3xl p-8 card-hover shadow-lg border border-gray-100 relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-saffron"></div>
+                        <div class="relative z-10">
+                            <div class="w-16 h-16 bg-gradient-to-br from-primary/10 to-saffron/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-star text-2xl text-primary"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Purpose</h3>
+                            <p class="text-gray-600 leading-relaxed mb-6">
+                                Transform dialogue into action through leadership engagement, policy implementation, and community-driven initiatives that create tangible outcomes for both nations.
+                            </p>
+                            <div class="flex items-center space-x-4">
+                                <div class="px-4 py-2 bg-primary/10 rounded-lg">
+                                    <span class="text-primary font-semibold text-sm">Policy → Action</span>
+                                </div>
+                                <div class="px-4 py-2 bg-saffron/10 rounded-lg">
+                                    <span class="text-saffron font-semibold text-sm">Leadership</span>
+                                </div>
+                                <div class="px-4 py-2 bg-secondary/10 rounded-lg">
+                                    <span class="text-secondary font-semibold text-sm">Impact</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Our Values Section -->
-        <section class="section-padding bg-white">
+        <!-- Strategic Focus Section -->
+        <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <!-- Section Header -->
-                <div class="max-w-3xl mb-16 text-center mx-auto">
-                    <div class="inline-flex items-center space-x-2 text-gray font-semibold uppercase text-sm tracking-wider mb-4">
-                        <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-secondary to-transparent"></div>
-                        <span>Core Values</span>
-                        <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-secondary to-transparent"></div>
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center space-x-4 mb-6">
+                        <div class="w-12 h-px bg-gradient-to-r from-transparent via-saffron to-transparent"></div>
+                        <span class="text-saffron font-semibold tracking-wider">OUR FOCUS</span>
+                        <div class="w-12 h-px bg-gradient-to-r from-transparent via-saffron to-transparent"></div>
                     </div>
-                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-primary">
-                        What Guides Us
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                        <span class="text-gray-900">Strategic</span>
+                        <span class="gradient-text">Focus Areas</span>
                     </h2>
-                    <p class="text-lg leading-relaxed text-gray-600">
-                        At the Australia India Alliance, our mission is shaped by the following core values that define our work, our partnerships, and our commitment to meaningful impact.
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                        We concentrate on key areas to strengthen Australia-India relations through practical initiatives
                     </p>
                 </div>
 
-                <!-- Core Values Grid -->
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- 1. Integrity -->
-                    <div class="text-center group hover-lift">
-                        <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 
-                                    group-hover:scale-110 transition-transform duration-300">
-                            <svg class="w-10 h-10 text-saffron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                                <path d="M2 17l10 5 10-5"></path>
-                                <path d="M2 12l10 5 10-5"></path>
-                            </svg>
+                <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+                    <!-- Focus 1 -->
+                    <div class="relative group">
+                        <div class="absolute inset-0 bg-gradient-to-br from-saffron/20 to-secondary/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                        <div class="relative bg-white rounded-3xl p-8 shadow-xl border border-gray-100 card-hover">
+                            <div class="text-6xl font-bold text-primary/10 mb-4">01</div>
+                            <div class="w-14 h-14 bg-gradient-to-br from-primary to-saffron rounded-2xl flex items-center justify-center mb-6">
+                                <i class="fas fa-globe-asia text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Australia-India Relations</h3>
+                            <p class="text-gray-600 leading-relaxed mb-6">
+                                Enhancing bilateral cooperation through strategic partnerships, cultural exchanges, and mutual understanding.
+                            </p>
+                            <div class="space-y-3">
+                                <div class="flex items-center space-x-3 text-gray-700">
+                                    <i class="fas fa-check text-saffron"></i>
+                                    <span>Strategic Partnerships</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-gray-700">
+                                    <i class="fas fa-check text-saffron"></i>
+                                    <span>Cultural Exchanges</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-gray-700">
+                                    <i class="fas fa-check text-saffron"></i>
+                                    <span>Mutual Understanding</span>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Integrity</h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            We uphold honesty, transparency, and ethical conduct in all our work, ensuring trust and credibility with our stakeholders, partners, and communities.
-                        </p>
                     </div>
 
-                    <!-- 2. Inclusivity -->
-                    <div class="text-center group hover-lift">
-                        <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 
-                                    group-hover:scale-110 transition-transform duration-300">
-                            <svg class="w-10 h-10 text-saffron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <circle cx="12" cy="7" r="4"></circle>
-                                <path d="M5.5 21a6.5 6.5 0 0 1 13 0"></path>
-                            </svg>
+                    <!-- Focus 2 -->
+                    <div class="relative group">
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                        <div class="relative bg-white rounded-3xl p-8 shadow-xl border border-gray-100 card-hover">
+                            <div class="text-6xl font-bold text-primary/10 mb-4">02</div>
+                            <div class="w-14 h-14 bg-gradient-to-br from-saffron to-secondary rounded-2xl flex items-center justify-center mb-6">
+                                <i class="fas fa-comments text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Policy Dialogue → Action</h3>
+                            <p class="text-gray-600 leading-relaxed mb-6">
+                                Converting strategic discussions into tangible initiatives through implementation frameworks.
+                            </p>
+                            <div class="space-y-3">
+                                <div class="flex items-center space-x-3 text-gray-700">
+                                    <i class="fas fa-check text-saffron"></i>
+                                    <span>High-Level Forums</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-gray-700">
+                                    <i class="fas fa-check text-saffron"></i>
+                                    <span>Working Groups</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-gray-700">
+                                    <i class="fas fa-check text-saffron"></i>
+                                    <span>Real-World Outcomes</span>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Inclusivity</h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            We celebrate diversity and embrace the richness of cultures, ideas, and perspectives from both nations, ensuring a welcoming and respectful environment for all.
-                        </p>
                     </div>
 
-                    <!-- 3. Collaboration -->
-                    <div class="text-center group hover-lift">
-                        <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 
-                                    group-hover:scale-110 transition-transform duration-300">
-                            <svg class="w-10 h-10 text-saffron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path d="M8 16l-4-4 4-4"></path>
-                                <path d="M16 8l4 4-4 4"></path>
-                                <path d="M4 12h16"></path>
-                            </svg>
+                    <!-- Focus 3 -->
+                    <div class="relative group">
+                        <div class="absolute inset-0 bg-gradient-to-br from-secondary/20 to-saffron/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                        <div class="relative bg-white rounded-3xl p-8 shadow-xl border border-gray-100 card-hover">
+                            <div class="text-6xl font-bold text-primary/10 mb-4">03</div>
+                            <div class="w-14 h-14 bg-gradient-to-br from-secondary to-primary rounded-2xl flex items-center justify-center mb-6">
+                                <i class="fas fa-users text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Leadership & Community</h3>
+                            <p class="text-gray-600 leading-relaxed mb-6">
+                                Empowering current and future leaders through exchange programs and community initiatives.
+                            </p>
+                            <div class="space-y-3">
+                                <div class="flex items-center space-x-3 text-gray-700">
+                                    <i class="fas fa-check text-saffron"></i>
+                                    <span>Exchange Programs</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-gray-700">
+                                    <i class="fas fa-check text-saffron"></i>
+                                    <span>Capacity Building</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-gray-700">
+                                    <i class="fas fa-check text-saffron"></i>
+                                    <span>Collaborative Solutions</span>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Collaboration</h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            We believe in the power of collective effort and actively build partnerships across sectors to create transformative and lasting impact.
-                        </p>
                     </div>
+                </div>
 
-                    <!-- 4. Innovation -->
-                    <div class="text-center group hover-lift">
-                        <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 
-                                    group-hover:scale-110 transition-transform duration-300">
-                            <svg class="w-10 h-10 text-saffron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2v4"></path>
-                                <path d="M12 18v4"></path>
-                                <path d="M4.93 4.93l2.83 2.83"></path>
-                                <path d="M16.24 16.24l2.83 2.83"></path>
-                                <circle cx="12" cy="12" r="5"></circle>
-                            </svg>
+                <!-- Programs Showcase -->
+                <div class="mt-20 bg-gradient-to-r from-primary to-accent rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-32 translate-x-32"></div>
+                    <div class="relative z-10">
+                        <div class="text-center mb-10">
+                            <h3 class="text-3xl font-bold mb-4">Featured Programs</h3>
+                            <p class="text-white/80 max-w-2xl mx-auto">Driving leadership and collaboration through specialized initiatives</p>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Innovation</h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            We embrace creativity, new ideas, and emerging technologies to address complex challenges and drive forward-thinking solutions.
-                        </p>
-                    </div>
-
-                    <!-- 5. Empowerment -->
-                    <div class="text-center group hover-lift">
-                        <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 
-                                    group-hover:scale-110 transition-transform duration-300">
-                            <svg class="w-10 h-10 text-saffron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 20l4-8h-8l4 8z"></path>
-                                <circle cx="12" cy="6" r="3"></circle>
-                            </svg>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="glass-morphism rounded-2xl p-8 backdrop-blur-sm hover:bg-white/15 transition-all duration-300">
+                                <div class="flex items-start space-x-6">
+                                    <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-exchange-alt text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xl font-bold mb-3">Leadership Exchange Program</h4>
+                                        <p class="text-white/80">
+                                            High-level engagement between Australian and Indian leaders, focusing on governance best practices and common challenges.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="glass-morphism rounded-2xl p-8 backdrop-blur-sm hover:bg-white/15 transition-all duration-300">
+                                <div class="flex items-start space-x-6">
+                                    <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-graduation-cap text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xl font-bold mb-3">Youth Leadership Programs</h4>
+                                        <p class="text-white/80">
+                                            Bringing together young leaders to discuss challenges and develop innovative solutions for a cooperative future.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Empowerment</h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            We uplift individuals and communities through initiatives that enable them to grow, thrive, and build a brighter future.
-                        </p>
-                    </div>
-
-                    <!-- 6. Sustainability -->
-                    <div class="text-center group hover-lift">
-                        <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 
-                                    group-hover:scale-110 transition-transform duration-300">
-                            <svg class="w-10 h-10 text-saffron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 22c4-2 8-6 8-12a8 8 0 1 0-16 0c0 6 4 10 8 12z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Sustainability</h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            We are committed to environmental and social sustainability, ensuring that our work positively impacts future generations.
-                        </p>
-                    </div>
-
-                    <!-- 7. Resilience -->
-                    <div class="text-center group hover-lift">
-                        <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 
-                                    group-hover:scale-110 transition-transform duration-300">
-                            <svg class="w-10 h-10 text-saffron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path d="M4 14l8 6 8-6"></path>
-                                <path d="M4 10l8 6 8-6"></path>
-                                <path d="M4 6l8 6 8-6"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Resilience</h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            We approach challenges with determination and adaptability, learning from obstacles and growing stronger through experience.
-                        </p>
-                    </div>
-
-                    <!-- 8. Excellence -->
-                    <div class="text-center group hover-lift">
-                        <div class="w-20 h-20 gradient-bg rounded-2xl flex items-center justify-center mx-auto mb-6 
-                                    group-hover:scale-110 transition-transform duration-300">
-                            <svg class="w-10 h-10 text-saffron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2l3 7h7l-5.5 4.5L18 22l-6-4-6 4 1.5-8.5L2 9h7l3-7z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Excellence</h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            We maintain the highest standards of professionalism, quality, and impact in everything we do.
-                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Strategic Navigation CTA -->
-        <section class="py-16 bg-gradient-to-r from-primary to-accent">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
-                        Ready to Explore Our Work in Depth?
-                    </h2>
-                    <p class="text-xl text-white/80 max-w-3xl mx-auto">
-                        Dive deeper into each of our strategic pillars and discover how we're making a difference across political, business, and charitable domains.
+        <!-- Core Values Section -->
+        <section class="py-20 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-white to-gray-50"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center space-x-4 mb-6">
+                        <div class="w-20 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+                        <span class="text-primary font-semibold tracking-wider uppercase">OUR VALUES</span>
+                        <div class="w-20 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+                    </div>
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">Core Values That <span class="gradient-text">Guide Us</span></h2>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                        These principles shape our decisions and drive our commitment to excellence
                     </p>
                 </div>
-                
-                <div class="grid md:grid-cols-3 gap-6">
-                    <a href="/political.html" class="group bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-xl font-bold text-white">Political & Strategic</h3>
-                            <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30">
-                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                </svg>
-                            </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                    <!-- Value 1 -->
+                    <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100 group shine-effect">
+                        <div class="w-16 h-16 bg-gradient-to-br from-primary/10 to-saffron/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-shield-alt text-2xl text-primary"></i>
                         </div>
-                        <p class="text-white/70 mb-4">Explore our diplomatic initiatives and policy advocacy work.</p>
-                        <span class="text-saffron font-medium text-sm">View Political Initiatives →</span>
-                    </a>
-                    
-                    <a href="/strategicapproach.html" class="group bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-xl font-bold text-white">Strategic Partnerships</h3>
-                            <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30">
-                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                </svg>
-                            </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Integrity</h4>
+                        <p class="text-gray-600 text-sm">Utmost honesty, transparency, and ethical conduct in all our work</p>
+                    </div>
+
+                    <!-- Value 2 -->
+                    <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100 group shine-effect">
+                        <div class="w-16 h-16 bg-gradient-to-br from-primary/10 to-saffron/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-users text-2xl text-primary"></i>
                         </div>
-                        <p class="text-white/70 mb-4">Discover business opportunities and economic collaborations.</p>
-                        <span class="text-saffron font-medium text-sm">Explore Partnerships →</span>
-                    </a>
-                    
-                    <a href="/charitablecause.html" class="group bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-xl font-bold text-white">Charity Initiatives</h3>
-                            <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30">
-                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                </svg>
-                            </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Inclusivity</h4>
+                        <p class="text-gray-600 text-sm">Embracing diversity and celebrating cultural richness</p>
+                    </div>
+
+                    <!-- Value 3 -->
+                    <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100 group shine-effect">
+                        <div class="w-16 h-16 bg-gradient-to-br from-primary/10 to-saffron/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-handshake text-2xl text-primary"></i>
                         </div>
-                        <p class="text-white/70 mb-4">Learn about our social impact programs and how to contribute.</p>
-                        <span class="text-saffron font-medium text-sm">Support Our Causes →</span>
-                    </a>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Collaboration</h4>
+                        <p class="text-gray-600 text-sm">Power of collective effort and strategic partnerships</p>
+                    </div>
+
+                    <!-- Value 4 -->
+                    <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100 group shine-effect">
+                        <div class="w-16 h-16 bg-gradient-to-br from-primary/10 to-saffron/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-lightbulb text-2xl text-primary"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Innovation</h4>
+                        <p class="text-gray-600 text-sm">Continuous learning and embracing new approaches</p>
+                    </div>
+
+                    <!-- Value 5 -->
+                    <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100 group shine-effect">
+                        <div class="w-16 h-16 bg-gradient-to-br from-primary/10 to-saffron/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-rocket text-2xl text-primary"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Empowerment</h4>
+                        <p class="text-gray-600 text-sm">Enabling individuals and communities to reach full potential</p>
+                    </div>
+
+                    <!-- Value 6 -->
+                    <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100 group shine-effect">
+                        <div class="w-16 h-16 bg-gradient-to-br from-primary/10 to-saffron/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-leaf text-2xl text-primary"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Sustainability</h4>
+                        <p class="text-gray-600 text-sm">Commitment to environmental and social responsibility</p>
+                    </div>
+
+                    <!-- Value 7 -->
+                    <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100 group shine-effect">
+                        <div class="w-16 h-16 bg-gradient-to-br from-primary/10 to-saffron/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-mountain text-2xl text-primary"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Resilience</h4>
+                        <p class="text-gray-600 text-sm">Determination to overcome challenges and learn from setbacks</p>
+                    </div>
+
+                    <!-- Value 8 -->
+                    <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100 group shine-effect">
+                        <div class="w-16 h-16 bg-gradient-to-br from-primary/10 to-saffron/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-trophy text-2xl text-primary"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Excellence</h4>
+                        <p class="text-gray-600 text-sm">Highest standards of quality and professionalism in all we do</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Legacy Partners Section -->
-        <section class="bg-gray-50 py-16">
-            <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                <!-- Section Heading -->
-                <div class="text-center mb-14">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
-                        Honouring Our Legacy & Community Partners
+        <section class="py-20 bg-gradient-to-b from-white to-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center space-x-4 mb-6">
+                        <div class="w-20 h-px bg-gradient-to-r from-transparent via-saffron to-transparent"></div>
+                        <span class="text-saffron font-semibold tracking-wider uppercase">OUR NETWORK</span>
+                        <div class="w-20 h-px bg-gradient-to-r from-transparent via-saffron to-transparent"></div>
+                    </div>
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                        <span class="text-gray-900">Honouring Our Legacy &</span>
+                        <span class="block gradient-text">Community Partners</span>
                     </h2>
-                    <p class="mt-4 text-gray-600 max-w-3xl mx-auto">
-                        We acknowledge and honor the organisations whose contributions over the years 
-                        have strengthened the cultural, social, and diplomatic ties between Australia 
-                        and India. These community groups and diaspora-led initiatives have played a 
-                        significant role in shaping Indo–Australian collaboration.
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                        We acknowledge and honor the organisations whose contributions have strengthened cultural, social, and diplomatic ties between Australia and India
                     </p>
                 </div>
 
-                <!-- Partner Grid -->
-                <div class="grid md:grid-cols-3 gap-10">
+                <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
                     <!-- SACLG -->
-                    <div class="bg-white shadow-sm rounded-xl p-6 hover:shadow-md transition">
-                        <img
-                            src="/images/Saclg.avif"
-                            alt="SACLG Logo"
-                            class="h-20 mx-auto object-contain mb-4"
-                        />
-                        <h3 class="text-xl font-semibold text-gray-800 text-center">
-                            South Asian Community Link Group Australasia (SACLG)
-                        </h3>
-                        <p class="mt-3 text-gray-600 text-center text-sm">
-                            A leading organisation dedicated to empowering South Asian communities 
-                            through cultural programs, mental health support, and community development.
-                        </p>
-                        <div class="mt-4 text-center">
-                            <a href="https://saclg.org" target="_blank" class="text-blue-600 font-medium hover:underline">
-                                Visit Website
+                    <div class="bg-white rounded-3xl p-8 card-hover shadow-lg border border-gray-100 relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-saffron to-secondary"></div>
+                        <div class="relative z-10">
+                            <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-primary/10 to-saffron/10 rounded-2xl flex items-center justify-center">
+                                <img src="/images/Saclg.avif" alt="SACLG Logo" class="w-12 h-12 object-contain">
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 text-center mb-4">SACLG</h3>
+                            <p class="text-gray-600 text-center text-sm mb-6">
+                                Empowering South Asian communities through cultural programs and community development
+                            </p>
+                            <a href="https://saclg.org" target="_blank" class="inline-flex items-center justify-center space-x-2 text-saffron font-medium w-full">
+                                <span>Visit Website</span>
+                                <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
                     </div>
 
                     <!-- GOPIO -->
-                    <div class="bg-white shadow-sm rounded-xl p-6 hover:shadow-md transition">
-                        <img
-                            src="/images/gopio_logo.jpg"
-                            alt="GOPIO Logo"
-                            class="h-20 mx-auto object-contain mb-4"
-                        />
-                        <h3 class="text-xl font-semibold text-gray-800 text-center">
-                            GOPIO Melbourne
-                        </h3>
-                        <p class="mt-3 text-gray-600 text-center text-sm">
-                            A global organisation representing people of Indian origin and promoting 
-                            welfare, unity, and cross-cultural engagement across the Indo–Australian diaspora.
-                        </p>
-                        <div class="mt-4 text-center">
-                            <a href="https://gopio.net" target="_blank" class="text-blue-600 font-medium hover:underline">
-                                Visit Website
+                    <div class="bg-white rounded-3xl p-8 card-hover shadow-lg border border-gray-100 relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary to-primary"></div>
+                        <div class="relative z-10">
+                            <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-primary/10 to-saffron/10 rounded-2xl flex items-center justify-center">
+                                <img src="/images/gopio_logo.jpg" alt="GOPIO Logo" class="w-12 h-12 object-contain">
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 text-center mb-4">GOPIO Melbourne</h3>
+                            <p class="text-gray-600 text-center text-sm mb-6">
+                                Promoting welfare, unity, and cross-cultural engagement across Indo-Australian diaspora
+                            </p>
+                            <a href="https://gopio.net" target="_blank" class="inline-flex items-center justify-center space-x-2 text-saffron font-medium w-full">
+                                <span>Visit Website</span>
+                                <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
                     </div>
 
                     <!-- AusInd Bridge -->
-                    <div class="bg-white shadow-sm rounded-xl p-6 hover:shadow-md transition">
-                        <img
-                            src="/images/ausind_bridge_foundation_logo.jpg"
-                            alt="AusInd Bridge Logo"
-                            class="h-20 mx-auto object-contain mb-4"
-                        />
-                        <h3 class="text-xl font-semibold text-gray-800 text-center">
-                            AusInd Bridge
-                        </h3>
-                        <p class="mt-3 text-gray-600 text-center text-sm">
-                            An initiative dedicated to strengthening relations between Australia and India 
-                            through community partnerships, cultural diplomacy, and collaborative programs.
-                        </p>
-                        <div class="mt-4 text-center">
-                            <a href="https://ausindbridge.org.au" target="_blank" class="text-blue-600 font-medium hover:underline">
-                                Visit Website
+                    <div class="bg-white rounded-3xl p-8 card-hover shadow-lg border border-gray-100 relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-saffron"></div>
+                        <div class="relative z-10">
+                            <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-primary/10 to-saffron/10 rounded-2xl flex items-center justify-center">
+                                <img src="/images/ausind_bridge_foundation_logo.jpg" alt="AusInd Bridge Logo" class="w-12 h-12 object-contain">
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 text-center mb-4">AusInd Bridge</h3>
+                            <p class="text-gray-600 text-center text-sm mb-6">
+                                Strengthening relations through community partnerships and collaborative programs
+                            </p>
+                            <a href="https://ausindbridge.org.au" target="_blank" class="inline-flex items-center justify-center space-x-2 text-saffron font-medium w-full">
+                                <span>Visit Website</span>
+                                <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
                     </div>
                 </div>
+
+                <!-- CTA Section -->
+                
             </div>
         </section>
-
-        <!-- CTA Section -->
-        <section class="section-padding gradient-bg text-white">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-3xl lg:text-4xl font-bold mb-6">Join Our Mission</h2>
-                <p class="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
-                    Become part of a growing community dedicated to strengthening Australia-India relations. Together, we can build bridges that create lasting impact.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="/contact.html" 
-                       class="bg-saffron text-primary px-8 py-4 rounded-lg font-semibold hover:bg-saffron/90 transition-colors shadow-lg inline-flex items-center justify-center space-x-2">
-                        <span>Get Involved</span>
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg>
-                    </a>
-                    <a href="/contact.html" 
-                       class="bg-white/10 backdrop-blur-sm border border-white/30 px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-colors inline-flex items-center justify-center">
-                        Explore Our Services
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Partners Section -->
-        <section class="py-16 bg-gradient-to-b from-gray-50 to-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <!-- Header Section -->
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                        Trusted by Global Leaders
-                        <span class="relative inline-block">
-                            <span class="text-saffron">Worldwide</span>
-                            <div class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-saffron/50 to-saffron-300 rounded-full"></div>
-                        </span>
-                    </h2>
-                    
-                    <p class="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto">
-                        We collaborate with government bodies, industry associations, and corporate leaders 
-                        from both nations to drive meaningful partnerships.
-                    </p>
-                </div>
-                
-                <!-- Auto-Scrolling Partner Logos Section -->
-                <div class="relative mb-16">
-                    
-                    <!-- Auto-scroll container -->
-                    <div class="overflow-hidden py-4">
-                        <div id="scrollContainer" class="flex gap-6" style="animation: scroll 30s linear infinite;">
-                            <!-- First set of logos -->
-                            <div class="flex gap-6">
-                                <!-- Austrade -->
-                                <div class="group bg-white/90 backdrop-blur-sm rounded-2xl p-6 flex flex-col items-center justify-center w-64 h-40 border border-gray-200 hover:border-blue-200 hover:shadow-xl transition-all duration-300 flex-shrink-0">
-                                    <div class="text-center">
-                                        <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                            <!-- <span class="text-blue-600 font-bold text-2xl group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">A</span> -->
-                                             <img 
-  src="images/DFAT.png"
-  alt="FICCI Logo"
-  class="w-20 h-auto object-contain group-hover:scale-110 transition-transform duration-300"
-/>
-                                        </div>
-                                        <span class="text-gray-900 font-bold text-lg">Austrade</span>
-                                        <div class="mt-2 h-0.5 w-8 mx-auto bg-gradient-to-r from-transparent via-gray-300 to-transparent group-hover:via-blue-500 transition-all duration-300"></div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Invest India -->
-                                <div class="group bg-white/90 backdrop-blur-sm rounded-2xl p-6 flex flex-col items-center justify-center w-64 h-40 border border-gray-200 hover:border-blue-200 hover:shadow-xl transition-all duration-300 flex-shrink-0">
-                                    <div class="text-center">
-                                        <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                            <!-- <span class="text-blue-600 font-bold text-2xl group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">I</span> -->
-                                             <img 
-  src="images/new-investindia-logo-both.png"
-  alt="FICCI Logo"
-  class="w-20 h-auto object-contain group-hover:scale-110 transition-transform duration-300"
-/>
-                                        </div>
-                                        <span class="text-gray-900 font-bold text-lg">Invest India</span>
-                                        <div class="mt-2 h-0.5 w-8 mx-auto bg-gradient-to-r from-transparent via-gray-300 to-transparent group-hover:via-blue-500 transition-all duration-300"></div>
-                                    </div>
-                                </div>
-                                
-                                <!-- DFAT -->
-                                <div class="group bg-white/90 backdrop-blur-sm rounded-2xl p-6 flex flex-col items-center justify-center w-64 h-40 border border-gray-200 hover:border-blue-200 hover:shadow-xl transition-all duration-300 flex-shrink-0">
-                                    <div class="text-center">
-                                        <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                            <!-- <span class="text-blue-600 font-bold text-2xl group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">D</span> -->
-                                             <img 
-  src="images/DFAT.png"
-  alt="FICCI Logo"
-  class="w-20 h-auto object-contain group-hover:scale-110 transition-transform duration-300"
-/>
-                                        </div>
-                                        <span class="text-gray-900 font-bold text-lg">DFAT</span>
-                                        <div class="mt-2 h-0.5 w-8 mx-auto bg-gradient-to-r from-transparent via-gray-300 to-transparent group-hover:via-blue-500 transition-all duration-300"></div>
-                                    </div>
-                                </div>
-                                
-                                <!-- FICCI -->
-                                <div class="group bg-white/90 backdrop-blur-sm rounded-2xl p-6 flex flex-col items-center justify-center w-64 h-40 border border-gray-200 hover:border-blue-200 hover:shadow-xl transition-all duration-300 flex-shrink-0">
-                                    <div class="text-center">
-                                        <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                            <!-- <span class="text-blue-600 font-bold text-2xl group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">F</span> -->
-                                        <img 
-  src="images/FICCI_LOGO.png"
-  alt="FICCI Logo"
-  class="w-20 h-auto object-contain group-hover:scale-110 transition-transform duration-300"
-/>
-
-                                        </div>
-                                        <span class="text-gray-900 font-bold text-lg">FICCI</span>
-                                        <div class="mt-2 h-0.5 w-8 mx-auto bg-gradient-to-r from-transparent via-gray-300 to-transparent group-hover:via-blue-500 transition-all duration-300"></div>
-                                    </div>
-                                </div>
-                                
-                                <!-- CII -->
-                                <div class="group bg-white/90 backdrop-blur-sm rounded-2xl p-6 flex flex-col items-center justify-center w-64 h-40 border border-gray-200 hover:border-blue-200 hover:shadow-xl transition-all duration-300 flex-shrink-0">
-                                    <div class="text-center">
-                                        <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                            <!-- <span class="text-blue-600 font-bold text-2xl group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">C</span> -->
-                                             <img 
-  src="images/cii-logoNew.png"
-  alt="FICCI Logo"
-  class="w-20 h-auto object-contain group-hover:scale-110 transition-transform duration-300"
-/>
-                                        </div>
-                                        <span class="text-gray-900 font-bold text-lg">CII</span>
-                                        <div class="mt-2 h-0.5 w-8 mx-auto bg-gradient-to-r from-transparent via-gray-300 to-transparent group-hover:via-blue-500 transition-all duration-300"></div>
-                                    </div>
-                                </div>
-                                
-                                <!-- AIBC -->
-                                <div class="group bg-white/90 backdrop-blur-sm rounded-2xl p-6 flex flex-col items-center justify-center w-64 h-40 border border-gray-200 hover:border-blue-200 hover:shadow-xl transition-all duration-300 flex-shrink-0">
-                                    <div class="text-center">
-                                        <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                            <!-- <span class="text-blue-600 font-bold text-2xl group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">A</span> -->
-                                             <img 
-  src="images/LogoHz.png"
-  alt="FICCI Logo"
-  class="w-20 h-auto object-contain group-hover:scale-110 transition-transform duration-300"
-/>
-                                        </div>
-                                        <span class="text-gray-900 font-bold text-lg">AIFC</span>
-                                        <div class="mt-2 h-0.5 w-8 mx-auto bg-gradient-to-r from-transparent via-gray-300 to-transparent group-hover:via-blue-500 transition-all duration-300"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Duplicate set for seamless scrolling -->
-                            <div class="flex gap-6">
-                                <!-- Austrade -->
-                                <div class="group bg-white/90 backdrop-blur-sm rounded-2xl p-6 flex flex-col items-center justify-center w-64 h-40 border border-gray-200 hover:border-blue-200 hover:shadow-xl transition-all duration-300 flex-shrink-0">
-                                    <div class="text-center">
-                                        <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                            <!-- <span class="text-blue-600 font-bold text-2xl group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">A</span> -->
-                                            <img 
-  src="images/DFAT.png"
-  alt="FICCI Logo"
-  class="w-20 h-auto object-contain group-hover:scale-110 transition-transform duration-300"
-/>
-                                        </div>
-                                        <span class="text-gray-900 font-bold text-lg">Austrade</span>
-                                        <div class="mt-2 h-0.5 w-8 mx-auto bg-gradient-to-r from-transparent via-gray-300 to-transparent group-hover:via-blue-500 transition-all duration-300"></div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Invest India -->
-                                <div class="group bg-white/90 backdrop-blur-sm rounded-2xl p-6 flex flex-col items-center justify-center w-64 h-40 border border-gray-200 hover:border-blue-200 hover:shadow-xl transition-all duration-300 flex-shrink-0">
-                                    <div class="text-center">
-                                        <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                            <span class="text-blue-600 font-bold text-2xl group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">I</span>
-                                        </div>
-                                        <span class="text-gray-900 font-bold text-lg">Invest India</span>
-                                        <div class="mt-2 h-0.5 w-8 mx-auto bg-gradient-to-r from-transparent via-gray-300 to-transparent group-hover:via-blue-500 transition-all duration-300"></div>
-                                    </div>
-                                </div>
-                                
-                                <!-- DFAT -->
-                                <div class="group bg-white/90 backdrop-blur-sm rounded-2xl p-6 flex flex-col items-center justify-center w-64 h-40 border border-gray-200 hover:border-blue-200 hover:shadow-xl transition-all duration-300 flex-shrink-0">
-                                    <div class="text-center">
-                                        <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                            <span class="text-blue-600 font-bold text-2xl group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">D</span>
-                                        </div>
-                                        <span class="text-gray-900 font-bold text-lg">DFAT</span>
-                                        <div class="mt-2 h-0.5 w-8 mx-auto bg-gradient-to-r from-transparent via-gray-300 to-transparent group-hover:via-blue-500 transition-all duration-300"></div>
-                                    </div>
-                                </div>
-                                
-                                <!-- FICCI -->
-                                <div class="group bg-white/90 backdrop-blur-sm rounded-2xl p-6 flex flex-col items-center justify-center w-64 h-40 border border-gray-200 hover:border-blue-200 hover:shadow-xl transition-all duration-300 flex-shrink-0">
-                                    <div class="text-center">
-                                        <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                            <span class="text-blue-600 font-bold text-2xl group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">F</span>
-                                        </div>
-                                        <span class="text-gray-900 font-bold text-lg">FICCI</span>
-                                        <div class="mt-2 h-0.5 w-8 mx-auto bg-gradient-to-r from-transparent via-gray-300 to-transparent group-hover:via-blue-500 transition-all duration-300"></div>
-                                    </div>
-                                </div>
-                                
-                                <!-- CII -->
-                                <div class="group bg-white/90 backdrop-blur-sm rounded-2xl p-6 flex flex-col items-center justify-center w-64 h-40 border border-gray-200 hover:border-blue-200 hover:shadow-xl transition-all duration-300 flex-shrink-0">
-                                    <div class="text-center">
-                                        <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                            <span class="text-blue-600 font-bold text-2xl group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">C</span>
-                                        </div>
-                                        <span class="text-gray-900 font-bold text-lg">CII</span>
-                                        <div class="mt-2 h-0.5 w-8 mx-auto bg-gradient-to-r from-transparent via-gray-300 to-transparent group-hover:via-blue-500 transition-all duration-300"></div>
-                                    </div>
-                                </div>
-                                
-                                <!-- AIBC -->
-                                <div class="group bg-white/90 backdrop-blur-sm rounded-2xl p-6 flex flex-col items-center justify-center w-64 h-40 border border-gray-200 hover:border-blue-200 hover:shadow-xl transition-all duration-300 flex-shrink-0">
-                                    <div class="text-center">
-                                        <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                            <span class="text-blue-600 font-bold text-2xl group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">A</span>
-                                        </div>
-                                        <span class="text-gray-900 font-bold text-lg">AIBC</span>
-                                        <div class="mt-2 h-0.5 w-8 mx-auto bg-gradient-to-r from-transparent via-gray-300 to-transparent group-hover:via-blue-500 transition-all duration-300"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Additional Partner Logos -->
-                <div class="mt-10 pt-10 border-t border-gray-200">
-                    <div class="flex flex-wrap justify-center items-center gap-6 md:gap-10">
-                        <div class="text-gray-400 font-medium text-sm">Also partnering with:</div>
-                        <div class="flex flex-wrap justify-center items-center gap-4 md:gap-8">
-                            <span class="text-gray-600 font-medium opacity-75 hover:opacity-100 transition-opacity duration-300">Ministry of Commerce</span>
-                            <span class="text-gray-600 font-medium opacity-75 hover:opacity-100 transition-opacity duration-300">State Governments</span>
-                            <span class="text-gray-600 font-medium opacity-75 hover:opacity-100 transition-opacity duration-300">Industry Chambers</span>
-                            <span class="text-gray-600 font-medium opacity-75 hover:opacity-100 transition-opacity duration-300">Corporate Leaders</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- CTA Button -->
-                <div class="mt-12 text-center">
-                    <button class="group inline-flex items-center bg-saffron text-white px-10 py-4 rounded-xl font-semibold hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
-                        </svg>
-                        <a href="/contact.html">
-                        Become a Partner
-                        </a>
-                        <svg class="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg>
-                    </button>
-                    <p class="mt-4 text-gray-600 text-sm">
-                        Join our network of trusted organizations driving Australia-India relations
-                    </p>
-                </div>
-            </div>
-            
-            <!-- Inline CSS for animation -->
-            <style>
-                @keyframes scroll {
-                    0% {
-                        transform: translateX(0);
-                    }
-                    100% {
-                        transform: translateX(-50%);
-                    }
-                }
-                
-                /* Pause animation on hover */
-                #scrollContainer:hover {
-                    animation-play-state: paused;
-                }
-            </style>
-            
-            <!-- JavaScript for controls -->
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    const scrollContainer = document.getElementById('scrollContainer');
-                    const prevBtn = document.getElementById('prevBtn');
-                    const nextBtn = document.getElementById('nextBtn');
-                    
-                    // Manual scroll controls
-                    prevBtn.addEventListener('click', function() {
-                        const currentTransform = getComputedStyle(scrollContainer).transform;
-                        const matrix = new DOMMatrix(currentTransform);
-                        const currentTranslateX = matrix.m41;
-                        
-                        scrollContainer.style.transform = `translateX(${currentTranslateX + 300}px)`;
-                    });
-                    
-                    nextBtn.addEventListener('click', function() {
-                        const currentTransform = getComputedStyle(scrollContainer).transform;
-                        const matrix = new DOMMatrix(currentTransform);
-                        const currentTranslateX = matrix.m41;
-                        
-                        scrollContainer.style.transform = `translateX(${currentTranslateX - 300}px)`;
-                    });
-                    
-                    // Reset animation when it reaches the end
-                    scrollContainer.addEventListener('animationiteration', function() {
-                        // Animation restarts automatically due to infinite loop
-                    });
-                });
-            </script>
-        </section>
-        <div class="h-2"></div>
     </main>
 
     <!-- Footer Included -->
     <div data-include="components/footer.html"></div>
 
     <script>
-        // Add smooth scrolling for anchor links
         document.addEventListener('DOMContentLoaded', function() {
-            // Intersection Observer for animations
+            // Scroll reveal animation
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
+                        entry.target.classList.add('visible');
                     }
                 });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            });
+            }, observerOptions);
 
-            // Observe all animated elements
-            document.querySelectorAll('.animate-fade-in, .animate-slide-in').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            // Observe all elements with scroll-reveal class
+            document.querySelectorAll('.scroll-reveal').forEach(el => {
                 observer.observe(el);
             });
 
-            // Hover effects for cards
-            document.querySelectorAll('.hover-lift').forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    card.style.transform = 'translateY(-5px)';
+            // Add particles on mouse move
+            document.addEventListener('mousemove', function(e) {
+                if (Math.random() > 0.7) { // 30% chance to create particle
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    particle.style.left = `${e.clientX}px`;
+                    particle.style.top = `${e.clientY}px`;
+                    particle.style.width = `${Math.random() * 10 + 5}px`;
+                    particle.style.height = particle.style.width;
+                    
+                    // Random movement
+                    const tx = (Math.random() - 0.5) * 100;
+                    const ty = (Math.random() - 0.5) * 100;
+                    particle.style.setProperty('--tx', `${tx}px`);
+                    particle.style.setProperty('--ty', `${ty}px`);
+                    particle.style.animation = `particle-float 2s ease-in-out forwards`;
+                    
+                    document.body.appendChild(particle);
+                    
+                    // Remove particle after animation
+                    setTimeout(() => {
+                        particle.remove();
+                    }, 2000);
+                }
+            });
+
+            // Card hover effects
+            document.querySelectorAll('.card-hover').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    this.style.setProperty('--mouse-x', `${x}px`);
+                    this.style.setProperty('--mouse-y', `${y}px`);
                 });
-                
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'translateY(0)';
-                });
+            });
+
+            // Stagger animation on load
+            document.querySelectorAll('.stagger-animation > *').forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
     </script>

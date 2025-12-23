@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Australia India Bridge Foundation - Footer</title>
+    <title>AusInd Bridge Foundation</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -87,9 +87,22 @@
             transform: translateY(-5px);
         }
         
-        /* Newsletter input focus */
-        .newsletter-input:focus {
-            box-shadow: 0 0 0 3px rgba(255, 153, 51, 0.2);
+        /* First Nations Acknowledgement Styling */
+        .first-nations-acknowledgement {
+            background: linear-gradient(135deg, rgba(12, 35, 64, 0.9) 0%, rgba(30, 58, 95, 0.9) 100%);
+            border-top: 3px solid #FF9933;
+            border-bottom: 3px solid #FF9933;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .first-nations-acknowledgement .icon {
+            color: #FF9933;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+        
+        .first-nations-acknowledgement .text {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
         }
         
         /* Custom colors */
@@ -123,7 +136,6 @@
 </head>
 <body class="bg-gray-50">
     
-    
     <!-- Scroll to top button -->
     <div class="scroll-to-top" id="scrollToTop">
         <i class="fas fa-chevron-up"></i>
@@ -137,6 +149,24 @@
     <!-- Footer Section -->
     <footer class="bg-[#0C2340] text-white" id="footer">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- FIRST NATIONS ACKNOWLEDGMENT -->
+            <div class="first-nations-acknowledgement rounded-lg mt-8">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
+                    <div class="icon">
+                        <i class="fas fa-hands-holding-circle text-3xl"></i>
+                    </div>
+                    <div class="text">
+                        <h4 class="font-bold text-lg mb-2 text-white">FIRST NATIONS ACKNOWLEDGEMENT</h4>
+                        <p class="text-gray-300 text-sm leading-relaxed max-w-4xl">
+                            The Australia India Bridge Foundation acknowledges the Traditional Custodians of the lands on which we operate across Australia. We pay our respects to Elders past, present and emerging, and recognise their continuing connection to land, waters and culture. We honour the rich cultural heritage of First Nations peoples and their enduring contribution to Australian society.
+                        </p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-globe-australia text-3xl"></i>
+                    </div>
+                </div>
+            </div>
+            
             <!-- Main Footer Content - 4 Columns -->
             <div class="py-16 grid grid-cols-1 lg:grid-cols-4 gap-10">
                 
@@ -204,10 +234,6 @@
                             </a>
                         </li>
                         <li class="flex items-center gap-3 lg:justify-start justify-center">
-                            <i class="fas fa-phone text-[#FF9933] text-base"></i>
-                            <span>Phone: Coming Soon</span>
-                        </li>
-                        <li class="flex items-center gap-3 lg:justify-start justify-center">
                             <i class="fas fa-map-marker-alt text-[#FF9933] text-base"></i>
                             <span>Melbourne, Victoria, Australia – 3000</span>
                         </li>
@@ -270,46 +296,22 @@
                             <i class="fab fa-youtube"></i>
                         </a>
                     </div>
-                    
-                    <!-- Copyright - Moved to bottom section but keeping here for mobile -->
-                    <div class="lg:hidden mt-8 pt-8 border-t border-white/10">
-                        <p class="text-gray-400 text-sm">
-                            © <span id="currentYear"></span> Australia India Bridge Foundation. All rights reserved.
-                        </p>
-                    </div>
                 </div>
             </div>
             
             <!-- Divider -->
             <div class="border-t border-white/10"></div>
             
-            <!-- Bottom Section with Copyright and Legal Links -->
-            <div class="py-8 flex flex-col md:flex-row justify-between items-center gap-6">
-                <!-- Copyright - Hidden on mobile, shown in footer above -->
-                <div class="hidden lg:block text-center md:text-left">
-                    <p class="text-gray-400 text-sm">
-                        © <span id="currentYear"></span> Australia India Bridge Foundation. All rights reserved.
-                    </p>
+            <!-- Bottom Section with Copyright -->
+            <div class="py-8 text-center">
+                <!-- Copyright -->
+                <div class="text-gray-400 text-sm mb-4">
+                    Copyright © <span id="currentYear"></span> Australia India Bridge Foundation.
                 </div>
                 
-                <!-- Legal Links -->
-                <div class="flex flex-wrap justify-center gap-4 md:gap-6">
-                    <a class="link-hover-effect text-gray-400 hover:text-white text-sm" href="privacy-policy.html">
-                        Privacy Policy
-                    </a>
-                    <a class="link-hover-effect text-gray-400 hover:text-white text-sm" href="terms-conditions.html">
-                        Terms & Conditions
-                    </a>
-                    <a class="link-hover-effect text-gray-400 hover:text-white text-sm" href="disclaimer.html">
-                        Disclaimer
-                    </a>
-                    <a class="link-hover-effect text-gray-400 hover:text-white text-sm" href="transparency.html">
-                        Transparency & Disclosure
-                    </a>
-                    <span class="text-gray-600 text-sm hidden md:inline">|</span>
-                    <span class="text-gray-400 text-sm">
-                        Melbourne, Victoria, Australia – 3000
-                    </span>
+                <!-- Location -->
+                <div class="text-gray-400 text-sm">
+                    Melbourne, Victoria, Australia – 3000
                 </div>
             </div>
         </div>
@@ -373,14 +375,6 @@
                     }, 150);
                 });
             });
-            
-            // Newsletter subscription placeholder
-            const newsletterBtn = document.querySelector('footer button.bg-saffron');
-            if (newsletterBtn) {
-                newsletterBtn.addEventListener('click', function() {
-                    alert('Newsletter subscription feature will be added soon!');
-                });
-            }
         });
     </script>
 
