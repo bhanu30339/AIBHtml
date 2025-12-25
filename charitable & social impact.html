@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social & Community Impact | Australia India Alliance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/language-manager.js" defer></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0C2340',
+                        secondary: '#D4AF37',
+                        accent: '#1E3A5F',
+                        light: '#F8F9FA',
+                        saffron: '#FF9933',
+                        dark: '#0A1A2E'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'gradient': 'gradient 8s ease infinite',
+                        'shine': 'shine 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        },
+                        shine: {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(100%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0C2340;
+            --secondary: #D4AF37;
+            --accent: #1E3A5F;
+            --saffron: #FF9933;
+        }
+
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #D4AF37 0%, #FF9933 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(12, 35, 64, 0.15);
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .impact-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(12, 35, 64, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(12, 35, 64, 0.05);
+            height: 100%;
+        }
+        
+        .impact-card:hover {
+            box-shadow: 0 20px 40px rgba(12, 35, 64, 0.12);
+        }
+        
+        .impact-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, rgba(12, 35, 64, 0.1), rgba(255, 153, 51, 0.1));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .impact-icon i {
+            font-size: 1.75rem;
+            color: var(--primary);
+        }
+        
+        .section-divider {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #D4AF37, #FF9933);
+            margin: 2rem auto;
+            border-radius: 2px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #0C2340, #1E3A5F);
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(12, 35, 64, 0.2);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #D4AF37, #FF9933);
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #0C2340, #1E3A5F);
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .cta-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(12, 35, 64, 0.05);
+            border-radius: 12px;
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .community-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(12, 35, 64, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(12, 35, 64, 0.05);
+            height: 100%;
+        }
+        
+        .community-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(12, 35, 64, 0.12);
+        }
+        
+        .community-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #0C2340, #1E3A5F);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .community-icon i {
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .gender-equality-card {
+            background: linear-gradient(135deg, rgba(12, 35, 64, 0.05), rgba(255, 153, 51, 0.05));
+            border-radius: 20px;
+            padding: 2rem;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+        }
+        
+        .gender-equality-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            margin: -2px;
+            border-radius: inherit;
+            background: linear-gradient(135deg, #0C2340, #FF9933);
+        }
+    </style>
+</head>
+<body class="font-sans bg-light overflow-x-hidden">
+    <!-- Header Included -->
+    <div data-include="components/header.html"></div>
+
+    <main class="min-h-screen">
+        <!-- Hero Section -->
+        <section class="relative pt-32 pb-20 overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="images/community-impact-hero.jpg" 
+                     alt="Social & Community Impact" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-accent/70"></div>
+            </div>
+            
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl animate-fade-in">
+                    <div class="inline-flex items-center space-x-2 text-saffron font-semibold uppercase text-sm tracking-wider mb-4">
+                        <i class="fas fa-hands-helping"></i>
+                        <span>Social & Community Impact</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                        Building Stronger<br>
+                        <span class="text-saffron">Communities Together</span>
+                    </h1>
+                    <p class="text-xl text-white/80 leading-relaxed mb-8">
+                        Creating lasting positive change through charitable initiatives, social programs, and community development that uplift lives in both Australia and India.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#initiatives" class="btn-secondary">
+                            <i class="fas fa-hands"></i> View Initiatives
+                        </a>
+                        <a href="#impact" class="btn-primary">
+                            <i class="fas fa-chart-line"></i> See Impact
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-gray-100">
+                    <div class="grid md:grid-cols-2 gap-10 items-center">
+                        <div>
+                            <div class="inline-flex items-center space-x-2 text-primary font-semibold uppercase text-sm tracking-wider mb-4">
+                                <span>Our Commitment</span>
+                            </div>
+                            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                                Creating <span class="gradient-text">Lasting Positive Change</span>
+                            </h2>
+                            <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                                The Australia India Alliance takes its commitment to philanthropy and social impact seriously, dedicating significant efforts and resources to various charitable projects that uplift communities in both Australia and India.
+                            </p>
+                            <p class="text-gray-600 leading-relaxed">
+                                Our initiatives focus on key areas such as education, healthcare, environmental sustainability, and community development, aiming to create positive change and improve the lives of beneficiaries through sustainable, long-term solutions.
+                            </p>
+                        </div>
+                        <div class="relative">
+                            <div class="bg-gradient-to-br from-primary/10 to-saffron/10 rounded-2xl p-6 border border-primary/10">
+                                <div class="grid grid-cols-2 gap-6">
+                                    <div class="text-center p-6 bg-white rounded-xl shadow-sm">
+                                        <div class="text-3xl font-bold text-primary mb-2">260K+</div>
+                                        <div class="text-gray-600">Indian Community in Victoria</div>
+                                    </div>
+                                    <div class="text-center p-6 bg-white rounded-xl shadow-sm">
+                                        <div class="text-3xl font-bold text-saffron mb-2">$38M+</div>
+                                        <div class="text-gray-600">Invested in Community Projects</div>
+                                    </div>
+                                    <div class="text-center p-6 bg-white rounded-xl shadow-sm">
+                                        <div class="text-3xl font-bold text-primary mb-2">40%</div>
+                                        <div class="text-gray-600">Of Australia's Indian Diaspora</div>
+                                    </div>
+                                    <div class="text-center p-6 bg-white rounded-xl shadow-sm">
+                                        <div class="text-3xl font-bold text-saffron mb-2">3000+</div>
+                                        <div class="text-gray-600">Students Learning Indian Languages</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+
+
+        <!-- Key Initiatives Section -->
+        <section id="initiatives" class="py-20 bg-gradient-to-b from-gray-50 to-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center space-x-4 mb-6">
+                        <div class="w-12 h-px bg-gradient-to-r from-transparent via-saffron to-transparent"></div>
+                        <span class="text-saffron font-semibold tracking-wider">KEY INITIATIVES</span>
+                        <div class="w-12 h-px bg-gradient-to-r from-transparent via-saffron to-transparent"></div>
+                    </div>
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                        <span class="text-gray-900">Charitable Causes &</span>
+                        <span class="block gradient-text">Social Impact Programs</span>
+                    </h2>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                        Strategic initiatives designed to create sustainable impact across education, healthcare, environment, and community development
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                    <!-- Education Initiative -->
+                    <div class="impact-card scroll-reveal">
+                        <div class="impact-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Education Empowerment Program</h3>
+                        <p class="text-gray-600 mb-6">
+                            Hundreds of underprivileged children have received access to quality education, empowering them with knowledge and skills to pursue better opportunities in the future.
+                        </p>
+                        <div class="p-4 bg-primary/5 rounded-xl mb-4">
+                            <p class="text-sm text-gray-600">
+                                <span class="font-medium">Impact:</span> Improved school infrastructure and well-trained teachers have created a conducive learning environment, leading to better academic performance and increased school attendance.
+                            </p>
+                        </div>
+                        <div class="flex items-center text-sm text-saffron font-medium">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            <span>Part of Victoria's commitment to Indian community education</span>
+                        </div>
+                    </div>
+
+                    <!-- Healthcare Initiative -->
+                    <div class="impact-card scroll-reveal">
+                        <div class="impact-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Healthcare Access Project</h3>
+                        <p class="text-gray-600 mb-6">
+                            The organization partners with local NGOs and community-based organizations to implement community development projects.
+                        </p>
+                        <div class="p-4 bg-saffron/5 rounded-xl mb-4">
+                            <p class="text-sm text-gray-600">
+                                <span class="font-medium">Focus:</span> Empowering marginalized communities through skills training, income-generating activities, and social empowerment programs.
+                            </p>
+                        </div>
+                        <div class="flex items-center text-sm text-primary font-medium">
+                            <i class="fas fa-hands-helping mr-2"></i>
+                            <span>Collaborating with local healthcare providers in both nations</span>
+                        </div>
+                    </div>
+
+                    <!-- Environmental Initiative -->
+                    <div class="impact-card scroll-reveal">
+                        <div class="impact-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Environmental Conservation Campaign</h3>
+                        <p class="text-gray-600 mb-6">
+                            Tree-planting drives and waste management programs have contributed to cleaner and healthier environments for communities, fostering a sense of environmental stewardship.
+                        </p>
+                        <div class="p-4 bg-primary/5 rounded-xl mb-4">
+                            <p class="text-sm text-gray-600">
+                                <span class="font-medium">Impact:</span> The adoption of clean energy practices has reduced carbon footprints and contributed to the fight against climate change.
+                            </p>
+                        </div>
+                        <div class="flex items-center text-sm text-saffron font-medium">
+                            <i class="fas fa-seedling mr-2"></i>
+                            <span>Supporting Victoria-India sustainability partnerships</span>
+                        </div>
+                    </div>
+
+                    <!-- Community Development -->
+                    <div class="impact-card scroll-reveal">
+                        <div class="impact-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Community Development Initiatives</h3>
+                        <p class="text-gray-600 mb-6">
+                            Marginalized communities have gained economic independence through skills training and income-generating activities, leading to improved livelihoods and reduced poverty.
+                        </p>
+                        <div class="p-4 bg-saffron/5 rounded-xl mb-4">
+                            <p class="text-sm text-gray-600">
+                                <span class="font-medium">Impact:</span> Social empowerment programs have helped individuals build confidence, self-esteem, and a sense of belonging within their communities.
+                            </p>
+                        </div>
+                        <div class="flex items-center text-sm text-primary font-medium">
+                            <i class="fas fa-handshake mr-2"></i>
+                            <span>Building sustainable community partnerships</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Social Causes Beyond Charity -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">
+        Social Causes Beyond Charity
+      </h2>
+      <p class="text-gray-600 max-w-3xl mx-auto">
+        Social impact at the Australia India Alliance extends beyond charitable giving.
+        Our work focuses on strengthening people-to-people connections, preserving culture,
+        building skills, and enabling long-term community resilience across Australia and India.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="impact-card">
+        <h3 class="font-bold text-lg mb-2">Education, Skills & Innovation</h3>
+        <p class="text-gray-600 text-sm">
+          Supporting education pathways, language learning, research collaboration,
+          and skills development that empower future generations and strengthen bilateral innovation.
+        </p>
+      </div>
+
+      <div class="impact-card">
+        <h3 class="font-bold text-lg mb-2">Culture, Community & People</h3>
+        <p class="text-gray-600 text-sm">
+          Celebrating Indian culture in Australia through festivals, arts,
+          community programs, and diaspora engagement that foster social cohesion.
+        </p>
+      </div>
+
+      <div class="impact-card">
+        <h3 class="font-bold text-lg mb-2">Tourism & Connectivity</h3>
+        <p class="text-gray-600 text-sm">
+          Strengthening tourism, city-to-city partnerships, and regional engagement
+          to promote economic and cultural exchange between Australia and India.
+        </p>
+      </div>
+
+      <div class="impact-card">
+        <h3 class="font-bold text-lg mb-2">Social Equity & Inclusion</h3>
+        <p class="text-gray-600 text-sm">
+          Advancing gender equality, multicultural inclusion,
+          and equal opportunity through policy-aligned community initiatives.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Strategic & Policy Alignment -->
+<section class="py-20 bg-gradient-to-b from-gray-50 to-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">
+        Strategic & Policy Alignment
+      </h2>
+      <p class="text-gray-600 max-w-3xl mx-auto">
+        Social and community initiatives are closely aligned with broader political
+        and strategic engagement between Australia and India, ensuring sustainable,
+        long-term impact beyond individual programs.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="community-card">
+        <h3 class="font-bold mb-2">Political & Strategic Engagement</h3>
+        <p class="text-gray-600 text-sm">
+          Supporting diplomatic dialogue, parliamentary exchanges,
+          and policy cooperation that reinforce mutual trust and shared values.
+        </p>
+      </div>
+
+      <div class="community-card">
+        <h3 class="font-bold mb-2">Multilateral & Regional Cooperation</h3>
+        <p class="text-gray-600 text-sm">
+          Engagement through regional forums, city-level partnerships,
+          and international collaboration across education, trade, and sustainability.
+        </p>
+      </div>
+
+      <div class="community-card">
+        <h3 class="font-bold mb-2">Diaspora-Led Partnerships</h3>
+        <p class="text-gray-600 text-sm">
+          Leveraging the strength of the Indian diaspora to drive social,
+          economic, and cultural connections across communities and regions.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+        <!-- Victorian Government Initiatives Section -->
+        <section class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center space-x-4 mb-6">
+                        <div class="w-20 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+                        <span class="text-primary font-semibold tracking-wider uppercase">VICTORIAN GOVERNMENT INITIATIVES</span>
+                        <div class="w-20 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+                    </div>
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                        <span class="text-gray-900">Strengthening Community</span>
+                        <span class="block gradient-text">Connections</span>
+                    </h2>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Connecting Schools Program -->
+                    <div class="community-card scroll-reveal">
+                        <div class="community-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Connecting Schools with Indian Communities</h3>
+                        <p class="text-gray-600 mb-6">
+                            Supports Victorian primary and secondary schools to engage the Indian diaspora and develop students' understanding of the contributions the diaspora makes to our State.
+                        </p>
+                        <div class="p-4 bg-primary/5 rounded-xl">
+                            <p class="text-sm text-gray-600">
+                                <span class="font-medium">Impact:</span> Nearly 3000 students in Victorian schools are studying Indian languages with $3.5 million committed in the 2023-24 State Budget.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Cultural Funding -->
+                    <div class="community-card scroll-reveal">
+                        <div class="community-icon">
+                            <i class="fas fa-theater-masks"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Cultural Funding & Support</h3>
+                        <p class="text-gray-600 mb-6">
+                            Since 2014, the Victorian Government's Indian cultural affairs portfolio has provided over $38 million in funding for projects supporting Victoria's Indian Community.
+                        </p>
+                        <div class="p-4 bg-saffron/5 rounded-xl">
+                            <p class="text-sm text-gray-600">
+                                <span class="font-medium">Events:</span> Supporting festivals like the Indian Film Festival of Melbourne and Festival of Diwali at Federation Square.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Regional Engagement -->
+                    <div class="community-card scroll-reveal">
+                        <div class="community-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Regional Community Development</h3>
+                        <p class="text-gray-600 mb-6">
+                            Victoria's regions, particularly Bendigo and Geelong, have growing Indian communities with Indian events becoming a fixture in local calendars.
+                        </p>
+                        <div class="p-4 bg-primary/5 rounded-xl">
+                            <p class="text-sm text-gray-600">
+                                <span class="font-medium">Example:</span> Bendigo's Holi Festival and Geelong's Pako Festa showcase cultural integration.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gender Equality Section -->
+        <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="gender-equality-card">
+                    <div class="grid md:grid-cols-2 gap-10 items-center">
+                        <div>
+                            <div class="inline-flex items-center space-x-2 text-primary font-semibold uppercase text-sm tracking-wider mb-4">
+                                <i class="fas fa-venus-mars"></i>
+                                <span>GENDER EQUALITY COMMITMENT</span>
+                            </div>
+                            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                                Advancing <span class="gradient-text">Gender Equality</span> Together
+                            </h2>
+                            <p class="text-gray-600 leading-relaxed mb-6">
+                                Victoria leads the nation in progressing gender equality and is committed to embedding the guiding principles of Our Equal State into the Victoria-India relationship.
+                            </p>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 bg-saffron/20 rounded-full flex items-center justify-center mt-1">
+                                        <i class="fas fa-check text-saffron text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-700 font-medium">Victoria's Gender Equality Act 2020</p>
+                                        <p class="text-gray-600 text-sm">First jurisdiction in Australia to enshrine public sector gender equality in legislation</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 bg-saffron/20 rounded-full flex items-center justify-center mt-1">
+                                        <i class="fas fa-check text-saffron text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-700 font-medium">India's Women's Reservation Bill 2023</p>
+                                        <p class="text-gray-600 text-sm">Aims to increase the number of women in national and state parliaments</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 bg-saffron/20 rounded-full flex items-center justify-center mt-1">
+                                        <i class="fas fa-check text-saffron text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-700 font-medium">Joint Initiatives</p>
+                                        <p class="text-gray-600 text-sm">Global Victoria Women initiative, DIDAC exhibition, and Cosmoprof India trade missions</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="relative">
+                            <div class="bg-white rounded-2xl p-6 shadow-lg border border-primary/10">
+                                <h3 class="text-xl font-bold text-gray-900 mb-4">Educational Gender Equality Programs</h3>
+                                
+                                <div class="space-y-4">
+                                    <div class="p-4 bg-primary/5 rounded-lg">
+                                        <h4 class="font-bold text-gray-900 mb-2">Future Forte</h4>
+                                        <p class="text-gray-600 text-sm">Gender equality initiative for international students</p>
+                                    </div>
+                                    
+                                    <div class="p-4 bg-saffron/5 rounded-lg">
+                                        <h4 class="font-bold text-gray-900 mb-2">STEM Sisters</h4>
+                                        <p class="text-gray-600 text-sm">Community dedicated to empowering women of colour in STEM</p>
+                                    </div>
+                                    
+                                    <div class="p-4 bg-primary/5 rounded-lg">
+                                        <h4 class="font-bold text-gray-900 mb-2">Women in School Leadership</h4>
+                                        <p class="text-gray-600 text-sm">Empowering exemplary school principals from Victoria and India</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Statistics Section -->
+        <section id="impact" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center space-x-4 mb-6">
+                        <div class="w-12 h-px bg-gradient-to-r from-transparent via-saffron to-transparent"></div>
+                        <span class="text-saffron font-semibold tracking-wider">OUR IMPACT</span>
+                        <div class="w-12 h-px bg-gradient-to-r from-transparent via-saffron to-transparent"></div>
+                    </div>
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                        <span class="text-gray-900">Measuring</span>
+                        <span class="block gradient-text">Social Impact</span>
+                    </h2>
+                </div>
+
+                <div class="impact-stats">
+                    <div class="stat-item scroll-reveal">
+                        <div class="stat-value">260K+</div>
+                        <div class="stat-label">Victorians Born in India</div>
+                        <p class="text-gray-500 text-sm mt-2">Largest Indian diaspora in Australia</p>
+                    </div>
+                    
+                    <div class="stat-item scroll-reveal">
+                        <div class="stat-value">40%</div>
+                        <div class="stat-label">Of Australia's Indian Diaspora</div>
+                        <p class="text-gray-500 text-sm mt-2">Live in Victoria, strengthening community ties</p>
+                    </div>
+                    
+                    <div class="stat-item scroll-reveal">
+                        <div class="stat-value">$38M+</div>
+                        <div class="stat-label">Community Funding</div>
+                        <p class="text-gray-500 text-sm mt-2">Invested in Indian community projects since 2014</p>
+                    </div>
+                    
+                    <div class="stat-item scroll-reveal">
+                        <div class="stat-value">3000+</div>
+                        <div class="stat-label">Students Learning Indian Languages</div>
+                        <p class="text-gray-500 text-sm mt-2">In Victorian schools, promoting cultural understanding</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Impact Programs -->
+        <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center space-x-4 mb-6">
+                        <div class="w-20 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+                        <span class="text-primary font-semibold tracking-wider uppercase">SOCIAL IMPACT PROGRAMS</span>
+                        <div class="w-20 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+                    </div>
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                        <span class="text-gray-900">Flagship Community</span>
+                        <span class="block gradient-text">Development Programs</span>
+                    </h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Bendigo Community Program -->
+                    <div class="community-card scroll-reveal">
+                        <div class="community-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Bendigo Community Integration</h3>
+                        <p class="text-gray-600 mb-6">
+                            The City of Greater Bendigo enjoys a growing relationship with India through the city's Indian community, cultural, education and tourism connections.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="p-4 bg-primary/5 rounded-lg">
+                                <p class="text-sm font-medium text-gray-700 mb-1">Key Programs</p>
+                                <p class="text-gray-600 text-sm">La Trobe University campus offering courses in dental science, nursing, IT and biomedical science for Indian students</p>
+                            </div>
+                            
+                            <div class="p-4 bg-saffron/5 rounded-lg">
+                                <p class="text-sm font-medium text-gray-700 mb-1">Cultural Events</p>
+                                <p class="text-gray-600 text-sm">Holi Festival and regional launch of Indian Film Festival of Melbourne</p>
+                            </div>
+                            
+                            <div class="p-4 bg-primary/5 rounded-lg">
+                                <p class="text-sm font-medium text-gray-700 mb-1">Economic Contribution</p>
+                                <p class="text-gray-600 text-sm">Indian-born community contributes significantly to health, engineering, IT, and food industry sectors</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Geelong Community Program -->
+                    <div class="community-card scroll-reveal">
+                        <div class="community-icon">
+                            <i class="fas fa-city"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Geelong Global Engagement</h3>
+                        <p class="text-gray-600 mb-6">
+                            Geelong has established itself as a vibrant hub for economic and cultural development, with strong education and innovation connections to India.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="p-4 bg-primary/5 rounded-lg">
+                                <p class="text-sm font-medium text-gray-700 mb-1">Education Hub</p>
+                                <p class="text-gray-600 text-sm">Deakin University has campuses in both Geelong and India, making the city a premier destination for Indian students</p>
+                            </div>
+                            
+                            <div class="p-4 bg-saffron/5 rounded-lg">
+                                <p class="text-sm font-medium text-gray-700 mb-1">Cultural Integration</p>
+                                <p class="text-gray-600 text-sm">Pako Festa, Victoria's largest free multicultural festival, attracts more than 50,000 visitors annually</p>
+                            </div>
+                            
+                            <div class="p-4 bg-primary/5 rounded-lg">
+                                <p class="text-sm font-medium text-gray-700 mb-1">Innovation Connection</p>
+                                <p class="text-gray-600 text-sm">Advanced Fibre Cluster connected with India through international research partnerships</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        
+    </main>
+
+    <!-- Footer Included -->
+    <div data-include="components/footer.html"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Scroll reveal animation
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all elements with scroll-reveal class
+            document.querySelectorAll('.scroll-reveal').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="js/include.js"></script>
+    <script src="js/header.js"></script>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en',
+                    autoDisplay: false
+                },
+                'google_translate_element'
+            );
+        }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="js/search-data.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>

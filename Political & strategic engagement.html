@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Political & Strategic Engagement | Australia India Alliance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/language-manager.js" defer></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0C2340',
+                        secondary: '#D4AF37',
+                        accent: '#1E3A5F',
+                        light: '#F8F9FA',
+                        saffron: '#FF9933',
+                        dark: '#0A1A2E'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'gradient': 'gradient 8s ease infinite',
+                        'shine': 'shine 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        },
+                        shine: {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(100%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0C2340;
+            --secondary: #D4AF37;
+            --accent: #1E3A5F;
+            --saffron: #FF9933;
+        }
+
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #D4AF37 0%, #FF9933 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-border {
+            position: relative;
+            background: linear-gradient(white, white) padding-box,
+                        linear-gradient(135deg, #D4AF37, #FF9933) border-box;
+            border: 2px solid transparent;
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(12, 35, 64, 0.15);
+        }
+
+        .shine-effect {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shine-effect::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 20%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(30deg);
+            transition: all 0.6s;
+        }
+
+        .shine-effect:hover::after {
+            left: 100%;
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .floating-shapes {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #D4AF37, #FF9933);
+            top: 10%;
+            right: 5%;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #0C2340, #1E3A5F);
+            bottom: 15%;
+            left: 5%;
+            animation: float 25s ease-in-out infinite reverse;
+        }
+
+        .stagger-animation > * {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.6s forwards;
+        }
+
+        .stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
+        .stagger-animation > *:nth-child(2) { animation-delay: 0.2s; }
+        .stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
+        .stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
+        .stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .gradient-bg-animated {
+            background: linear-gradient(-45deg, #0C2340, #1E3A5F, #0A1A2E, #0C2340);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        .text-gradient-primary {
+            background: linear-gradient(135deg, #0C2340 0%, #1E3A5F 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .initiative-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, rgba(12, 35, 64, 0.1), rgba(255, 153, 51, 0.1));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .initiative-icon i {
+            font-size: 1.75rem;
+            color: var(--primary);
+        }
+        
+        .section-divider {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #D4AF37, #FF9933);
+            margin: 2rem auto;
+            border-radius: 2px;
+        }
+        
+        .benefit-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(12, 35, 64, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(12, 35, 64, 0.05);
+            height: 100%;
+        }
+        
+        .benefit-card:hover {
+            box-shadow: 0 20px 40px rgba(12, 35, 64, 0.12);
+            transform: translateY(-5px);
+        }
+        
+        .benefit-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #0C2340, #1E3A5F);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .benefit-icon i {
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .stakeholder-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(12, 35, 64, 0.08);
+        }
+        
+        .stakeholder-table thead {
+            background: linear-gradient(135deg, #0C2340, #1E3A5F);
+        }
+        
+        .stakeholder-table th {
+            padding: 1.25rem 1.5rem;
+            color: white;
+            font-weight: 600;
+            text-align: left;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .stakeholder-table tbody tr {
+            background: white;
+            transition: all 0.2s ease;
+        }
+        
+        .stakeholder-table tbody tr:nth-child(even) {
+            background: rgba(12, 35, 64, 0.02);
+        }
+        
+        .stakeholder-table tbody tr:hover {
+            background: rgba(255, 153, 51, 0.05);
+        }
+        
+        .stakeholder-table td {
+            padding: 1.25rem 1.5rem;
+            color: #374151;
+            border-bottom: 1px solid rgba(12, 35, 64, 0.05);
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #0C2340, #1E3A5F);
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .cta-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #0C2340, #1E3A5F);
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(12, 35, 64, 0.2);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #D4AF37, #FF9933);
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
+        }
+    </style>
+</head>
+<body class="font-sans bg-light overflow-x-hidden">
+    <!-- Header Included -->
+    <div data-include="components/header.html"></div>
+
+    <main class="min-h-screen">
+        <!-- Hero Section -->
+        <section class="relative pt-32 pb-20 overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="images/political-engagement-hero.jpg" 
+                     alt="Political Engagement" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/95"></div>
+            </div>
+            
+            <!-- Floating Shapes -->
+            <!-- <div class="floating-shapes shape-1"></div> -->
+            <!-- <div class="floating-shapes shape-2"></div> -->
+            
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl animate-fade-in">
+                    <div class="inline-flex items-center space-x-2 text-saffron font-semibold uppercase text-sm tracking-wider mb-4">
+                        <i class="fas fa-landmark"></i>
+                        <span>Political & Strategic Engagement</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                        Strengthening Diplomatic<br>
+                        <span class="text-saffron">Ties & Cooperation</span>
+                    </h1>
+                    <p class="text-xl text-white/80 leading-relaxed mb-8">
+                        Fostering political relations through diplomatic cooperation, cultural exchange, and constructive dialogue between Australia and India for a shared prosperous future.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#initiatives" class="btn-secondary">
+                            <i class="fas fa-list"></i> View Initiatives
+                        </a>
+                        <!-- <a href="#engagement" class="btn-primary">
+                            <i class="fas fa-handshake"></i> Get Involved
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section class="py-16 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-gray-100">
+                    <div class="grid md:grid-cols-2 gap-10 items-center">
+                        <div>
+                            <div class="inline-flex items-center space-x-2 text-primary font-semibold uppercase text-sm tracking-wider mb-4">
+                                <span>Introduction</span>
+                            </div>
+                            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                                Promoting Political <span class="gradient-text">Cooperation & Understanding</span>
+                            </h2>
+                            <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                                The Australia India Alliance takes pride in promoting political cooperation and understanding between Australia and India through strategic initiatives and projects. Our efforts focus on building resilient diplomatic ties, facilitating policy dialogue, and fostering mutual understanding at all levels of government and society.
+                            </p>
+                            <p class="text-gray-600 leading-relaxed">
+                                We work towards creating platforms for open dialogue, cultural exchange, and collaborative problem-solving that strengthen the foundation of Australia-India relations.
+                            </p>
+                        </div>
+                        <div class="relative">
+                            <div class="bg-gradient-to-br from-primary/10 to-saffron/10 rounded-2xl p-6 border border-primary/10">
+                                <div class="grid grid-cols-2 gap-6">
+    <div class="text-center p-6 bg-white rounded-xl shadow-sm">
+        <div class="text-xl font-semibold text-primary mb-2">
+            High-Level
+        </div>
+        <div class="text-gray-600">Policy Forums</div>
+    </div>
+
+    <div class="text-center p-6 bg-white rounded-xl shadow-sm">
+        <div class="text-xl font-semibold text-saffron mb-2">
+            Extensive
+        </div>
+        <div class="text-gray-600">Leadership Exchanges</div>
+    </div>
+
+    <div class="text-center p-6 bg-white rounded-xl shadow-sm">
+        <div class="text-xl font-semibold text-primary mb-2">
+            Dedicated
+        </div>
+        <div class="text-gray-600">Working Groups</div>
+    </div>
+
+    <div class="text-center p-6 bg-white rounded-xl shadow-sm">
+        <div class="text-xl font-semibold text-saffron mb-2">
+            Broad
+        </div>
+        <div class="text-gray-600">Stakeholder Participation</div>
+    </div>
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Initiatives Section -->
+        <section id="initiatives" class="py-20 bg-gradient-to-b from-gray-50 to-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center space-x-4 mb-6">
+                        <div class="w-12 h-px bg-gradient-to-r from-transparent via-saffron to-transparent"></div>
+                        <span class="text-saffron font-semibold tracking-wider">INITIATIVES</span>
+                        <div class="w-12 h-px bg-gradient-to-r from-transparent via-saffron to-transparent"></div>
+                    </div>
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                        <span class="text-gray-900">Key Political</span>
+                        <span class="block gradient-text">Strengthening Initiatives</span>
+                    </h2>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                        Strategic programs designed to foster diplomatic cooperation, cultural exchange, and policy dialogue
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                    <!-- Initiative 1 -->
+                    <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100 group shine-effect scroll-reveal">
+                        <div class="initiative-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Leadership Exchange Program</h3>
+                        <p class="text-gray-600 text-sm mb-4">High-level engagement between Australian and Indian leaders for dialogue on common challenges and governance best practices.</p>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-saffron mr-2"></i>
+                                Ministerial-level exchanges
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-saffron mr-2"></i>
+                                Senior bureaucrat secondments
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-saffron mr-2"></i>
+                                Governance best practice sharing
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Initiative 2 -->
+                    <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100 group shine-effect scroll-reveal">
+                        <div class="initiative-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Policy Forums & Seminars</h3>
+                        <p class="text-gray-600 text-sm mb-4">Regular platforms for open dialogue and idea exchange between policymakers, academics, and subject matter experts.</p>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-saffron mr-2"></i>
+                                Annual bilateral policy dialogue
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-saffron mr-2"></i>
+                                Sector-specific policy workshops
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-saffron mr-2"></i>
+                                Think tank collaborations
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Initiative 3 -->
+                    <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100 group shine-effect scroll-reveal">
+                        <div class="initiative-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Joint Working Groups</h3>
+                        <p class="text-gray-600 text-sm mb-4">Specialized groups focusing on shared policy areas to develop collaborative frameworks and joint action plans.</p>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-saffron mr-2"></i>
+                                Defense and security cooperation
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-saffron mr-2"></i>
+                                Trade and economic policy
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-saffron mr-2"></i>
+                                Climate change and environment
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Initiative 4 -->
+                    <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100 group shine-effect scroll-reveal">
+                        <div class="initiative-icon">
+                            <i class="fas fa-theater-masks"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Cultural Diplomacy</h3>
+                        <p class="text-gray-600 text-sm mb-4">Showcasing the rich diversity and heritage of Australia and India through cultural events and people-to-people connections.</p>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-saffron mr-2"></i>
+                                Cultural festivals and exhibitions
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-saffron mr-2"></i>
+                                Artist and performer exchanges
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-saffron mr-2"></i>
+                                Literary and film festivals
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mt-8">
+                    <!-- Initiative 5 -->
+                    <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100 group shine-effect scroll-reveal">
+                        <div class="initiative-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Parliamentary Exchanges</h3>
+                        <p class="text-gray-600 text-sm mb-4">Enables parliamentarians to experience legislative processes and democratic institutions, fostering mutual understanding.</p>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-saffron mr-2"></i>
+                                Parliamentary friendship groups
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-saffron mr-2"></i>
+                                Committee-level exchanges
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-saffron mr-2"></i>
+                                Legislative study tours
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Initiative 6 -->
+                    <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100 group shine-effect scroll-reveal">
+                        <div class="initiative-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Youth Leadership Programs</h3>
+                        <p class="text-gray-600 text-sm mb-4">Brings together young leaders and future policymakers to discuss challenges and build networks for bilateral relations.</p>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-saffron mr-2"></i>
+                                Young political leaders forum
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-saffron mr-2"></i>
+                                Youth policy incubator
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-saffron mr-2"></i>
+                                Emerging leaders fellowship
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Initiative 7 -->
+                    <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100 group shine-effect scroll-reveal">
+                        <div class="initiative-icon">
+                            <i class="fas fa-diploma"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Track II Diplomacy</h3>
+                        <p class="text-gray-600 text-sm mb-4">Supports informal dialogues among former diplomats and experts to discuss complex geopolitical issues outside formal channels.</p>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-saffron mr-2"></i>
+                                Strategic dialogue forums
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-saffron mr-2"></i>
+                                Expert working groups
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-saffron mr-2"></i>
+                                Confidence-building measures
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Initiative 8 -->
+                    <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100 group shine-effect scroll-reveal">
+                        <div class="initiative-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Capacity Building Workshops</h3>
+                        <p class="text-gray-600 text-sm mb-4">Enhances skills of public servants and diplomats to navigate international relations effectively and implement bilateral agreements.</p>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-saffron mr-2"></i>
+                                Diplomatic training programs
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-saffron mr-2"></i>
+                                Public administration workshops
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-saffron mr-2"></i>
+                                Negotiation skills training
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategic Approach Section -->
+        <section class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center space-x-4 mb-6">
+                        <div class="w-20 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+                        <span class="text-primary font-semibold tracking-wider uppercase">STRATEGIC APPROACH</span>
+                        <div class="w-20 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+                    </div>
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                        <span class="text-gray-900">Our Approach to</span>
+                        <span class="block gradient-text">Political Strengthening</span>
+                    </h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Approach 1 -->
+                    <div class="relative group">
+                        <div class="absolute inset-0 bg-gradient-to-br from-saffron/20 to-secondary/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                        <div class="relative bg-white rounded-3xl p-8 shadow-xl border border-gray-100 card-hover">
+                            <div class="w-14 h-14 bg-gradient-to-br from-primary to-saffron rounded-2xl flex items-center justify-center mb-6">
+                                <i class="fas fa-bullhorn text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Policy Advocacy</h3>
+                            <p class="text-gray-600 leading-relaxed mb-6">
+                                Actively advocating for policies that promote bilateral trade, economic growth, and political cooperation through evidence-based research and stakeholder engagement.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Approach 2 -->
+                    <div class="relative group">
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                        <div class="relative bg-white rounded-3xl p-8 shadow-xl border border-gray-100 card-hover">
+                            <div class="w-14 h-14 bg-gradient-to-br from-saffron to-secondary rounded-2xl flex items-center justify-center mb-6">
+                                <i class="fas fa-handshake text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Diplomatic Engagement</h3>
+                            <p class="text-gray-600 leading-relaxed mb-6">
+                                Regular engagement with government officials and policymakers helps nurture a conducive environment for mutual understanding and strategic cooperation.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Approach 3 -->
+                    <div class="relative group">
+                        <div class="absolute inset-0 bg-gradient-to-br from-secondary/20 to-saffron/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                        <div class="relative bg-white rounded-3xl p-8 shadow-xl border border-gray-100 card-hover">
+                            <div class="w-14 h-14 bg-gradient-to-br from-secondary to-primary rounded-2xl flex items-center justify-center mb-6">
+                                <i class="fas fa-database text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Evidence-Based Approach</h3>
+                            <p class="text-gray-600 leading-relaxed mb-6">
+                                Emphasis on data-driven decision making, leveraging research and analysis to inform policy recommendations and assess the impact of diplomatic initiatives.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Approach 4 -->
+                    <div class="relative group">
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-saffron/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                        <div class="relative bg-white rounded-3xl p-8 shadow-xl border border-gray-100 card-hover">
+                            <div class="w-14 h-14 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mb-6">
+                                <i class="fas fa-users-cog text-2xl text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Multi-Stakeholder Approach</h3>
+                            <p class="text-gray-600 leading-relaxed mb-6">
+                                Engaging diverse stakeholders including government agencies, think tanks, academic institutions, and civil society organizations to develop comprehensive policy frameworks.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stakeholders Section -->
+        <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center space-x-4 mb-6">
+                        <div class="w-12 h-px bg-gradient-to-r from-transparent via-saffron to-transparent"></div>
+                        <span class="text-saffron font-semibold tracking-wider">STAKEHOLDERS</span>
+                        <div class="w-12 h-px bg-gradient-to-r from-transparent via-saffron to-transparent"></div>
+                    </div>
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                        <span class="text-gray-900">Role of Stakeholders in</span>
+                        <span class="block gradient-text">Political Strengthening</span>
+                    </h2>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto mb-10">
+                        Stakeholders play a critical role in strengthening bilateral political relations and driving impactful change through various avenues
+                    </p>
+                </div>
+
+                <div class="overflow-x-auto rounded-2xl shadow-lg">
+                    <table class="stakeholder-table">
+                        <thead>
+                            <tr>
+                                <th>Stakeholder Group</th>
+                                <th>Key Contributions</th>
+                                <th>Engagement Opportunities</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Government Agencies</strong></td>
+                                <td>Support diplomacy, policymaking, and policy dialogue for closer cooperation</td>
+                                <td>Bilateral agreements, joint committees, diplomatic exchanges</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Parliamentarians</strong></td>
+                                <td>Legislative cooperation, parliamentary diplomacy, oversight of bilateral relations</td>
+                                <td>Friendship groups, committee exchanges, legislative cooperation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Think Tanks & Research Institutions</strong></td>
+                                <td>Provide expertise for shaping strategies, policy reforms, and research efforts</td>
+                                <td>Policy research, strategic dialogues, track II diplomacy</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Academic Institutions</strong></td>
+                                <td>Enable knowledge exchange, research partnerships, and academic collaboration</td>
+                                <td>Joint research, academic exchanges, policy education</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Civil Society Organizations</strong></td>
+                                <td>Promote people-to-people connections, cultural understanding, and grassroots diplomacy</td>
+                                <td>Cultural exchanges, community dialogues, advocacy campaigns</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Media & Communication Experts</strong></td>
+                                <td>Shape public discourse, enhance mutual understanding, and promote bilateral narratives</td>
+                                <td>Media exchanges, joint productions, information sharing</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center space-x-4 mb-6">
+                        <div class="w-20 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+                        <span class="text-primary font-semibold tracking-wider uppercase">BENEFITS</span>
+                        <div class="w-20 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+                    </div>
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                        <span class="text-gray-900">Benefits of Political</span>
+                        <span class="block gradient-text">Engagement</span>
+                    </h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Benefit 1 -->
+                    <div class="benefit-card scroll-reveal">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Enhanced Security Cooperation</h3>
+                        <p class="text-gray-600">
+                            Strengthened defense and security partnerships, intelligence sharing, and coordinated responses to regional and global security challenges.
+                        </p>
+                    </div>
+
+                    <!-- Benefit 2 -->
+                    <div class="benefit-card scroll-reveal">
+                        <div class="benefit-icon">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Regional & Global Leadership</h3>
+                        <p class="text-gray-600">
+                            Joint leadership in regional forums and multilateral institutions, amplifying shared values and interests on the global stage.
+                        </p>
+                    </div>
+
+                    <!-- Benefit 3 -->
+                    <div class="benefit-card scroll-reveal">
+                        <div class="benefit-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Policy Coordination</h3>
+                        <p class="text-gray-600">
+                            Aligned positions on key international issues, coordinated approaches to global challenges, and harmonized regulatory frameworks.
+                        </p>
+                    </div>
+
+                    <!-- Benefit 4 -->
+                    <div class="benefit-card scroll-reveal">
+                        <div class="benefit-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Trust & Understanding</h3>
+                        <p class="text-gray-600">
+                            Increased mutual trust, reduced misperceptions, and deeper understanding of each other's strategic perspectives and national interests.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="engagement" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="cta-section p-10 md:p-16 text-white">
+                    <div class="cta-overlay"></div>
+                    <div class="relative z-10">
+                        <div class="text-center max-w-3xl mx-auto">
+                            <div class="inline-flex items-center space-x-2 text-white/80 font-semibold uppercase text-sm tracking-wider mb-6">
+                                <i class="fas fa-handshake"></i>
+                                <span>Get Involved</span>
+                            </div>
+                            <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                                Engage in Political Diplomacy & Policy Advocacy
+                            </h2>
+                            <p class="text-white/80 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+                                Be part of dialogues that strengthen political cooperation and diplomatic ties between Australia and India. Join our policy forums, leadership exchanges, and diplomatic initiatives to contribute to a stronger bilateral relationship.
+                            </p>
+                            <div class="flex flex-wrap gap-4 justify-center">
+                                <a href="#contact" class="btn-secondary">
+                                    <i class="fas fa-envelope"></i> Contact Us
+                                </a>
+                                <a href="membership.html" class="btn-primary">
+                                    <i class="fas fa-user-plus"></i> Become a Member
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Included -->
+    <div data-include="components/footer.html"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Scroll reveal animation
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all elements with scroll-reveal class
+            document.querySelectorAll('.scroll-reveal').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Card hover effects with improved shine effect
+            document.querySelectorAll('.shine-effect').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.zIndex = '10';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.zIndex = '1';
+                });
+            });
+        });
+    </script>
+    <script src="js/include.js"></script>
+    <script src="js/header.js"></script>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en',
+                    autoDisplay: false
+                },
+                'google_translate_element'
+            );
+        }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="js/search-data.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>
