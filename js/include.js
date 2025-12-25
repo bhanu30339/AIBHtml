@@ -1,15 +1,20 @@
 async function includeHTML() {
-        const elements = document.querySelectorAll("[data-include]");
+  const elements = document.querySelectorAll("[data-include]");
 
-        for (let el of elements) {
-            const file = el.getAttribute("data-include");
-            const response = await fetch(file);
-            const html = await response.text();
-            el.innerHTML = html;
-        }
+  for (const el of elements) {
+    const file = el.getAttribute("data-include");
+    const response = await fetch(file);
+    const html = await response.text();
+    el.innerHTML = html;
+
+    // 🔥 INIT HEADER AFTER IT IS LOADED
+    if (file.includes("header.html")) {
+      initHeaderMenu();
     }
+  }
+}
 
-    document.addEventListener("DOMContentLoaded", includeHTML);
+document.addEventListener("DOMContentLoaded", includeHTML);
 
 
 // // /js/include.js
