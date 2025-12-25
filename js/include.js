@@ -6,6 +6,10 @@ async function includeHTML() {
     const response = await fetch(file);
     const html = await response.text();
     el.innerHTML = html;
+    if (typeof initSearch === "function") {
+  initSearch();
+}
+
 
     // 🔥 INIT HEADER AFTER IT IS LOADED
     if (file.includes("header.html")) {
