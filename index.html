@@ -286,11 +286,97 @@
             color: white;
             font-size: 1.25rem;
         }
-        
-        /* Video Controls */
-        #muteBtn:hover svg {
-            transform: scale(1.1);
-            transition: transform 0.3s;
+
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 500px;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 30px;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .carousel-nav:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-nav.prev {
+            left: 20px;
+        }
+
+        .carousel-nav.next {
+            right: 20px;
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: white;
+            transform: scale(1.2);
         }
     </style>
 </head>
@@ -1298,7 +1384,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <!-- CTA -->
             <div class="text-center mt-12">
                 <a href="bilateral trade & business.html" class="btn-primary">
-                    <i class="fas fa-chart-line"></i> Explore
+                    <i class="fas fa-chart-line"></i> Explore 
                 </a>
             </div>
         </div>
@@ -1351,7 +1437,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
             </div>
-
             
             
 
@@ -1474,6 +1559,340 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </section>
 
+    <!-- NEW EVENT SECTION: Tech Diplomacy Launch -->
+    <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center space-x-4 mb-6">
+                    <div class="w-12 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+                    <span class="text-primary font-semibold tracking-wider uppercase">FEATURED EVENT</span>
+                    <div class="w-12 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    <span class="text-gray-900">Launch of the Parliamentarians Forum</span>
+                    <span class="block text-primary">for Tech Diplomacy</span>
+                </h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                    Advancing Responsible, Inclusive Tech in Global Diplomacy
+                </p>
+            </div>
+
+            <!-- Event Content -->
+            <div class="grid lg:grid-cols-2 gap-12 mb-16">
+                <!-- Event Description -->
+                <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mr-4">
+                            <i class="fas fa-rocket text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">Global Initiative Launch</h3>
+                            <p class="text-gray-600">A new era in technology-driven diplomacy</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        We're thrilled to have launched the Parliamentarians Forum for Tech Diplomacy, 
+                        a global initiative dedicated to fostering collaboration on the responsible and 
+                        inclusive use of emerging technologies.
+                    </p>
+                    
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        It was an honour to host Hon. Dylan Wight MP, Hon. Mathew Hilakari MP, and 
+                        distinguished members of the Australian delegation from the Parliament of Victoria. 
+                        This gathering, organised in partnership with the AusInd Bridge Foundation, 
+                        brought together policymakers, business leaders, academics, and young changemakers 
+                        from Australia and India.
+                    </p>
+                    
+                    <div class="p-6 bg-primary/5 rounded-xl border border-primary/10">
+                        <h4 class="font-bold text-primary mb-3">Key Takeaway</h4>
+                        <p class="text-gray-700">
+                            A key takeaway from the event was the importance of tech-enabled diplomacy 
+                            and inclusive leadership in shaping a better future. Drawing inspiration 
+                            from the Hon'ble Prime Minister Narendra Modi ji's G20 model, we explored 
+                            how multi-stakeholder engagement across diverse sectors can drive positive 
+                            change on the global stage.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Photo Carousel -->
+<section class="relative max-w-6xl mx-auto mt-12 px-4">
+    <div class="relative overflow-hidden rounded-2xl shadow-lg">
+
+        <!-- Slides Track -->
+        <div id="carouselTrack" class="flex transition-transform duration-500 ease-in-out">
+
+            <!-- Slide 1 -->
+            <div class="min-w-full relative">
+                <img src="/images/drive-download-20251217T071050Z-1-001/DSC_4643.JPG"
+                     class="w-full h-[500px] md:h-[600px] object-cover"
+                     alt="Australian Parliamentarians with delegation">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 md:p-8 text-white">
+                    <h3 class="text-xl md:text-2xl font-bold mb-2">Hon. Dylan Wight MP & Hon. Mathew Hilakari MP</h3>
+                    <p class="text-white/90">With distinguished members of the Australian delegation</p>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="min-w-full relative">
+                <img src="/images/drive-download-20251217T071050Z-1-001/DSC_4646.JPG"
+                     class="w-full h-[500px] md:h-[600px] object-cover"
+                     alt="Tech Diplomacy Forum discussion">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 md:p-8 text-white">
+                    <h3 class="text-xl md:text-2xl font-bold mb-2">Tech Diplomacy Discussions</h3>
+                    <p class="text-white/90">Engaging dialogue on responsible technology use</p>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="min-w-full relative">
+                <img src="/images/drive-download-20251217T071050Z-1-001/DSC_4691.JPG"
+                     class="w-full h-[500px] md:h-[600px] object-cover"
+                     alt="Forum Launch Ceremony">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 md:p-8 text-white">
+                    <h3 class="text-xl md:text-2xl font-bold mb-2">Forum Launch Ceremony</h3>
+                    <p class="text-white/90">Official launch of the Parliamentarians Forum</p>
+                </div>
+            </div>
+
+             <div class="min-w-full relative">
+                <img src="/images/drive-download-20251217T071050Z-1-001/DSC_4691.JPG"
+                     class="w-full h-[500px] md:h-[600px] object-cover"
+                     alt="Forum Launch Ceremony">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 md:p-8 text-white">
+                    <h3 class="text-xl md:text-2xl font-bold mb-2">Forum Launch Ceremony</h3>
+                    <p class="text-white/90">Official launch of the Parliamentarians Forum</p>
+                </div>
+            </div>
+
+             <div class="min-w-full relative">
+                <img src="/images/drive-download-20251217T071050Z-1-001/DSC_4691.JPG"
+                     class="w-full h-[500px] md:h-[600px] object-cover"
+                     alt="Forum Launch Ceremony">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 md:p-8 text-white">
+                    <h3 class="text-xl md:text-2xl font-bold mb-2">Forum Launch Ceremony</h3>
+                    <p class="text-white/90">Official launch of the Parliamentarians Forum</p>
+                </div>
+            </div>
+
+             <div class="min-w-full relative">
+                <img src="/images/drive-download-20251217T071050Z-1-001/DSC_4691.JPG"
+                     class="w-full h-[500px] md:h-[600px] object-cover"
+                     alt="Forum Launch Ceremony">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 md:p-8 text-white">
+                    <h3 class="text-xl md:text-2xl font-bold mb-2">Forum Launch Ceremony</h3>
+                    <p class="text-white/90">Official launch of the Parliamentarians Forum</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button id="prevBtn" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300">
+            ❮
+        </button>
+        <button id="nextBtn" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300">
+            ❯
+        </button>
+
+        <!-- Dots Indicator -->
+        <div id="carouselDots" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            <!-- Dots will be inserted here by JavaScript -->
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* Ensure smooth transitions */
+    #carouselTrack {
+        will-change: transform;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .carousel-btn {
+            width: 8px;
+            height: 8px;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const track = document.getElementById('carouselTrack');
+        const slides = Array.from(track.children);
+        const nextButton = document.getElementById('nextBtn');
+        const prevButton = document.getElementById('prevBtn');
+        const dotsContainer = document.getElementById('carouselDots');
+        
+        let currentIndex = 0;
+        let autoScrollInterval;
+        const slideInterval = 4000; // 4 seconds
+        
+        // Create dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.className = 'w-3 h-3 rounded-full bg-white/50 hover:bg-white cursor-pointer transition-colors duration-300';
+            if (index === 0) dot.classList.add('bg-white');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+        
+        const dots = Array.from(dotsContainer.children);
+        
+        // Function to update carousel position
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            // Update active dot
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('bg-white', index === currentIndex);
+                dot.classList.toggle('bg-white/50', index !== currentIndex);
+            });
+        }
+        
+        // Function to go to specific slide
+        function goToSlide(index) {
+            currentIndex = index;
+            updateCarousel();
+            resetAutoScroll();
+        }
+        
+        // Next slide function
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateCarousel();
+        }
+        
+        // Previous slide function
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateCarousel();
+        }
+        
+        // Auto-scroll function
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(nextSlide, slideInterval);
+        }
+        
+        // Reset auto-scroll timer
+        function resetAutoScroll() {
+            clearInterval(autoScrollInterval);
+            startAutoScroll();
+        }
+        
+        // Event listeners
+        nextButton.addEventListener('click', () => {
+            nextSlide();
+            resetAutoScroll();
+        });
+        
+        prevButton.addEventListener('click', () => {
+            prevSlide();
+            resetAutoScroll();
+        });
+        
+        // Pause auto-scroll on hover
+        track.parentElement.addEventListener('mouseenter', () => {
+            clearInterval(autoScrollInterval);
+        });
+        
+        track.parentElement.addEventListener('mouseleave', () => {
+            startAutoScroll();
+        });
+        
+        // Touch swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        track.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            clearInterval(autoScrollInterval);
+        });
+        
+        track.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+            startAutoScroll();
+        });
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe left - next slide
+                    nextSlide();
+                } else {
+                    // Swipe right - previous slide
+                    prevSlide();
+                }
+            }
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                nextSlide();
+                resetAutoScroll();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+                resetAutoScroll();
+            }
+        });
+        
+        // Initialize
+        updateCarousel();
+        startAutoScroll();
+        
+        // Handle window resize
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                updateCarousel();
+            }, 250);
+        });
+    });
+</script>
+
+            </div>
+
+            <!-- Event Highlights -->
+            <div class="bg-gradient-to-r from-primary/5 to-saffron/5 rounded-3xl p-8">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">Event Highlights</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-xl">
+                        <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-handshake text-primary"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">Multi-Stakeholder Engagement</h4>
+                        <p class="text-gray-600 text-sm">Policymakers, business leaders, academics, and young changemakers united</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl">
+                        <div class="w-10 h-10 bg-saffron/10 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-microchip text-saffron"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">Tech-Enabled Diplomacy</h4>
+                        <p class="text-gray-600 text-sm">Exploring responsible use of emerging technologies in global relations</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl">
+                        <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-globe-asia text-primary"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">Global Inspiration</h4>
+                        <p class="text-gray-600 text-sm">Drawing from Hon'ble PM Modi's G20 model for inclusive leadership</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact CTA Section -->
     <!-- <section class="relative py-20 lg:py-28 bg-gray-50 overflow-hidden">
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1576,7 +1995,88 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
             });
+
+            // Initialize Carousel
+            initCarousel();
         });
+
+        // Carousel Functionality
+        function initCarousel() {
+            const track = document.getElementById('carouselTrack');
+            const slides = Array.from(track.children);
+            const nextButton = document.getElementById('nextBtn');
+            const prevButton = document.getElementById('prevBtn');
+            const dotsContainer = document.getElementById('carouselDots');
+            
+            let currentIndex = 0;
+            const slideWidth = slides[0].getBoundingClientRect().width;
+            
+            // Arrange slides next to one another
+            slides.forEach((slide, index) => {
+                slide.style.left = slideWidth * index + 'px';
+                
+                // Create dots
+                const dot = document.createElement('div');
+                dot.classList.add('carousel-dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => moveToSlide(index));
+                dotsContainer.appendChild(dot);
+            });
+            
+            const dots = Array.from(dotsContainer.children);
+            
+            // Move to specific slide
+            function moveToSlide(index) {
+                currentIndex = index;
+                track.style.transform = 'translateX(-' + (slideWidth * currentIndex) + 'px)';
+                
+                // Update dots
+                dots.forEach((dot, dotIndex) => {
+                    dot.classList.toggle('active', dotIndex === currentIndex);
+                });
+            }
+            
+            // Next slide
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                moveToSlide(currentIndex);
+            });
+            
+            // Previous slide
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                moveToSlide(currentIndex);
+            });
+            
+            // Auto-play
+            let autoplay = setInterval(() => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                moveToSlide(currentIndex);
+            }, 5000);
+            
+            // Pause on hover
+            track.parentElement.addEventListener('mouseenter', () => {
+                clearInterval(autoplay);
+            });
+            
+            track.parentElement.addEventListener('mouseleave', () => {
+                autoplay = setInterval(() => {
+                    currentIndex = (currentIndex + 1) % slides.length;
+                    moveToSlide(currentIndex);
+                }, 5000);
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') {
+                    currentIndex = (currentIndex + 1) % slides.length;
+                    moveToSlide(currentIndex);
+                } else if (e.key === 'ArrowLeft') {
+                    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                    moveToSlide(currentIndex);
+                }
+            });
+        }
     </script>
 
     <script src="js/include.js"></script>

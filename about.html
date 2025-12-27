@@ -645,31 +645,7 @@ header * {
                 observer.observe(el);
             });
 
-            // Add particles on mouse move
-            // document.addEventListener('mousemove', function(e) {
-            //     if (Math.random() > 0.7) { // 30% chance to create particle
-            //         const particle = document.createElement('div');
-            //         particle.classList.add('particle');
-            //         particle.style.left = `${e.clientX}px`;
-            //         particle.style.top = `${e.clientY}px`;
-            //         particle.style.width = `${Math.random() * 10 + 5}px`;
-            //         particle.style.height = particle.style.width;
-                    
-            //         // Random movement
-            //         const tx = (Math.random() - 0.5) * 100;
-            //         const ty = (Math.random() - 0.5) * 100;
-            //         particle.style.setProperty('--tx', `${tx}px`);
-            //         particle.style.setProperty('--ty', `${ty}px`);
-            //         particle.style.animation = `particle-float 2s ease-in-out forwards`;
-                    
-            //         document.body.appendChild(particle);
-                    
-            //         // Remove particle after animation
-            //         setTimeout(() => {
-            //             particle.remove();
-            //         }, 2000);
-            //     }
-            // });
+        
 
             // Card hover effects
             document.querySelectorAll('.card-hover').forEach(card => {
