@@ -421,48 +421,53 @@
     </div>
 
     <!-- Purpose Column -->
-    <div class="space-y-12">
-        <!-- Purpose Card -->
-        <div class="group relative">
-            <div class="absolute -inset-1 bg-gradient-to-r from-amber-100 to-orange-100 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
-            <div class="relative bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 h-full">
-                <div class="flex items-start mb-6">
-                    <div class="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-amber-50 to-amber-100 rounded-xl flex items-center justify-center">
-                        <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="ml-6 text-2xl font-bold text-gray-900 pt-2">Our Purpose</h3>
+<div class="space-y-12">
+
+    <!-- Purpose Card -->
+    <div class="group relative">
+        <div class="absolute -inset-1 bg-gradient-to-r from-amber-100 to-orange-100 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
+        <div class="relative bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+            <div class="flex items-start mb-6">
+                <div class="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-amber-50 to-amber-100 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2
+                              c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857
+                              M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0
+                              019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0
+                              11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                        </path>
+                    </svg>
                 </div>
-                <p class="text-gray-700 leading-relaxed">
-                    This is an invitation to join the Australia India Alliance as valuable stakeholders, 
-                    partners, and supporters. We aim to share our vision, showcase our achievements, and 
-                    present opportunities for collaboration and growth that the alliance offers.
-                </p>
-                
-                <!-- Photo Section -->
-                <div class="mt-8">
-                    <div class="relative rounded-xl overflow-hidden border border-gray-200 shadow-md">
-                        <!-- Replace the src with your actual photo URL -->
-                        <img 
-                            src="/images/LogoHz.png" 
-                            alt="Australia India Alliance Leadership Team" 
-                            class="w-full h-[90%] object-cover transition-transform duration-300 hover:scale-105"
-                        >
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                        <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
-                            <p class="text-white text-sm font-medium">
-                                <!-- Leadership team discussing bilateral cooperation strategies -->
-                            </p>
-                        </div>
-                    </div>
-                    <p class="mt-2 text-xs text-gray-500 text-center">
-                        Australia India Alliance leadership meeting to strengthen bilateral ties
-                    </p>
-                </div>
+                <h3 class="ml-6 text-2xl font-bold text-gray-900 pt-2">Our Purpose</h3>
             </div>
+
+            <p class="text-gray-700 leading-relaxed">
+                This is an invitation to join the Australia India Alliance as valuable stakeholders,
+                partners, and supporters. We aim to share our vision, showcase our achievements, and
+                present opportunities for collaboration and growth that the alliance offers.
+            </p>
         </div>
     </div>
+
+    <!-- Photo Section (NOW BELOW PURPOSE) -->
+    <div>
+        <div class="relative rounded-xl overflow-hidden border border-gray-200 shadow-md">
+            <img 
+                src="/images/drive-download-20251217T071050Z-1-001/DSC_4691.JPG" 
+                alt="Australia India Alliance Leadership Team"
+                class="w-full h-[380px] object-cover transition-transform duration-300 hover:scale-105"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+        </div>
+
+        <p class="mt-2 text-xs text-gray-500 text-center">
+            <!-- Australia India Alliance leadership meeting to strengthen bilateral ties -->
+        </p>
+    </div>
+
+</div>
+
 </div>
         </div>
     </section>
@@ -1203,8 +1208,8 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
 
             <!-- Trade Statistics -->
-            <div class="grid md:grid-cols-3 gap-8 mb-12">
-                <!-- Stat 1 -->
+            <!-- <div class="grid md:grid-cols-3 gap-8 mb-12">
+                
                 <div class="stat-card scroll-reveal">
                     <div class="stat-value">$15B</div>
                     <div class="stat-label">Total Trade Volume</div>
@@ -1213,7 +1218,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </p>
                 </div>
 
-                <!-- Stat 2 -->
+                
                 <div class="stat-card scroll-reveal">
                     <div class="stat-value">$8B</div>
                     <div class="stat-label">Australian Exports to India</div>
@@ -1222,7 +1227,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     </p>
                 </div>
 
-                <!-- Stat 3 -->
                 <div class="stat-card scroll-reveal">
                     <div class="stat-value">$7B</div>
                     <div class="stat-label">Indian Exports to Australia</div>
@@ -1230,7 +1234,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         Led by pharmaceuticals, textiles, automotive components, and technology services
                     </p>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Trade Composition -->
             <div class="grid lg:grid-cols-2 gap-8 mb-12">
@@ -1376,8 +1380,8 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
 
             <!-- Key Initiatives Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mb-12">
-                <!-- Education -->
+            <!-- <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mb-12">
+                
                 <div class="modern-card">
                     <div class="feature-icon mb-4">
                         <i class="fas fa-graduation-cap"></i>
@@ -1408,7 +1412,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
 
-                <!-- Healthcare -->
+                
                 <div class="modern-card">
                     <div class="feature-icon mb-4">
                         <i class="fas fa-heartbeat"></i>
@@ -1439,7 +1443,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
 
-                <!-- Environment -->
+               ]
                 <div class="modern-card">
                     <div class="feature-icon mb-4">
                         <i class="fas fa-leaf"></i>
@@ -1470,7 +1474,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
 
-                <!-- Community Development -->
+                
                 <div class="modern-card">
                     <div class="feature-icon mb-4">
                         <i class="fas fa-users"></i>
@@ -1500,7 +1504,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Victorian Initiatives -->
             <div class="modern-card">
