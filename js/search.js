@@ -1,45 +1,93 @@
 function initSearch() {
   const input = document.getElementById("searchInput");
   const resultsBox = document.getElementById("searchResults");
+  
+  const mobileInput = document.getElementById("mobileSearchInput");
+  const mobileResultsBox = document.getElementById("mobileSearchResults");
 
-  if (!input || !resultsBox) return;
+  // Desktop search
+  if (input && resultsBox) {
+    input.addEventListener("input", () => {
+      const query = input.value.trim().toLowerCase();
+      resultsBox.innerHTML = "";
 
-  input.addEventListener("input", () => {
-    const query = input.value.trim().toLowerCase();
-    resultsBox.innerHTML = "";
+      if (!query) {
+        resultsBox.classList.add("hidden");
+        return;
+      }
 
-    if (!query) {
-      resultsBox.classList.add("hidden");
-      return;
-    }
+      const results = SEARCH_DATA.filter(item =>
+    item.title.toLowerCase().includes(query) ||
+    item.content.toLowerCase().includes(query)
+  );
 
-    const results = SEARCH_DATA.filter(item =>
-  item.title.toLowerCase().includes(query) ||
-  item.content.toLowerCase().includes(query)
-);
+      if (results.length === 0) {
+        resultsBox.innerHTML = `<div class="px-4 py-3 text-sm text-gray-500">No results found</div>`;
+        resultsBox.classList.remove("hidden");
+        return;
+      }
 
+      results.forEach(item => {
+        const a = document.createElement("a");
+        a.href = item.url;
+        a.className =
+          "block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm";
+        a.textContent = item.title;
+        resultsBox.appendChild(a);
+      });
 
-    if (results.length === 0) {
-      resultsBox.innerHTML = `<div class="px-4 py-3 text-sm text-gray-500">No results found</div>`;
       resultsBox.classList.remove("hidden");
-      return;
-    }
-
-    results.forEach(item => {
-      const a = document.createElement("a");
-      a.href = item.url;
-      a.className =
-        "block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm";
-      a.textContent = item.title;
-      resultsBox.appendChild(a);
     });
 
-    resultsBox.classList.remove("hidden");
-  });
+    document.addEventListener("click", (e) => {
+      if (!resultsBox.contains(e.target) && e.target !== input) {
+        resultsBox.classList.add("hidden");
+      }
+    });
+  }
 
-  document.addEventListener("click", (e) => {
-    if (!resultsBox.contains(e.target) && e.target !== input) {
-      resultsBox.classList.add("hidden");
-    }
-  });
+  // Mobile search
+  if (mobileInput && mobileResultsBox) {
+    mobileInput.addEventListener("input", () => {
+      const query = mobileInput.value.trim().toLowerCase();
+      mobileResultsBox.innerHTML = "";
+
+      if (!query) {
+        mobileResultsBox.classList.add("hidden");
+        return;
+      }
+
+      const results = SEARCH_DATA.filter(item =>
+    item.title.toLowerCase().includes(query) ||
+    item.content.toLowerCase().includes(query)
+  );
+
+      if (results.length === 0) {
+        mobileResultsBox.innerHTML = `<div class="px-4 py-3 text-sm text-gray-500">No results found</div>`;
+        mobileResultsBox.classList.remove("hidden");
+        return;
+      }
+
+      results.forEach(item => {
+        const a = document.createElement("a");
+        a.href = item.url;
+        a.className =
+          "block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm border-b dark:border-gray-700";
+        a.textContent = item.title;
+        a.onclick = () => {
+          mobileInput.value = "";
+          mobileResultsBox.classList.add("hidden");
+        };
+        mobileResultsBox.appendChild(a);
+      });
+
+      mobileResultsBox.classList.remove("hidden");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!mobileResultsBox.contains(e.target) && e.target !== mobileInput) {
+        mobileResultsBox.classList.add("hidden");
+      }
+    });
+  }
 }

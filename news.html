@@ -121,79 +121,380 @@
             </div>
         </section>
 
-        <!-- Single Event Section -->
-        <section class="py-16 bg-gradient-to-b from-white to-gray-50">
+        <!-- NEW EVENT SECTION: Tech Diplomacy Launch -->
+    <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
-            <div class="text-center mb-12">
-                <div class="inline-flex items-center mb-4">
-                    <div class="w-12 h-px bg-gradient-to-r from-saffron/10 via-saffron to-transparent"></div>
-                    <span class="mx-3 text-xs font-semibold uppercase tracking-wider text-blue-900">Latest Event</span>
-                    <div class="w-12 h-px bg-gradient-to-r from-saffron/10 via-saffron to-transparent"></div>
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center space-x-4 mb-6">
+                    <div class="w-12 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+                    <span class="text-blue-900 text-xs font-semibold tracking-wider uppercase">FEATURED EVENT</span>
+                    <div class="w-12 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
                 </div>
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-                    Parliamentarians Forum for Tech Diplomacy Launch
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    <span class="text-gray-900">Launch of the Parliamentarians Forum</span>
+                    <span class="block text-primary">for Tech Diplomacy</span>
                 </h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Honouring Australian Parliamentarians & Launching Global Tech Diplomacy Initiative
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                    Advancing Responsible, Inclusive Tech in Global Diplomacy
                 </p>
             </div>
 
-            <!-- Event Details -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Event Information -->
-                <div>
-                    <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
-                        <span class="inline-block px-4 py-2 bg-saffron text-white font-semibold rounded-full text-sm mb-4">
-                            Recent Event
-                        </span>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-4">
-                            Hosting Hon. Dylan Wight MP and Hon. Mathew Hilakari MP from Victoria, Australia
-                        </h3>
-                        <p class="text-gray-600 mb-4">
-                            I had the honour of hosting Hon. Dylan Wight MP and Hon. Mathew Hilakari MP from Victoria, Australia, as part of the Visiting Australian Delegation. Organised in collaboration with the AusInd Bridge Foundation, this gathering brought together policymakers, business leaders, academics, innovators & young changemakers from both our nations.
-                        </p>
-                        
-                        <div class="mt-6 p-6 bg-gray-50 rounded-lg">
-                            <p class="text-gray-600 mb-3 italic">
-                                "My heartfelt thanks to Deepak Vinayak OAM JP, Founder, AusInd Bridge Foundation (Australia), Dr. Jasvinder Sidhu, Federation University (Australia) and Prof. Kamala Kanta Dash (कृष्णकृपा), Rajasthan Centre of Advanced Technology (R-CAT), for shaping this meaningful dialogue and building bridges that matter."
-                            </p>
-                            <p class="text-gray-700 font-medium">
-                                The journey of #TechBridgeDiplomacy has just begun - and the road ahead is full of promise, purpose, and partnership.
-                            </p>
+            <!-- Event Content -->
+            <div class="grid lg:grid-cols-2 gap-12 mb-16">
+                <!-- Event Description -->
+                <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mr-4">
+                            <i class="fas fa-rocket text-primary text-xl"></i>
                         </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">Global Initiative Launch</h3>
+                            <p class="text-gray-600">A new era in technology-driven diplomacy</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        We're thrilled to have launched the Parliamentarians Forum for Tech Diplomacy, 
+                        a global initiative dedicated to fostering collaboration on the responsible and 
+                        inclusive use of emerging technologies.
+                    </p>
+                    
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        It was an honour to host Hon. Dylan Wight MP, Hon. Mathew Hilakari MP, and 
+                        distinguished members of the Australian delegation from the Parliament of Victoria. 
+                        This gathering, organised in partnership with the AusInd Bridge Foundation, 
+                        brought together policymakers, business leaders, academics, and young changemakers 
+                        from Australia and India.
+                    </p>
+                    
+                    <div class="p-6 bg-primary/5 rounded-xl border border-primary/10">
+                        <h4 class="font-bold text-primary mb-3">Key Takeaway</h4>
+                        <p class="text-gray-700">
+                            A key takeaway from the event was the importance of tech-enabled diplomacy 
+                            and inclusive leadership in shaping a better future. Drawing inspiration 
+                            from the Hon'ble Prime Minister Narendra Modi ji's G20 model, we explored 
+                            how multi-stakeholder engagement across diverse sectors can drive positive 
+                            change on the global stage.
+                        </p>
                     </div>
                 </div>
 
-                <!-- Event Gallery -->
-                <div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-6">Event Photos</h4>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="relative rounded-xl overflow-hidden shadow-lg">
-                            <img src="images/drive-download-20251217T071050Z-1-001/DSC_4643.JPG" 
-                                 alt="Australian Parliamentarians with delegation" 
-                                 class="w-full h-64 object-cover">
+                <!-- Photo Carousel -->
+<section class="relative max-w-6xl mx-auto mt-12 px-4">
+    <div class="relative overflow-hidden rounded-2xl shadow-lg">
+
+        <!-- Slides Track -->
+        <div id="carouselTrack" class="flex transition-transform duration-500 ease-in-out">
+
+            <!-- Slide 1 -->
+            <div class="min-w-full relative">
+                <img src="/images/eve/1.jpeg"
+                     class="w-full h-[500px] md:h-[600px] object-cover"
+                     alt="Australian Parliamentarians with delegation">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 md:p-8 text-white">
+                    <h3 class="text-xl md:text-2xl font-bold mb-2">Hon. Dylan Wight MP & Hon. Mathew Hilakari MP</h3>
+                    <p class="text-white/90">With distinguished members of the Australian delegation</p>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="min-w-full relative">
+                <img src="/images/eve/2.jpeg"
+                     class="w-full h-[500px] md:h-[600px] object-cover"
+                     alt="Tech Diplomacy Forum discussion">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 md:p-8 text-white">
+                    <h3 class="text-xl md:text-2xl font-bold mb-2">Tech Diplomacy Discussions</h3>
+                    <p class="text-white/90">Engaging dialogue on responsible technology use</p>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="min-w-full relative">
+                <img src="/images/eve/3.jpeg"
+                     class="w-full h-[500px] md:h-[600px] object-cover"
+                     alt="Forum Launch Ceremony">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 md:p-8 text-white">
+                    <h3 class="text-xl md:text-2xl font-bold mb-2">Forum Launch Ceremony</h3>
+                    <p class="text-white/90">Official launch of the Parliamentarians Forum</p>
+                </div>
+            </div>
+
+             <div class="min-w-full relative">
+                <img src="/images/eve/4.jpeg"
+                     class="w-full h-[500px] md:h-[600px] object-cover"
+                     alt="Forum Launch Ceremony">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 md:p-8 text-white">
+                    <h3 class="text-xl md:text-2xl font-bold mb-2">Forum Launch Ceremony</h3>
+                    <p class="text-white/90">Official launch of the Parliamentarians Forum</p>
+                </div>
+            </div>
+
+             <div class="min-w-full relative">
+                <img src="/images/eve/5.jpeg"
+                     class="w-full h-[500px] md:h-[600px] object-cover"
+                     alt="Forum Launch Ceremony">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 md:p-8 text-white">
+                    <h3 class="text-xl md:text-2xl font-bold mb-2">Forum Launch Ceremony</h3>
+                    <p class="text-white/90">Official launch of the Parliamentarians Forum</p>
+                </div>
+            </div>
+
+             <div class="min-w-full relative">
+                <img src="/images/eve/6.jpeg"
+                     class="w-full h-[500px] md:h-[600px] object-cover"
+                     alt="Forum Launch Ceremony">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 md:p-8 text-white">
+                    <h3 class="text-xl md:text-2xl font-bold mb-2">Forum Launch Ceremony</h3>
+                    <p class="text-white/90">Official launch of the Parliamentarians Forum</p>
+                </div>
+            </div>
+            <div class="min-w-full relative">
+                <img src="/images/eve/7.jpeg"
+                     class="w-full h-[500px] md:h-[600px] object-cover"
+                     alt="Forum Launch Ceremony">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 md:p-8 text-white">
+                    <h3 class="text-xl md:text-2xl font-bold mb-2">Forum Launch Ceremony</h3>
+                    <p class="text-white/90">Official launch of the Parliamentarians Forum</p>
+                </div>
+            </div>
+            <div class="min-w-full relative">
+                <img src="/images/eve/8.jpeg"
+                     class="w-full h-[500px] md:h-[600px] object-cover"
+                     alt="Forum Launch Ceremony">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 md:p-8 text-white">
+                    <h3 class="text-xl md:text-2xl font-bold mb-2">Forum Launch Ceremony</h3>
+                    <p class="text-white/90">Official launch of the Parliamentarians Forum</p>
+                </div>
+            </div>
+            <div class="min-w-full relative">
+                <img src="/images/eve/9.jpeg"
+                     class="w-full h-[500px] md:h-[600px] object-cover"
+                     alt="Forum Launch Ceremony">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 md:p-8 text-white">
+                    <h3 class="text-xl md:text-2xl font-bold mb-2">Forum Launch Ceremony</h3>
+                    <p class="text-white/90">Official launch of the Parliamentarians Forum</p>
+                </div>
+            </div>
+            <div class="min-w-full relative">
+                <img src="/images/eve/10.jpeg"
+                     class="w-full h-[500px] md:h-[600px] object-cover"
+                     alt="Forum Launch Ceremony">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 md:p-8 text-white">
+                    <h3 class="text-xl md:text-2xl font-bold mb-2">Forum Launch Ceremony</h3>
+                    <p class="text-white/90">Official launch of the Parliamentarians Forum</p>
+                </div>
+            </div>
+            <div class="min-w-full relative">
+                <img src="/images/eve/11.jpeg"
+                     class="w-full h-[500px] md:h-[600px] object-cover"
+                     alt="Forum Launch Ceremony">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 md:p-8 text-white">
+                    <h3 class="text-xl md:text-2xl font-bold mb-2">Forum Launch Ceremony</h3>
+                    <p class="text-white/90">Official launch of the Parliamentarians Forum</p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button id="prevBtn" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300">
+            ❮
+        </button>
+        <button id="nextBtn" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300">
+            ❯
+        </button>
+
+        <!-- Dots Indicator -->
+        <div id="carouselDots" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            <!-- Dots will be inserted here by JavaScript -->
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* Ensure smooth transitions */
+    #carouselTrack {
+        will-change: transform;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .carousel-btn {
+            width: 8px;
+            height: 8px;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const track = document.getElementById('carouselTrack');
+        const slides = Array.from(track.children);
+        const nextButton = document.getElementById('nextBtn');
+        const prevButton = document.getElementById('prevBtn');
+        const dotsContainer = document.getElementById('carouselDots');
+        
+        let currentIndex = 0;
+        let autoScrollInterval;
+        const slideInterval = 4000; // 4 seconds
+        
+        // Create dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.className = 'w-3 h-3 rounded-full bg-white/50 hover:bg-white cursor-pointer transition-colors duration-300';
+            if (index === 0) dot.classList.add('bg-white');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+        
+        const dots = Array.from(dotsContainer.children);
+        
+        // Function to update carousel position
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            // Update active dot
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('bg-white', index === currentIndex);
+                dot.classList.toggle('bg-white/50', index !== currentIndex);
+            });
+        }
+        
+        // Function to go to specific slide
+        function goToSlide(index) {
+            currentIndex = index;
+            updateCarousel();
+            resetAutoScroll();
+        }
+        
+        // Next slide function
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateCarousel();
+        }
+        
+        // Previous slide function
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateCarousel();
+        }
+        
+        // Auto-scroll function
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(nextSlide, slideInterval);
+        }
+        
+        // Reset auto-scroll timer
+        function resetAutoScroll() {
+            clearInterval(autoScrollInterval);
+            startAutoScroll();
+        }
+        
+        // Event listeners
+        nextButton.addEventListener('click', () => {
+            nextSlide();
+            resetAutoScroll();
+        });
+        
+        prevButton.addEventListener('click', () => {
+            prevSlide();
+            resetAutoScroll();
+        });
+        
+        // Pause auto-scroll on hover
+        track.parentElement.addEventListener('mouseenter', () => {
+            clearInterval(autoScrollInterval);
+        });
+        
+        track.parentElement.addEventListener('mouseleave', () => {
+            startAutoScroll();
+        });
+        
+        // Touch swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        track.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            clearInterval(autoScrollInterval);
+        });
+        
+        track.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+            startAutoScroll();
+        });
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe left - next slide
+                    nextSlide();
+                } else {
+                    // Swipe right - previous slide
+                    prevSlide();
+                }
+            }
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                nextSlide();
+                resetAutoScroll();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+                resetAutoScroll();
+            }
+        });
+        
+        // Initialize
+        updateCarousel();
+        startAutoScroll();
+        
+        // Handle window resize
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                updateCarousel();
+            }, 250);
+        });
+    });
+</script>
+
+            </div>
+
+            <!-- Event Highlights -->
+            <div class="bg-gradient-to-r from-primary/5 to-saffron/5 rounded-3xl p-8">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">Event Highlights</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-xl">
+                        <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-handshake text-primary"></i>
                         </div>
-                        <div class="relative rounded-xl overflow-hidden shadow-lg">
-                            <img src="images/drive-download-20251217T071050Z-1-001/DSC_4648.JPG" 
-                                 alt="Tech Diplomacy Forum discussion" 
-                                 class="w-full h-64 object-cover">
-                        </div>
-                        <div class="relative rounded-xl overflow-hidden shadow-lg">
-                            <img src="images/drive-download-20251217T071050Z-1-001/DSC_4684.JPG" 
-                                 alt="Tech Diplomacy Forum discussion" 
-                                 class="w-full h-64 object-cover">
-                        </div>
-                        <div class="relative rounded-xl overflow-hidden shadow-lg">
-                            <img src="images/drive-download-20251217T071050Z-1-001/DSC_4691.JPG" 
-                                 alt="Tech Diplomacy Forum discussion" 
-                                 class="w-full h-64 object-cover">
-                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">Multi-Stakeholder Engagement</h4>
+                        <p class="text-gray-600 text-sm">Policymakers, business leaders, academics, and young changemakers united</p>
                     </div>
-                    <div class="mt-4 text-center">
-                        <!-- <a href="news.html" class="btn-primary">
-                            <i class="fas fa-newspaper"></i> View All Events
-                        </a> -->
+                    <div class="bg-white p-6 rounded-xl">
+                        <div class="w-10 h-10 bg-saffron/10 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-microchip text-saffron"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">Tech-Enabled Diplomacy</h4>
+                        <p class="text-gray-600 text-sm">Exploring responsible use of emerging technologies in global relations</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl">
+                        <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-globe-asia text-primary"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">Global Inspiration</h4>
+                        <p class="text-gray-600 text-sm">Drawing from Hon'ble PM Modi's G20 model for inclusive leadership</p>
                     </div>
                 </div>
             </div>
