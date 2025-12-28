@@ -311,6 +311,11 @@ body, html {
                         <div id="languageDropdown" class="language-dropdown absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-xl border dark:border-gray-700 z-50">
                             <div class="py-2">
                                 <div class="px-4 py-2 text-xs text-gray-500 dark:text-gray-400 border-b dark:border-gray-700">Select Language</div>
+                                <button id="allLanguagesBtn" class="w-full text-left px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center justify-between" onclick="showAllLanguages()">
+                                    <span class="font-medium">All languages</span>
+                                    <span class="text-xs text-gray-500">▾</span>
+                                </button>
+                                <div id="allLangContainer" class="px-4 py-2 hidden"></div>
                                 <button class="w-full text-left px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2" onclick="googleTranslate('en')">
                                     <span class="font-medium">English</span>
                                     <span class="text-xs text-gray-500">(EN)</span>
