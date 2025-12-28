@@ -110,7 +110,24 @@ function googleTranslate(lang) {
   }, 300);
 
   // Stop trying after 8 seconds
-  setTimeout(() => clearInterval(interval), 8000);
+  setTimeout(() => {
+    // Final attempt, then fallback to cookie-based translate if not applied
+    const ok = tryApply();
+    clearInterval(interval);
+    if (!ok) {
+      try {
+        const cookieVal = `/en/${lang}`;
+        document.cookie = `googtrans=${encodeURIComponent(cookieVal)}; path=/;`;
+        // Also attempt to set cookie with domain for broader compatibility
+        try {
+          document.cookie = `googtrans=${encodeURIComponent(cookieVal)}; path=/; domain=${location.hostname};`;
+        } catch (e) {}
+      } catch (e) {}
+      // Reload so Google Translate picks up the cookie and applies translation
+      console.warn('googleTranslate: falling back to cookie method for', lang);
+      window.location.reload();
+    }
+  }, 8000);
 }
 
 function showAllLanguages() {
