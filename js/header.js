@@ -64,14 +64,53 @@ function initHeaderMenu() {
   }
 }
 function googleTranslate(lang) {
-  const interval = setInterval(() => {
-    const select = document.querySelector(".goog-te-combo");
-    if (select) {
-      select.value = lang;
-      select.dispatchEvent(new Event("change"));
-      clearInterval(interval);
+  if (!lang) return;
+
+  const normalize = (s) => (s || '').toString();
+
+  const tryApply = () => {
+    const select = document.querySelector('.goog-te-combo');
+    if (!select) return false;
+
+    // Try exact, underscore and language-only matches
+    const candidates = [lang, lang.replace('-', '_'), lang.split('-')[0]];
+
+    let matchedIndex = -1;
+    for (let i = 0; i < select.options.length; i++) {
+      const optVal = normalize(select.options[i].value).toLowerCase();
+      if (candidates.some(c => c && optVal === normalize(c).toLowerCase())) {
+        matchedIndex = i;
+        break;
+      }
     }
+
+    try {
+      if (matchedIndex >= 0) {
+        select.selectedIndex = matchedIndex;
+      } else {
+        // fallback: set value directly
+        select.value = lang;
+      }
+
+      // Dispatch change with bubbles so any listeners pick it up
+      const ev = new Event('change', { bubbles: true });
+      select.dispatchEvent(ev);
+
+      // Some implementations attach onchange directly
+      if (typeof select.onchange === 'function') select.onchange(ev);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  };
+
+  const interval = setInterval(() => {
+    const ok = tryApply();
+    if (ok) clearInterval(interval);
   }, 300);
+
+  // Stop trying after 8 seconds
+  setTimeout(() => clearInterval(interval), 8000);
 }
 
 function showAllLanguages() {
