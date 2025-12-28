@@ -43,6 +43,9 @@ function initHeaderMenu() {
   // Populate desktop language list
   populateDesktopLanguageList();
   
+  // Populate mobile language list
+  populateMobileLanguageList();
+  
   // Initialize search functionality
   if (typeof initSearch === 'function') {
     initSearch();
@@ -116,6 +119,43 @@ function populateDesktopLanguageList() {
         document.getElementById('languageDropdown').classList.remove('open');
       };
       listContainer.appendChild(btn);
+    }
+  });
+}
+
+function populateMobileLanguageList() {
+  const select = document.getElementById('mobileLanguageSelect');
+  const listContainer = document.getElementById('mobileLanguageList');
+  const toggleBtn = document.getElementById('mobileLanguageToggle');
+  
+  if (!select || !listContainer || !toggleBtn) return;
+  
+  // Populate list from select options
+  Array.from(select.options).forEach(option => {
+    if (option.value) {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm border-b border-gray-900 dark:border-gray-700 transition-colors text-blue-900 dark:text-gray-300';
+      btn.textContent = option.text;
+      btn.onclick = (e) => {
+        e.preventDefault();
+        googleTranslate(option.value);
+        listContainer.classList.add('hidden');
+      };
+      listContainer.appendChild(btn);
+    }
+  });
+  
+  // Toggle list visibility
+  toggleBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    listContainer.classList.toggle('hidden');
+  });
+  
+  // Close list when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!toggleBtn.contains(e.target) && !listContainer.contains(e.target)) {
+      listContainer.classList.add('hidden');
     }
   });
 }
