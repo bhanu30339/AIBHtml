@@ -40,6 +40,18 @@ function initHeaderMenu() {
     if (!languageDropdown.contains(e.target)) languageDropdown.classList.remove('open');
   });
 
+  // Close mobile menu when scrolling
+  let lastScrollTop = 0;
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Close menu if user scrolls
+    if (currentScroll !== lastScrollTop && mobileMenu.classList.contains('open')) {
+      mobileMenu.classList.remove('open');
+    }
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  }, false);
+
   // Populate desktop language list
   populateDesktopLanguageList();
   
