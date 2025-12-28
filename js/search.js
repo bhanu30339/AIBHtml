@@ -22,7 +22,7 @@ function initSearch() {
   );
 
       if (results.length === 0) {
-        resultsBox.innerHTML = `<div class="px-4 py-3 text-sm text-gray-500">No results found</div>`;
+        resultsBox.innerHTML = `<div class="px-4 py-3 text-sm text-gray-500 dark:text-gray-400">No results found</div>`;
         resultsBox.classList.remove("hidden");
         return;
       }
@@ -31,7 +31,7 @@ function initSearch() {
         const a = document.createElement("a");
         a.href = item.url;
         a.className =
-          "block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm";
+          "block px-4 py-2 sm:py-3 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm text-gray-900 dark:text-gray-100 border-b dark:border-gray-700 last:border-b-0 transition-colors";
         a.textContent = item.title;
         resultsBox.appendChild(a);
       });
@@ -63,7 +63,7 @@ function initSearch() {
   );
 
       if (results.length === 0) {
-        mobileResultsBox.innerHTML = `<div class="px-4 py-3 text-sm text-gray-500">No results found</div>`;
+        mobileResultsBox.innerHTML = `<div class="px-3 py-3 text-sm text-gray-500 dark:text-gray-400">No results found</div>`;
         mobileResultsBox.classList.remove("hidden");
         return;
       }
@@ -72,7 +72,7 @@ function initSearch() {
         const a = document.createElement("a");
         a.href = item.url;
         a.className =
-          "block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm border-b dark:border-gray-700";
+          "block px-3 py-2 sm:py-3 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm text-gray-900 dark:text-gray-100 border-b dark:border-gray-700 last:border-b-0 transition-colors";
         a.textContent = item.title;
         a.onclick = () => {
           mobileInput.value = "";
