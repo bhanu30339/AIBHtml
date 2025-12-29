@@ -136,15 +136,8 @@
 </head>
 <body class="bg-gray-50">
     
-    <!-- Scroll to top button -->
-    <div class="scroll-to-top" id="scrollToTop">
-        <i class="fas fa-chevron-up"></i>
-    </div>
-    
-    <!-- Scroll to bottom button -->
-    <div class="scroll-to-bottom" id="scrollToBottom">
-        <i class="fas fa-chevron-down"></i>
-    </div>
+    <!-- Newsletter subscription (replacing up/down buttons) -->
+    <!-- The small fixed up/down buttons were removed per request and replaced with footer newsletter form -->
 
     <!-- Footer Section -->
     <footer class="bg-[#0C2340] text-white" id="footer">
@@ -208,13 +201,38 @@
                             </a>
                         </li>
                         <li>
-                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="#news-section">
+                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="news.html">
                                 News
                             </a>
                         </li>
                         <li>
                             <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="contact.html">
                                 Contact Us
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="privacy.html">
+                                Privacy Policy
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="terms.html">
+                                Terms & Conditions
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="disclaimer.html">
+                                Disclaimer
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="transparency.html">
+                                Transparency
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="discourse.html">
+                                Discourse
                             </a>
                         </li>
                     </ul>
@@ -273,7 +291,7 @@
                         </a>
                         
                         <!-- Instagram -->
-                        <a href="https://www.instagram.com/ausindbridgeorg" 
+                        <a href="https://www.instagram.com/ausindbridgeorgau" 
                            target="_blank"
                            class="social-icon-hover w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-gradient-to-r from-purple-500 to-pink-500 transition-colors"
                            aria-label="Instagram">
@@ -281,7 +299,7 @@
                         </a>
                         
                         <!-- Threads -->
-                        <a href="https://www.threads.com/@ausindbridgeorg" 
+                        <a href="https://www.threads.com/@ausindbridgeorgau" 
                            target="_blank"
                            class="social-icon-hover w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-black transition-colors"
                            aria-label="Threads">
@@ -296,6 +314,15 @@
                             <i class="fab fa-youtube"></i>
                         </a>
                     </div>
+                    <!-- Newsletter subscription -->
+                    <div class="mt-4 lg:mt-0">
+                        <h5 class="text-sm font-semibold text-white mb-3">Subscribe to our newsletter</h5>
+                        <form id="newsletterForm" class="flex items-center gap-2 max-w-md mx-auto lg:mx-0">
+                            <input type="email" id="newsletterEmail" placeholder="Enter your email" required class="w-full px-3 py-2 rounded-lg text-gray-900" />
+                            <button type="submit" class="px-4 py-2 bg-saffron text-white rounded-lg">Subscribe</button>
+                        </form>
+                        <p id="newsletterMsg" class="text-xs text-gray-300 mt-2 hidden"></p>
+                    </div>
                 </div>
             </div>
             
@@ -306,7 +333,7 @@
             <div class="py-8 text-center">
                 <!-- Copyright -->
                 <div class="text-gray-400 text-sm mb-4">
-                    Copyright © <span id="currentYear"></span> Australia India Bridge Foundation.
+                    Copyright © 2026<span id="currentYear"></span> Australia India Bridge Foundation.
                 </div>
                 
                 <!-- Location -->
@@ -323,36 +350,22 @@
             const currentYear = new Date().getFullYear();
             document.getElementById('currentYear').textContent = currentYear;
             
-            // Show/hide scroll buttons
-            const scrollToTopBtn = document.getElementById('scrollToTop');
-            const scrollToBottomBtn = document.getElementById('scrollToBottom');
-            
-            // Show buttons on scroll
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 300) {
-                    scrollToTopBtn.style.display = 'flex';
-                    scrollToBottomBtn.style.display = 'flex';
-                } else {
-                    scrollToTopBtn.style.display = 'none';
-                    scrollToBottomBtn.style.display = 'none';
-                }
-            });
-            
-            // Scroll to top functionality
-            scrollToTopBtn.addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
+            // Newsletter form handling
+            const newsletterForm = document.getElementById('newsletterForm');
+            const newsletterEmail = document.getElementById('newsletterEmail');
+            const newsletterMsg = document.getElementById('newsletterMsg');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = newsletterEmail.value.trim();
+                    if (!email) return;
+                    // Minimal UI feedback - no backend available here
+                    newsletterMsg.textContent = 'Thanks — you\'re subscribed!';
+                    newsletterMsg.classList.remove('hidden');
+                    newsletterEmail.value = '';
+                    setTimeout(() => newsletterMsg.classList.add('hidden'), 4000);
                 });
-            });
-            
-            // Scroll to bottom functionality
-            scrollToBottomBtn.addEventListener('click', function() {
-                window.scrollTo({
-                    top: document.body.scrollHeight,
-                    behavior: 'smooth'
-                });
-            });
+            }
             
             // Add click effects to social icons
             document.querySelectorAll('.social-icon-hover').forEach(icon => {

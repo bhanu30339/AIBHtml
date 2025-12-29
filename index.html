@@ -50,6 +50,7 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="/images/Logo.png" type="image/png">
     <style>
         :root {
             --primary: #0C2340;
@@ -403,7 +404,7 @@
     </section>
 
     <!-- Banner Section -->
-    <section class="relative h-[100vh] flex items-center overflow-hidden">
+    <!-- <section class="relative h-[100vh] flex items-center overflow-hidden">
         <div class="absolute inset-0">
             <img 
                 src="/images/Aus-ind-Ab.jpg" 
@@ -411,7 +412,7 @@
                 class="w-full h-full object-cover scale-110"
             />
         </div>
-    </section>
+    </section> -->
 
     <!-- About Us Section -->
     <section class="py-24 bg-gradient-to-br from-white to-gray-50">
@@ -433,6 +434,9 @@
                     A partnership dedicated to strengthening bilateral relations through collaboration, 
                     mutual respect, and shared prosperity.
                 </p>
+                <div class="mt-6">
+                    <a href="about.html" class="inline-flex items-center px-5 py-2 bg-saffron text-white rounded-lg hover:opacity-90 transition">Learn more about us</a>
+                </div>
             </div>
 
             <!-- Content Grid -->
@@ -540,7 +544,7 @@
     <div>
         <div class="relative rounded-xl overflow-hidden border border-gray-200 shadow-md">
             <img 
-                src="/images/drive-download-20251217T071050Z-1-001/DSC_4691.JPG" 
+                src="/images/Aus-ind-Ab.jpg" 
                 alt="Australia India Alliance Leadership Team"
                 class="w-full h-[380px] object-cover transition-transform duration-300 hover:scale-105"
             >
@@ -579,7 +583,7 @@
 
     <!-- Body - Contact Form -->
     <div class="chat-body">
-      <p class="chat-text mb-4">For general enquiries only. Please fill out the form below.</p>
+      <p class="chat-text mb-4">For enquiries only. Please fill out the form below.</p>
       
       <form id="chatForm" class="chat-form">
         <!-- Name -->
@@ -606,7 +610,7 @@
         <!-- Message -->
         <div class="form-group">
           <label class="form-label">Your Message *</label>
-          <textarea name="message" placeholder="Please provide details of your enquiry..." required rows="4" class="form-textarea"></textarea>
+          <textarea name="message" placeholder="Please provide details of your enquiry" required rows="4" class="form-textarea"></textarea>
           <div class="error-message" id="messageError"></div>
         </div>
         
@@ -1498,12 +1502,12 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="text-center mb-16">
                 <div class="inline-flex items-center space-x-4 mb-6">
                     <div class="w-12 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
-                    <span class="text-blue-900 text-xs font-semibold tracking-wider uppercase">FEATURED EVENT</span>
+                    <span class="text-blue-900 text-xs font-semibold tracking-wider uppercase">NEWS</span>
                     <div class="w-12 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
                 </div>
                 <h2 class="text-4xl lg:text-5xl font-bold mb-6">
                     <span class="text-gray-900">Launch of the Parliamentarians Forum</span>
-                    <span class="block text-primary">for Tech Diplomacy</span>
+                    <span class="block text-blue-900">for Tech Diplomacy</span>
                 </h2>
                 <p class="text-gray-600 text-lg max-w-3xl mx-auto">
                     Advancing Responsible, Inclusive Tech in Global Diplomacy
@@ -1876,6 +1880,68 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="chat-wrapper">
         <!-- Your existing chat code -->
     </div>
+
+    <section class="relative py-16 sm:py-20 lg:py-28 bg-gray-50 overflow-hidden">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+                <!-- LEFT CONTENT -->
+                
+                <div class="order-2 lg:order-1">
+                    <span class="text-blue-900 uppercase text-xs sm:text-sm font-semibold tracking-widest">
+                        Get in Touch
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mt-4 mb-4 sm:mb-6">
+                        Contact <br class="hidden sm:block">
+                        <span class="text-saffron">Our Team</span>
+                    </h2>
+                    <p class="text-gray-600 text-base sm:text-lg mb-6 sm:mb-8 max-w-xl leading-relaxed">
+                        For enquiries, information requests, or any questions you may have, 
+                        our team is here to assist you during regular office hours.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="contact.html" class="btn-secondary text-center sm:text-left">
+                            Send Enquiry
+                        </a>
+                    </div>
+                </div>
+
+                <!-- RIGHT QUICK INFO -->
+            
+                <div class="order-1 lg:order-2 bg-white rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 flex-shrink-0 bg-primary rounded-lg flex items-center justify-center">
+                            <i class="fas fa-map-marker-alt text-saffron"></i>
+                        </div>
+                        <div class="min-w-0">
+                            <h4 class="font-semibold text-primary text-sm sm:text-base">Melbourne Office</h4>
+                            <p class="text-gray-600 text-sm break-words">Melbourne, VIC 3000</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 flex-shrink-0 bg-primary rounded-lg flex items-center justify-center">
+                            <i class="fas fa-envelope text-saffron"></i>
+                        </div>
+                        <div class="min-w-0">
+                            <h4 class="font-semibold text-primary text-sm sm:text-base">Email</h4>
+                            <p class="text-gray-600 text-sm break-words">info@ausindbridge.org.au</p>
+                            <p class="text-gray-500 text-xs mt-1">For enquiries</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 flex-shrink-0 bg-primary rounded-lg flex items-center justify-center">
+                            <i class="fas fa-clock text-saffron"></i>
+                        </div>
+                        <div class="min-w-0">
+                            <h4 class="font-semibold text-primary text-sm sm:text-base">Office Hours</h4>
+                            <p class="text-gray-600 text-sm">Monday – Friday, 9:00 AM – 5:00 PM</p>
+                            <p class="text-gray-500 text-xs mt-1">AEST | Closed on weekends and public holidays</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
 
     <!-- Footer -->
     <div data-include="components/footer.html"></div>
