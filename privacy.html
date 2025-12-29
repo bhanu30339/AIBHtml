@@ -1,0 +1,1120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Privacy Policy | Australia India Alliance</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9fafb;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Header Styles */
+    header {
+      background: linear-gradient(135deg, #0c4b8f 0%, #1a237e 100%);
+      color: white;
+      padding: 1.5rem 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: white;
+    }
+    
+    .logo-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      font-size: 24px;
+    }
+    
+    .logo-text h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    
+    .logo-text p {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-top: 2px;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.3s;
+      padding: 0.5rem 0;
+      position: relative;
+    }
+    
+    nav a:hover {
+      opacity: 0.8;
+    }
+    
+    nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: #ff9800;
+      border-radius: 2px;
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    /* Main Content */
+    main {
+      flex: 1;
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+      width: 100%;
+    }
+    
+    .page-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding: 3rem 2rem;
+      background: linear-gradient(135deg, rgba(12, 75, 143, 0.05) 0%, rgba(26, 35, 126, 0.05) 100%);
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(to right, #0c4b8f, #ff9800);
+    }
+    
+    .privacy-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #0c4b8f, #1a237e);
+      border-radius: 50%;
+      color: white;
+      font-size: 32px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 10px 20px rgba(12, 75, 143, 0.2);
+    }
+    
+    h1 {
+      font-family: 'Source Serif Pro', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #1a237e;
+      margin-bottom: 1rem;
+    }
+    
+    .page-subtitle {
+      font-size: 1.2rem;
+      color: #6b7280;
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+    }
+    
+    .last-updated {
+      display: inline-block;
+      background: rgba(12, 75, 143, 0.1);
+      color: #0c4b8f;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+    
+    /* Privacy Navigation */
+    .privacy-nav {
+      position: sticky;
+      top: 20px;
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e5e7eb;
+      z-index: 10;
+    }
+    
+    .privacy-nav h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: #1a237e;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .privacy-nav h3 i {
+      color: #0c4b8f;
+    }
+    
+    .privacy-nav ul {
+      list-style: none;
+    }
+    
+    .privacy-nav li {
+      margin-bottom: 0.8rem;
+    }
+    
+    .privacy-nav a {
+      color: #4b5563;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      transition: all 0.3s;
+      padding: 0.6rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+    }
+    
+    .privacy-nav a:hover {
+      color: #1a237e;
+      background: rgba(26, 35, 126, 0.05);
+    }
+    
+    .privacy-nav a.active {
+      color: #1a237e;
+      background: rgba(26, 35, 126, 0.1);
+      font-weight: 600;
+    }
+    
+    .privacy-nav i {
+      font-size: 0.9rem;
+      width: 20px;
+    }
+    
+    /* Privacy Content */
+    .privacy-container {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      padding: 3rem;
+      margin-bottom: 3rem;
+    }
+    
+    .privacy-section {
+      margin-bottom: 3rem;
+      scroll-margin-top: 20px;
+    }
+    
+    .privacy-section:last-child {
+      margin-bottom: 0;
+    }
+    
+    h2 {
+      font-family: 'Source Serif Pro', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #1a237e;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e5e7eb;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    h2 i {
+      color: #0c4b8f;
+      font-size: 1.5rem;
+    }
+    
+    .privacy-section p {
+      margin-bottom: 1.2rem;
+      color: #4b5563;
+      font-size: 1.05rem;
+    }
+    
+    .privacy-section ul, .privacy-section ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #4b5563;
+    }
+    
+    .privacy-section li {
+      margin-bottom: 0.7rem;
+      position: relative;
+    }
+    
+    .privacy-section li::marker {
+      color: #0c4b8f;
+    }
+    
+    /* Data Collection Cards */
+    .data-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .data-card {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 1.5rem;
+      border-left: 4px solid #0c4b8f;
+      transition: transform 0.3s;
+    }
+    
+    .data-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .data-card h3 {
+      color: #1a237e;
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .data-card h3 i {
+      color: #0c4b8f;
+    }
+    
+    .data-card p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+    
+    /* Cookie Table */
+    .cookie-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .cookie-table th {
+      background: #0c4b8f;
+      color: white;
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    
+    .cookie-table td {
+      padding: 1rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .cookie-table tr:nth-child(even) {
+      background: #f8fafc;
+    }
+    
+    .cookie-table tr:hover {
+      background: #f0f7ff;
+    }
+    
+    .cookie-type {
+      display: inline-block;
+      background: rgba(12, 75, 143, 0.1);
+      color: #0c4b8f;
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    
+    .cookie-type.essential {
+      background: rgba(76, 175, 80, 0.1);
+      color: #2e7d32;
+    }
+    
+    .cookie-type.analytics {
+      background: rgba(33, 150, 243, 0.1);
+      color: #1565c0;
+    }
+    
+    /* Privacy Rights */
+    .privacy-rights {
+      background: linear-gradient(135deg, rgba(12, 75, 143, 0.05) 0%, rgba(26, 35, 126, 0.05) 100%);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .privacy-rights h3 {
+      color: #1a237e;
+      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
+    }
+    
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .right-item {
+      background: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.03);
+    }
+    
+    .right-item h4 {
+      color: #1a237e;
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .right-item h4 i {
+      color: #0c4b8f;
+    }
+    
+    /* Contact Section */
+    .contact-section {
+      background: linear-gradient(135deg, #1a237e 0%, #0c4b8f 100%);
+      color: white;
+      padding: 3rem;
+      border-radius: 20px;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    
+    .contact-section h2 {
+      color: white;
+      font-family: 'Source Serif Pro', serif;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      border-bottom: none;
+    }
+    
+    .contact-section p {
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #ff9800;
+      color: white;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+    
+    .contact-btn:hover {
+      background: #ff5722;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Footer */
+    footer {
+      background: #1a237e;
+      color: white;
+      padding: 3rem 2rem 2rem;
+      margin-top: auto;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .footer-section h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      color: #ff9800;
+    }
+    
+    .footer-section p, .footer-section a {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 0.8rem;
+      display: block;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-section a:hover {
+      color: #ff9800;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: white;
+      transition: all 0.3s;
+    }
+    
+    .social-links a:hover {
+      background: #ff9800;
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+    }
+    
+    /* Cookie Consent Banner */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      padding: 1.5rem 2rem;
+      box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      display: none;
+    }
+    
+    .cookie-banner.show {
+      display: block;
+    }
+    
+    .cookie-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    
+    .cookie-text p {
+      margin-bottom: 0;
+      color: #4b5563;
+    }
+    
+    .cookie-text a {
+      color: #0c4b8f;
+      font-weight: 600;
+    }
+    
+    .cookie-actions {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .cookie-btn {
+      padding: 0.7rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: none;
+    }
+    
+    .cookie-btn.accept {
+      background: #0c4b8f;
+      color: white;
+    }
+    
+    .cookie-btn.accept:hover {
+      background: #1a237e;
+    }
+    
+    .cookie-btn.reject {
+      background: transparent;
+      color: #4b5563;
+      border: 1px solid #d1d5db;
+    }
+    
+    .cookie-btn.reject:hover {
+      background: #f3f4f6;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      h1 {
+        font-size: 2.4rem;
+      }
+      
+      .privacy-container {
+        padding: 2rem;
+      }
+      
+      .contact-section {
+        padding: 2rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      
+      nav ul {
+        gap: 1.5rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      h2 {
+        font-size: 1.6rem;
+      }
+      
+      .privacy-nav {
+        position: static;
+        margin-bottom: 2rem;
+      }
+      
+      .cookie-table {
+        display: block;
+        overflow-x: auto;
+      }
+      
+      .cookie-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      header, main, footer {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+      
+      .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      
+      .logo-text h1 {
+        font-size: 1.5rem;
+      }
+      
+      nav {
+        display: none;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .privacy-container, .contact-section {
+        padding: 1.5rem;
+      }
+      
+      .data-cards, .rights-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .cookie-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+      
+      .cookie-btn {
+        width: 100%;
+      }
+    }
+    
+    /* Print Styles */
+    @media print {
+      header, footer, .privacy-nav, .contact-section, .mobile-menu-btn, .cookie-banner {
+        display: none;
+      }
+      
+      main {
+        margin: 0;
+        padding: 0;
+      }
+      
+      .privacy-container {
+        box-shadow: none;
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+    <div data-include="components/header.html"></div>
+
+  <main>
+    <div class="page-header">
+      <div class="privacy-icon">
+        <i class="fas fa-shield-alt"></i>
+      </div>
+      <h1>Privacy Policy</h1>
+      <p class="page-subtitle">This Privacy Policy explains how the Australia India Alliance collects, uses, and protects your information when you use our website and services.</p>
+      <div class="last-updated">
+        <i class="fas fa-calendar-alt"></i> Last updated: June 15, 2023
+      </div>
+    </div>
+    
+    <div class="privacy-nav">
+      <h3><i class="fas fa-list"></i> Privacy Policy Sections</h3>
+      <ul>
+        <li><a href="#information-collected" class="active"><i class="fas fa-database"></i> Information We Collect</a></li>
+        <li><a href="#how-we-use"><i class="fas fa-cogs"></i> How We Use Information</a></li>
+        <li><a href="#data-protection"><i class="fas fa-lock"></i> Data Protection</a></li>
+        <li><a href="#cookies"><i class="fas fa-cookie-bite"></i> Cookies & Tracking</a></li>
+        <li><a href="#your-rights"><i class="fas fa-user-shield"></i> Your Privacy Rights</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact Us</a></li>
+      </ul>
+    </div>
+    
+    <div class="privacy-container">
+      <section id="information-collected" class="privacy-section">
+        <h2><i class="fas fa-database"></i> Information We Collect</h2>
+        <p>We collect information to provide better services to our users. The types of information we collect depend on how you interact with our website and services.</p>
+        
+        <div class="data-cards">
+          <div class="data-card">
+            <h3><i class="fas fa-user-circle"></i> Personal Information</h3>
+            <p>When you contact us, subscribe to newsletters, or register for events, we may collect:</p>
+            <ul>
+              <li>Name and contact details (email, phone)</li>
+              <li>Organization and job title</li>
+              <li>Communication preferences</li>
+            </ul>
+          </div>
+          
+          <div class="data-card">
+            <h3><i class="fas fa-chart-line"></i> Usage Data</h3>
+            <p>We automatically collect non-identifying information about how you use our website:</p>
+            <ul>
+              <li>Browser type and device information</li>
+              <li>Pages visited and time spent</li>
+              <li>Referring website and search terms</li>
+            </ul>
+          </div>
+          
+          <div class="data-card">
+            <h3><i class="fas fa-comments"></i> Communications</h3>
+            <p>When you contact us directly, we may keep records of:</p>
+            <ul>
+              <li>Email correspondence</li>
+              <li>Feedback and survey responses</li>
+              <li>Event registration details</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      
+      <section id="how-we-use" class="privacy-section">
+        <h2><i class="fas fa-cogs"></i> How We Use Information</h2>
+        <p>We use the information we collect for various purposes, including:</p>
+        
+        <ul>
+          <li><strong>Service Provision:</strong> To respond to your enquiries and provide requested services</li>
+          <li><strong>Communication:</strong> To send newsletters, updates, and event information (with your consent)</li>
+          <li><strong>Improvement:</strong> To analyze website usage and improve our content and functionality</li>
+          <li><strong>Security:</strong> To detect and prevent fraudulent activity and ensure website security</li>
+          <li><strong>Compliance:</strong> To meet legal obligations and enforce our terms of service</li>
+        </ul>
+        
+        <div class="privacy-rights">
+          <h3>Data Sharing Policy</h3>
+          <p>We do not sell, trade, or rent your personal information to third parties. We may share information only in these circumstances:</p>
+          <ul>
+            <li>With service providers who assist our operations (under strict confidentiality agreements)</li>
+            <li>When required by law, regulation, or legal process</li>
+            <li>To protect the rights, property, or safety of our organization or others</li>
+            <li>With your explicit consent for specific purposes</li>
+          </ul>
+        </div>
+      </section>
+      
+      <section id="data-protection" class="privacy-section">
+        <h2><i class="fas fa-lock"></i> Data Protection & Security</h2>
+        <p>We take the security of your data seriously and implement appropriate technical and organizational measures to protect it.</p>
+        
+        <ul>
+          <li><strong>Encryption:</strong> Sensitive data is encrypted during transmission using SSL/TLS technology</li>
+          <li><strong>Access Controls:</strong> Strict access controls limit who can view personal information within our organization</li>
+          <li><strong>Regular Audits:</strong> We conduct regular security assessments to identify and address vulnerabilities</li>
+          <li><strong>Data Retention:</strong> We retain personal information only as long as necessary for the purposes collected</li>
+          <li><strong>Staff Training:</strong> Our team receives regular training on data protection and privacy practices</li>
+        </ul>
+      </section>
+      
+      <section id="cookies" class="privacy-section">
+        <h2><i class="fas fa-cookie-bite"></i> Cookies & Tracking Technologies</h2>
+        <p>We use cookies and similar tracking technologies to enhance your experience on our website.</p>
+        
+        <table class="cookie-table">
+          <thead>
+            <tr>
+              <th>Cookie Type</th>
+              <th>Purpose</th>
+              <th>Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="cookie-type essential">Essential</span></td>
+              <td>Required for basic website functionality and security</td>
+              <td>Session</td>
+            </tr>
+            <tr>
+              <td><span class="cookie-type analytics">Analytics</span></td>
+              <td>Helps us understand how visitors interact with our website</td>
+              <td>2 years</td>
+            </tr>
+            <tr>
+              <td><span class="cookie-type">Preference</span></td>
+              <td>Remembers your settings and preferences</td>
+              <td>1 year</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <p>You can control cookies through your browser settings. Most browsers allow you to refuse cookies or alert you when cookies are being sent. However, disabling cookies may affect the functionality of our website.</p>
+        
+        <div class="privacy-rights">
+          <h3><i class="fas fa-sliders-h"></i> Cookie Preferences</h3>
+          <p>Manage your cookie preferences using the buttons below:</p>
+          <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+            <button class="cookie-btn accept" id="acceptAllCookies">
+              <i class="fas fa-check"></i> Accept All Cookies
+            </button>
+            <button class="cookie-btn reject" id="rejectNonEssential">
+              <i class="fas fa-times"></i> Essential Cookies Only
+            </button>
+          </div>
+        </div>
+      </section>
+      
+      <section id="your-rights" class="privacy-section">
+        <h2><i class="fas fa-user-shield"></i> Your Privacy Rights</h2>
+        <p>Depending on your location, you may have certain rights regarding your personal information:</p>
+        
+        <div class="rights-grid">
+          <div class="right-item">
+            <h4><i class="fas fa-eye"></i> Right to Access</h4>
+            <p>You can request a copy of the personal information we hold about you.</p>
+          </div>
+          
+          <div class="right-item">
+            <h4><i class="fas fa-edit"></i> Right to Correction</h4>
+            <p>You can request corrections to inaccurate or incomplete personal information.</p>
+          </div>
+          
+          <div class="right-item">
+            <h4><i class="fas fa-trash-alt"></i> Right to Deletion</h4>
+            <p>You can request deletion of your personal information in certain circumstances.</p>
+          </div>
+          
+          <div class="right-item">
+            <h4><i class="fas fa-ban"></i> Right to Object</h4>
+            <p>You can object to certain processing of your personal information.</p>
+          </div>
+        </div>
+        
+        <p>To exercise any of these rights, please contact us using the information in the Contact section below. We will respond to your request within 30 days.</p>
+      </section>
+      
+      <section id="contact" class="privacy-section">
+        <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+        <p>If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact our Privacy Officer:</p>
+        
+        <div class="data-cards">
+          <div class="data-card">
+            <h3><i class="fas fa-envelope"></i> Email</h3>
+            <p><a href="mailto:privacy@ausindbridge.org.au">privacy@ausindbridge.org.au</a></p>
+          </div>
+          
+          <div class="data-card">
+            <h3><i class="fas fa-phone"></i> Phone</h3>
+            <p>+61 2 1234 5678</p>
+            <p>Monday to Friday, 9am to 5pm AEST</p>
+          </div>
+          
+          <div class="data-card">
+            <h3><i class="fas fa-map-marker-alt"></i> Postal Address</h3>
+            <p>Privacy Officer<br>
+            Australia India Alliance<br>
+            Level 12, 123 Bridge Street<br>
+            Sydney NSW 2000, Australia</p>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+    <div class="contact-section">
+      <h2>Privacy Concerns?</h2>
+      <p>If you have any concerns about how we handle your personal information, please don't hesitate to reach out to our privacy team.</p>
+      <a href="mailto:privacy@ausindbridge.org.au" class="contact-btn">
+        <i class="fas fa-envelope"></i> Contact Privacy Officer
+      </a>
+    </div>
+  </main>
+
+  <!-- Cookie Consent Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-content">
+      <div class="cookie-text">
+        <p>We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. By clicking "Accept All", you consent to our use of cookies. <a href="#cookies">Learn more</a></p>
+      </div>
+      <div class="cookie-actions">
+        <button class="cookie-btn accept" id="cookieAccept">Accept All</button>
+        <button class="cookie-btn reject" id="cookieReject">Essential Only</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const nav = document.querySelector('nav');
+    
+    mobileMenuBtn.addEventListener('click', function() {
+      if (nav.style.display === 'block') {
+        nav.style.display = 'none';
+      } else {
+        nav.style.display = 'block';
+      }
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 576) {
+        nav.style.display = '';
+      }
+    });
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('.privacy-nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        // Update active class
+        document.querySelectorAll('.privacy-nav a').forEach(link => {
+          link.classList.remove('active');
+        });
+        this.classList.add('active');
+        
+        // Smooth scroll to target
+        window.scrollTo({
+          top: targetElement.offsetTop - 100,
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Update active nav link on scroll
+    window.addEventListener('scroll', function() {
+      const sections = document.querySelectorAll('.privacy-section');
+      const navLinks = document.querySelectorAll('.privacy-nav a');
+      
+      let currentSection = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+        const sectionHeight = section.clientHeight;
+        
+        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+          currentSection = '#' + section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === currentSection) {
+          link.classList.add('active');
+        }
+      });
+    });
+    
+    // Cookie consent functionality
+    const cookieBanner = document.getElementById('cookieBanner');
+    const cookieAccept = document.getElementById('cookieAccept');
+    const cookieReject = document.getElementById('cookieReject');
+    const acceptAllCookies = document.getElementById('acceptAllCookies');
+    const rejectNonEssential = document.getElementById('rejectNonEssential');
+    
+    // Check if cookie consent has been given
+    if (!localStorage.getItem('cookieConsent')) {
+      // Show banner after a short delay
+      setTimeout(() => {
+        cookieBanner.classList.add('show');
+      }, 1000);
+    }
+    
+    // Cookie consent handlers
+    cookieAccept.addEventListener('click', function() {
+      localStorage.setItem('cookieConsent', 'all');
+      cookieBanner.classList.remove('show');
+      showToast('Cookie preferences saved. All cookies accepted.');
+    });
+    
+    cookieReject.addEventListener('click', function() {
+      localStorage.setItem('cookieConsent', 'essential');
+      cookieBanner.classList.remove('show');
+      showToast('Cookie preferences saved. Only essential cookies accepted.');
+    });
+    
+    acceptAllCookies.addEventListener('click', function() {
+      localStorage.setItem('cookieConsent', 'all');
+      showToast('All cookies accepted. Thank you!');
+    });
+    
+    rejectNonEssential.addEventListener('click', function() {
+      localStorage.setItem('cookieConsent', 'essential');
+      showToast('Non-essential cookies rejected. Only essential cookies will be used.');
+    });
+    
+    // Toast notification function
+    function showToast(message) {
+      // Create toast element
+      const toast = document.createElement('div');
+      toast.textContent = message;
+      toast.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #0c4b8f;
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        z-index: 1001;
+        animation: fadeIn 0.3s, fadeOut 0.3s 2.7s;
+        max-width: 300px;
+      `;
+      
+      // Add keyframes for animation
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeOut {
+          from { opacity: 1; transform: translateY(0); }
+          to { opacity: 0; transform: translateY(20px); }
+        }
+      `;
+      document.head.appendChild(style);
+      
+      document.body.appendChild(toast);
+      
+      // Remove toast after animation completes
+      setTimeout(() => {
+        if (toast.parentNode) {
+          toast.parentNode.removeChild(toast);
+        }
+      }, 3000);
+    }
+  </script>
+  <div data-include="components/footer.html"></div>
+  <script src="/_next/static/chunks/webpack-a7f1c6512654c8e1.js" async=""></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/include.js"></script>
+  <script src="js/header.js"></script>
+  <script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {
+      pageLanguage: 'en',
+      autoDisplay: false
+    },
+    'google_translate_element'
+  );
+}
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script src="js/search-data.js"></script>
+<script src="js/search.js"></script>
+</body>
+</html>
