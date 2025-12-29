@@ -3,799 +3,122 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Disclaimer | Australia India Alliance</title>
+  <title>Disclaimer | Australia India Bridge Foundation</title>
+
+  <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: #f9fafb;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    /* Header Styles */
-    header {
-      background: linear-gradient(135deg, #0c4b8f 0%, #1a237e 100%);
-      color: white;
-      padding: 1.5rem 2rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-    
-    .header-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: white;
-    }
-    
-    .logo-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255, 255, 255, 0.1);
-      width: 50px;
-      height: 50px;
-      border-radius: 10px;
-      font-size: 24px;
-    }
-    
-    .logo-text h1 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      line-height: 1.2;
-    }
-    
-    .logo-text p {
-      font-size: 0.9rem;
-      opacity: 0.9;
-      margin-top: 2px;
-    }
-    
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-    }
-    
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: opacity 0.3s;
-      padding: 0.5rem 0;
-      position: relative;
-    }
-    
-    nav a:hover {
-      opacity: 0.8;
-    }
-    
-    nav a.active::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background-color: #ff9800;
-      border-radius: 2px;
-    }
-    
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-    
-    /* Main Content */
-    main {
-      flex: 1;
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 2rem;
-      width: 100%;
-    }
-    
-    .page-header {
-      text-align: center;
-      margin-bottom: 3rem;
-      padding: 3rem 2rem;
-      background: linear-gradient(135deg, rgba(12, 75, 143, 0.05) 0%, rgba(26, 35, 126, 0.05) 100%);
-      border-radius: 20px;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .page-header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 5px;
-      background: linear-gradient(to right, #0c4b8f, #ff9800);
-    }
-    
-    .disclaimer-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 80px;
-      height: 80px;
-      background: linear-gradient(135deg, #0c4b8f, #1a237e);
-      border-radius: 50%;
-      color: white;
-      font-size: 32px;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 10px 20px rgba(12, 75, 143, 0.2);
-    }
-    
-    h1 {
-      font-family: 'Source Serif Pro', serif;
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: #1a237e;
-      margin-bottom: 1rem;
-    }
-    
-    .page-subtitle {
-      font-size: 1.2rem;
-      color: #6b7280;
-      max-width: 700px;
-      margin: 0 auto 1.5rem;
-    }
-    
-    /* Warning Banner */
-    .warning-banner {
-      background: linear-gradient(135deg, #fff8e1 0%, #fff3e0 100%);
-      border-left: 6px solid #ff9800;
-      border-radius: 12px;
-      padding: 2rem;
-      margin: 2rem 0 3rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 1.5rem;
-      box-shadow: 0 8px 20px rgba(255, 152, 0, 0.1);
-    }
-    
-    .warning-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 60px;
-      height: 60px;
-      background: #ff9800;
-      border-radius: 50%;
-      color: white;
-      font-size: 24px;
-      flex-shrink: 0;
-    }
-    
-    .warning-content h2 {
-      font-size: 1.5rem;
-      color: #1a237e;
-      margin-bottom: 0.8rem;
-    }
-    
-    .warning-content p {
-      color: #5d4037;
-      margin-bottom: 0;
-      font-size: 1.05rem;
-    }
-    
-    /* Disclaimer Sections */
-    .disclaimer-container {
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-      padding: 3rem;
-      margin-bottom: 3rem;
-    }
-    
-    .disclaimer-section {
-      margin-bottom: 3rem;
-      padding-bottom: 2.5rem;
-      border-bottom: 1px solid #e5e7eb;
-    }
-    
-    .disclaimer-section:last-child {
-      margin-bottom: 0;
-      padding-bottom: 0;
-      border-bottom: none;
-    }
-    
-    h2 {
-      font-family: 'Source Serif Pro', serif;
-      font-size: 1.8rem;
-      font-weight: 600;
-      color: #1a237e;
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    
-    h2 i {
-      color: #0c4b8f;
-      font-size: 1.5rem;
-    }
-    
-    .disclaimer-section p {
-      margin-bottom: 1.2rem;
-      color: #4b5563;
-      font-size: 1.05rem;
-    }
-    
-    .disclaimer-section ul, .disclaimer-section ol {
-      margin-left: 1.5rem;
-      margin-bottom: 1.5rem;
-      color: #4b5563;
-    }
-    
-    .disclaimer-section li {
-      margin-bottom: 0.7rem;
-      position: relative;
-    }
-    
-    .disclaimer-section li::marker {
-      color: #0c4b8f;
-    }
-    
-    /* Limitation Cards */
-    .limitation-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin: 2rem 0;
-    }
-    
-    .limitation-card {
-      background: #f8fafc;
-      border-radius: 12px;
-      padding: 1.8rem;
-      border: 1px solid #e5e7eb;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    
-    .limitation-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-    }
-    
-    .limitation-card h3 {
-      color: #1a237e;
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    
-    .limitation-card h3 i {
-      color: #0c4b8f;
-    }
-    
-    .limitation-card p {
-      margin-bottom: 0;
-      font-size: 0.95rem;
-    }
-    
-    /* External Links Section */
-    .links-section {
-      background: #f0f7ff;
-      border-radius: 12px;
-      padding: 2rem;
-      margin: 2rem 0;
-    }
-    
-    .links-section h3 {
-      color: #1a237e;
-      margin-bottom: 1.5rem;
-      font-size: 1.4rem;
-    }
-    
-    .link-examples {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-    
-    .link-example {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: white;
-      padding: 0.8rem 1.2rem;
-      border-radius: 8px;
-      text-decoration: none;
-      color: #0c4b8f;
-      border: 1px solid #d1e3ff;
-      transition: all 0.3s;
-      font-weight: 500;
-    }
-    
-    .link-example:hover {
-      background: #0c4b8f;
-      color: white;
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(12, 75, 143, 0.2);
-    }
-    
-    .link-example i {
-      font-size: 0.9rem;
-    }
-    
-    /* Acknowledgement Section */
-    .acknowledgement {
-      background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(56, 142, 60, 0.05) 100%);
-      border-radius: 12px;
-      padding: 2rem;
-      margin: 2rem 0;
-      border-left: 4px solid #4caf50;
-    }
-    
-    .acknowledgement h3 {
-      color: #1a237e;
-      margin-bottom: 1rem;
-      font-size: 1.4rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    
-    .acknowledgement h3 i {
-      color: #4caf50;
-    }
-    
-    /* Contact Section */
-    .contact-section {
-      background: linear-gradient(135deg, #1a237e 0%, #0c4b8f 100%);
-      color: white;
-      padding: 3rem;
-      border-radius: 20px;
-      text-align: center;
-      margin-top: 3rem;
-    }
-    
-    .contact-section h2 {
-      color: white;
-      font-family: 'Source Serif Pro', serif;
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-      border-bottom: none;
-      justify-content: center;
-    }
-    
-    .contact-section p {
-      color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 1.5rem;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    .contact-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: #ff9800;
-      color: white;
-      padding: 1rem 2.5rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s;
-      border: none;
-      cursor: pointer;
-      font-size: 1.1rem;
-    }
-    
-    .contact-btn:hover {
-      background: #ff5722;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-    
-    /* Footer */
-    footer {
-      background: #1a237e;
-      color: white;
-      padding: 3rem 2rem 2rem;
-      margin-top: auto;
-    }
-    
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2.5rem;
-      margin-bottom: 2rem;
-    }
-    
-    .footer-section h3 {
-      font-size: 1.3rem;
-      margin-bottom: 1.5rem;
-      color: #ff9800;
-    }
-    
-    .footer-section p, .footer-section a {
-      color: rgba(255, 255, 255, 0.8);
-      margin-bottom: 0.8rem;
-      display: block;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    
-    .footer-section a:hover {
-      color: #ff9800;
-    }
-    
-    .social-links {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-    
-    .social-links a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      color: white;
-      transition: all 0.3s;
-    }
-    
-    .social-links a:hover {
-      background: #ff9800;
-      transform: translateY(-3px);
-    }
-    
-    .copyright {
-      text-align: center;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 0.9rem;
-    }
-    
-    /* Responsive Design */
-    @media (max-width: 992px) {
-      h1 {
-        font-size: 2.4rem;
-      }
-      
-      .disclaimer-container {
-        padding: 2rem;
-      }
-      
-      .contact-section {
-        padding: 2rem;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .header-container {
-        flex-direction: column;
-        gap: 1.5rem;
-      }
-      
-      nav ul {
-        gap: 1.5rem;
-      }
-      
-      h1 {
-        font-size: 2rem;
-      }
-      
-      h2 {
-        font-size: 1.6rem;
-      }
-      
-      .warning-banner {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-      }
-      
-      .limitation-cards {
-        grid-template-columns: 1fr;
-      }
-    }
-    
-    @media (max-width: 576px) {
-      header, main, footer {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-      }
-      
-      .header-container {
-        flex-direction: row;
-        justify-content: space-between;
-      }
-      
-      .logo-text h1 {
-        font-size: 1.5rem;
-      }
-      
-      nav {
-        display: none;
-      }
-      
-      .mobile-menu-btn {
-        display: block;
-      }
-      
-      .disclaimer-container, .contact-section {
-        padding: 1.5rem;
-      }
-      
-      .link-examples {
-        flex-direction: column;
-      }
-    }
-    
-    /* Print Styles */
-    @media print {
-      header, footer, .warning-banner, .contact-section, .mobile-menu-btn {
-        display: none;
-      }
-      
-      main {
-        margin: 0;
-        padding: 0;
-      }
-      
-      .disclaimer-container {
-        box-shadow: none;
-        padding: 0;
-      }
-      
-      .limitation-cards {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-</head>
-<body>
-  <!-- Header -->
-  <div data-include="components/header.html"></div>
 
-  <main>
-    <div class="page-header">
-      <div class="disclaimer-icon">
-        <i class="fas fa-exclamation-triangle"></i>
-      </div>
-      <h1>Website Disclaimer</h1>
-      <p class="page-subtitle">Important information about the use of this website and the limitations of the content provided herein.</p>
-    </div>
-    
-    <div class="warning-banner">
-      <div class="warning-icon">
-        <i class="fas fa-exclamation"></i>
-      </div>
-      <div class="warning-content">
-        <h2>Important Notice</h2>
-        <p>The information on this website is provided for general informational purposes only. It is not intended as professional advice and should not be relied upon as such. Always seek appropriate professional guidance for your specific circumstances.</p>
-      </div>
-    </div>
-    
-    <div class="disclaimer-container">
-      <section class="disclaimer-section">
-        <h2><i class="fas fa-info-circle"></i> General Disclaimer</h2>
-        <p>The information contained on this website is provided "as is" for general information purposes only. While we strive to keep the information up-to-date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose.</p>
-        
-        <div class="limitation-cards">
-          <div class="limitation-card">
-            <h3><i class="fas fa-clipboard-check"></i> No Professional Advice</h3>
-            <p>Content on this site does not constitute legal, financial, professional, or other expert advice. You should consult with appropriate professionals for advice tailored to your specific situation.</p>
-          </div>
-          
-          <div class="limitation-card">
-            <h3><i class="fas fa-history"></i> Information Currency</h3>
-            <p>While we make efforts to update information regularly, we cannot guarantee that all content is current, complete, or accurate at the time of your access.</p>
-          </div>
-          
-          <div class="limitation-card">
-            <h3><i class="fas fa-user-check"></i> Personal Responsibility</h3>
-            <p>Any reliance you place on information from this website is strictly at your own risk. You are responsible for verifying any information before relying on it.</p>
-          </div>
-        </div>
-      </section>
-      
-      <section class="disclaimer-section">
-        <h2><i class="fas fa-external-link-alt"></i> External Links Disclaimer</h2>
-        <p>This website may contain links to external websites that are not provided or maintained by or in any way affiliated with Australia India Alliance. Please note that we do not guarantee the accuracy, relevance, timeliness, or completeness of any information on these external websites.</p>
-        
-        <div class="links-section">
-          <h3>External Link Examples</h3>
-          <p>Links to external sites are provided for convenience and informational purposes only. They do not constitute an endorsement or approval of:</p>
-          <ul>
-            <li>The content, products, services, or policies of linked websites</li>
-            <li>The organizations operating those websites</li>
-            <li>Any commercial or other interests represented on those websites</li>
-          </ul>
-          
-          <div class="link-examples">
-            <a href="#" class="link-example">
-              <i class="fas fa-external-link-alt"></i> Government Resources
-            </a>
-            <a href="#" class="link-example">
-              <i class="fas fa-external-link-alt"></i> Partner Organizations
-            </a>
-            <a href="#" class="link-example">
-              <i class="fas fa-external-link-alt"></i> Research Publications
-            </a>
-            <a href="#" class="link-example">
-              <i class="fas fa-external-link-alt"></i> Event Information
-            </a>
-          </div>
-        </div>
-        
-        <p>We have no control over the nature, content, and availability of those sites. The inclusion of any links does not necessarily imply a recommendation or endorsement of the views expressed within them.</p>
-      </section>
-      
-      <section class="disclaimer-section">
-        <h2><i class="fas fa-balance-scale"></i> Limitation of Liability</h2>
-        <p>To the fullest extent permitted by applicable law, the Australia India Alliance, its directors, employees, and agents shall not be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website.</p>
-        
-        <div class="limitation-cards">
-          <div class="limitation-card">
-            <h3><i class="fas fa-exclamation-circle"></i> No Liability</h3>
-            <p>We are not liable for any errors or omissions in content, nor for the availability of this website. We are not liable for any losses, injuries, or damages from the display or use of this information.</p>
-          </div>
-          
-          <div class="limitation-card">
-            <h3><i class="fas fa-shield-alt"></i> Website Availability</h3>
-            <p>We do not warrant that this website will be uninterrupted, timely, secure, or error-free, or that defects will be corrected. Access may be suspended temporarily without notice.</p>
-          </div>
-        </div>
-        
-        <p>This limitation of liability applies whether the alleged liability is based on contract, tort, negligence, strict liability, or any other basis, even if we have been advised of the possibility of such damage.</p>
-      </section>
-      
-      <section class="disclaimer-section">
-        <h2><i class="fas fa-copyright"></i> Intellectual Property</h2>
-        <p>All content, logos, and materials on this website are the property of Australia India Alliance or its content suppliers and are protected by international copyright and intellectual property laws.</p>
-        
-        <div class="acknowledgement">
-          <h3><i class="fas fa-handshake"></i> Permissions & Acknowledgements</h3>
-          <p>Some content may be used under license or with permission from third parties. Where applicable, such acknowledgements are provided with the content. Unauthorized use of any materials may violate copyright, trademark, and other laws.</p>
-        </div>
-      </section>
-      
-      <section class="disclaimer-section">
-        <h2><i class="fas fa-gavel"></i> Jurisdiction & Governing Law</h2>
-        <p>This disclaimer shall be governed by and construed in accordance with the laws of Australia. Any disputes relating to this disclaimer will be subject to the exclusive jurisdiction of the courts of Australia.</p>
-        
-        <p>If any provision of this disclaimer is found to be invalid or unenforceable by a court of competent jurisdiction, the remaining provisions will remain in full force and effect.</p>
-      </section>
-    </div>
-    
-    <div class="contact-section">
-      <h2><i class="fas fa-question-circle"></i> Questions About This Disclaimer?</h2>
-      <p>If you have any questions or concerns about this disclaimer or the use of our website, please contact us.</p>
-      <a href="mailto:info@ausindbridge.org.au" class="contact-btn">
-        <i class="fas fa-envelope"></i> Contact Us
-      </a>
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <div data-include="components/footer.html"></div>
-
-  <script>
-    // Mobile menu toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const nav = document.querySelector('nav');
-    
-    mobileMenuBtn.addEventListener('click', function() {
-      if (nav.style.display === 'block') {
-        nav.style.display = 'none';
-      } else {
-        nav.style.display = 'block';
-      }
-    });
-    
-    // Handle window resize
-    window.addEventListener('resize', function() {
-      if (window.innerWidth > 576) {
-        nav.style.display = '';
-      }
-    });
-    
-    // Animate limitation cards on hover
-    const limitationCards = document.querySelectorAll('.limitation-card');
-    limitationCards.forEach(card => {
-      card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-8px)';
-        this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.12)';
-      });
-      
-      card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0)';
-        this.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.08)';
-      });
-    });
-    
-    // External link example interactions
-    const linkExamples = document.querySelectorAll('.link-example');
-    linkExamples.forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        // Create a modal or alert instead of actually navigating
-        const linkType = this.textContent.trim();
-        const messages = {
-          'Government Resources': 'Links to government websites are provided for official information and reference purposes only.',
-          'Partner Organizations': 'Links to partner organizations do not imply endorsement of all their content or activities.',
-          'Research Publications': 'External research publications are linked for informational purposes; views expressed are those of the authors.',
-          'Event Information': 'External event links are provided for convenience; we are not responsible for event organization or content.'
-        };
-        
-        alert(`${linkType}\n\n${messages[linkType]}\n\nPlease exercise caution when visiting external websites.`);
-      });
-    });
-    
-    // Scroll animation for sections
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
+  <!-- Page Styles -->
+  <link rel="stylesheet" href="css/legal-pages.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+        <script src="/js/language-manager.js" defer></script>
+        <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0C2340",
+                        secondary: "#F5C642",
+                        accent: "#1E3A5F",
+                        light: "#F8F9FA",
+                         saffron: '#FF9933'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
         }
-      });
-    }, observerOptions);
-    
-    // Observe disclaimer sections for animation
-    const disclaimerSections = document.querySelectorAll('.disclaimer-section');
-    disclaimerSections.forEach(section => {
-      section.style.opacity = '0';
-      section.style.transform = 'translateY(20px)';
-      section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-      observer.observe(section);
-    });
-    
-    // Show warning on first visit to disclaimer page
-    if (!sessionStorage.getItem('disclaimerVisited')) {
-      setTimeout(() => {
-        alert('Important: Please read our disclaimer carefully. The information on this website is provided for general purposes only and does not constitute professional advice.');
-        sessionStorage.setItem('disclaimerVisited', 'true');
-      }, 1000);
-    }
-  </script>
-  <div data-include="components/footer.html"></div>
+    </script>
+</head>
+
+<body>
+
+<!-- Header -->
+<div data-include="components/header.html"></div>
+
+<main>
+  <div class="page-header">
+    <div class="disclaimer-icon">
+      <i class="fas fa-exclamation-triangle"></i>
+    </div>
+    <h1>Website Disclaimer</h1>
+    <p class="page-subtitle">
+      Important information regarding the use of this website and the limitations of the content provided.
+    </p>
+  </div>
+
+  <div class="warning-banner">
+    <div class="warning-icon">
+      <i class="fas fa-exclamation"></i>
+    </div>
+    <div>
+      <h2>Important Notice</h2>
+      <p>
+        The information on this website is provided for general informational purposes only and does not
+        constitute professional, legal, or financial advice.
+      </p>
+    </div>
+  </div>
+
+  <div class="disclaimer-container">
+
+    <section class="disclaimer-section">
+      <h2><i class="fas fa-info-circle"></i> General Disclaimer</h2>
+      <p>
+        All information on this website is provided “as is” for general informational purposes only.
+        Australia India Bridge Foundation makes no representations or warranties regarding accuracy,
+        completeness, or reliability.
+      </p>
+    </section>
+
+    <section class="disclaimer-section">
+      <h2><i class="fas fa-external-link-alt"></i> External Links</h2>
+      <p>
+        This website may contain links to external websites. Australia India Bridge Foundation has no
+        control over the nature, content, or availability of those sites and does not endorse them.
+      </p>
+    </section>
+
+    <section class="disclaimer-section">
+      <h2><i class="fas fa-balance-scale"></i> Limitation of Liability</h2>
+      <p>
+        To the fullest extent permitted by law, Australia India Bridge Foundation shall not be liable
+        for any loss or damage arising from the use of this website or reliance on its content.
+      </p>
+    </section>
+
+    <section class="disclaimer-section">
+      <h2><i class="fas fa-copyright"></i> Intellectual Property</h2>
+      <p>
+        All content on this website, including text, graphics, logos, and media, is the property of
+        Australia India Bridge Foundation unless otherwise stated.
+      </p>
+    </section>
+
+    <section class="disclaimer-section">
+      <h2><i class="fas fa-gavel"></i> Governing Law</h2>
+      <p>
+        This disclaimer shall be governed by and interpreted in accordance with the laws of Australia.
+      </p>
+    </section>
+
+  </div>
+
+  <div class="contact-section">
+    <h2>Questions?</h2>
+    <p>
+      If you have any questions regarding this disclaimer, please contact us.
+    </p>
+    <a href="mailto:info@ausindbridge.org.au" class="contact-btn">
+      <i class="fas fa-envelope"></i> Contact Us
+    </a>
+  </div>
+</main>
+
+<!-- Footer -->
+<div data-include="components/footer.html"></div>
   <script src="/_next/static/chunks/webpack-a7f1c6512654c8e1.js" async=""></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="js/include.js"></script>
