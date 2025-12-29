@@ -67,7 +67,7 @@ const SEARCH_DATA = [
     url: "contact.html",
     content: `
       Contact details, enquiries,
-      email, Melbourne office,
+      Melbourne, VIC 3000 Australia,
       Australia India Bridge Foundation contact.
     `
   }

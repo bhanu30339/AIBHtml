@@ -227,12 +227,7 @@
                         </li>
                         <li>
                             <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="transparency.html">
-                                Transparency
-                            </a>
-                        </li>
-                        <li>
-                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="privacy.html">
-                                Discourse
+                                Transparency & Disclosure
                             </a>
                         </li>
                     </ul>
@@ -330,10 +325,10 @@
             <div class="border-t border-white/10"></div>
             
             <!-- Bottom Section with Copyright -->
-            <div class="py-8 text-center">
+                <div class="py-8 text-center">
                 <!-- Copyright -->
                 <div class="text-gray-400 text-sm mb-4">
-                    Copyright © 2026<span id="currentYear"></span> Australia India Bridge Foundation.
+                    Copyright ©️ 2026 AusInd Bridge Foundation | All Rights Reserved
                 </div>
                 
                 <!-- Location -->
@@ -345,10 +340,11 @@
     </footer>
 
     <script>
-        // Set current year in copyright
+            // Set current year in copyright (guarded)
         document.addEventListener('DOMContentLoaded', function() {
             const currentYear = new Date().getFullYear();
-            document.getElementById('currentYear').textContent = currentYear;
+            const el = document.getElementById('currentYear');
+            if (el) el.textContent = currentYear;
             
             // Newsletter form handling
             const newsletterForm = document.getElementById('newsletterForm');
