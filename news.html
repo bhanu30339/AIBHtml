@@ -96,6 +96,7 @@
             position: relative;
             width: 100%;
             padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            min-height: 420px; /* ensure a larger preview box on wide screens */
             height: 100%;
             overflow: hidden;
             border-radius: 1rem;
@@ -129,16 +130,17 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 80px;
-            height: 80px;
-            background: rgba(212, 175, 55, 0.9);
+            width: 96px;
+            height: 96px;
+            background: rgba(212, 175, 55, 0.95);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             z-index: 2;
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
         }
         
         .play-button:hover {
@@ -148,8 +150,23 @@
         
         .play-button i {
             color: #0C2340;
-            font-size: 2rem;
-            margin-left: 5px;
+            font-size: 2.4rem;
+            margin-left: 6px;
+        }
+        @media (max-width: 768px) {
+            .video-container {
+                min-height: 240px;
+                padding-bottom: 56.25%;
+            }
+
+            .play-button {
+                width: 72px;
+                height: 72px;
+            }
+
+            .play-button i {
+                font-size: 1.6rem;
+            }
         }
     </style>
 </head>
@@ -425,7 +442,7 @@
                     <!-- Video Section -->
                     <div class="relative rounded-3xl overflow-hidden shadow-2xl">
                         <div class="video-container">
-                            <video id="strategyVideo" class="w-full" controls poster="/images/events/india-strategy-launch.jpg">
+                            <video id="strategyVideo" class="w-full" controls preload="metadata" poster="/images/NewIm.jpeg">
                                 <source src="/videos/LinVid.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
