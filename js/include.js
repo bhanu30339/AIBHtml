@@ -6,26 +6,68 @@ async function includeHTML() {
     const response = await fetch(file);
     const html = await response.text();
 
-    // Insert HTML
-    el.innerHTML = html;
+    // Parse fetched HTML
+    const temp = document.createElement('div');
+    temp.innerHTML = html;
+
+    // If including the header component, only inject the nav and mobile menu
+    if (file.includes("header.html")) {
+      const nav = temp.querySelector('nav');
+      const mobile = temp.querySelector('#mobileMenu');
+
+      // Move only header-related <style> or stylesheet <link> into document.head (avoid duplicates)
+      const stylesAndLinks = temp.querySelectorAll('style, link[rel="stylesheet"]');
+      const headerSelectors = ['nav', 'mobile-menu', 'nav-link', '#mobileMenu', '#searchDropdown', '#languageDropdown', '.mobile-item', '.theme-toggle-btn', '.search-dropdown'];
+      stylesAndLinks.forEach(s => {
+        try {
+          if (s.tagName === 'LINK') {
+            const href = s.getAttribute('href') || s.href || '';
+            // Skip common external libs (fonts, fontawesome) if already present
+            const skipHref = /fonts.googleapis.com|tailwindcss.com|cdnjs.cloudflare.com\/ajax\/libs\/font-awesome/i;
+            if (skipHref.test(href)) return;
+            if (!document.head.querySelector(`link[href="${href}"]`)) {
+              document.head.appendChild(s.cloneNode(true));
+            }
+          } else {
+            const text = s.textContent || '';
+            // Only add style blocks that reference header-related selectors to avoid duplicating page CSS
+            const matchesHeader = headerSelectors.some(sel => text.indexOf(sel) !== -1);
+            if (matchesHeader) document.head.appendChild(s.cloneNode(true));
+          }
+        } catch (err) {
+          console.warn('Could not move style/link to head', err);
+        }
+      });
+
+      el.innerHTML = (nav ? nav.outerHTML : '') + (mobile ? mobile.outerHTML : '');
+    } else {
+      // Default: insert full HTML for other components
+      el.innerHTML = html;
+    }
 
     // Execute any scripts contained in the loaded HTML (both inline and external)
     try {
-      const temp = document.createElement('div');
-      temp.innerHTML = html;
       const scripts = temp.querySelectorAll('script');
       scripts.forEach(s => {
         if (s.src) {
+          const src = s.getAttribute('src') || s.src || '';
+          // Skip loading global/library scripts that are already on the page
+          const skipPattern = /tailwindcss.com|translate.google|translate_a\/element.js|fonts.googleapis.com|cdnjs.cloudflare.com\/ajax\/libs\/font-awesome/i;
+          if (skipPattern.test(src)) return;
           // avoid loading duplicate external scripts
-          if (!document.querySelector(`script[src="${s.src}"]`)) {
+          if (!document.querySelector(`script[src="${src}"]`)) {
             const newScript = document.createElement('script');
-            newScript.src = s.src;
+            newScript.src = src;
             if (s.defer) newScript.defer = true;
             document.head.appendChild(newScript);
           }
         } else {
+          const text = s.innerHTML || '';
+          // Only execute inline header-specific scripts (avoid re-running tailwind config / page-level scripts)
+          const allowInline = /initHeaderMenu\(|populateDesktopLanguageList\(|toggleMobilePillars\(|googleTranslate\(/i;
+          if (!allowInline.test(text)) return;
           const inline = document.createElement('script');
-          inline.text = s.innerHTML;
+          inline.text = text;
           document.body.appendChild(inline);
         }
       });
