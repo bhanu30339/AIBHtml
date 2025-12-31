@@ -1,29 +1,28 @@
 // Scroll-to-top and scroll-to-bottom button functionality
 document.addEventListener('DOMContentLoaded', function() {
-    // Create scroll buttons container
+    // Create scroll buttons container with inline styles
     const scrollButtonsHTML = `
-        <div id="scrollButtons" class="fixed right-6 bottom-8 flex flex-col gap-3 z-40">
+        <div id="scrollButtons" style="position: fixed; right: 24px; bottom: 32px; display: flex; flex-direction: column; gap: 12px; z-index: 1000;">
             <button id="scrollTopBtn" 
-                    class="w-12 h-12 bg-primary hover:bg-primary/90 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:shadow-xl hover:scale-110"
+                    style="width: 48px; height: 48px; background-color: #0C2340; color: white; border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: all 0.3s ease; font-size: 18px; visibility: hidden; opacity: 0;"
                     title="Scroll to top"
                     aria-label="Scroll to top">
-                <i class="fas fa-chevron-up text-lg"></i>
+                <i class="fas fa-chevron-up"></i>
             </button>
             <button id="scrollBottomBtn" 
-                    class="w-12 h-12 bg-secondary hover:bg-secondary/90 text-primary rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:shadow-xl hover:scale-110"
+                    style="width: 48px; height: 48px; background-color: #F5C642; color: #0C2340; border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: all 0.3s ease; font-size: 18px; visibility: hidden; opacity: 0;"
                     title="Scroll to bottom"
                     aria-label="Scroll to bottom">
-                <i class="fas fa-chevron-down text-lg"></i>
+                <i class="fas fa-chevron-down"></i>
             </button>
         </div>
     `;
 
-    // Insert scroll buttons before closing body tag
+    // Insert scroll buttons at end of body
     document.body.insertAdjacentHTML('beforeend', scrollButtonsHTML);
 
     const scrollTopBtn = document.getElementById('scrollTopBtn');
     const scrollBottomBtn = document.getElementById('scrollBottomBtn');
-    const scrollButtonsContainer = document.getElementById('scrollButtons');
 
     // Show/hide buttons based on scroll position
     function updateButtonVisibility() {
@@ -32,14 +31,49 @@ document.addEventListener('DOMContentLoaded', function() {
         const windowHeight = window.innerHeight;
 
         // Show scroll top button if user has scrolled down
-        scrollTopBtn.classList.toggle('opacity-0 pointer-events-none', scrollTop < 100);
-        scrollTopBtn.classList.toggle('opacity-100', scrollTop >= 100);
+        if (scrollTop >= 100) {
+            scrollTopBtn.style.visibility = 'visible';
+            scrollTopBtn.style.opacity = '1';
+        } else {
+            scrollTopBtn.style.visibility = 'hidden';
+            scrollTopBtn.style.opacity = '0';
+        }
 
         // Show scroll bottom button if not at the bottom
         const isAtBottom = scrollTop + windowHeight >= scrollHeight - 100;
-        scrollBottomBtn.classList.toggle('opacity-0 pointer-events-none', isAtBottom);
-        scrollBottomBtn.classList.toggle('opacity-100', !isAtBottom);
+        if (!isAtBottom) {
+            scrollBottomBtn.style.visibility = 'visible';
+            scrollBottomBtn.style.opacity = '1';
+        } else {
+            scrollBottomBtn.style.visibility = 'hidden';
+            scrollBottomBtn.style.opacity = '0';
+        }
     }
+
+    // Add hover effects
+    scrollTopBtn.addEventListener('mouseenter', function() {
+        this.style.backgroundColor = '#1a3550';
+        this.style.transform = 'scale(1.1)';
+        this.style.boxShadow = '0 8px 20px rgba(0,0,0,0.25)';
+    });
+
+    scrollTopBtn.addEventListener('mouseleave', function() {
+        this.style.backgroundColor = '#0C2340';
+        this.style.transform = 'scale(1)';
+        this.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+    });
+
+    scrollBottomBtn.addEventListener('mouseenter', function() {
+        this.style.backgroundColor = '#e6b300';
+        this.style.transform = 'scale(1.1)';
+        this.style.boxShadow = '0 8px 20px rgba(0,0,0,0.25)';
+    });
+
+    scrollBottomBtn.addEventListener('mouseleave', function() {
+        this.style.backgroundColor = '#F5C642';
+        this.style.transform = 'scale(1)';
+        this.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+    });
 
     // Scroll to top functionality
     scrollTopBtn.addEventListener('click', function() {
@@ -59,32 +93,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Update button visibility on scroll
     window.addEventListener('scroll', updateButtonVisibility);
+    window.addEventListener('resize', updateButtonVisibility);
 
     // Initial check
     updateButtonVisibility();
-
-    // Add smooth scroll behavior CSS if not already present
-    if (!document.querySelector('style[data-scroll-buttons]')) {
-        const style = document.createElement('style');
-        style.setAttribute('data-scroll-buttons', 'true');
-        style.textContent = `
-            #scrollButtons button {
-                opacity: 1;
-                transition: opacity 0.3s ease, transform 0.3s ease;
-            }
-
-            #scrollButtons button.opacity-0 {
-                opacity: 0;
-            }
-
-            #scrollButtons button.pointer-events-none {
-                pointer-events: none;
-            }
-
-            html {
-                scroll-behavior: smooth;
-            }
-        `;
-        document.head.appendChild(style);
-    }
 });

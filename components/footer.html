@@ -52,16 +52,24 @@
             border: 2px solid #FF9933;
             border-radius: 50%;
             cursor: pointer;
-            display: none;
+            display: flex !important;
             justify-content: center;
             align-items: center;
             z-index: 1000;
             transition: all 0.3s ease;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
         }
         
         .scroll-to-top:hover {
             background: #FF9933;
             transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
         }
         
         .scroll-to-bottom {
@@ -75,16 +83,24 @@
             border: 2px solid #FF9933;
             border-radius: 50%;
             cursor: pointer;
-            display: none;
+            display: flex !important;
             justify-content: center;
             align-items: center;
             z-index: 1000;
             transition: all 0.3s ease;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .scroll-to-bottom.visible {
+            opacity: 1;
+            pointer-events: auto;
         }
         
         .scroll-to-bottom:hover {
             background: #FF9933;
             transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
         }
         
         /* First Nations Acknowledgement Styling */
@@ -165,8 +181,8 @@
                 </div>
             </div>
             
-            <!-- Main Footer Content - 4 Columns -->
-            <div class="py-16 grid grid-cols-1 lg:grid-cols-4 gap-10">
+            <!-- Main Footer Content - 5 Columns -->
+            <div class="py-16 grid grid-cols-1 lg:grid-cols-5 gap-10">
                 
                 <!-- Column 1: Logo and Description -->
                 <div class="text-center lg:text-left">
@@ -233,6 +249,31 @@
                         <li>
                             <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="transparency.html">
                                 Transparency & Disclosure
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Column 2.5: Strategic Pillars -->
+                <div class="text-center lg:text-left">
+                    <h4 class="font-semibold text-lg mb-6 relative inline-block">
+                        Strategic Pillars
+                        <span class="absolute -bottom-2 left-0 w-12 h-0.5 bg-gradient-to-r from-[#FF9933] to-transparent rounded-full"></span>
+                    </h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="bilateral%20trade%20&%20business.html">
+                                Bilateral Trade & Business
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="Political%20&%20strategic%20engagement.html">
+                                Political & Strategic Engagement
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="charitable%20&%20social%20impact.html">
+                                Charitable & Social Impact
                             </a>
                         </li>
                     </ul>
@@ -399,10 +440,23 @@
                 const winH = window.innerHeight;
                 const atTop = y < 200;
                 const atBottom = y + winH >= docH - 200;
-                if (scrollTopBtn) scrollTopBtn.style.display = atTop ? 'none' : 'flex';
-                if (scrollBottomBtn) scrollBottomBtn.style.display = atBottom ? 'none' : 'flex';
+                if (scrollTopBtn) {
+                    if (atTop) {
+                        scrollTopBtn.classList.remove('visible');
+                    } else {
+                        scrollTopBtn.classList.add('visible');
+                    }
+                }
+                if (scrollBottomBtn) {
+                    if (atBottom) {
+                        scrollBottomBtn.classList.remove('visible');
+                    } else {
+                        scrollBottomBtn.classList.add('visible');
+                    }
+                }
             }
             window.addEventListener('scroll', toggleScrollButtons);
+            window.addEventListener('resize', toggleScrollButtons);
             toggleScrollButtons();
             if (scrollTopBtn) {
                 scrollTopBtn.addEventListener('click', () => {
