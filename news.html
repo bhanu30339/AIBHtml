@@ -109,7 +109,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain; /* Changed from cover to contain for better visibility */
         }
         
         .video-overlay {
@@ -173,6 +173,34 @@
         
         .expand-button:hover {
             background: rgba(0,0,0,0.6);
+        }
+        
+        /* Fullscreen styles for vertical video */
+        .video-container:fullscreen video {
+            object-fit: contain;
+            background: #000;
+        }
+        
+        .video-container:-webkit-full-screen video {
+            object-fit: contain;
+            background: #000;
+        }
+        
+        .video-container:-moz-full-screen video {
+            object-fit: contain;
+            background: #000;
+        }
+        
+        .video-container:-ms-fullscreen video {
+            object-fit: contain;
+            background: #000;
+        }
+        
+        /* Hide overlay elements in fullscreen */
+        .video-container:fullscreen .video-overlay,
+        .video-container:fullscreen .play-button,
+        .video-container:fullscreen .expand-button {
+            display: none;
         }
         
         @media (max-width: 768px) {
@@ -985,14 +1013,19 @@
                 video.addEventListener('pause', function() {
                     playButton.style.display = 'flex';
                 });
+                
                 // Fullscreen / expand button
                 const expandBtn = document.getElementById('expandBtn');
-                if (expandBtn) {
+                const videoContainer = document.querySelector('.video-container');
+                
+                if (expandBtn && videoContainer) {
                     expandBtn.addEventListener('click', function(e) {
                         e.stopPropagation();
+                        
                         // If already fullscreen, exit
                         const doc = document;
-                        if (doc.fullscreenElement || doc.webkitFullscreenElement || doc.mozFullScreenElement || doc.msFullscreenElement) {
+                        if (doc.fullscreenElement || doc.webkitFullscreenElement || 
+                            doc.mozFullScreenElement || doc.msFullscreenElement) {
                             if (doc.exitFullscreen) doc.exitFullscreen();
                             else if (doc.webkitExitFullscreen) doc.webkitExitFullscreen();
                             else if (doc.mozCancelFullScreen) doc.mozCancelFullScreen();
@@ -1000,20 +1033,42 @@
                             return;
                         }
 
-                        // Request fullscreen on the video element (with vendor prefixes)
-                        if (video.requestFullscreen) {
-                            video.requestFullscreen();
-                        } else if (video.webkitRequestFullscreen) {
-                            video.webkitRequestFullscreen();
-                        } else if (video.mozRequestFullScreen) {
-                            video.mozRequestFullScreen();
-                        } else if (video.msRequestFullscreen) {
-                            video.msRequestFullscreen();
+                        // Request fullscreen on the video container
+                        if (videoContainer.requestFullscreen) {
+                            videoContainer.requestFullscreen();
+                        } else if (videoContainer.webkitRequestFullscreen) {
+                            videoContainer.webkitRequestFullscreen();
+                        } else if (videoContainer.mozRequestFullScreen) {
+                            videoContainer.mozRequestFullScreen();
+                        } else if (videoContainer.msRequestFullscreen) {
+                            videoContainer.msRequestFullscreen();
                         } else {
                             // Fallback: open video in a new window
                             window.open(video.currentSrc || video.querySelector('source')?.src, '_blank');
                         }
                     });
+                    
+                    // Listen for fullscreen change events to adjust video display
+                    document.addEventListener('fullscreenchange', handleFullscreenChange);
+                    document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+                    document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+                    document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+                    
+                    function handleFullscreenChange() {
+                        const isFullscreen = document.fullscreenElement || 
+                                            document.webkitFullscreenElement || 
+                                            document.mozFullScreenElement || 
+                                            document.msFullscreenElement;
+                        
+                        if (isFullscreen) {
+                            // When in fullscreen, ensure video fits properly
+                            video.style.objectFit = 'contain';
+                            video.style.backgroundColor = '#000';
+                        } else {
+                            // When exiting fullscreen, reset to normal display
+                            video.style.objectFit = 'contain';
+                        }
+                    }
                 }
             }
             
