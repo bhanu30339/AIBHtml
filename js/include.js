@@ -5,11 +5,37 @@ async function includeHTML() {
     const file = el.getAttribute("data-include");
     const response = await fetch(file);
     const html = await response.text();
-    el.innerHTML = html;
-    if (typeof initSearch === "function") {
-  initSearch();
-}
 
+    // Insert HTML
+    el.innerHTML = html;
+
+    // Execute any scripts contained in the loaded HTML (both inline and external)
+    try {
+      const temp = document.createElement('div');
+      temp.innerHTML = html;
+      const scripts = temp.querySelectorAll('script');
+      scripts.forEach(s => {
+        if (s.src) {
+          // avoid loading duplicate external scripts
+          if (!document.querySelector(`script[src="${s.src}"]`)) {
+            const newScript = document.createElement('script');
+            newScript.src = s.src;
+            if (s.defer) newScript.defer = true;
+            document.head.appendChild(newScript);
+          }
+        } else {
+          const inline = document.createElement('script');
+          inline.text = s.innerHTML;
+          document.body.appendChild(inline);
+        }
+      });
+    } catch (err) {
+      console.error('Error executing included scripts for', file, err);
+    }
+
+    if (typeof initSearch === "function") {
+      initSearch();
+    }
 
     // 🔥 INIT HEADER AFTER IT IS LOADED
     if (file.includes("header.html")) {
