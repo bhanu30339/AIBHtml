@@ -183,12 +183,61 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        header,
-header * {
-    animation: none !important;
-    transition: none !important;
-}
         
+        header,
+        header * {
+            animation: none !important;
+            transition: none !important;
+        }
+        
+        .dignitary-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+        
+        .dignitary-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(12, 35, 64, 0.15);
+        }
+        
+        .dignitary-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+        }
+        
+        .dignitary-image img {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .dignitary-card:hover .dignitary-image img {
+            transform: scale(1.05);
+        }
+        
+        .dignitary-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: linear-gradient(135deg, #0C2340, #1E3A5F);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 10;
+        }
+        
+        .role-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(255, 153, 51, 0.1));
+            color: #0C2340;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
     </style>
 </head>
 <body class="font-sans bg-light overflow-x-hidden">
@@ -197,8 +246,6 @@ header * {
 
     <main class="min-h-screen relative">
         
-        <!-- Hero Section -->
-         <main class="min-h-screen">
         <!-- Hero Section -->
         <section class="relative pt-20 pb-20 overflow-hidden">
             <div class="absolute inset-0">
@@ -221,6 +268,8 @@ header * {
                 </div>
             </div>
         </section>
+
+       
 
         <!-- About Cards Section -->
         <section class="py-20 relative">
@@ -567,7 +616,7 @@ header * {
                                     <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-primary/10 to-saffron/10 rounded-2xl flex items-center justify-center">
                                         <img src="/images/Saclg.avif" alt="SACLG Logo" class="w-12 h-12 object-contain">
                                     </div>
-                                    <h3 class="text-xl font-bold text-gray-900 text-center mb-4">SACLG</h3>
+                                    <h3 class="text-xl font-bold text-gray-900 text-center mb-4">South Asian Community Link Group-Australasia Inc (SACLG)</h3>
                                     <p class="text-gray-600 text-center text-sm mb-6">
                                         Empowering south asian communities through cultural programs and community development.
                                     </p>
@@ -581,7 +630,7 @@ header * {
                                     <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-primary/10 to-saffron/10 rounded-2xl flex items-center justify-center">
                                         <img src="/images/gopio_logo.jpg" alt="GOPIO Logo" class="w-12 h-12 object-contain">
                                     </div>
-                                    <h3 class="text-xl font-bold text-gray-900 text-center mb-4">GOPIO Melbourne</h3>
+                                    <h3 class="text-xl font-bold text-gray-900 text-center mb-4">Global Organization of People of Indian Origin (GOPIO) Melbourne</h3>
                                     <p class="text-gray-600 text-center text-sm mb-6">
                                         Promoting welfare, unity, and cross-cultural engagement across the Indo-Australian diaspora.
                                     </p>
@@ -593,6 +642,194 @@ header * {
 
                 <!-- CTA Section -->
                 
+            </div>
+        </section>
+
+
+         <!-- NEW SECTION: Dignitaries Gallery -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center space-x-4 mb-6">
+                        <div class="w-20 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+                        <span class="text-blue-900 text-xs font-semibold tracking-wider uppercase">MEET OUR FOUNDER WITH</span>
+                        <div class="w-20 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+                    </div>
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                        <span class="text-gray-900">Distinguished Leaders &</span>
+                        <span class="block text-saffron">Dignitaries</span>
+                    </h2>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                        Our founder has had the privilege of engaging with prominent leaders who share our vision for stronger Australia-India relations
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Tim Watts -->
+                    <div class="dignitary-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                        <div class="dignitary-image h-64 mb-6 relative">
+                            <img src="images/Tim_watts.jpeg" 
+                                 alt="Tim Watts MP - Member for Gellibrand" 
+                                 class="w-full h-full object-cover">
+                            <div class="dignitary-badge">Federal MP</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Tim Watts MP</h3>
+                        <p class="text-primary font-semibold text-sm mb-4">
+                            Member for Gellibrand (House of Representatives)
+                        </p>
+                        
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-900 mb-2 text-sm">Key Roles:</h4>
+                            <div class="flex flex-wrap">
+                                <span class="role-badge">Australia's Special Envoy for Indian Ocean Affairs</span>
+                                <span class="role-badge">Chair of the Standing Committee on Education</span>
+                                <span class="role-badge">Member, Joint Standing Committee on Foreign Affairs</span>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-2 text-sm text-gray-600">
+                            <div class="flex items-center">
+                                <i class="fas fa-user-tie text-saffron mr-2 w-4"></i>
+                                <span>Member of the Australian Labor Party</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-briefcase text-saffron mr-2 w-4"></i>
+                                <span>Former Assistant Minister for Foreign Affairs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Roshena Campbell -->
+                    <div class="dignitary-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                        <div class="dignitary-image h-64 mb-6 relative">
+                            <img src="images/Roshena.jpeg" 
+                                 alt="Roshena Campbell - Deputy Lord Mayor of Melbourne" 
+                                 class="w-full h-full object-cover">
+                            <div class="dignitary-badge">Deputy Lord Mayor</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Roshena Campbell</h3>
+                        <p class="text-primary font-semibold text-sm mb-4">
+                            Deputy Lord Mayor of Melbourne
+                        </p>
+                        
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-900 mb-2 text-sm">Portfolios:</h4>
+                            <div class="flex flex-wrap">
+                                <span class="role-badge">Portfolio Head for Planning</span>
+                                <span class="role-badge">Deputy Portfolio Holder for Tourism and Events</span>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-2 text-sm text-gray-600">
+                            <div class="flex items-center">
+                                <i class="fas fa-city text-saffron mr-2 w-4"></i>
+                                <span>Key leadership role in Melbourne City Council</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-map text-saffron mr-2 w-4"></i>
+                                <span>Oversees strategic planning and development</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-calendar-alt text-saffron mr-2 w-4"></i>
+                                <span>Supports tourism and major events initiatives</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dr. Sushil Kumar -->
+                    <div class="dignitary-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                        <div class="dignitary-image h-64 mb-6 relative">
+                            <img src="images/Consul.jpeg" 
+                                 alt="Dr. Sushil Kumar - Former Consul General of India in Melbourne" 
+                                 class="w-full h-full object-cover">
+                            <div class="dignitary-badge">Consul General</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Dr. Sushil Kumar</h3>
+                        <p class="text-primary font-semibold text-sm mb-4">
+                            Former Consul General of India in Melbourne
+                        </p>
+                        
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-900 mb-2 text-sm">Diplomatic Role:</h4>
+                            <div class="text-sm text-gray-600">
+                                <p class="mb-2">
+                                    Served as India's senior diplomatic representative in Melbourne, overseeing consular services, trade promotion, and cultural relations.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-2 text-sm text-gray-600">
+                            <div class="flex items-center">
+                                <i class="fas fa-passport text-saffron mr-2 w-4"></i>
+                                <span>Oversaw consular services for Indian community</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-handshake text-saffron mr-2 w-4"></i>
+                                <span>Promoted bilateral trade and investment</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-monument text-saffron mr-2 w-4"></i>
+                                <span>Strengthened cultural ties between India and Victoria</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sujatha Singh -->
+                    <div class="dignitary-card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                        <div class="dignitary-image h-64 mb-6 relative">
+                            <img src="images/sujitha.jpeg" 
+                                 alt="Mrs. Sujatha Singh - Former High Commissioner of India to Australia" 
+                                 class="w-full h-full object-cover">
+                            <div class="dignitary-badge">High Commissioner</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Mrs. Sujatha Singh</h3>
+                        <p class="text-primary font-semibold text-sm mb-4">
+                            Former High Commissioner of India to Australia
+                        </p>
+                        
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-900 mb-2 text-sm">Diplomatic Leadership:</h4>
+                            <div class="text-sm text-gray-600">
+                                <p class="mb-2">
+                                    Served as India's top diplomatic representative in Australia, overseeing bilateral relations and strengthening strategic partnerships.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-2 text-sm text-gray-600">
+                            <div class="flex items-center">
+                                <i class="fas fa-flag text-saffron mr-2 w-4"></i>
+                                <span>India's highest diplomatic representative in Australia</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-diploma text-saffron mr-2 w-4"></i>
+                                <span>Senior career diplomat with extensive experience</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-globe-asia text-saffron mr-2 w-4"></i>
+                                <span>Strengthened strategic bilateral partnerships</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Founder's Message -->
+                <div class="mt-16 bg-gradient-to-r from-primary/5 to-saffron/5 rounded-3xl p-8">
+                    <div class="text-center max-w-3xl mx-auto">
+                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-users text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Founder's Vision</h3>
+                        <p class="text-gray-700 leading-relaxed mb-6">
+                            "These engagements with distinguished leaders reflect our commitment to building bridges at the highest levels. By connecting with policymakers, diplomats, and community leaders, we ensure that our initiatives have meaningful impact and contribute to the strengthening of Australia-India relations."
+                        </p>
+                        <div class="flex items-center justify-center space-x-4">
+                            <div class="w-12 h-px bg-gradient-to-r from-transparent via-saffron to-transparent"></div>
+                            <span class="text-sm text-gray-600">Building Connections That Matter</span>
+                            <div class="w-12 h-px bg-gradient-to-r from-transparent via-saffron to-transparent"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -622,8 +859,6 @@ header * {
                 observer.observe(el);
             });
 
-        
-
             // Card hover effects
             document.querySelectorAll('.card-hover').forEach(card => {
                 card.addEventListener('mouseenter', function() {
@@ -639,6 +874,16 @@ header * {
             // Stagger animation on load
             document.querySelectorAll('.stagger-animation > *').forEach((el, index) => {
                 el.style.animationDelay = `${index * 0.1}s`;
+            });
+            
+            // Add click animation to dignitary cards
+            document.querySelectorAll('.dignitary-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                    setTimeout(() => {
+                        this.style.transform = 'translateY(-8px)';
+                    }, 150);
+                });
             });
         });
 

@@ -67,7 +67,7 @@ const SEARCH_DATA = [
     url: "contact.html",
     content: `
       Contact details, enquiries,
-      Melbourne, VIC 3000 Australia,
+      Level 27, 101 Collins Street, Melbourne, VIC 3000 Australia,
       Australia India Bridge Foundation contact.
     `
   }
