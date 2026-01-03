@@ -175,6 +175,47 @@
             background: rgba(0,0,0,0.6);
         }
         
+        /* Navigation buttons for carousel - ensure clickability */
+        #prevBtn, #nextBtn {
+            z-index: 10 !important;
+            cursor: pointer;
+            pointer-events: auto !important;
+        }
+        
+        #prevBtn:hover, #nextBtn:hover {
+            background: rgba(0,0,0,0.8) !important;
+        }
+        
+        #prevBtn:active, #nextBtn:active {
+            transform: scale(0.95);
+        }
+        
+        /* Ensure carousel container is relative positioned */
+        #carouselTrack {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Carousel wrapper for proper button positioning */
+        .relative.overflow-hidden.rounded-2xl {
+            position: relative;
+        }
+        
+        /* Ensure buttons are clickable on all devices */
+        @media (hover: hover) and (pointer: fine) {
+            #prevBtn:hover, #nextBtn:hover {
+                background: rgba(0,0,0,0.8) !important;
+            }
+        }
+        
+        /* Mobile touch optimization */
+        @media (max-width: 768px) {
+            #prevBtn, #nextBtn {
+                width: 44px !important;
+                height: 44px !important;
+            }
+        }
+        
         /* Fullscreen styles for vertical video */
         .video-container:fullscreen video {
             object-fit: contain;
@@ -267,21 +308,20 @@
                 </div>
 
                 <!-- Kiran Bedi Content -->
-                <div class="grid lg:grid-cols-2 gap-12">
-                    <!-- Profile Section -->
-                    <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
-                        <div class="flex items-center mb-6">
-                            <div class="w-48 h-48 rounded-full overflow-hidden mr-4 border-4 border-primary/10">
-                                <img src="images/kiran_bedi.jpeg" alt="Dr. Kiran Bedi" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold text-gray-900">Kiran Bedi</h3>
-                                <p class="text-primary font-semibold">First woman officer of the Indian Police Service (IPS)</p>
-                            </div>
+                <div class="grid lg:grid-cols-2 gap-12 items-start">
+                    <!-- Photo Section -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-md border border-gray-100">
+                        <img src="images/kiran_bedi.jpeg" alt="Dr. Kiran Bedi" class="w-full h-[500px] object-cover">
+                        <div class="p-6 bg-white">
+                            <h3 class="text-2xl font-bold text-gray-900">Dr. Kiran Bedi</h3>
+                            <p class="text-primary font-semibold">First woman officer of the Indian Police Service (IPS)</p>
                         </div>
-                        
+                    </div>
+                    <!-- Content Section -->
+                    <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Distinguished Career</h3>
                         <div class="mb-6">
-                            <h4 class="font-bold text-gray-900 mb-3">Distinguished Career:</h4>
+                            <h4 class="font-bold text-gray-900 mb-3">Key Positions:</h4>
                             <ul class="space-y-3 text-gray-700">
                                 <li class="flex items-start">
                                     <i class="fas fa-star text-saffron text-xs mt-1 mr-2"></i>
@@ -305,49 +345,41 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
 
-                    <!-- Visit Description -->
-                    <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
-                        <div class="flex items-center mb-6">
+                        <div class="flex items-center mb-6 mt-8">
                             <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mr-4">
                                 <i class="fas fa-globe-asia text-primary text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-2xl font-bold text-gray-900">Diaspora Engagement</h3>
-                                <p class="text-gray-600">Strengthening India-Australia people-to-people ties</p>
+                                <h4 class="font-bold text-gray-900">Diaspora Engagement</h4>
+                                <p class="text-gray-600 text-sm">Strengthening India-Australia people-to-people ties</p>
                             </div>
                         </div>
                         
-                        <p class="text-gray-700 leading-relaxed mb-6">
-                            Dr Kiran Bedi, India's first woman IPS officer and social activist, visited Melbourne to engage with the Indian diaspora. During her trip, she addressed community members on leadership, social reform, governance, and the role of the Indian community abroad.
+                        <p class="text-gray-700 leading-relaxed">
+                            Dr Kiran Bedi, India's first woman IPS officer and social activist, brings decades of experience in public service and social development. Her visit to Melbourne and engagement with the Indian diaspora underscores the importance of strengthening people-to-people ties between India and Australia.
                         </p>
-                        
-                        <p class="text-gray-700 leading-relaxed mb-6">
-                            Her visit highlighted the importance of strengthening people-to-people ties between India and Australia, promoting civic responsibility, youth leadership, and community engagement. Dr Bedi's work in public service and social development continues to inspire communities across the world.
-                        </p>
-                        
-                        <div class="p-6 bg-saffron/5 rounded-xl border border-saffron/10">
-                            <div class="flex items-start">
-                                <div class="w-10 h-10 bg-saffron/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                                    <i class="fas fa-users text-saffron"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-primary mb-2">Key Focus Areas</h4>
-                                    <div class="grid grid-cols-2 gap-3 mt-2">
-                                        <span class="text-sm bg-white px-3 py-1 rounded border">Leadership</span>
-                                        <span class="text-sm bg-white px-3 py-1 rounded border">Social Reform</span>
-                                        <span class="text-sm bg-white px-3 py-1 rounded border">Governance</span>
-                                        <span class="text-sm bg-white px-3 py-1 rounded border">Youth Engagement</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
-                <!-- Impact Highlights -->
-                <div class="mt-12 bg-gradient-to-r from-primary/5 to-saffron/5 rounded-3xl p-8">
+                <!-- Diaspora Engagement Details -->
+                <div class="mt-8 bg-gradient-to-r from-primary/5 to-saffron/5 rounded-3xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 text-center mb-6">Focus Areas of the Visit</h3>
+                    <div class="grid md:grid-cols-4 gap-4">
+                        <div class="bg-white px-4 py-3 rounded-lg border border-primary/10">
+                            <p class="text-center text-sm font-semibold text-primary">Leadership</p>
+                        </div>
+                        <div class="bg-white px-4 py-3 rounded-lg border border-primary/10">
+                            <p class="text-center text-sm font-semibold text-primary">Social Reform</p>
+                        </div>
+                        <div class="bg-white px-4 py-3 rounded-lg border border-primary/10">
+                            <p class="text-center text-sm font-semibold text-primary">Governance</p>
+                        </div>
+                        <div class="bg-white px-4 py-3 rounded-lg border border-primary/10">
+                            <p class="text-center text-sm font-semibold text-primary">Youth Engagement</p>
+                        </div>
+                    </div>
+                </div>
                     <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">Visit Impact & Legacy</h3>
                     <div class="grid md:grid-cols-3 gap-6">
                         <div class="bg-white p-6 rounded-xl">
@@ -425,70 +457,63 @@
                         </div>
                     </div>
 
-                    <!-- Premier Jacinta Allan Profile -->
-                    <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
-                        <div class="flex items-center mb-6">
-                            <div class="w-48 h-48 rounded-full overflow-hidden mr-4 border-4 border-primary/10">
-                                <img src="images/Jacinta_Allan.jpeg" alt="Premier Jacinta Allan" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold text-gray-900">Jacinta Allan</h3>
-                                <p class="text-primary font-semibold">Premier of Victoria (since September 2023)</p>
-                                <p class="text-gray-600">Member for Bendigo East</p>
-                            </div>
+                    <!-- MCG Event Photo Section -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-md border border-gray-100">
+                        <img src="images/Jacinta_Allan1.jpeg" alt="MCG India Independence Day Celebration" class="w-full h-[500px] object-cover">
+                        <div class="p-6 bg-white">
+                            <h3 class="text-2xl font-bold text-gray-900">Jacinta Allan</h3>
+                            <p class="text-primary font-semibold">Premier of Victoria (since September 2023)</p>
+                            <p class="text-gray-600">Member for Bendigo East</p>
                         </div>
+                    </div>
+                    <!-- MCG Event Details Section -->
+                    <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">About the Celebration</h3>
                         
-                        <div class="mb-6">
-                            <h4 class="font-bold text-gray-900 mb-3">Former Positions:</h4>
+                        <p class="text-gray-700 leading-relaxed mb-6">
+                            The celebration of India's Independence Day at the Melbourne Cricket Ground highlighted the enduring and growing relationship between India and Victoria. The event brought together community leaders and senior representatives of the Victorian Government, including the Deputy Premier and Minister for Education, the Hon. Ben Carroll MP.
+                        </p>
+                        
+                        <div class="mb-6 p-4 bg-primary/5 rounded-lg border border-primary/10">
+                            <h4 class="font-bold text-primary mb-3">Landmarks Illuminated in Tricolour:</h4>
                             <ul class="space-y-2 text-gray-700">
                                 <li class="flex items-start">
-                                    <i class="fas fa-chevron-right text-saffron text-xs mt-1 mr-2"></i>
-                                    <span>Former Deputy Premier of Victoria</span>
+                                    <i class="fas fa-check text-saffron text-xs mt-1 mr-2"></i>
+                                    <span>Flinders Street Station</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-chevron-right text-saffron text-xs mt-1 mr-2"></i>
-                                    <span>Former Minister for Transport and Infrastructure</span>
+                                    <i class="fas fa-check text-saffron text-xs mt-1 mr-2"></i>
+                                    <span>Melbourne's iconic landmarks</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-chevron-right text-saffron text-xs mt-1 mr-2"></i>
-                                    <span>Former Minister for the Suburban Rail Loop</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-chevron-right text-saffron text-xs mt-1 mr-2"></i>
-                                    <span>Former Minister for Public Transport</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-chevron-right text-saffron text-xs mt-1 mr-2"></i>
-                                    <span>Former Minister for Major Projects</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-chevron-right text-saffron text-xs mt-1 mr-2"></i>
-                                    <span>Former Minister for Employment</span>
+                                    <i class="fas fa-check text-saffron text-xs mt-1 mr-2"></i>
+                                    <span>Symbolising unity and multicultural pride</span>
                                 </li>
                             </ul>
                         </div>
                         
                         <div class="p-4 bg-saffron/5 rounded-lg border border-saffron/10">
-                            <p class="text-gray-700 text-sm">
-                                Together, these engagements represent an important step in advancing Victoria–India relations through meaningful dialogue, cultural recognition and forward-looking partnerships.
+                            <p class="text-gray-700 text-sm font-semibold">
+                                The occasion also coincided with Premier Jacinta Allan's upcoming visit to India, strengthening Victoria's commitment to deepening collaboration across education, innovation, business, technology, and the visitor economy.
                             </p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Deputy Premier Profile -->
-                <div class="grid lg:grid-cols-2 gap-12 mb-16">
-                    <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
-                        <div class="flex items-center mb-6">
-                            <div class="w-48 h-48 rounded-full overflow-hidden mr-4 border-4 border-primary/10">
-                                <img src="images/ben_caroll.jpeg" alt="Deputy Premier Ben Carroll" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold text-gray-900">Ben Carroll</h3>
-                                <p class="text-primary font-semibold">Deputy Premier of Victoria</p>
-                                <p class="text-gray-600">Member for Niddrie</p>
-                            </div>
+                <div class="grid lg:grid-cols-2 gap-12 mb-16 items-start">
+                    <!-- Ben Carroll Photo -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-md border border-gray-100">
+                        <img src="images/ben_caroll.jpeg" alt="Deputy Premier Ben Carroll" class="w-full h-[500px] object-cover">
+                        <div class="p-6 bg-white">
+                            <h3 class="text-2xl font-bold text-gray-900">Ben Carroll</h3>
+                            <p class="text-primary font-semibold">Deputy Premier of Victoria</p>
+                            <p class="text-gray-600">Member for Niddrie</p>
                         </div>
+                    </div>
+                    <!-- Ben Carroll Info -->
+                    <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">About Ben Carroll</h3>
                         
                         <div class="mb-6">
                             <h4 class="font-bold text-gray-900 mb-3">Current Portfolios:</h4>
@@ -1082,6 +1107,10 @@
                 const slides = Array.from(track.children);
                 const nextButton = document.getElementById('nextBtn');
                 const prevButton = document.getElementById('prevBtn');
+                
+                // Ensure buttons are clickable by setting pointer-events
+                if (nextButton) nextButton.style.pointerEvents = 'auto';
+                if (prevButton) prevButton.style.pointerEvents = 'auto';
                 const dotsContainer = document.getElementById('carouselDots');
                 
                 let currentIndex = 0;
