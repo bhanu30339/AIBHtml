@@ -1952,62 +1952,84 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </section>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
-                <!-- LEFT CONTENT -->
-                
-                <div class="order-2 lg:order-1">
-                    <span class="text-blue-900 uppercase text-xs sm:text-sm font-semibold tracking-widest">
-                        Get in Touch
-                    </span>
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mt-4 mb-4 sm:mb-6">
-                        Contact <br class="hidden sm:block">
-                        <span class="text-saffron">Our Team</span>
-                    </h2>
-                    <p class="text-gray-600 text-base sm:text-lg mb-6 sm:mb-8 max-w-xl leading-relaxed">
-                        For enquiries, information requests, or any questions you may have, 
-                        our team is here to assist you during regular office hours.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="contact.html" class="btn-secondary text-center sm:text-left">
-                            Send Enquiry
-                        </a>
-                    </div>
-                </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 mt-10 gap-8 sm:gap-12 items-center">
+    <!-- LEFT CONTENT -->
+    
+    <div class="order-2 lg:order-1">
+        <span class="text-blue-900 uppercase text-xs sm:text-sm font-semibold tracking-widest">
+            Get in Touch
+        </span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mt-4 mb-4 sm:mb-6">
+            Contact <br class="hidden sm:block">
+            <span class="text-saffron">Our Team</span>
+        </h2>
+        <p class="text-gray-600 text-base sm:text-lg mb-6 sm:mb-8 max-w-xl leading-relaxed">
+            For enquiries, information requests, or any questions you may have, 
+            our team is here to assist you during regular office hours.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+            <a href="contact.html" class="btn-secondary text-center sm:text-left">
+                Send Enquiry
+            </a>
+        </div>
+    </div>
 
-                <!-- RIGHT QUICK INFO -->
-            
-                <div class="order-1 lg:order-2 bg-white rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 flex-shrink-0 bg-primary rounded-lg flex items-center justify-center">
-                            <i class="fas fa-map-marker-alt text-saffron"></i>
-                        </div>
-                        <div class="min-w-0">
-                            <h4 class="font-semibold text-primary text-sm sm:text-base">Office Address</h4>
-                            <p class="text-gray-600 text-sm break-words">Level 27, 101 Collins Street, Melbourne, VIC 3000 Australia</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 flex-shrink-0 bg-primary rounded-lg flex items-center justify-center">
-                            <i class="fas fa-envelope text-saffron"></i>
-                        </div>
-                        <div class="min-w-0">
-                            <h4 class="font-semibold text-primary text-sm sm:text-base">Email</h4>
-                            <p class="text-gray-600 text-sm break-words">info@ausindbridge.org.au</p>
-                            <p class="text-gray-500 text-xs mt-1">For enquiries</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 flex-shrink-0 bg-primary rounded-lg flex items-center justify-center">
-                            <i class="fas fa-clock text-saffron"></i>
-                        </div>
-                        <div class="min-w-0">
-                            <h4 class="font-semibold text-primary text-sm sm:text-base">Office Hours</h4>
-                            <p class="text-gray-600 text-sm">Monday – Friday, 9:00 AM – 5:00 PM</p>
-                            <p class="text-gray-500 text-xs mt-1">AEST | Closed on weekends and public holidays</p>
-                        </div>
-                    </div>
-                </div>
+    <!-- RIGHT QUICK INFO -->
+  
+    <div class="order-1 lg:order-2 bg-white rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
+        <div class="flex items-start gap-4">
+            <div class="w-12 h-12 flex-shrink-0 bg-primary rounded-lg flex items-center justify-center">
+                <i class="fas fa-map-marker-alt text-saffron"></i>
             </div>
+            <div class="min-w-0">
+                <h4 class="font-semibold text-primary text-sm sm:text-base">Office Address</h4>
+                <p class="text-gray-600 text-sm break-words">Level 27, 101 Collins Street, Melbourne, VIC 3000 Australia</p>
+            </div>
+        </div>
+        
+        <!-- Added Phone Number Section -->
+        <div class="flex items-start gap-4">
+            <div class="w-12 h-12 flex-shrink-0 bg-primary rounded-lg flex items-center justify-center">
+                <i class="fas fa-phone-alt text-saffron"></i>
+            </div>
+            <div class="min-w-0">
+                <h4 class="font-semibold text-primary text-sm sm:text-base">Phone</h4>
+                <p class="text-gray-600 text-sm break-words">
+                    <a href="tel:+61386802586" class="hover:text-saffron transition-colors">
+                        +61 3 8680 2586
+                    </a>
+                </p>
+                <p class="text-gray-500 text-xs mt-1">During office hours</p>
+            </div>
+        </div>
+        
+        <div class="flex items-start gap-4">
+            <div class="w-12 h-12 flex-shrink-0 bg-primary rounded-lg flex items-center justify-center">
+                <i class="fas fa-envelope text-saffron"></i>
+            </div>
+            <div class="min-w-0">
+                <h4 class="font-semibold text-primary text-sm sm:text-base">Email</h4>
+                <p class="text-gray-600 text-sm break-words">
+                    <a href="mailto:info@ausindbridge.org.au" class="hover:text-saffron transition-colors">
+                        info@ausindbridge.org.au
+                    </a>
+                </p>
+                <p class="text-gray-500 text-xs mt-1">For enquiries</p>
+            </div>
+        </div>
+        
+        <div class="flex items-start gap-4">
+            <div class="w-12 h-12 flex-shrink-0 bg-primary rounded-lg flex items-center justify-center">
+                <i class="fas fa-clock text-saffron"></i>
+            </div>
+            <div class="min-w-0">
+                <h4 class="font-semibold text-primary text-sm sm:text-base">Office Hours</h4>
+                <p class="text-gray-600 text-sm">Monday – Friday, 9:00 AM – 5:00 PM</p>
+                <p class="text-gray-500 text-xs mt-1">AEST | Closed on weekends and public holidays</p>
+            </div>
+        </div>
+    </div>
+</div>
         </div>
     </section>
     

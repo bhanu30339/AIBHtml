@@ -89,6 +89,23 @@
                                 </div>
                             </div>
                             
+                            <!-- Phone Number -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-[#0C2340] rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-phone w-5 h-5 text-saffron"
+                                        aria-hidden="true">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-[#0C2340] mb-1">Phone Number</h3>
+                                    <p class="text-gray-600 text-sm">+61 3 8680 2586</p>
+                                    <p class="text-gray-500 text-xs mt-1">During office hours only</p>
+                                </div>
+                            </div>
+                            
                             <!-- Email -->
                             <div class="flex items-start gap-4">
                                 <div class="w-12 h-12 bg-[#0C2340] rounded-lg flex items-center justify-center flex-shrink-0">
@@ -141,6 +158,16 @@
                             <p class="text-white/70 text-sm mb-4">
                                 Please use this form for general enquiries, information requests, or any questions about our organization.
                             </p>
+                            <div class="flex items-center gap-2 text-white/70 text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-check-circle"
+                                    aria-hidden="true">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <span>Response within 1-2 business days</span>
+                            </div>
                         </div>
                     </div>
 
@@ -176,13 +203,39 @@
                                 </div>
                             </div>
                             
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label class="block text-sm font-semibold text-[#0C2340] mb-2">
+                                        Phone Number
+                                    </label>
+                                    <input
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 outline-none transition-all"
+                                        placeholder="Your phone number (optional)" type="tel">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-[#0C2340] mb-2">
+                                        Subject *
+                                    </label>
+                                    <input required
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 outline-none transition-all"
+                                        placeholder="Brief description of your enquiry" type="text">
+                                </div>
+                            </div>
+                            
                             <div class="mb-6">
                                 <label class="block text-sm font-semibold text-[#0C2340] mb-2">
-                                    Subject *
+                                    Enquiry Type *
                                 </label>
-                                <input required
-                                    class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 outline-none transition-all"
-                                    placeholder="Brief description of your enquiry" type="text">
+                                <select required
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 outline-none transition-all">
+                                    <option value="" selected disabled>Select enquiry type</option>
+                                    <option value="general">General Enquiry</option>
+                                    <option value="partnership">Partnership Opportunities</option>
+                                    <option value="media">Media & Press</option>
+                                    <option value="events">Event Information</option>
+                                    <option value="support">Support & Assistance</option>
+                                    <option value="other">Other</option>
+                                </select>
                             </div>
                             
                             <div class="mb-8">
@@ -251,11 +304,51 @@
                         <p class="text-xs text-gray-600">
                             Melbourne, VIC 3000 Australia
                         </p>
+                        <div class="flex items-center gap-2 mt-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-phone text-primary"
+                                aria-hidden="true">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <p class="text-xs text-gray-600">+61 3 8680 2586</p>
+                        </div>
                     </div>
                 </div>
             </div>
             
-           
+            <!-- Quick Contact CTA -->
+            <div class="max-w-4xl mx-auto mt-12 px-4">
+                <div class="bg-gradient-to-r from-primary to-accent rounded-2xl p-8 text-center text-white">
+                    <h3 class="text-2xl font-bold mb-4">Need Immediate Assistance?</h3>
+                    <p class="text-white/80 mb-6">
+                        For urgent matters during office hours, you can reach us directly by phone.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="tel:+61386802586" 
+                           class="bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-phone"
+                                aria-hidden="true">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            Call +61 3 8680 2586
+                        </a>
+                        <a href="mailto:info@ausindbridge.org.au"
+                           class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-mail"
+                                aria-hidden="true">
+                                <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+                                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                            </svg>
+                            Email Us
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     
@@ -279,19 +372,22 @@
                     e.preventDefault();
                     
                     // Basic validation
-                    const nameInput = contactForm.querySelector('input[type="text"]');
+                    const nameInput = contactForm.querySelector('input[placeholder="Your full name"]');
                     const emailInput = contactForm.querySelector('input[type="email"]');
                     const subjectInput = contactForm.querySelector('input[placeholder*="Brief description"]');
+                    const enquiryType = contactForm.querySelector('select');
                     const messageTextarea = contactForm.querySelector('textarea');
                     
                     let isValid = true;
                     
                     // Clear previous error styles
-                    [nameInput, emailInput, subjectInput, messageTextarea].forEach(input => {
-                        input.classList.remove('border-red-500');
-                        const errorMsg = input.nextElementSibling;
-                        if (errorMsg && errorMsg.classList.contains('text-red-500')) {
-                            errorMsg.remove();
+                    [nameInput, emailInput, subjectInput, enquiryType, messageTextarea].forEach(input => {
+                        if (input) {
+                            input.classList.remove('border-red-500');
+                            const errorMsg = input.nextElementSibling;
+                            if (errorMsg && errorMsg.classList.contains('text-red-500')) {
+                                errorMsg.remove();
+                            }
                         }
                     });
                     
@@ -311,6 +407,11 @@
                         isValid = false;
                     }
                     
+                    if (!enquiryType.value) {
+                        showError(enquiryType, 'Please select an enquiry type');
+                        isValid = false;
+                    }
+                    
                     if (!messageTextarea.value.trim()) {
                         showError(messageTextarea, 'Please enter your message');
                         isValid = false;
@@ -326,17 +427,28 @@
             }
             
             function showError(inputElement, message) {
-                inputElement.classList.add('border-red-500');
-                const errorElement = document.createElement('p');
-                errorElement.className = 'text-red-500 text-xs mt-1';
-                errorElement.textContent = message;
-                inputElement.parentNode.appendChild(errorElement);
+                if (inputElement) {
+                    inputElement.classList.add('border-red-500');
+                    const errorElement = document.createElement('p');
+                    errorElement.className = 'text-red-500 text-xs mt-1';
+                    errorElement.textContent = message;
+                    inputElement.parentNode.appendChild(errorElement);
+                }
             }
             
             function isValidEmail(email) {
                 const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 return re.test(String(email).toLowerCase());
             }
+            
+            // Add click-to-call functionality
+            const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+            phoneLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Optional: Add analytics tracking here
+                    console.log('Phone number clicked:', this.href);
+                });
+            });
         });
     </script>
 
