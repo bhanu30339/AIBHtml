@@ -238,6 +238,81 @@
             margin-right: 0.5rem;
             margin-bottom: 0.5rem;
         }
+
+        .initiative-icon {
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .partner-logo {
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .partner-logo img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: var(--saffron);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--saffron);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 0.5rem;
+            top: 1.5rem;
+            width: 2px;
+            height: calc(100% + 1rem);
+            background: linear-gradient(to bottom, var(--saffron), transparent);
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .program-highlight {
+            background: linear-gradient(135deg, rgba(12, 35, 64, 0.03), rgba(212, 175, 55, 0.03));
+            border-left: 4px solid var(--saffron);
+            padding: 1.5rem;
+            border-radius: 0 0.75rem 0.75rem 0;
+            margin: 1.5rem 0;
+        }
+
+        .parliament-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(12, 35, 64, 0.1), rgba(212, 175, 55, 0.1));
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            margin: 0.5rem;
+            font-size: 0.875rem;
+        }
     </style>
 </head>
 <body class="font-sans bg-light overflow-x-hidden">
@@ -249,8 +324,6 @@
         <!-- Hero Section -->
         <section class="relative pt-20 pb-20 overflow-hidden">
             <div class="absolute inset-0">
-                <!-- <img src="images/Aus-ind-Ab.jpg" 
-                     alt="About AIBF" class="w-full h-full object-cover"> -->
                 <div class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-accent/70"></div>
             </div>
             <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -269,7 +342,7 @@
             </div>
         </section>
 
-       
+        
 
         <!-- About Cards Section -->
         <section class="py-20 relative">
@@ -613,13 +686,13 @@
                     <div class="bg-white rounded-3xl p-8 card-hover shadow-lg border border-gray-100 relative overflow-hidden group">
                         <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-saffron to-secondary"></div>
                         <div class="relative z-10">
-                                    <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-primary/10 to-saffron/10 rounded-2xl flex items-center justify-center">
-                                        <img src="/images/Saclg.avif" alt="SACLG Logo" class="w-12 h-12 object-contain">
-                                    </div>
-                                    <h3 class="text-xl font-bold text-gray-900 text-center mb-4">South Asian Community Link Group-Australasia (SACLG)</h3>
-                                    <p class="text-gray-600 text-center text-sm mb-6">
-                                        Empowering south asian communities through cultural programs and community development.
-                                    </p>
+                            <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-primary/10 to-saffron/10 rounded-2xl flex items-center justify-center">
+                                <img src="/images/Saclg.avif" alt="SACLG Logo" class="w-12 h-12 object-contain">
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 text-center mb-4">South Asian Community Link Group-Australasia (SACLG)</h3>
+                            <p class="text-gray-600 text-center text-sm mb-6">
+                                Empowering south asian communities through cultural programs and community development.
+                            </p>
                         </div>
                     </div>
 
@@ -627,26 +700,564 @@
                     <div class="bg-white rounded-3xl p-8 card-hover shadow-lg border border-gray-100 relative overflow-hidden group">
                         <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary to-saffron"></div>
                         <div class="relative z-10">
-                                    <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-primary/10 to-saffron/10 rounded-2xl flex items-center justify-center">
-                                        <img src="/images/gopio_logo.jpg" alt="GOPIO Logo" class="w-12 h-12 object-contain">
-                                    </div>
-                                    <h3 class="text-xl font-bold text-gray-900 text-center mb-4">Global Organization of People of Indian Origin (GOPIO) Melbourne</h3>
-                                    <p class="text-gray-600 text-center text-sm mb-6">
-                                        Promoting welfare, unity, and cross-cultural engagement across the Indo-Australian diaspora.
-                                    </p>
+                            <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-primary/10 to-saffron/10 rounded-2xl flex items-center justify-center">
+                                <img src="/images/gopio_logo.jpg" alt="GOPIO Logo" class="w-12 h-12 object-contain">
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 text-center mb-4">Global Organization of People of Indian Origin (GOPIO) Melbourne</h3>
+                            <p class="text-gray-600 text-center text-sm mb-6">
+                                Promoting welfare, unity, and cross-cultural engagement across the Indo-Australian diaspora.
+                            </p>
                         </div>
                     </div>
 
-                    <!-- Removed AusInd Bridge entry from Legacy Partners as requested -->
+                    <!-- CTA Section -->
+                    <!-- <div class="bg-gradient-to-r from-primary to-accent rounded-3xl p-8 flex flex-col justify-center items-center text-center">
+                        <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-handshake text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Join Our Network</h3>
+                        <p class="text-white/80 mb-6">
+                            Become part of our growing community dedicated to strengthening Australia-India relations
+                        </p>
+                        <a href="/contact.html" class="px-8 py-3 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300">
+                            Get Involved
+                        </a>
+                    </div> -->
                 </div>
-
-                <!-- CTA Section -->
-                
             </div>
         </section>
 
+         <!-- Strategic Partners Section -->
+        <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center space-x-4 mb-6">
+                        <div class="w-20 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+                        <span class="text-blue-900 text-xs font-semibold tracking-wider uppercase">OUR PARTNERS</span>
+                        <div class="w-20 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+                    </div>
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                        <span class="text-gray-900">Strategic</span>
+                        <span class="block text-saffron">Partners</span>
+                    </h2>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                        We collaborate with premier institutions and organizations to drive excellence in education, research, technology, and cultural exchange
+                    </p>
+                </div>
 
-         <!-- NEW SECTION: Dignitaries Gallery -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Partner 1 -->
+                    <div class="bg-white rounded-2xl p-6 card-hover border border-gray-100">
+                        <div class="partner-logo">
+                            <img src="/images/NALSAR.png" alt="NALSAR University of Law" class="bg-black">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 text-center">NALSAR University of Law</h3>
+                        <p class="text-gray-600 text-sm text-center">
+                            A premier public law university in India, renowned for legal education, policy research, governance studies, and national impact.
+                        </p>
+                    </div>
+
+                    <!-- Partner 2 -->
+                    <div class="bg-white rounded-2xl p-6 card-hover border border-gray-100">
+                        <div class="partner-logo">
+                            <img src="/images/KIIT-Logo.png" alt="KIIT University">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 text-center">KIIT University</h3>
+                        <p class="text-gray-600 text-sm text-center">
+                            A leading deemed-to-be university in India offering a wide spectrum of programs across engineering, law, medicine, management, and liberal arts with strong global presence.
+                        </p>
+                    </div>
+
+                    <!-- Partner 3 -->
+                    <div class="bg-white rounded-2xl p-6 card-hover border border-gray-100">
+                        <div class="partner-logo">
+                            <img src="/images/Sri_Sri.png" alt="Sri Sri University">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 text-center">Sri Sri University</h3>
+                        <p class="text-gray-600 text-sm text-center">
+                            A multidisciplinary private university in Odisha known for holistic education, leadership development, ethics, and global exposure.
+                        </p>
+                    </div>
+
+                    <!-- Partner 4 -->
+                    <div class="bg-white rounded-2xl p-6 card-hover border border-gray-100">
+                        <div class="partner-logo">
+                            <img src="/images/NITHM.jpg" alt="NITHM">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 text-center">NITHM</h3>
+                        <p class="text-gray-600 text-sm text-center">
+                            An autonomous institute under the Ministry of Tourism, Government of India, specializing in tourism, hospitality, and travel management education.
+                        </p>
+                    </div>
+
+                    <!-- Partner 5 -->
+                    <div class="bg-white rounded-2xl p-6 card-hover border border-gray-100">
+                        <div class="partner-logo">
+                            <img src="/images/jlu.png" alt="Jagran Lakecity University">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 text-center">Jagran Lakecity University</h3>
+                        <p class="text-gray-600 text-sm text-center">
+                            A private university recognized for interdisciplinary, industry-linked programs across media, law, management, and liberal arts.
+                        </p>
+                    </div>
+
+                    <!-- Partner 6 -->
+                    <div class="bg-white rounded-2xl p-6 card-hover border border-gray-100">
+                        <div class="partner-logo">
+                            <img src="/images/TID.png" alt="Triveni Institute">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 text-center">Triveni Institute</h3>
+                        <p class="text-gray-600 text-sm text-center">
+                            A specialized dental education and healthcare institution offering academic, clinical, and research-based dental sciences programs.
+                        </p>
+                    </div>
+
+                    <!-- Partner 7 -->
+                    <div class="bg-white rounded-2xl p-6 card-hover border border-gray-100">
+                        <div class="partner-logo">
+                            <img src="/images/gsg-logo.svg" alt="Professor's Global School">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 text-center">Professor's Global School</h3>
+                        <p class="text-gray-600 text-sm text-center">
+                            An international school brand focused on global curricula, innovative pedagogy, and future-ready education models.
+                        </p>
+                    </div>
+
+                    <!-- Partner 8 -->
+                    <div class="bg-white rounded-2xl p-6 card-hover border border-gray-100">
+                        <div class="partner-logo">
+                            <img src="/images/data.png" alt="Dataviv Technologies">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 text-center">Dataviv Technologies</h3>
+                        <p class="text-gray-600 text-sm text-center">
+                            A cutting-edge artificial intelligence research company working on advanced AI-driven solutions and technology innovation.
+                        </p>
+                    </div>
+
+                    <!-- Partner 9 -->
+                    <div class="bg-white rounded-2xl p-6 card-hover border border-gray-100">
+                        <div class="partner-logo">
+                            <img src="/images/KLF-LOGO-04.png" alt="Kalinga Literary Festival">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 text-center">Kalinga Literary Festival</h3>
+                        <p class="text-gray-600 text-sm text-center">
+                            A prominent national literary and cultural platform promoting literature, arts, intellectual discourse, and cultural dialogue.
+                        </p>
+                    </div>
+
+                    <!-- Partner 10 -->
+                    <div class="bg-white rounded-2xl p-6 card-hover border border-gray-100">
+                        <div class="partner-logo">
+                            <img src="/images/Kalinga_kusum.jpg" alt="Kalinga Kusum">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 text-center">Kalinga Kusum</h3>
+                        <p class="text-gray-600 text-sm text-center">
+                            A cultural and literary initiative associated with the Kalinga/KIIT ecosystem, promoting arts, heritage, and thought leadership.
+                        </p>
+                    </div>
+
+                    <!-- Partner 11 -->
+                    <div class="bg-white rounded-2xl p-6 card-hover border border-gray-100">
+                        <div class="partner-logo">
+                            <img src="/images/LexMantra.avif" alt="LexMantra">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 text-center">LexMantra</h3>
+                        <p class="text-gray-600 text-sm text-center">
+                            A full-service business and legal consulting firm providing advisory services across corporate, legal, and compliance domains.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <div class="inline-flex items-center space-x-2 text-gray-600">
+                        <i class="fas fa-handshake text-saffron"></i>
+                        <span>Building meaningful partnerships for greater impact</span>
+                        <i class="fas fa-handshake text-saffron"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW: University Connect Programme Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center space-x-4 mb-6">
+                        <div class="w-20 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+                        <span class="text-blue-900 text-xs font-semibold tracking-wider uppercase">UNIVERSITY CONNECT</span>
+                        <div class="w-20 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+                    </div>
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                        <span class="text-gray-900">University Connect</span>
+                        <span class="block text-saffron">Programme</span>
+                    </h2>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                        Building bridges between Australian and Indian higher education institutions through strategic partnerships, digital internships, and student support initiatives
+                    </p>
+                </div>
+
+                <!-- Programme Overview -->
+                <div class="bg-gradient-to-r from-primary/5 to-saffron/5 rounded-3xl p-8 mb-12">
+                    <div class="flex flex-col lg:flex-row items-center gap-8">
+                        <div class="lg:w-1/3">
+                            <div class="w-24 h-24 bg-gradient-to-br from-primary to-saffron rounded-3xl flex items-center justify-center mb-6">
+                                <i class="fas fa-university text-3xl text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Programme Overview</h3>
+                            <p class="text-gray-600">
+                                It started with AusInd Bridge Foundation (AIBF)'s partnership with Sri Sri University, KIIT University and other national level institutions, establishing a framework for academic collaboration and student exchange.
+                            </p>
+                        </div>
+                        <div class="lg:w-2/3">
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                                <!-- University 1 -->
+                                <div class="bg-white rounded-xl p-4 text-center border border-gray-100">
+                                    <div class="partner-logo h-12 mb-2">
+                                        <i class="fas fa-graduation-cap text-2xl text-saffron"></i>
+                                    </div>
+                                    <h4 class="font-semibold text-gray-900 text-sm">Sri Sri University</h4>
+                                </div>
+                                <!-- University 2 -->
+                                <div class="bg-white rounded-xl p-4 text-center border border-gray-100">
+                                    <div class="partner-logo h-12 mb-2">
+                                        <i class="fas fa-flask text-2xl text-primary"></i>
+                                    </div>
+                                    <h4 class="font-semibold text-gray-900 text-sm">KIIT University</h4>
+                                </div>
+                                <!-- University 3 -->
+                                <div class="bg-white rounded-xl p-4 text-center border border-gray-100">
+                                    <div class="partner-logo h-12 mb-2">
+                                        <i class="fas fa-plane-departure text-2xl text-saffron"></i>
+                                    </div>
+                                    <h4 class="font-semibold text-gray-900 text-sm">NITHM</h4>
+                                </div>
+                                <!-- University 4 -->
+                                <div class="bg-white rounded-xl p-4 text-center border border-gray-100">
+                                    <div class="partner-logo h-12 mb-2">
+                                        <i class="fas fa-newspaper text-2xl text-primary"></i>
+                                    </div>
+                                    <h4 class="font-semibold text-gray-900 text-sm">Jagran Lakecity University</h4>
+                                </div>
+                                <!-- University 5 -->
+                                <div class="bg-white rounded-xl p-4 text-center border border-gray-100">
+                                    <div class="partner-logo h-12 mb-2">
+                                        <i class="fas fa-tooth text-2xl text-saffron"></i>
+                                    </div>
+                                    <h4 class="font-semibold text-gray-900 text-sm">Triveni Institute</h4>
+                                </div>
+                                <!-- University 6 -->
+                                <div class="bg-white rounded-xl p-4 text-center border border-gray-100">
+                                    <div class="partner-logo h-12 mb-2">
+                                        <i class="fas fa-plus-square text-2xl text-primary"></i>
+                                    </div>
+                                    <h4 class="font-semibold text-gray-900 text-sm">More Partnerships</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pilot Digital Internship -->
+                <div class="mb-16">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-8 text-center">
+                        <span class="text-primary">Pilot Digital Internship</span>
+                        <span class="text-saffron"> Program</span>
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                            <div class="flex items-center space-x-4 mb-6">
+                                <div class="w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-50 rounded-2xl flex items-center justify-center">
+                                    <i class="fas fa-laptop-code text-2xl text-blue-900"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-gray-900">Digital Engagement (2020)</h4>
+                                    <p class="text-sm text-gray-500">Initial Phase</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                During 2020, a series of online engagement sessions were conducted with Indian university students to support youth engagement, resilience, and cross-border collaboration.
+                            </p>
+                            <p class="text-gray-600">
+                                These interactions highlighted the need for an ongoing digital platform that could connect students in India with opportunities linked to Australia–India cooperation.
+                            </p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                            <div class="flex items-center space-x-4 mb-6">
+                                <div class="w-14 h-14 bg-gradient-to-br from-green-100 to-green-50 rounded-2xl flex items-center justify-center">
+                                    <i class="fas fa-briefcase text-2xl text-green-900"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-gray-900">Internship Implementation</h4>
+                                    <p class="text-sm text-gray-500">Practical Experience</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                In response, a pilot digital internship program was implemented in collaboration with an Indian university. Postgraduate management students participated remotely, working on projects designed to complement the Victorian Government's India Strategy.
+                            </p>
+                            <p class="text-gray-600">
+                                The internships provided students with practical exposure to international policy, market research, and strategic analysis while enabling sustained academic and professional engagement between Australia and India.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="program-highlight">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 bg-gradient-to-br from-saffron to-secondary rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-900 mb-2">Key Success Factor</h4>
+                                <p class="text-gray-600">
+                                    The pilot demonstrated the effectiveness of virtual internships as a scalable model for international collaboration and skills development. This innovative approach created new pathways for student engagement during challenging times.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COVID-19 Response Section -->
+                <div class="mb-16">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-8 text-center">
+                        <span class="text-primary">COVID-19 Response &</span>
+                        <span class="text-saffron"> Student Support</span>
+                        <span class="block text-lg font-normal text-gray-600 mt-2">(2020–2021)</span>
+                    </h3>
+
+                    <p class="text-gray-600 text-lg mb-8 text-center max-w-4xl mx-auto">
+                        During the COVID-19 pandemic, AusInd Bridge Foundation (AIBF) delivered targeted, non-commercial programmes focused on international student welfare, mental health, and Australia–India community engagement.
+                    </p>
+
+                    <!-- Support Initiatives Grid -->
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <!-- Initiative 1 -->
+                        <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm card-hover">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <div class="w-12 h-12 bg-gradient-to-br from-red-100 to-red-50 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-shopping-basket text-xl text-red-900"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-gray-900">International Student Welfare & Relief Support (Victoria)</h4>
+                            </div>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check text-saffron mt-1"></i>
+                                    <span>Coordinated food and grocery assistance for Indian and other international students in Victoria who lost part-time work and income</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check text-saffron mt-1"></i>
+                                    <span>Worked through community volunteers and local networks to identify students in financial distress</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check text-saffron mt-1"></i>
+                                    <span>Support was confidential, need-based, and prioritised students with no income or family support</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Initiative 2 -->
+                        <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm card-hover">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <div class="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-50 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-brain text-xl text-blue-900"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-gray-900">Student Mental Health & Wellbeing Support</h4>
+                            </div>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check text-saffron mt-1"></i>
+                                    <span>Delivered online group counselling and wellbeing sessions for students located in Australia and India</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check text-saffron mt-1"></i>
+                                    <span>Enabled one-to-one mentoring and emotional support for students experiencing anxiety, isolation, and uncertainty around visas and study completion</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check text-saffron mt-1"></i>
+                                    <span>Sessions focused on coping strategies, mental resilience, and maintaining academic continuity</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Initiative 3 -->
+                        <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm card-hover">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <div class="w-12 h-12 bg-gradient-to-br from-green-100 to-green-50 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-chalkboard-teacher text-xl text-green-900"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-gray-900">Mentoring & Career Continuity Webinars</h4>
+                            </div>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check text-saffron mt-1"></i>
+                                    <span>Conducted structured webinars and mentoring sessions covering post-COVID study and education pathways</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check text-saffron mt-1"></i>
+                                    <span>Focused on employability, career planning, health, wellbeing, and resilience during disruption</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check text-saffron mt-1"></i>
+                                    <span>Speakers included academics, industry professionals, policymakers, and community leaders from Australia, India, and Southeast Asia</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check text-saffron mt-1"></i>
+                                    <span>Programmes ensured continued access to guidance and learning during lockdowns</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Initiative 4 -->
+                        <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm card-hover">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <div class="w-12 h-12 bg-gradient-to-br from-purple-100 to-purple-50 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-handshake text-xl text-purple-900"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-gray-900">Australia–India Student & Community Engagement Dialogues</h4>
+                            </div>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check text-saffron mt-1"></i>
+                                    <span>Facilitated digital engagement to maintain people-to-people links between Australia and India while borders were closed</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check text-saffron mt-1"></i>
+                                    <span>Focused on student experiences, cross-cultural understanding, and shared recovery challenges</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <i class="fas fa-check text-saffron mt-1"></i>
+                                    <span>Strengthened trust between students, Australian institutions, and community leadership during the crisis</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Parliamentary Support Section -->
+                    <div class="bg-gradient-to-r from-primary/10 to-saffron/10 rounded-2xl p-8">
+                        <h4 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+                            <i class="fas fa-landmark text-saffron mr-2"></i>
+                            Partnerships & Engagement Support (COVID Period)
+                        </h4>
+                        <p class="text-gray-600 text-center mb-6">
+                            The following parliamentary offices provided engagement support and participation during this period:
+                        </p>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <div class="parliament-badge">
+                                <i class="fas fa-user-tie text-primary mr-2"></i>
+                                <span>MP Office of Sujeet Kumar</span>
+                                <span class="ml-2 text-saffron font-semibold">Rajya Sabha</span>
+                            </div>
+                            <div class="parliament-badge">
+                                <i class="fas fa-user-tie text-primary mr-2"></i>
+                                <span>MP Office of Thamizhachi Thangapandian</span>
+                                <span class="ml-2 text-saffron font-semibold">Lok Sabha</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-500 text-center mt-6 text-sm">
+                            Parliament of India
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Initiatives Section -->
+        <section class="py-20 bg-gradient-to-b from-white to-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center space-x-4 mb-6">
+                        <div class="w-20 h-px bg-gradient-to-r from-transparent via-saffron to-transparent"></div>
+                        <span class="text-blue-900 text-xs font-semibold tracking-wider uppercase">OUR IMPACT</span>
+                        <div class="w-20 h-px bg-gradient-to-r from-transparent via-saffron to-transparent"></div>
+                    </div>
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                        <span class="text-gray-900">Community</span>
+                        <span class="block text-saffron">Initiatives</span>
+                    </h2>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                        During challenging times, we've provided essential support and built resilient community networks
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Initiative 1 -->
+                    <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100">
+                        <div class="initiative-icon bg-gradient-to-br from-blue-100 to-blue-50">
+                            <i class="fas fa-utensils text-2xl text-blue-900"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Essential Support</h3>
+                        <p class="text-gray-600">
+                            Delivered food and grocery assistance to international students in Victoria facing financial hardship.
+                        </p>
+                    </div>
+
+                    <!-- Initiative 2 -->
+                    <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100">
+                        <div class="initiative-icon bg-gradient-to-br from-green-100 to-green-50">
+                            <i class="fas fa-heart text-2xl text-green-900"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Mental Wellbeing</h3>
+                        <p class="text-gray-600">
+                            Provided online group counselling and one-to-one mentoring to support mental wellbeing during periods of isolation and uncertainty.
+                        </p>
+                    </div>
+
+                    <!-- Initiative 3 -->
+                    <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100">
+                        <div class="initiative-icon bg-gradient-to-br from-purple-100 to-purple-50">
+                            <i class="fas fa-hands-helping text-2xl text-purple-900"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Settlement Support</h3>
+                        <p class="text-gray-600">
+                            Assisted new migrants from India with settlement support, including guidance on education, employment pathways, and access to local services.
+                        </p>
+                    </div>
+
+                    <!-- Initiative 4 -->
+                    <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100">
+                        <div class="initiative-icon bg-gradient-to-br from-yellow-100 to-yellow-50">
+                            <i class="fas fa-users text-2xl text-yellow-900"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Community Engagement</h3>
+                        <p class="text-gray-600">
+                            Ran webinars, mentoring programs and community forums to share accurate information, build connections and reduce anxiety.
+                        </p>
+                    </div>
+
+                    <!-- Initiative 5 -->
+                    <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100">
+                        <div class="initiative-icon bg-gradient-to-br from-red-100 to-red-50">
+                            <i class="fas fa-network-wired text-2xl text-red-900"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Trusted Networks</h3>
+                        <p class="text-gray-600">
+                            Created trusted community networks that offered practical help, emotional support and a sense of belonging during the pandemic.
+                        </p>
+                    </div>
+
+                    <!-- Initiative 6 -->
+                    <div class="bg-white rounded-2xl p-8 card-hover border border-gray-100">
+                        <div class="initiative-icon bg-gradient-to-br from-indigo-100 to-indigo-50">
+                            <i class="fas fa-bridge text-2xl text-indigo-900"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Building Bridges</h3>
+                        <p class="text-gray-600">
+                            Our ongoing commitment to connect communities, provide support, and foster meaningful relationships between Australia and India.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <div class="inline-flex items-center space-x-3 text-gray-600">
+                        <i class="fas fa-hand-holding-heart text-saffron"></i>
+                        <span>Supporting communities since the beginning of the pandemic</span>
+                        <i class="fas fa-hand-holding-heart text-saffron"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dignitaries Gallery -->
         <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
@@ -861,7 +1472,7 @@
 
             // Card hover effects
             document.querySelectorAll('.card-hover').forEach(card => {
-                card.addEventListener('mouseenter', function() {
+                card.addEventListener('mouseenter', function(e) {
                     const rect = this.getBoundingClientRect();
                     const x = e.clientX - rect.left;
                     const y = e.clientY - rect.top;
@@ -902,21 +1513,20 @@
         });
     </script>
     <script src="js/include.js"></script>
-  <script src="js/header.js"></script>
-  <script>
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement(
-    {
-      pageLanguage: 'en',
-      autoDisplay: false
-    },
-    'google_translate_element'
-  );
-}
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-<script src="js/search-data.js"></script>
-<script src="js/search.js"></script>
+    <script src="js/header.js"></script>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en',
+                    autoDisplay: false
+                },
+                'google_translate_element'
+            );
+        }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="js/search-data.js"></script>
+    <script src="js/search.js"></script>
 </body>
 </html>
