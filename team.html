@@ -77,8 +77,9 @@
     .stagger-delay-4 { animation-delay: 0.4s; }
     
     .filter-btn.active {
-      background-color: #0C2340;
-      color: white;
+      background-color: #000;
+      color: #fff;
+      border-color: #000;
     }
     
     .team-section {
@@ -123,19 +124,19 @@
       <div class="flex flex-wrap justify-center gap-4">
         <button 
           id="fullTeamBtn" 
-          class="filter-btn px-6 py-3 bg-saffron text-white rounded-lg font-semibold hover:bg-[#e6892e] transition-colors active"
+          class="filter-btn px-6 py-3 bg-black text-white border border-black rounded-lg font-semibold hover:bg-gray-900 transition-colors active"
           data-target="full-team">
           <i class="fas fa-users mr-2"></i>Full Team
         </button>
         <button 
           id="directorsBtn" 
-          class="filter-btn px-6 py-3 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300 transition-colors"
+          class="filter-btn px-6 py-3 bg-white text-gray-800 border border-gray-300 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
           data-target="directors">
           <i class="fas fa-user-tie mr-2"></i>Executive Leadership
         </button>
         <button 
           id="advisoryBtn" 
-          class="filter-btn px-6 py-3 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300 transition-colors"
+          class="filter-btn px-6 py-3 bg-white text-gray-800 border border-gray-300 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
           data-target="advisory-board">
           <i class="fas fa-graduation-cap mr-2"></i>Advisory Board
         </button>
