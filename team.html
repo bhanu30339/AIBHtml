@@ -82,13 +82,18 @@
     .stagger-delay-4 { animation-delay: 0.4s; }
     
     .filter-btn {
-      background-color: #000;
-      color: #fff;
-      border: 1px solid #000;
+      background-color: #e5e7eb;
+      color: #1f2937;
+      border: 1px solid #d1d5db;
     }
 
     .filter-btn:hover,
-    .filter-btn:focus-visible,
+    .filter-btn:focus-visible {
+      background-color: #dcdfe3;
+      color: #111827;
+      border-color: #cbd2d9;
+    }
+
     .filter-btn.active {
       background-color: #000;
       color: #fff;
@@ -596,10 +601,16 @@ function googleTranslateElementInit() {
           
           // Update active button
           filterButtons.forEach(btn => {
-            btn.classList.remove('active');
+            btn.classList.remove('active', 'bg-gray-200', 'text-gray-700', 'bg-saffron', 'text-white');
+            btn.style.backgroundColor = '';
+            btn.style.color = '';
+            btn.style.borderColor = '';
           });
           
           this.classList.add('active');
+          this.style.backgroundColor = '';
+          this.style.color = '';
+          this.style.borderColor = '';
           
           // Show/hide sections
           teamSections.forEach(section => {
