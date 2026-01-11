@@ -299,7 +299,7 @@
         }
     </style>
 </head>
-<body class="notranslate bg-white text-gray-800">
+<body class=" bg-white text-gray-800">
     <!-- Header would go here -->
     <div data-include="components/header.html"></div>
 
@@ -1414,10 +1414,16 @@
     <!-- Footer would go here -->
     <!-- <footer data-include="components/footer.html"></footer> -->
 
+    <div data-include="components/chat.html"></div>
+    <div data-include="components/navigation-controls.html"></div>
+    <footer data-include="components/footer.html"></footer>
+
     <script src="/_next/static/chunks/webpack-a7f1c6512654c8e1.js" async=""></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/include.js"></script>
     <script src="js/header.js"></script>
+    <script src="js/search-data.js"></script>
+    <script src="js/search.js"></script>
     <script>
         function googleTranslateElementInit() {
             new google.translate.TranslateElement(
@@ -1430,9 +1436,6 @@
         }
     </script>
     <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-    <script src="js/search-data.js"></script>
-    <script src="js/search.js"></script>
 
     <script>
         // Video player functionality
@@ -1662,12 +1665,5 @@
             document.head.appendChild(style);
         });
     </script>
-
-    <div data-include="components/chat.html"></div>
-    <div data-include="components/navigation-controls.html"></div>
-    <footer data-include="components/footer.html"></footer>
-
-    <script src="js/include.js"></script>
-    <script src="js/header.js"></script>
 </body>
 </html>
