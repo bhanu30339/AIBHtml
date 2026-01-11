@@ -569,10 +569,10 @@
     
 
     <!-- ================= FLOATING CHAT ================= -->
-<div class="chat-wrapper">
+<div class="chat-wrapper" translate="no">
 
   <!-- Toggle Button -->
-  <button id="chatToggle" class="chat-toggle">
+  <button id="chatToggle" class="chat-toggle notranslate" translate="no">
     💬
   </button>
 
@@ -582,7 +582,7 @@
     <!-- Header -->
     <div class="chat-header">
       <span>Send an Enquiry</span>
-      <button id="chatClose" class="chat-close">✕</button>
+      <button id="chatClose" class="chat-close notranslate" translate="no">✕</button>
     </div>
 
     <!-- Body - Contact Form -->
@@ -665,6 +665,7 @@
   font-size: 22px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
+  translate: no;
 }
 
 .chat-toggle:hover {
