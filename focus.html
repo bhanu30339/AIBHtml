@@ -8,6 +8,43 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    /* Hide ALL Google Translate elements */
+    .goog-te-banner-frame {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Hide Google Translate floating toolbar */
+    .goog-te-floating-button-container {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    
+    /* Hide the main translate element */
+    .skiptranslate {
+        display: none !important;
+    }
+    
+    /* Hide the Google Translate icon bar */
+    div#goog-gt {
+        display: none !important;
+    }
+    
+    /* Hide Google Translate notification */
+    .goog-te-gadget {
+        display: none !important;
+    }
+    
+    /* Remove top margin when Google Translate banner is hidden */
+    body {
+        top: 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
     :root {
       --primary: #0C2340;
       --secondary: #D4AF37;
