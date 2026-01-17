@@ -26,7 +26,7 @@ const SHEET_ID = 'YOUR_GOOGLE_SHEET_ID_HERE';
 const SHEET_NAME = 'Contact Submissions';
 
 // Email address to receive notifications
-const NOTIFICATION_EMAIL = 'info@ausindbridge.org.au';
+const NOTIFICATION_EMAIL = 'info@ausindbridge.org';
 
 // Enable/disable email notifications
 const SEND_EMAIL_NOTIFICATIONS = true;
@@ -318,7 +318,7 @@ function sendAutoReply(data) {
             <p>Our team will review your message and respond within 1-2 business days. If your enquiry is urgent, please feel free to contact us directly:</p>
             
             <ul>
-              <li><strong>Email:</strong> <a href="mailto:info@ausindbridge.org.au">info@ausindbridge.org.au</a></li>
+              <li><strong>Email:</strong> <a href="mailto:info@ausindbridge.org">info@ausindbridge.org</a></li>
               <li><strong>Phone:</strong> +61 2 6273 3637</li>
             </ul>
             

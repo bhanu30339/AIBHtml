@@ -48,8 +48,8 @@ Update these values at the top of the script:
 // Replace with your Google Sheet ID from Step 1
 const SHEET_ID = 'YOUR_GOOGLE_SHEET_ID_HERE';
 
-// Email where notifications will be sent (default: info@ausindbridge.org.au)
-const NOTIFICATION_EMAIL = 'info@ausindbridge.org.au';
+// Email where notifications will be sent (default: info@ausindbridge.org)
+const NOTIFICATION_EMAIL = 'info@ausindbridge.org';
 
 // Enable/disable features as needed
 const SEND_EMAIL_NOTIFICATIONS = true;
@@ -137,7 +137,7 @@ const SEND_AUTO_REPLY = true;
 - Automatic column formatting and resizing
 
 ### 2. **Email Notifications**
-- **Admin Notification**: Sent to `info@ausindbridge.org.au` with full submission details
+- **Admin Notification**: Sent to `info@ausindbridge.org` with full submission details
 - **Auto-Reply**: Professional acknowledgment sent to the person who submitted the form
 - Both emails are HTML-formatted with branding
 
@@ -287,4 +287,4 @@ For technical issues:
 
 **Last Updated**: December 2024  
 **Version**: 1.0  
-**Contact**: info@ausindbridge.org.au
+**Contact**: info@ausindbridge.org
