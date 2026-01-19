@@ -47,6 +47,10 @@ function initHeaderMenu() {
       mobilePillarsMenu.classList.add('hidden');
     }
     if (pillarsArrow) pillarsArrow.style.transform = '';
+
+    if (languageDropdown.classList.contains('open')) {
+      showAllLanguages(true);
+    }
   };
 
   document.addEventListener('click', (e) => {
@@ -172,12 +176,12 @@ function googleTranslate(lang) {
   }, 8000);
 }
 
-function showAllLanguages() {
+function showAllLanguages(forceShow = false) {
   const container = document.getElementById('allLangContainer');
   if (!container) return;
 
-  // Toggle if already visible
-  if (!container.classList.contains('hidden')) {
+  // Toggle if already visible (unless forced open)
+  if (!forceShow && !container.classList.contains('hidden')) {
     container.classList.add('hidden');
     return;
   }

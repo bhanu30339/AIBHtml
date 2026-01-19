@@ -310,7 +310,7 @@
                 <div class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-accent/70"></div>
             </div>
             <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="max-w-3xl animate-fade-in">
+                <div class="max-w-3xl">
                     <div class="inline-flex items-center space-x-2 text-saffron font-semibold uppercase text-sm tracking-wider mb-4">
                         <!-- <span>News</span> -->
                     </div>
@@ -1525,53 +1525,6 @@ A key takeaway from the event was the importance of tech-enabled diplomacy and i
                 // Your existing nextImage code
             }
             
-            // Animation on scroll
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.animationPlayState = 'running';
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            });
-            
-            document.querySelectorAll('.animate-fade-in').forEach(el => {
-                observer.observe(el);
-            });
-            
-            // Add animation styles
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes fadeIn {
-                    from {
-                        opacity: 0;
-                        transform: translateY(20px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-                
-                .animate-fade-in {
-                    animation: fadeIn 0.6s ease-out forwards;
-                    animation-play-state: paused;
-                    opacity: 0;
-                }
-                
-                .news-gallery img {
-                    transition: transform 0.3s ease, box-shadow 0.3s ease;
-                }
-                
-                .news-gallery img:hover {
-                    transform: scale(1.05);
-                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-                }
-            `;
-            document.head.appendChild(style);
         });
     </script>
 </body>
