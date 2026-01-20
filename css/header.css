@@ -46,6 +46,16 @@
     width: 100%;
 }
 
+/* Dropdown hover bridge to prevent flicker */
+nav .relative.group::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 12px;
+}
+
 /* Mobile menu items */
 .mobile-item {
     display: block;

@@ -108,7 +108,7 @@
   position: absolute;
   right: 0;
   bottom: 70px;
-  width: 380px;
+  width: min(380px, calc(100vw - 40px));
   max-width: 95vw;
   max-height: 80vh;
   background: #ffffff;
@@ -319,7 +319,7 @@
 /* ================= RESPONSIVE ================= */
 @media (max-width: 480px) {
   .chat-box {
-    width: 340px;
+    width: min(340px, calc(100vw - 20px));
     right: 10px;
   }
   

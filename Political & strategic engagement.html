@@ -178,6 +178,34 @@
             animation: float 25s ease-in-out infinite reverse;
         }
 
+        @media (max-width: 768px) {
+            .shape-1 {
+                width: 200px;
+                height: 200px;
+                right: -10%;
+            }
+
+            .shape-2 {
+                width: 140px;
+                height: 140px;
+                left: -10%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .shape-1 {
+                width: 160px;
+                height: 160px;
+                top: 5%;
+            }
+
+            .shape-2 {
+                width: 120px;
+                height: 120px;
+                bottom: 8%;
+            }
+        }
+
         .stagger-animation > * {
             opacity: 0;
             transform: translateY(30px);
