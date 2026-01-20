@@ -78,16 +78,160 @@ function initHeaderMenu() {
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
   }, false);
 
+  // Ensure language options exist
+  ensureLanguageOptions();
+
   // Populate desktop language list
   populateDesktopLanguageList();
   
   // Populate mobile language list
   populateMobileLanguageList();
   
-  // Initialize search functionality
+  // Initialize search functionality (may load after this script)
   if (typeof initSearch === 'function') {
     initSearch();
+  } else {
+    window.addEventListener('load', () => {
+      if (typeof initSearch === 'function') {
+        initSearch();
+      }
+    });
   }
+}
+
+// Auto-init header once DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initHeaderMenu);
+} else {
+  initHeaderMenu();
+}
+
+function ensureLanguageOptions() {
+  const desktopSelect = document.getElementById('desktopLanguageSelect');
+  const mobileSelect = document.getElementById('mobileLanguageSelect');
+
+  const options = [
+    { value: 'en', label: 'English' },
+    { value: 'af', label: 'Afrikaans' },
+    { value: 'sq', label: 'Shqip' },
+    { value: 'am', label: 'አማርኛ' },
+    { value: 'ar', label: 'العربية' },
+    { value: 'hy', label: 'Հայերեն' },
+    { value: 'az', label: 'Azərbaycanca' },
+    { value: 'eu', label: 'Euskara' },
+    { value: 'be', label: 'Беларусь' },
+    { value: 'bn', label: 'বাংলা' },
+    { value: 'bs', label: 'Bosanski' },
+    { value: 'bg', label: 'Български' },
+    { value: 'ca', label: 'Català' },
+    { value: 'ceb', label: 'Cebuano' },
+    { value: 'ny', label: 'Chichewa' },
+    { value: 'zh-CN', label: '中文 (简体)' },
+    { value: 'zh-TW', label: '中文 (繁體)' },
+    { value: 'co', label: 'Corsu' },
+    { value: 'hr', label: 'Hrvatski' },
+    { value: 'cs', label: 'Čeština' },
+    { value: 'da', label: 'Dansk' },
+    { value: 'nl', label: 'Nederlands' },
+    { value: 'eo', label: 'Esperanto' },
+    { value: 'et', label: 'Eesti' },
+    { value: 'tl', label: 'Filipino' },
+    { value: 'fi', label: 'Suomi' },
+    { value: 'fr', label: 'Français' },
+    { value: 'fy', label: 'Frisian' },
+    { value: 'gl', label: 'Galego' },
+    { value: 'ka', label: 'ქართული' },
+    { value: 'de', label: 'Deutsch' },
+    { value: 'el', label: 'Ελληνικά' },
+    { value: 'gu', label: 'ગુજરાતી' },
+    { value: 'ht', label: 'Kreyòl Ayisyen' },
+    { value: 'ha', label: 'Hausa' },
+    { value: 'haw', label: 'Hawaiki' },
+    { value: 'hi', label: 'हिन्दी' },
+    { value: 'hu', label: 'Magyar' },
+    { value: 'is', label: 'Íslenska' },
+    { value: 'ig', label: 'Igbo' },
+    { value: 'id', label: 'Bahasa Indonesia' },
+    { value: 'ga', label: 'Gaeilge' },
+    { value: 'it', label: 'Italiano' },
+    { value: 'ja', label: '日本語' },
+    { value: 'jw', label: 'Basa Jawa' },
+    { value: 'kk', label: 'Қазақ' },
+    { value: 'km', label: 'ខ្មែរ' },
+    { value: 'rw', label: 'Kinyarwanda' },
+    { value: 'ko', label: '한국어' },
+    { value: 'ku', label: 'کوردی' },
+    { value: 'ky', label: 'Кыргызча' },
+    { value: 'lo', label: 'ລາວ' },
+    { value: 'la', label: 'Latina' },
+    { value: 'lv', label: 'Latviešu' },
+    { value: 'lt', label: 'Lietuvių' },
+    { value: 'lb', label: 'Lëtzebuergesch' },
+    { value: 'mk', label: 'Македонски' },
+    { value: 'mg', label: 'Malagasy' },
+    { value: 'ms', label: 'Bahasa Melayu' },
+    { value: 'ml', label: 'മലയാളം' },
+    { value: 'mt', label: 'Maltese' },
+    { value: 'mi', label: 'Māori' },
+    { value: 'mr', label: 'मराठी' },
+    { value: 'mn', label: 'Монгол' },
+    { value: 'my', label: 'မြန်မာ' },
+    { value: 'ne', label: 'नेपाली' },
+    { value: 'no', label: 'Norsk' },
+    { value: 'or', label: 'ଓଡିଆ' },
+    { value: 'ps', label: 'پښتو' },
+    { value: 'fa', label: 'فارسی' },
+    { value: 'pl', label: 'Polski' },
+    { value: 'pt', label: 'Português' },
+    { value: 'pt-BR', label: 'Português (Brasil)' },
+    { value: 'pa', label: 'ਪੰਜਾਬੀ' },
+    { value: 'ro', label: 'Română' },
+    { value: 'ru', label: 'Русский' },
+    { value: 'sm', label: 'Samoan' },
+    { value: 'gd', label: 'Gàidhlig' },
+    { value: 'sr', label: 'Српски' },
+    { value: 'st', label: 'Sesotho' },
+    { value: 'sn', label: 'Shona' },
+    { value: 'sd', label: 'سنڌي' },
+    { value: 'si', label: 'සිංහල' },
+    { value: 'sk', label: 'Slovenčina' },
+    { value: 'sl', label: 'Slovenščina' },
+    { value: 'so', label: 'Somali' },
+    { value: 'es', label: 'Español' },
+    { value: 'su', label: 'Sundanese' },
+    { value: 'sw', label: 'Swahili' },
+    { value: 'sv', label: 'Svenska' },
+    { value: 'tg', label: 'Тоҷикӣ' },
+    { value: 'ta', label: 'தமிழ்' },
+    { value: 'te', label: 'తెలుగు' },
+    { value: 'th', label: 'ไทย' },
+    { value: 'tr', label: 'Türkçe' },
+    { value: 'tk', label: 'Түркмөнче' },
+    { value: 'uk', label: 'Українська' },
+    { value: 'ur', label: 'اردو' },
+    { value: 'ug', label: 'ئۇيغۇرچە' },
+    { value: 'uz', label: "O'zbek" },
+    { value: 'vi', label: 'Tiếng Việt' },
+    { value: 'cy', label: 'Cymraeg' },
+    { value: 'xh', label: 'Xhosa' },
+    { value: 'yi', label: 'יידיש' },
+    { value: 'yo', label: 'Yorùbá' },
+    { value: 'zu', label: 'Zulu' }
+  ];
+
+  const fill = (select) => {
+    if (!select) return;
+    if (select.options.length > 1) return;
+    options.forEach(opt => {
+      const option = document.createElement('option');
+      option.value = opt.value;
+      option.textContent = opt.label;
+      select.appendChild(option);
+    });
+  };
+
+  fill(desktopSelect);
+  fill(mobileSelect);
 }
 
 // Toggle function called from the inline onclick in mobile header

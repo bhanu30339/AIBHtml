@@ -63,9 +63,134 @@
             padding-top: 0 !important;
         }
     </style>
+    <link rel="stylesheet" href="css/header.css">
     </head>
     <body class="">
-    <div data-include="components/header.html"></div>
+    <div id="google_translate_element" style="display:none;"></div>
+    <nav class="sticky top-0 z-50 bg-white shadow-lg theme-transition">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-4">
+                    <div class="w-36 h-full rounded-lg overflow-hidden">
+                        <img src="images/LogoHz.png" alt="AIBF Logo" class="w-full h-full object-cover">
+                    </div>
+                </a>
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="index.html" class="nav-link group" data-translate="home">
+                        Home <span class="underline-hover"></span>
+                    </a>
+                    <a href="about.html" class="nav-link group"  data-translate="about">
+                        About Us <span class="underline-hover"></span>
+                    </a>
+                    <a href="team.html" class="nav-link group" data-translate="board">
+                        Team <span class="underline-hover"></span>
+                    </a>
+                    <div class="relative group">
+                        <button class="nav-link group flex items-center gap-1">
+                            Strategic Pillars
+                            <svg class="w-4 h-4 mt-0.5 transition-transform duration-300 group-hover:rotate-180"
+                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M19 9l-7 7-7-7" />
+                            </svg>
+                            <span class="underline-hover"></span>
+                        </button>
+                        <div class="absolute left-0 mt-3 w-72 bg-white rounded-xl shadow-xl border border-gray-200 
+                                    opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                                    transition-all duration-300 z-50">
+                            <a href="Political & strategic engagement.html"
+                               class="block px-5 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">
+                                Political & Strategic Engagement
+                            </a>
+                            <a href="bilateral trade & business.html"
+                               class="block px-5 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">
+                                Bilateral Trade & Business
+                            </a>
+                            <a href="charitable & social impact.html"
+                               class="block px-5 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">
+                                Charitable & Social Impact
+                            </a>
+                        </div>
+                    </div>
+                    <a href="news.html" class="nav-link group" data-translate="news">
+                        News <span class="underline-hover"></span>
+                    </a>
+                    <a href="contact.html" class="nav-link group" data-translate="contact">
+                        Contact Us <span class="underline-hover"></span>
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <button id="searchBtn" class="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors" aria-label="Search">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </button>
+                        <div id="searchDropdown" class="search-dropdown absolute mt-2 w-screen sm:w-80 md:w-80 lg:w-80 bg-white dark:bg-gray-800 rounded-lg shadow-xl border dark:border-gray-700 z-50 -left-4 sm:right-0 sm:left-auto sm:w-80">
+                            <div class="p-3 sm:p-4">
+                                <div class="relative">
+                                    <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400 z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                    </svg>
+                                    <input id="searchInput" type="text" placeholder="Search website" class="w-full px-4 py-2 sm:py-3 pl-10 bg-gray-50 dark:bg-gray-900 text-gray-900 border dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary text-sm sm:text-base" />
+                                </div>
+                                <div id="searchResults" class="hidden mt-2 max-h-48 sm:max-h-64 overflow-y-auto bg-white text-gray-900 dark:bg-gray-800 border dark:border-gray-700 rounded-lg shadow"></div>
+                                <div class="mt-2 text-xs text-gray-500 dark:text-gray-400">Press Enter</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <button id="languageBtn" class="flex items-center space-x-1 p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+                            </svg>
+                            <span class="text-sm">EN</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="languageDropdown" class="language-dropdown absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-xl border dark:border-gray-700 z-50">
+                            <div class="py-2">
+                                <div class="px-4 py-2 text-xs text-gray-500 dark:text-gray-400 border-b dark:border-gray-700">Select Language</div>
+                                <div id="desktopLanguageList" class="text-gray-900 max-h-80 overflow-y-auto"></div>
+                                <div class="px-4 py-2 border-t dark:border-gray-700">
+                                    <div id="allLangContainer" class="hidden px-2 py-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <select id="desktopLanguageSelect" class="hidden">
+                            <option value="">Select Language...</option>
+                        </select>
+                    </div>
+                    <button id="mobileBtn" class="lg:hidden p-2 text-primary dark:text-gray-900">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="mobileMenu" class="mobile-menu text-gray-900 dark:text-gray-100 fixed top-20 left-0 w-full max-h-[calc(100vh-80px)] overflow-y-auto bg-white dark:bg-gray-800 shadow-lg lg:hidden z-50 theme-transition border-t dark:border-gray-700">
+        <a href="index.html" class="mobile-item">Home</a>
+        <a href="about.html" class="mobile-item">About Us</a>
+        <a href="team.html" class="mobile-item">Team</a>
+        <div class="border-b">
+            <button id="mobilePillarsBtn" onclick="toggleMobilePillars()" class="mobile-item pl-10 flex items-center justify-between">
+                Strategic Pillars
+                <svg id="pillarsArrow" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+            </button>
+            <div id="mobilePillarsMenu" class="hidden bg-gray-50 dark:bg-gray-900">
+                <a href="Political & strategic engagement.html" class="mobile-item pl-10">Political & Strategic Engagement</a>
+                <a href="bilateral trade & business.html" class="mobile-item pl-10">Bilateral Trade & Business</a>
+                <a href="charitable & social impact.html" class="mobile-item pl-10">Charitable & Social Impact</a>
+            </div>
+        </div>
+        <a href="news.html" class="mobile-item">News</a>
+        <a href="contact.html" class="mobile-item">Contact Us</a>
+    </div>
     
     <!-- Hero Section -->
     <section class="relative pt-20 pb-20 overflow-hidden">

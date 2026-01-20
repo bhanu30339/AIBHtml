@@ -45,6 +45,7 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/header.css">
     <style>
         /* Hide ALL Google Translate elements */
         .goog-te-banner-frame {
@@ -231,11 +232,6 @@
             overflow: hidden;
         }
         
-        .dignitary-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(12, 35, 64, 0.15);
-        }
-        
         .dignitary-image {
             position: relative;
             overflow: hidden;
@@ -243,11 +239,7 @@
         }
         
         .dignitary-image img {
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .dignitary-card:hover .dignitary-image img {
-            transform: scale(1.05);
+            transition: none;
         }
         
         .dignitary-badge {
@@ -353,7 +345,239 @@
 </head>
 <body class="font-sans bg-light overflow-x-hidden">
     <!-- Header Included -->
-    <div data-include="components/header.html"></div>
+    <div id="google_translate_element" style="display:none;"></div>
+    <nav class="sticky top-0 z-50 bg-white shadow-lg theme-transition">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-4">
+                    <div class="w-36 h-full rounded-lg overflow-hidden">
+                        <img src="images/LogoHz.png" alt="AIBF Logo" class="w-full h-full object-cover">
+                    </div>
+                </a>
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="index.html" class="nav-link group" data-translate="home">
+                        Home <span class="underline-hover"></span>
+                    </a>
+                    <a href="about.html" class="nav-link group"  data-translate="about">
+                        About Us <span class="underline-hover"></span>
+                    </a>
+                    <a href="team.html" class="nav-link group" data-translate="board">
+                        Team <span class="underline-hover"></span>
+                    </a>
+                    <div class="relative group">
+                        <button class="nav-link group flex items-center gap-1">
+                            Strategic Pillars
+                            <svg class="w-4 h-4 mt-0.5 transition-transform duration-300 group-hover:rotate-180"
+                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M19 9l-7 7-7-7" />
+                            </svg>
+                            <span class="underline-hover"></span>
+                        </button>
+                        <div class="absolute left-0 mt-3 w-72 bg-white rounded-xl shadow-xl border border-gray-200 
+                                    opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                                    transition-all duration-300 z-50">
+                            <a href="Political & strategic engagement.html"
+                               class="block px-5 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">
+                                Political & Strategic Engagement
+                            </a>
+                            <a href="bilateral trade & business.html"
+                               class="block px-5 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">
+                                Bilateral Trade & Business
+                            </a>
+                            <a href="charitable & social impact.html"
+                               class="block px-5 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">
+                                Charitable & Social Impact
+                            </a>
+                        </div>
+                    </div>
+                    <a href="news.html" class="nav-link group" data-translate="news">
+                        News <span class="underline-hover"></span>
+                    </a>
+                    <a href="contact.html" class="nav-link group" data-translate="contact">
+                        Contact Us <span class="underline-hover"></span>
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <button id="searchBtn" class="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors" aria-label="Search">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </button>
+                        <div id="searchDropdown" class="search-dropdown absolute mt-2 w-screen sm:w-80 md:w-80 lg:w-80 bg-white dark:bg-gray-800 rounded-lg shadow-xl border dark:border-gray-700 z-50 -left-4 sm:right-0 sm:left-auto sm:w-80">
+                            <div class="p-3 sm:p-4">
+                                <div class="relative">
+                                    <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400 z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                    </svg>
+                                    <input id="searchInput" type="text" placeholder="Search website" class="w-full px-4 py-2 sm:py-3 pl-10 bg-gray-50 dark:bg-gray-900 text-gray-900 border dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary text-sm sm:text-base" />
+                                </div>
+                                <div id="searchResults" class="hidden mt-2 max-h-48 sm:max-h-64 overflow-y-auto bg-white text-gray-900 dark:bg-gray-800 border dark:border-gray-700 rounded-lg shadow"></div>
+                                <div class="mt-2 text-xs text-gray-500 dark:text-gray-400">
+                                    Press Enter
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <button id="languageBtn" class="flex items-center space-x-1 p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+                            </svg>
+                            <span class="text-sm">EN</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="languageDropdown" class="language-dropdown absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-xl border dark:border-gray-700 z-50">
+                            <div class="py-2">
+                                <div class="px-4 py-2 text-xs text-gray-500 dark:text-gray-400 border-b dark:border-gray-700">Select Language</div>
+                                <div id="desktopLanguageList" class="text-gray-900 max-h-80 overflow-y-auto"></div>
+                                <div class="px-4 py-2 border-t dark:border-gray-700">
+                                    <div id="allLangContainer" class="hidden px-2 py-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <select id="desktopLanguageSelect" class="hidden">
+                            <option value="">Select Language...</option>
+                            <option value="en">English</option>
+                            <option value="af">Afrikaans</option>
+                            <option value="sq">Shqip</option>
+                            <option value="am">አማርኛ</option>
+                            <option value="ar">العربية</option>
+                            <option value="hy">Հայերեն</option>
+                            <option value="az">Azərbaycanca</option>
+                            <option value="eu">Euskara</option>
+                            <option value="be">Беларусь</option>
+                            <option value="bn">বাংলা</option>
+                            <option value="bs">Bosanski</option>
+                            <option value="bg">Български</option>
+                            <option value="ca">Català</option>
+                            <option value="ceb">Cebuano</option>
+                            <option value="ny">Chichewa</option>
+                            <option value="zh-CN">中文 (简体)</option>
+                            <option value="zh-TW">中文 (繁體)</option>
+                            <option value="co">Corsu</option>
+                            <option value="hr">Hrvatski</option>
+                            <option value="cs">Čeština</option>
+                            <option value="da">Dansk</option>
+                            <option value="nl">Nederlands</option>
+                            <option value="eo">Esperanto</option>
+                            <option value="et">Eesti</option>
+                            <option value="tl">Filipino</option>
+                            <option value="fi">Suomi</option>
+                            <option value="fr">Français</option>
+                            <option value="fy">Frisian</option>
+                            <option value="gl">Galego</option>
+                            <option value="ka">ქართული</option>
+                            <option value="de">Deutsch</option>
+                            <option value="el">Ελληνικά</option>
+                            <option value="gu">ગુજરાતી</option>
+                            <option value="ht">Kreyòl Ayisyen</option>
+                            <option value="ha">Hausa</option>
+                            <option value="haw">Hawaiki</option>
+                            <option value="hi">हिन्दी</option>
+                            <option value="hu">Magyar</option>
+                            <option value="is">Íslenska</option>
+                            <option value="ig">Igbo</option>
+                            <option value="id">Bahasa Indonesia</option>
+                            <option value="ga">Gaeilge</option>
+                            <option value="it">Italiano</option>
+                            <option value="ja">日本語</option>
+                            <option value="jw">Basa Jawa</option>
+                            <option value="kk">Қазақ</option>
+                            <option value="km">ខ្មែរ</option>
+                            <option value="rw">Kinyarwanda</option>
+                            <option value="ko">한국어</option>
+                            <option value="ku">کوردی</option>
+                            <option value="ky">Кыргызча</option>
+                            <option value="lo">ລາວ</option>
+                            <option value="la">Latina</option>
+                            <option value="lv">Latviešu</option>
+                            <option value="lt">Lietuvių</option>
+                            <option value="lb">Lëtzebuergesch</option>
+                            <option value="mk">Македонски</option>
+                            <option value="mg">Malagasy</option>
+                            <option value="ms">Bahasa Melayu</option>
+                            <option value="ml">മലയാളം</option>
+                            <option value="mt">Maltese</option>
+                            <option value="mi">Māori</option>
+                            <option value="mr">मराठी</option>
+                            <option value="mn">Монгол</option>
+                            <option value="my">မြန်မာ</option>
+                            <option value="ne">नेपाली</option>
+                            <option value="no">Norsk</option>
+                            <option value="or">ଓଡିଆ</option>
+                            <option value="ps">پښتو</option>
+                            <option value="fa">فارسی</option>
+                            <option value="pl">Polski</option>
+                            <option value="pt">Português</option>
+                            <option value="pt-BR">Português (Brasil)</option>
+                            <option value="pa">ਪੰਜਾਬੀ</option>
+                            <option value="ro">Română</option>
+                            <option value="ru">Русский</option>
+                            <option value="sm">Samoan</option>
+                            <option value="gd">Gàidhlig</option>
+                            <option value="sr">Српски</option>
+                            <option value="st">Sesotho</option>
+                            <option value="sn">Shona</option>
+                            <option value="sd">سنڌي</option>
+                            <option value="si">සිංහල</option>
+                            <option value="sk">Slovenčina</option>
+                            <option value="sl">Slovenščina</option>
+                            <option value="so">Somali</option>
+                            <option value="es">Español</option>
+                            <option value="su">Sundanese</option>
+                            <option value="sw">Swahili</option>
+                            <option value="sv">Svenska</option>
+                            <option value="tg">Тоҷикӣ</option>
+                            <option value="ta">தமிழ்</option>
+                            <option value="te">తెలుగు</option>
+                            <option value="th">ไทย</option>
+                            <option value="tr">Türkçe</option>
+                            <option value="tk">Түркмөнче</option>
+                            <option value="uk">Українська</option>
+                            <option value="ur">اردو</option>
+                            <option value="ug">ئۇيغۇرچە</option>
+                            <option value="uz">O'zbek</option>
+                            <option value="vi">Tiếng Việt</option>
+                            <option value="cy">Cymraeg</option>
+                            <option value="xh">Xhosa</option>
+                            <option value="yi">יידיש</option>
+                            <option value="yo">Yorùbá</option>
+                            <option value="zu">Zulu</option>
+                        </select>
+                    </div>
+                    <button id="mobileBtn" class="lg:hidden p-2 text-primary dark:text-gray-900">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="mobileMenu" class="mobile-menu text-gray-900 dark:text-gray-100 fixed top-20 left-0 w-full max-h-[calc(100vh-80px)] overflow-y-auto bg-white dark:bg-gray-800 shadow-lg lg:hidden z-50 theme-transition border-t dark:border-gray-700">
+        <a href="index.html" class="mobile-item">Home</a>
+        <a href="about.html" class="mobile-item">About Us</a>
+        <a href="team.html" class="mobile-item">Team</a>
+        <div class="border-b">
+            <button id="mobilePillarsBtn" onclick="toggleMobilePillars()" class="mobile-item pl-10 flex items-center justify-between">
+                Strategic Pillars
+                <svg id="pillarsArrow" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+            </button>
+            <div id="mobilePillarsMenu" class="hidden bg-gray-50 dark:bg-gray-900">
+                <a href="Political & strategic engagement.html" class="mobile-item pl-10">Political & Strategic Engagement</a>
+                <a href="bilateral trade & business.html" class="mobile-item pl-10">Bilateral Trade & Business</a>
+                <a href="charitable & social impact.html" class="mobile-item pl-10">Charitable & Social Impact</a>
+            </div>
+        </div>
+        <a href="news.html" class="mobile-item">News</a>
+        <a href="contact.html" class="mobile-item">Contact Us</a>
+    </div>
 
     <main class="min-h-screen relative">
         
@@ -1216,7 +1440,7 @@
                     <div class="relative h-96 md:h-80 overflow-hidden">
                         <img src="images/kk.jpeg" 
                              alt="Prof. Kamala Kanta Dash - AIBF India Secretary felicitated at Parliament of Victoria" 
-                             class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ">
+                                class="w-full h-full object-cover object-top">
                         <div class="absolute inset-0 bg-gradient-to-t from-gray-900/30 to-transparent"></div>
                         
                         <!-- Badge with modern design -->
@@ -1298,7 +1522,7 @@
                     <div class="relative h-96 md:h-80 overflow-hidden">
                         <img src="images/ka.jpg" 
                              alt="Hon. Luba Grigorovitch MP" 
-                             class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
+                                class="w-full h-full object-cover object-top">
                         <div class="absolute inset-0 bg-gradient-to-t from-gray-900/30 to-transparent"></div>
                         
                         <!-- Badge with modern design -->
@@ -1316,7 +1540,7 @@
                         <div class="mb-6">
                             <h3 class="text-2xl font-bold text-gray-900 mb-2 leading-tight">Hon. Luba Grigorovitch MP</h3>
                             <p class="text-amber-600 font-semibold text-lg bg-gradient-to-r from-amber-500/10 to-amber-600/10 inline-block px-4 py-1.5 rounded-full">
-                                MP Member of Parliament, Victoria (Kororoit) — Current
+                                Member of Parliament, Victoria (Kororoit) — Current
                             </p>
                         </div>
                         
@@ -1427,7 +1651,7 @@
                             <!-- <div class="dignitary-badge">Governor</div> -->
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-2">Her Excellency the Honourable Margaret Gardner AC FASSA</h3>
-                        <p class="text-primary font-semibold text-sm mb-4">
+                        <p class="text-gray-600 font-semibold text-sm mb-4">
                             Governor of Victoria (2023–present)
                         </p>
                         
@@ -1460,7 +1684,7 @@
                             <!-- <div class="dignitary-badge">Premier</div> -->
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-2">Hon. Daniel Andrews MP</h3>
-                        <p class="text-primary font-semibold text-sm mb-4">
+                        <p class=" font-semibold text-gray-600  text-sm mb-4">
                             Hon. Daniel Andrews MP – Premier of Victoria (2014–2023), Leader of the Opposition (2010–2014), Minister for Health (2007–2010), Minister for Gaming and Consumer Affairs, Minister Assisting the Premier on Multicultural Affairs, Member of Parliament for Mulgrave (2002–2023)
                         </p>
                         
@@ -1481,7 +1705,7 @@
                             <!-- <div class="dignitary-badge">Victorian MP</div> -->
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-2">Hon Ben Carroll MP</h3>
-                        <p class="text-primary font-semibold text-sm mb-4">
+                        <p class="text-gray-600 font-semibold text-sm mb-4">
                             Hon Ben Carroll MP – Deputy Premier of Victoria (2023–present), Minister for Education (2023–present), Minister for WorkSafe and the TAC (2023–present), Former Minister for Public Transport, Industry and Innovation, Former Minister for Crime Prevention and Corrections
                         </p>
                     </div>
@@ -1498,14 +1722,9 @@
                         <p class="text-primary font-semibold text-sm mb-4">
                             Federal Member for Scullin (House of Representatives, 2013–present)
                         </p>
-                        
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-900 mb-2 text-sm">Ministerial Roles:</h4>
-                            <div class="flex flex-wrap">
-                                <span class="role-badge">Minister for Immigration, Citizenship and Multicultural Affairs (2022–2023)</span>
-                                <span class="role-badge">Minister for Skills and Training (2020–2022)</span>
-                            </div>
-                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Minister for Immigration, Citizenship and Multicultural Affairs (2022–2023). Minister for Skills and Training (2020–2022).
+                        </p>
                         
                         <!-- <div class="space-y-2 text-sm text-gray-600">
                             <div class="flex items-center">
@@ -1527,26 +1746,12 @@
                         <p class="text-primary font-semibold text-sm mb-4">
                             Federal Member for Cowan (2016–present)
                         </p>
-                        
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-900 mb-2 text-sm">Current Roles:</h4>
-                            <div class="flex flex-wrap">
-                                <span class="role-badge">Minister for Early Childhood Education (2023–present)</span>
-                                <span class="role-badge">Minister for Youth (2023–present)</span>
-                                <!-- <span class="role-badge">Federal Member for Cowan</span> -->
-                            </div>
-                        </div>
-                        
-                        <div class="space-y-2 text-sm text-gray-600">
-                            <div class="flex items-center">
-                                <!-- <i class="fas fa-user-tie text-saffron mr-2 w-4"></i> -->
-                                <!-- <span>Member of the Australian Labor Party</span> -->
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-briefcase text-saffron mr-2 w-4"></i>
-                                <span>Former Minister Assisting the Minister for NDIS</span>
-                            </div>
-                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Current roles: Minister for Early Childhood Education (2023–present); Minister for Youth (2023–present).
+                        </p>
+                        <p class="text-gray-600 text-sm leading-relaxed mt-2">
+                            Former Minister Assisting the Minister for NDIS.
+                        </p>
                     </div>
 
                     <!-- Tim Watts -->
@@ -1561,15 +1766,9 @@
                         <p class="text-primary font-semibold text-sm mb-4">
                             Federal Member for Gellibrand (2016–present)
                         </p>
-                        
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-900 mb-2 text-sm">Key Roles:</h4>
-                            <div class="flex flex-wrap">
-                                <span class="role-badge">Australia's Special Envoy for Indian Ocean Affairs (2023–present)</span>
-                                <span class="role-badge">Chair of the Standing Committee on Education</span>
-                                <span class="role-badge">Former Assistant Minister for Foreign Affairs</span>
-                            </div>
-                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Australia’s Special Envoy for Indian Ocean Affairs (2023–present); Chair of the Standing Committee on Education; Former Assistant Minister for Foreign Affairs.
+                        </p>
                         
                         <!-- <div class="space-y-2 text-sm text-gray-600">
                             <div class="flex items-center">
@@ -1591,31 +1790,12 @@
                         <p class="text-primary font-semibold text-sm mb-4">
                             Member for Western Metropolitan Region (Victorian Legislative Council , 2014–present)
                         </p>
-                        
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-900 mb-2 text-sm">Current Ministerial Roles:</h4>
-                            <div class="flex flex-wrap">
-                                <span class="role-badge">Minister for Mental Health (2022–present)</span>
-                                <span class="role-badge">Minister for Ageing (2022–present)</span>
-                                <span class="role-badge">Minister for Multicultural Affairs (2022–present)</span>
-                                <span class="role-badge">Minister for Prevention of Family Violence (2022–present)</span>
-                            </div>
-                        </div>
-                        
-                        <div class="space-y-2 text-sm text-gray-600">
-                            <div class="flex items-center">
-                                <!-- <i class="fas fa-user-tie text-saffron mr-2 w-4"></i> -->
-                                <!-- <span>Member of the Victorian Legislative Council</span> -->
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-briefcase text-saffron mr-2 w-4"></i>
-                                <span>Former Minister for Early Childhood and Pre-Prep</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-leaf text-saffron mr-2 w-4"></i>
-                                <span>Former Minister for Environment and Workplace Safety</span>
-                            </div>
-                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Current ministerial roles: Minister for Mental Health (2022–present); Minister for Ageing (2022–present); Minister for Multicultural Affairs (2022–present); Minister for Prevention of Family Violence (2022–present).
+                        </p>
+                        <p class="text-gray-600 text-sm leading-relaxed mt-2">
+                            Former Minister for Early Childhood and Pre-Prep; Former Minister for Environment and Workplace Safety.
+                        </p>
                     </div>
 
                     <!-- Hon Gabrielle Williams MP -->
@@ -1630,29 +1810,12 @@
                         <p class="text-primary font-semibold text-sm mb-4">
                             Member for Dandenong (Victorian Legislative Assembly, 2014–present)
                         </p>
-                        
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-900 mb-2 text-sm">Current Ministerial Roles:</h4>
-                            <div class="flex flex-wrap">
-                                <span class="role-badge">Minister for Transport Infrastructure (2022–present)</span>
-                                <span class="role-badge">Minister for Public and Active Transport (2022–present)</span>
-                            </div>
-                        </div>
-                        
-                        <div class="space-y-2 text-sm text-gray-600">
-                            <div class="flex items-center">
-                                <!-- <i class="fas fa-user-tie text-saffron mr-2 w-4"></i> -->
-                                <!-- <span>Member of the Victorian Legislative Assembly</span> -->
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-briefcase text-saffron mr-2 w-4"></i>
-                                <span>Former Minister for Government Services and Consumer Affairs</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-heart text-saffron mr-2 w-4"></i>
-                                <span>Former Minister for Mental Health, Women and Aboriginal Affairs</span>
-                            </div>
-                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Current ministerial roles: Minister for Transport Infrastructure (2022–present); Minister for Public and Active Transport (2022–present).
+                        </p>
+                        <p class="text-gray-600 text-sm leading-relaxed mt-2">
+                            Former Minister for Government Services and Consumer Affairs; Former Minister for Mental Health, Women and Aboriginal Affairs.
+                        </p>
                     </div>
 
                     <!-- Hon Enver Erdoğan -->
@@ -1667,14 +1830,9 @@
                         <p class="text-primary font-semibold text-sm mb-4">
                             Member of the Victorian Legislative Council (2018–present)
                         </p>
-                        
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-900 mb-2 text-sm">Current Ministerial Roles:</h4>
-                            <div class="flex flex-wrap">
-                                <span class="role-badge">Minister for Casino, Gaming and Liquor Regulation (2023–present)</span>
-                                <span class="role-badge">Minister for Corrections and Youth Justice (2023–present)</span>
-                            </div>
-                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Minister for Casino, Gaming and Liquor Regulation (2023–present). Minister for Corrections and Youth Justice (2023–present).
+                        </p>
                         
                         <!-- <div class="space-y-2 text-sm text-gray-600">
                             <div class="flex items-center">
@@ -1700,25 +1858,12 @@
                         <p class="text-primary font-semibold text-sm mb-4">
                             Member for Oakleigh (Victorian Legislative Assembly, 2014–present)
                         </p>
-                        
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-900 mb-2 text-sm">Current Ministerial Roles:</h4>
-                            <div class="flex flex-wrap">
-                                <span class="role-badge">Minister for Tourism, Sport and Major Events (2022–present)</span>
-                                <span class="role-badge">Minister for Creative Industries (2022–present)</span>
-                            </div>
-                        </div>
-                        
-                        <div class="space-y-2 text-sm text-gray-600">
-                            <div class="flex items-center">
-                                <!-- <i class="fas fa-user-tie text-saffron mr-2 w-4"></i> -->
-                                <!-- <span>Member of the Victorian Legislative Assembly</span> -->
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-briefcase text-saffron mr-2 w-4"></i>
-                                <span>Former Parliamentary Secretary for Justice and Regulatory Reform</span>
-                            </div>
-                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Current ministerial roles: Minister for Tourism, Sport and Major Events (2022–present); Minister for Creative Industries (2022–present).
+                        </p>
+                        <p class="text-gray-600 text-sm leading-relaxed mt-2">
+                            Former Parliamentary Secretary for Justice and Regulatory Reform.
+                        </p>
                     </div>
 
                     <!-- Josh Bull MP -->
@@ -1733,25 +1878,12 @@
                         <p class="text-primary font-semibold text-sm mb-4">
                             Member for Sunbury (Victorian Legislative Assembly, 2010–present)
                         </p>
-                        
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-900 mb-2 text-sm">Current Parliamentary Secretary Roles:</h4>
-                            <div class="flex flex-wrap">
-                                <span class="role-badge">Parliamentary Secretary for Transport (2022–present)</span>
-                                <span class="role-badge">Parliamentary Secretary for Infrastructure Delivery (2022–present)</span>
-                            </div>
-                        </div>
-                        
-                        <div class="space-y-2 text-sm text-gray-600">
-                            <div class="flex items-center">
-                                <!-- <i class="fas fa-user-tie text-saffron mr-2 w-4"></i> -->
-                                <!-- <span>Member of the Victorian Legislative Assembly</span> -->
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-briefcase text-saffron mr-2 w-4"></i>
-                                <span>Former Parliamentary Secretary for Youth, Health and Multicultural Affairs</span>
-                            </div>
-                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Current Parliamentary Secretary roles: Parliamentary Secretary for Transport (2022–present); Parliamentary Secretary for Infrastructure Delivery (2022–present).
+                        </p>
+                        <p class="text-gray-600 text-sm leading-relaxed mt-2">
+                            Former Parliamentary Secretary for Youth, Health and Multicultural Affairs.
+                        </p>
                     </div>
 
                     <!-- Roshena Campbell -->
@@ -1766,14 +1898,9 @@
                         <p class="text-primary font-semibold text-sm mb-4">
                             Deputy Lord Mayor of Melbourne (2021–present)
                         </p>
-                        
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-900 mb-2 text-sm">Portfolios:</h4>
-                            <div class="flex flex-wrap">
-                                <span class="role-badge">Portfolio Head for Planning</span>
-                                <span class="role-badge">Deputy Portfolio Holder for Tourism and Events</span>
-                            </div>
-                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Portfolio Head for Planning; Deputy Portfolio Holder for Tourism and Events.
+                        </p>
                         
                         <!-- <div class="space-y-2 text-sm text-gray-600">
                             <div class="flex items-center">
@@ -1803,14 +1930,9 @@
                         <p class="text-primary font-semibold text-sm mb-4">
                             Lord Mayor of Melbourne (2018–present)
                         </p>
-                        
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-900 mb-2 text-sm">Former Positions:</h4>
-                            <div class="flex flex-wrap">
-                                <span class="role-badge">Former CEO, Committee for Melbourne</span>
-                                <span class="role-badge">Former Director, City of Melbourne Projects</span>
-                            </div>
-                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Former CEO, Committee for Melbourne; Former Director, City of Melbourne Projects.
+                        </p>
                         
                         <!-- <div class="space-y-2 text-sm text-gray-600">
                             <div class="flex items-center">
@@ -1836,15 +1958,9 @@
                         <p class="text-primary font-semibold text-sm mb-4">
                             Former Consul General of India in Melbourne 
                         </p>
-                        
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-900 mb-2 text-sm">Diplomatic Role:</h4>
-                            <div class="text-sm text-gray-600">
-                                <p class="mb-2">
-                                    senior diplomatic representative for India in Melbourne.
-                                </p>
-                            </div>
-                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Senior diplomatic representative for India in Melbourne.
+                        </p>
                         
                         <!-- <div class="space-y-2 text-sm text-gray-600">
                             <div class="flex items-center">
@@ -1874,15 +1990,9 @@
                         <p class="text-primary font-semibold text-sm mb-4">
                             Former High Commissioner of India to Australia (2013–2016)
                         </p>
-                        
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-900 mb-2 text-sm">Diplomatic Leadership:</h4>
-                            <div class="text-sm text-gray-600">
-                                <p class="mb-2">
-                                    senior diplomatic representative for India in Australia.
-                                </p>
-                            </div>
-                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Senior diplomatic representative for India in Australia.
+                        </p>
                         
                         <!-- <div class="space-y-2 text-sm text-gray-600">
                             <div class="flex items-center">
@@ -1912,17 +2022,9 @@
                         <p class="text-primary font-semibold text-sm mb-4">
                             Senator for Tasmania
                         </p>
-                        
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-900 mb-2 text-sm">Former Positions:</h4>
-                            <div class="flex flex-wrap">
-                                <!-- <span class="role-badge">Australian Senator for Tasmania</span> -->
-                                <span class="role-badge">Tasmanian Minister for Corrections and Consumer Protection</span>
-                                <span class="role-badge">Minister for Workplace Relations</span>
-                                <span class="role-badge">Minister Assisting Premier on Climate Change</span>
-                                <span class="role-badge">Member of Tasmanian House of Assembly (Denison)</span>
-                            </div>
-                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Former Positions: Tasmanian Minister for Corrections and Consumer Protection; Minister for Workplace Relations; Minister Assisting Premier on Climate Change; Member of Tasmanian House of Assembly (Denison).
+                        </p>
                         
                         <!-- <div class="space-y-2 text-sm text-gray-600">
                             <div class="flex items-center">
@@ -1977,14 +2079,9 @@
                         <p class="text-primary font-semibold text-sm mb-4">
                             <!-- Former Australian Senator Tasmania -->
                         </p>
-                        
-                        <div class="mb-4">
-                            <!-- <h4 class="font-semibold text-gray-900 mb-2 text-sm">Former Positions:</h4> -->
-                            <div class="flex flex-wrap">
-                                <span class="role-badge">Member for Mill Park (Victorian Legislative Assembly, 2006–present)</span>
-                                <span class="role-badge"> Minister for Energy, Environment and Climate Change (2014–present)</span>
-                            </div>
-                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Member for Mill Park (Victorian Legislative Assembly, 2006–present). Minister for Energy, Environment and Climate Change (2014–present).
+                        </p>
                         
                         <!-- <div class="space-y-2 text-sm text-gray-600">
                             <div class="flex items-center">
@@ -2062,15 +2159,6 @@
                 el.style.animationDelay = `${index * 0.1}s`;
             });
             
-            // Add click animation to dignitary cards
-            document.querySelectorAll('.dignitary-card').forEach(card => {
-                card.addEventListener('click', function() {
-                    this.style.transform = 'translateY(-8px) scale(1.02)';
-                    setTimeout(() => {
-                        this.style.transform = 'translateY(-8px)';
-                    }, 150);
-                });
-            });
         });
 
         // Smooth scroll for anchor links
