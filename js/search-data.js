@@ -1,7 +1,7 @@
 const SEARCH_DATA = [
   {
     title: "Home",
-    url: "index.html",
+    url: "home.html",
     content: `
       Australia India Bridge Foundation.
       Where dialogue becomes action.
