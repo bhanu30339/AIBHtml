@@ -587,7 +587,7 @@
                     <!-- Video Section -->
                     <div class="relative rounded-3xl overflow-hidden shadow-2xl">
                         <div class="video-container">
-                            <video id="strategyVideo" class="w-full" preload="metadata" poster="/images/sc.png">
+                            <video id="strategyVideo" class="w-full" preload="metadata" poster="/images/sc.png" controls>
                                 <source src="/videos/LinVid.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
@@ -1593,6 +1593,13 @@ A key takeaway from the event was the importance of tech-enabled diplomacy and i
                 playButton.addEventListener('click', function() {
                     video.play();
                     playButton.style.display = 'none';
+                });
+                video.addEventListener('click', function() {
+                    if (video.paused) {
+                        video.play();
+                    } else {
+                        video.pause();
+                    }
                 });
                 
                 video.addEventListener('play', function() {
