@@ -166,6 +166,7 @@
             align-items: flex-end;
             padding: 2rem;
             z-index: 1;
+            pointer-events: none;
         }
         
         .play-button {
@@ -1594,14 +1595,6 @@ A key takeaway from the event was the importance of tech-enabled diplomacy and i
                     video.play();
                     playButton.style.display = 'none';
                 });
-                video.addEventListener('click', function() {
-                    if (video.paused) {
-                        video.play();
-                    } else {
-                        video.pause();
-                    }
-                });
-                
                 video.addEventListener('play', function() {
                     playButton.style.display = 'none';
                 });
