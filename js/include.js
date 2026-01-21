@@ -40,6 +40,35 @@ async function includeHTML() {
       });
 
       el.innerHTML = (nav ? nav.outerHTML : '') + (mobile ? mobile.outerHTML : '');
+    } else if (file.includes("footer.html")) {
+      const footer = temp.querySelector('footer');
+
+      // Move footer-related <style> or stylesheet <link> into document.head (avoid duplicates)
+      const stylesAndLinks = temp.querySelectorAll('style, link[rel="stylesheet"]');
+      stylesAndLinks.forEach(s => {
+        try {
+          if (s.tagName === 'LINK') {
+            const href = s.getAttribute('href') || s.href || '';
+            if (!href) return;
+            if (!document.head.querySelector(`link[href="${href}"]`)) {
+              document.head.appendChild(s.cloneNode(true));
+            }
+          } else {
+            const text = s.textContent || '';
+            const existing = Array.from(document.querySelectorAll('style[data-footer-style="true"]'))
+              .some(styleEl => styleEl.textContent === text);
+            if (!existing) {
+              const clone = s.cloneNode(true);
+              clone.setAttribute('data-footer-style', 'true');
+              document.head.appendChild(clone);
+            }
+          }
+        } catch (err) {
+          console.warn('Could not move footer style/link to head', err);
+        }
+      });
+
+      el.innerHTML = footer ? footer.outerHTML : html;
     } else {
       // Default: insert full HTML for other components
       el.innerHTML = html;
@@ -64,7 +93,7 @@ async function includeHTML() {
         } else {
           const text = s.innerHTML || '';
           // Only execute inline header-specific scripts (avoid re-running tailwind config / page-level scripts)
-          const allowInline = /initHeaderMenu\(|populateDesktopLanguageList\(|toggleMobilePillars\(|googleTranslate\(/i;
+          const allowInline = /initHeaderMenu\(|populateDesktopLanguageList\(|toggleMobilePillars\(|googleTranslate\(|initFooter\(/i;
           if (!allowInline.test(text)) return;
           const inline = document.createElement('script');
           inline.text = text;
