@@ -139,6 +139,17 @@ nav .relative.group::after {
     color: #F5C642 !important;
 }
 
+/* Tablet responsiveness (768px–1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    nav .lg\:flex {
+        display: none !important;
+    }
+
+    nav .lg\:hidden {
+        display: inline-flex !important;
+    }
+}
+
 /* SSL Certificate Indicator */
 .ssl-indicator {
     font-size: 0.7rem;
