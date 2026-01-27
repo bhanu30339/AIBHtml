@@ -106,51 +106,6 @@
         background-color: #FF9933;
         transition: width 0.3s ease;
       }
-      .scroll-controls {
-        position: fixed;
-        right: 12px;
-        top: 50%;
-        transform: translateY(-50%);
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        z-index: 1200;
-        padding: 6px;
-        border-radius: 10px;
-        background: rgba(12,35,64,0.06);
-        backdrop-filter: blur(6px);
-        box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-        pointer-events: auto;
-      }
-      .scroll-controls .scroll-to-top,
-      .scroll-controls .scroll-to-bottom {
-        width: 40px;
-        height: 40px;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: none;
-        cursor: pointer;
-        opacity: 0;
-        pointer-events: none;
-        font-size: 16px;
-      }
-      .scroll-controls .scroll-to-top.visible,
-      .scroll-controls .scroll-to-bottom.visible {
-        opacity: 1;
-        pointer-events: auto;
-      }
-      .scroll-controls .scroll-to-top {
-        background: #ffffff;
-        color: #0C2340;
-        border: 1px solid rgba(12,35,64,0.08);
-      }
-      .scroll-controls .scroll-to-bottom {
-        background: rgba(255,153,51,0.95);
-        color: #0C2340;
-        border: 1px solid rgba(0,0,0,0.06);
-      }
       .first-nations-acknowledgement {
         background: linear-gradient(135deg, rgba(12, 35, 64, 0.9) 0%, rgba(30, 58, 95, 0.9) 100%);
         border-top: 3px solid #FF9933;
@@ -1170,36 +1125,6 @@
           setTimeout(() => { this.style.transform = ''; }, 150);
         });
       });
-      const scrollTopBtn = document.getElementById('scrollTopBtn');
-      const scrollBottomBtn = document.getElementById('scrollBottomBtn');
-      function toggleScrollButtons() {
-        const y = window.scrollY;
-        const docH = document.documentElement.scrollHeight;
-        const winH = window.innerHeight;
-        const atTop = y < 200;
-        const atBottom = y + winH >= docH - 200;
-        if (scrollTopBtn) {
-          if (atTop) scrollTopBtn.classList.remove('visible');
-          else scrollTopBtn.classList.add('visible');
-        }
-        if (scrollBottomBtn) {
-          if (atBottom) scrollBottomBtn.classList.remove('visible');
-          else scrollBottomBtn.classList.add('visible');
-        }
-      }
-      window.addEventListener('scroll', toggleScrollButtons);
-      window.addEventListener('resize', toggleScrollButtons);
-      toggleScrollButtons();
-      if (scrollTopBtn) {
-        scrollTopBtn.addEventListener('click', () => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      }
-      if (scrollBottomBtn) {
-        scrollBottomBtn.addEventListener('click', () => {
-          window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
-        });
-      }
     }
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', initFooter);
