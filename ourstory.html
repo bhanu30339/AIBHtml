@@ -470,6 +470,34 @@
             </div>
         </div>
     </footer>
+
+    <!-- Scroll Navigation Controls -->
+    <div id="scroll-controls" class="fixed right-6 bottom-24 z-50 flex flex-col gap-3 notranslate" translate="no" style="position: fixed; right: 24px; bottom: 96px; display: flex; flex-direction: column; gap: 12px; z-index: 50;">
+
+        <!-- Scroll Up -->
+        <button
+            onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+            class="w-12 h-12 rounded-full bg-[#0C2340] text-white shadow-lg notranslate"
+            style="width: 48px; height: 48px; border-radius: 9999px; background: #0C2340; color: #ffffff; border: none; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 15px rgba(0,0,0,0.12); font-size: 20px; line-height: 1;"
+            aria-label="Scroll Up"
+            translate="no"
+        >
+            ↑
+        </button>
+
+        <!-- Scroll Down -->
+        <button
+            onclick="window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })"
+            class="w-12 h-12 rounded-full bg-[#0C2340] text-white shadow-lg notranslate"
+            style="width: 48px; height: 48px; border-radius: 9999px; background: #0C2340; color: #ffffff; border: none; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 15px rgba(0,0,0,0.12); font-size: 20px; line-height: 1;"
+            aria-label="Scroll Down"
+            translate="no"
+        >
+            ↓
+        </button>
+
+    </div>
+
     <script src="/_next/static/chunks/webpack-a7f1c6512654c8e1.js" async=""></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/include.js"></script>

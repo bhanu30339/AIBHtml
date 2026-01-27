@@ -40,64 +40,6 @@
             width: 100%;
         }
         
-        /* Floating vertical scroll controls (styled like attached example) */
-        .scroll-controls {
-            position: fixed;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            z-index: 1200;
-            padding: 6px;
-            border-radius: 10px;
-            background: rgba(12,35,64,0.06);
-            backdrop-filter: blur(6px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-            pointer-events: auto;
-        }
-
-        .scroll-controls .scroll-to-top,
-        .scroll-controls .scroll-to-bottom {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, opacity 0.2s ease;
-            opacity: 0;
-            pointer-events: none;
-            font-size: 16px;
-        }
-
-        .scroll-controls .scroll-to-top.visible,
-        .scroll-controls .scroll-to-bottom.visible {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .scroll-controls .scroll-to-top {
-            background: #ffffff;
-            color: #0C2340;
-            border: 1px solid rgba(12,35,64,0.08);
-        }
-
-        .scroll-controls .scroll-to-bottom {
-            background: rgba(255,153,51,0.95);
-            color: #0C2340;
-            border: 1px solid rgba(0,0,0,0.06);
-        }
-
-        .scroll-controls .scroll-to-top:hover,
-        .scroll-controls .scroll-to-bottom:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.18);
-        }
-        
         /* First Nations Acknowledgement Styling */
         .first-nations-acknowledgement {
             background: linear-gradient(135deg, rgba(12, 35, 64, 0.9) 0%, rgba(30, 58, 95, 0.9) 100%);
@@ -147,16 +89,6 @@
 </head>
 <body class="bg-gray-50">
     
-    <!-- Global Scroll Controls (stacked near scrollbar) -->
-    <!-- <div id="scrollControls" class="scroll-controls" aria-hidden="false">
-        <button id="scrollTopBtn" class="scroll-to-top" aria-label="Scroll to top">
-            <i class="fas fa-chevron-up"></i>
-        </button>
-        <button id="scrollBottomBtn" class="scroll-to-bottom" aria-label="Scroll to bottom">
-            <i class="fas fa-chevron-down"></i>
-        </button>
-    </div> -->
-
     <!-- Footer Section -->
     <footer class="bg-[#0C2340] text-white" id="footer" style="background-color: #0C2340 !important; background-image: none !important;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -426,43 +358,6 @@
                 });
             });
 
-            // Scroll buttons
-            const scrollTopBtn = document.getElementById('scrollTopBtn');
-            const scrollBottomBtn = document.getElementById('scrollBottomBtn');
-            function toggleScrollButtons() {
-                const y = window.scrollY;
-                const docH = document.documentElement.scrollHeight;
-                const winH = window.innerHeight;
-                const atTop = y < 200;
-                const atBottom = y + winH >= docH - 200;
-                if (scrollTopBtn) {
-                    if (atTop) {
-                        scrollTopBtn.classList.remove('visible');
-                    } else {
-                        scrollTopBtn.classList.add('visible');
-                    }
-                }
-                if (scrollBottomBtn) {
-                    if (atBottom) {
-                        scrollBottomBtn.classList.remove('visible');
-                    } else {
-                        scrollBottomBtn.classList.add('visible');
-                    }
-                }
-            }
-            window.addEventListener('scroll', toggleScrollButtons);
-            window.addEventListener('resize', toggleScrollButtons);
-            toggleScrollButtons();
-            if (scrollTopBtn) {
-                scrollTopBtn.addEventListener('click', () => {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
-            }
-            if (scrollBottomBtn) {
-                scrollBottomBtn.addEventListener('click', () => {
-                    window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
-                });
-            }
         }
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', initFooter);

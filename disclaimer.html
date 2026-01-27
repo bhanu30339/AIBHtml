@@ -18,7 +18,7 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
+        class:"w-12 h-12 rounded-full bg-[#0C2340] text-white shadow-lg notranslate",
                         primary: "#0C2340",
                         secondary: "#F5C642",
                         accent: "#1E3A5F",
@@ -30,7 +30,7 @@
                     }
                 }
             }
-        }
+        
     </script>
     <style>
         /* Hide ALL Google Translate elements */
@@ -106,7 +106,6 @@
         background-color: #FF9933;
         transition: width 0.3s ease;
       }
-      .link-hover-effect:hover::after { width: 100%; }
       .scroll-controls {
         position: fixed;
         right: 12px;
@@ -133,7 +132,6 @@
         justify-content: center;
         border: none;
         cursor: pointer;
-        transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, opacity 0.2s ease;
         opacity: 0;
         pointer-events: none;
         font-size: 16px;
@@ -152,11 +150,6 @@
         background: rgba(255,153,51,0.95);
         color: #0C2340;
         border: 1px solid rgba(0,0,0,0.06);
-      }
-      .scroll-controls .scroll-to-top:hover,
-      .scroll-controls .scroll-to-bottom:hover {
-        transform: translateY(-3px) scale(1.05);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.18);
       }
       .first-nations-acknowledgement {
         background: linear-gradient(135deg, rgba(12, 35, 64, 0.9) 0%, rgba(30, 58, 95, 0.9) 100%);
@@ -1008,7 +1001,7 @@
     <!-- Scroll Up -->
     <button
       onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-      class="w-12 h-12 rounded-full bg-[#0C2340] text-white shadow-lg hover:bg-[#1E3A5F] transition notranslate"
+      class="w-12 h-12 rounded-full bg-[#0C2340] text-white shadow-lg notranslate"
       aria-label="Scroll Up"
       translate="no"
     >
@@ -1018,7 +1011,7 @@
     <!-- Scroll Down -->
     <button
       onclick="window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })"
-      class="w-12 h-12 rounded-full bg-[#0C2340] text-white shadow-lg hover:bg-[#1E3A5F] transition notranslate"
+      class="w-12 h-12 rounded-full bg-[#0C2340] text-white shadow-lg notranslate"
       aria-label="Scroll Down"
       translate="no"
     >
