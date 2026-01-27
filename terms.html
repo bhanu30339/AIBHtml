@@ -86,6 +86,30 @@
 </head>
 <body>
   <div id="google_translate_element" style="display:none;"></div>
+  <!-- Scroll Navigation Controls -->
+  <div id="scroll-controls" class="fixed right-6 bottom-24 z-50 flex flex-col gap-3 notranslate" translate="no">
+
+    <!-- Scroll Up -->
+    <button
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      class="w-12 h-12 rounded-full bg-[#0C2340] text-white shadow-lg notranslate"
+      aria-label="Scroll Up"
+      translate="no"
+    >
+      ↑
+    </button>
+
+    <!-- Scroll Down -->
+    <button
+      onclick="window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })"
+      class="w-12 h-12 rounded-full bg-[#0C2340] text-white shadow-lg notranslate"
+      aria-label="Scroll Down"
+      translate="no"
+    >
+      ↓
+    </button>
+
+  </div>
   <nav class="sticky top-0 z-50 bg-white shadow-lg theme-transition">
     <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-20">
@@ -738,30 +762,6 @@
   });
   </script>
 
-  <!-- Scroll Navigation Controls -->
-  <div id="scroll-controls" class="fixed right-6 bottom-24 z-50 flex flex-col gap-3 notranslate" translate="no">
-
-    <!-- Scroll Up -->
-    <button
-      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-      class="w-12 h-12 rounded-full bg-[#0C2340] text-white shadow-lg notranslate"
-      aria-label="Scroll Up"
-      translate="no"
-    >
-      ↑
-    </button>
-
-    <!-- Scroll Down -->
-    <button
-      onclick="window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })"
-      class="w-12 h-12 rounded-full bg-[#0C2340] text-white shadow-lg notranslate"
-      aria-label="Scroll Down"
-      translate="no"
-    >
-      ↓
-    </button>
-
-  </div>
     <footer class="bg-[#0C2340] text-white" id="footer" style="background-color: #0C2340 !important; background-image: none !important;">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="first-nations-acknowledgement rounded-lg mt-8">
