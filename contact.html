@@ -1143,131 +1143,56 @@
     <!-- Add Font Awesome for icons if needed -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- <script>
-       
-        document.addEventListener('DOMContentLoaded', function() {
-            const contactForm = document.getElementById('contactForm');
-            const submitBtn = document.getElementById('submitBtn');
-            const submitBtnText = document.getElementById('submitBtnText');
-            const submitBtnLoader = document.getElementById('submitBtnLoader');
-            const successMessage = document.getElementById('successMessage');
-            const errorMessage = document.getElementById('errorMessage');
-            const errorText = document.getElementById('errorText');
-            
-            if (contactForm) {
-                contactForm.addEventListener('submit', async function(e) {
-                    e.preventDefault();
-                    
-                    
-                    successMessage.classList.add('hidden');
-                    errorMessage.classList.add('hidden');
-                    
-                  
-                    submitBtn.disabled = true;
-                    submitBtnText.classList.add('hidden');
-                    submitBtnLoader.classList.remove('hidden');
-                    
-                    
-                    const formData = new FormData(contactForm);
-                    const data = {
-                        fullName: formData.get('fullName'),
-                        email: formData.get('email'),
-                        phone: formData.get('phone') || 'Not provided',
-                        subject: formData.get('subject'),
-                        enquiryType: formData.get('enquiryType'),
-                        message: formData.get('message'),
-                        timestamp: new Date().toISOString(),
-                        source: 'Contact Form - AusInd Bridge Foundation'
-                    };
-                    
-                    try {
-                        
-                        const response = await fetch('send-mail.php', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify(data)
-                        });
-                        const result = await response.json();
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const contactForm = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const submitBtnText = document.getElementById('submitBtnText');
+        const submitBtnLoader = document.getElementById('submitBtnLoader');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+        const errorText = document.getElementById('errorText');
 
-                        if (!response.ok || !result.success) {
-                            throw new Error(result.message || 'Submission failed');
-                        }
+        if (!contactForm) return;
 
-                        successMessage.classList.remove('hidden');
-                        contactForm.reset();
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
 
-                       
-                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        
-                    } catch (error) {
-                        console.error('Form submission error:', error);
-                        errorText.textContent = error.message || 'Unable to submit form. Please try again or email us directly at info@ausindbridge.org';
-                        errorMessage.classList.remove('hidden');
-                        
-                        
-                        errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    } finally {
-                        
-                        submitBtn.disabled = false;
-                        submitBtnText.classList.remove('hidden');
-                        submitBtnLoader.classList.add('hidden');
-                    }
+            successMessage.classList.add('hidden');
+            errorMessage.classList.add('hidden');
+
+            submitBtn.disabled = true;
+            submitBtnText.classList.add('hidden');
+            submitBtnLoader.classList.remove('hidden');
+
+            const formData = new FormData(contactForm);
+
+            try {
+                const response = await fetch('send-mail.php', {
+                    method: 'POST',
+                    body: formData
                 });
+
+                const result = await response.json();
+                if (!response.ok || !result.success) {
+                    throw new Error(result.message || 'Submission failed');
+                }
+
+                successMessage.classList.remove('hidden');
+                contactForm.reset();
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } catch (error) {
+                errorText.textContent = error.message || 'Unable to submit form. Please try again or email us directly at info@ausindbridge.org';
+                errorMessage.classList.remove('hidden');
+                errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } finally {
+                submitBtn.disabled = false;
+                submitBtnText.classList.remove('hidden');
+                submitBtnLoader.classList.add('hidden');
             }
-            
-            
-            function isValidEmail(email) {
-                const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                return re.test(String(email).toLowerCase());
-            }
-            
-            
-            const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
-            phoneLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    console.log('Phone number clicked:', this.href);
-                });
-            });
         });
-    </script> -->
-
-
-
-    <script>
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Stop the page from reloading
-   
-    const responseDiv = document.getElementById('formResponse');
-    responseDiv.innerHTML = "Sending...";
-
-    const formData = new FormData(this);
-
-    // We send the data to the PHP file we created earlier
-    fetch('/send.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(res => res.text())
-    .then(data => {
-        if(data.trim() === "success") {
-            responseDiv.innerHTML = "<span style='color:green;'>Message sent!</span>";
-            document.getElementById('contactForm').reset();
-        } else {
-            responseDiv.innerHTML = "<span style='color:red;'>Error: " + data + "</span>";
-        }
-    })
-    .catch(error => {
-        responseDiv.innerHTML = "Something went wrong. Please try again.";
     });
-});
-</script>
-    <script>
- 
-document.getElementById('contactForm').addEventListener('submit', function(e) { e.preventDefault(); const formData = new FormData(this); fetch('send.php', { method: 'POST', body: formData }) .then(response => response.text()) .then(data => { if(data === "success") { alert("Message sent successfully!"); this.reset(); } else { alert("Error: " + data); } }); });
- 
-</script>
+    </script>
     <script src="js/include.js"></script>
   <script src="js/header.js"></script>
   <script>

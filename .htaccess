@@ -1,7 +1,14 @@
-<?php phpinfo(); ?>
 Options -MultiViews -Indexes
 RewriteEngine On
 RewriteBase /
+
+# Strategic Pillars: normalize legacy/legacy-encoded and lowercase URLs
+RewriteRule ^political-strategic-engagement/?$ Political-strategic-engagement.html [L]
+RewriteRule ^social-charitable-impact/?$ charitable-social-impact.html [L]
+
+RewriteRule ^Political%20&%20strategic%20engagement\.html$ /Political-strategic-engagement.html [R=301,L,NC]
+RewriteRule ^bilateral%20trade%20&%20business\.html$ /bilateral-trade-business.html [R=301,L,NC]
+RewriteRule ^charitable%20&%20social%20impact\.html$ /charitable-social-impact.html [R=301,L,NC]
 
 # 1. Handle Home Page (Root)
 DirectoryIndex home.html

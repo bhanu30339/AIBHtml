@@ -30,33 +30,21 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://ausindbridge.org/media</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  
   <url>
     <loc>https://ausindbridge.org/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://ausindbridge.org/focus</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ausindbridge.org/strategicapproach</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  
+  
   <url>
     <loc>https://ausindbridge.org/political</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ausindbridge.org/Political-strategic-engagement</loc>
+    <loc>https://ausindbridge.org/political-strategic-engagement</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -65,11 +53,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
-    <loc>https://ausindbridge.org/charitable-impact</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  
   <url>
     <loc>https://ausindbridge.org/charitable-social-impact</loc>
     <changefreq>monthly</changefreq>
