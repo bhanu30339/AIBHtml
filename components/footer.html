@@ -294,10 +294,10 @@
                     <div class="mt-4 lg:mt-0">
                         <h5 class="text-sm font-semibold text-white mb-3">Subscribe to our newsletter</h5>
                         <form id="newsletterForm" class="flex items-center gap-2 max-w-md mx-auto lg:mx-0">
-                            <input type="email" id="newsletterEmail" placeholder="Enter your email" required class="w-full px-3 py-2 rounded-lg text-gray-900" />
+                            <input type="email" id="newsletterEmail" name="email" placeholder="Enter your email" required class="w-full px-3 py-2 rounded-lg text-gray-900" />
                             <button type="submit" class="px-4 py-2 bg-saffron text-white rounded-lg">Subscribe</button>
                         </form>
-                        <p id="newsletterMsg" class="text-xs text-gray-300 mt-2 hidden"></p>
+                        <p id="newsletterMsg" class="text-xs text-gray-300 mt-2 hidden" aria-live="polite" role="status"></p>
                     </div>
                 </div>
             </div>
@@ -326,16 +326,51 @@
             const newsletterForm = document.getElementById('newsletterForm');
             const newsletterEmail = document.getElementById('newsletterEmail');
             const newsletterMsg = document.getElementById('newsletterMsg');
-            if (newsletterForm) {
-                newsletterForm.addEventListener('submit', function(e) {
+            if (newsletterForm && newsletterEmail && newsletterMsg) {
+                newsletterForm.addEventListener('submit', async function(e) {
                     e.preventDefault();
                     const email = newsletterEmail.value.trim();
                     if (!email) return;
-                    // Minimal UI feedback - no backend available here
-                    newsletterMsg.textContent = 'Thanks — you\'re subscribed!';
-                    newsletterMsg.classList.remove('hidden');
-                    newsletterEmail.value = '';
-                    setTimeout(() => newsletterMsg.classList.add('hidden'), 4000);
+
+                    const submitBtn = newsletterForm.querySelector('button[type="submit"]');
+                    const originalText = submitBtn ? submitBtn.textContent : '';
+
+                    if (submitBtn) {
+                        submitBtn.disabled = true;
+                        submitBtn.textContent = 'Submitting...';
+                    }
+
+                    newsletterMsg.textContent = '';
+                    newsletterMsg.classList.add('hidden');
+                    newsletterMsg.classList.remove('text-green-300', 'text-red-300');
+
+                    try {
+                        const response = await fetch('newsletter-subscribe.php', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ email })
+                        });
+
+                        const result = await response.json();
+                        if (!response.ok || !result.success) {
+                            throw new Error(result.message || 'Unable to subscribe right now.');
+                        }
+
+                        newsletterMsg.textContent = result.message || 'Thanks — you\'re subscribed!';
+                        newsletterMsg.classList.remove('hidden');
+                        newsletterMsg.classList.add('text-green-300');
+                        newsletterForm.reset();
+                        setTimeout(() => newsletterMsg.classList.add('hidden'), 4000);
+                    } catch (error) {
+                        newsletterMsg.textContent = error.message || 'Unable to subscribe right now.';
+                        newsletterMsg.classList.remove('hidden');
+                        newsletterMsg.classList.add('text-red-300');
+                    } finally {
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = originalText || 'Subscribe';
+                        }
+                    }
                 });
             }
             
