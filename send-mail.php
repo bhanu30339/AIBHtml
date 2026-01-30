@@ -75,6 +75,33 @@ try {
 	";
 
 	$mail->send();
+
+	// Send confirmation email to the user
+	$confirmationMail = new PHPMailer(true);
+	$confirmationMail->isSMTP();
+	$confirmationMail->Host = $smtpHost;
+	$confirmationMail->SMTPAuth = true;
+	$confirmationMail->Username = $smtpUser;
+	$confirmationMail->Password = $smtpPass;
+	$confirmationMail->SMTPSecure = $smtpSecure === 'ssl' ? PHPMailer::ENCRYPTION_SMTPS : PHPMailer::ENCRYPTION_STARTTLS;
+	$confirmationMail->Port = (int) $smtpPort;
+
+	$confirmationMail->setFrom($smtpUser, 'AusInd Bridge');
+	$confirmationMail->addAddress($email, $name);
+
+	$confirmationMail->isHTML(true);
+	$confirmationMail->Subject = 'Thanks for contacting AusInd Bridge';
+	$confirmationMail->Body = "
+		<p>Hi {$name},</p>
+		<p>Thank you for reaching out to AusInd Bridge about <strong>{$enquiryType}</strong>. Our team has received your message and will get back to you shortly.</p>
+		<p>Here is a copy for your records:</p>
+		<p><strong>Subject:</strong> {$subject}<br>
+		<strong>Message:</strong><br>" . nl2br($message) . "</p>
+		<p>Warm regards,<br>AusInd Bridge Team</p>
+	";
+	$confirmationMail->AltBody = "Hi {$name},\n\nThank you for contacting AusInd Bridge about {$enquiryType}. We received your message and will get back to you shortly.\n\nSubject: {$subject}\nMessage: {$message}\n\nWarm regards,\nAusInd Bridge Team";
+
+	$confirmationMail->send();
 	echo json_encode(['success' => true, 'message' => 'Message sent successfully.']);
 } catch (Exception $e) {
 	http_response_code(500);

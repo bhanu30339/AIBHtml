@@ -1,4 +1,9 @@
 Options -MultiViews -Indexes
+SetEnv SMTP_HOST smtp.hostinger.com
+SetEnv SMTP_PORT 587
+SetEnv SMTP_USER info@ausindbridge.org
+SetEnv SMTP_PASS YOUR_PASSWORD
+SetEnv SMTP_SECURE tls
 RewriteEngine On
 RewriteBase /
 
