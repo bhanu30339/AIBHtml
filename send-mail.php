@@ -92,14 +92,12 @@ try {
 	$confirmationMail->isHTML(true);
 	$confirmationMail->Subject = 'Thanks for contacting AusInd Bridge';
 	$confirmationMail->Body = "
-		<p>Hi {$name},</p>
-		<p>Thank you for reaching out to AusInd Bridge about <strong>{$enquiryType}</strong>. Our team has received your message and will get back to you shortly.</p>
-		<p>Here is a copy for your records:</p>
-		<p><strong>Subject:</strong> {$subject}<br>
-		<strong>Message:</strong><br>" . nl2br($message) . "</p>
-		<p>Warm regards,<br>AusInd Bridge Team</p>
+		<p>Dear {$name},</p>
+		<p>Thank you for contacting AusInd Bridge.</p>
+		<p>We have received your enquiry and our team will review it shortly. A member of our team will be in touch with you as soon as possible.</p>
+		<p>Kind regards,<br>AusInd Bridge Team</p>
 	";
-	$confirmationMail->AltBody = "Hi {$name},\n\nThank you for contacting AusInd Bridge about {$enquiryType}. We received your message and will get back to you shortly.\n\nSubject: {$subject}\nMessage: {$message}\n\nWarm regards,\nAusInd Bridge Team";
+	$confirmationMail->AltBody = "Dear {$name},\n\nThank you for contacting AusInd Bridge.\n\nWe have received your enquiry and our team will review it shortly. A member of our team will be in touch with you as soon as possible.\n\nKind regards,\nAusInd Bridge Team";
 
 	$confirmationMail->send();
 	echo json_encode(['success' => true, 'message' => 'Message sent successfully.']);
