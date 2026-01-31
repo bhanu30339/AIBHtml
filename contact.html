@@ -639,6 +639,7 @@
                     <p class="chat-text mb-4">For enquiries only. Please fill out the form below.</p>
           
                     <form id="chatForm" class="chat-form">
+                        <input type="hidden" name="enquiryType" value="Chat Enquiry">
                         <!-- Name -->
                         <div class="form-group">
                             <label class="form-label">Full Name *</label>
@@ -675,6 +676,8 @@
                                 <path d="m21.854 2.147-10.94 10.939"></path>
                             </svg>
                         </button>
+
+                        <div id="formError" class="error-message" role="alert"></div>
             
                         <p class="privacy-note">
                             * Required fields. We respect your privacy and will only use your information to respond to your enquiry.
@@ -963,6 +966,7 @@
             const chatForm = document.getElementById('chatForm');
             const successMessage = document.getElementById('successMessage');
             const newEnquiryBtn = document.getElementById('newEnquiry');
+            const formError = document.getElementById('formError');
       
             if (!chatToggle || !chatBox) return; // Exit if chat not found
       
@@ -1026,12 +1030,18 @@
                     inputElement.style.borderColor = '#DC2626';
                 }
             }
+
+            function setFormError(message) {
+                if (!formError) return;
+                formError.textContent = message;
+            }
       
             // Form submission
             if (chatForm) {
-                chatForm.addEventListener('submit', function(e) {
+                chatForm.addEventListener('submit', async function(e) {
                     e.preventDefault();
                     clearErrors();
+                    setFormError('');
           
                     // Get form values
                     const name = chatForm.querySelector('[name="name"]').value.trim();
@@ -1072,36 +1082,44 @@
                     }
           
                     if (isValid) {
-                        // Show loading state
                         const submitBtn = chatForm.querySelector('.submit-btn');
                         const originalText = submitBtn.innerHTML;
                         submitBtn.innerHTML = 'Sending...';
                         submitBtn.disabled = true;
-            
-                        // Simulate API call
-                        setTimeout(() => {
-                            // Show success message
+
+                        try {
+                            const formData = new FormData(chatForm);
+                            if (!formData.get('enquiryType')) {
+                                formData.set('enquiryType', 'Chat Enquiry');
+                            }
+
+                            const response = await fetch('send-mail.php', {
+                                method: 'POST',
+                                body: formData
+                            });
+
+                            const result = await response.json().catch(() => null);
+                            if (!response.ok || !result || !result.success) {
+                                throw new Error((result && result.message) || 'Unable to submit your enquiry. Please try again.');
+                            }
+
                             chatForm.style.display = 'none';
                             successMessage.style.display = 'block';
-              
-                            // Reset form
                             chatForm.reset();
-              
-                            // Restore button
-                            submitBtn.innerHTML = originalText;
-                            submitBtn.disabled = false;
-              
-                            // Auto-close after 5 seconds
+
                             setTimeout(() => {
                                 chatBox.classList.remove('open');
-                
-                                // Reset after closing
                                 setTimeout(() => {
                                     chatForm.style.display = 'flex';
                                     successMessage.style.display = 'none';
                                 }, 300);
                             }, 5000);
-                        }, 1500);
+                        } catch (error) {
+                            setFormError(error.message || 'Unable to submit your enquiry. Please try again later.');
+                        } finally {
+                            submitBtn.innerHTML = originalText;
+                            submitBtn.disabled = false;
+                        }
                     }
                 });
             }
@@ -1113,6 +1131,7 @@
                     successMessage.style.display = 'none';
                     chatForm.reset();
                     clearErrors();
+                    setFormError('');
                 });
             }
       
