@@ -73,7 +73,7 @@ if ($curlError) {
 $responseData = json_decode($response, true);
 
 if ($statusCode >= 200 && $statusCode < 300) {
-    echo json_encode(['success' => true, 'message' => 'Thanks — you\'re on the list!']);
+    echo json_encode(['success' => true, 'message' => 'Thanks you\'re on the list!']);
     exit;
 }
 
