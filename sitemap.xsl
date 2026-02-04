@@ -79,10 +79,10 @@
 										<xsl:when test="sm:loc='https://ausindbridge.org/political-strategic-engagement'">Political &amp; Strategic Engagement</xsl:when>
 										<xsl:when test="sm:loc='https://ausindbridge.org/bilateral-trade-business'">Bilateral Trade &amp; Business</xsl:when>
 										<xsl:when test="sm:loc='https://ausindbridge.org/charitable-social-impact'">Social &amp; Charitable Impact</xsl:when>
-										<xsl:when test="sm:loc='https://ausindbridge.org/privacy'">Privacy Policy</xsl:when>
-										<xsl:when test="sm:loc='https://ausindbridge.org/terms'">Terms &amp; Conditions</xsl:when>
+										<xsl:when test="sm:loc='https://ausindbridge.org/privacy-policy'">Privacy Policy</xsl:when>
+										<xsl:when test="sm:loc='https://ausindbridge.org/terms-and-conditions'">Terms &amp; Conditions</xsl:when>
 										<xsl:when test="sm:loc='https://ausindbridge.org/disclaimer'">Disclaimer</xsl:when>
-										<xsl:when test="sm:loc='https://ausindbridge.org/transparency'">Transparency &amp; Disclosure</xsl:when>
+										<xsl:when test="sm:loc='https://ausindbridge.org/transparency-disclosure'">Transparency &amp; Disclosure</xsl:when>
 										<xsl:otherwise>Page</xsl:otherwise>
 									</xsl:choose>
 								</div>
