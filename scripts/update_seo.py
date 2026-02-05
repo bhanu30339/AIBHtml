@@ -166,7 +166,7 @@ class PageMeta:
 PAGES: list[PageMeta] = [
     PageMeta(
         file_name="home.html",
-        title="AusInd Bridge Foundation | Building the Australia–India Partnership",
+        title="AusInd Bridge Foundation ",
         description=(
             "AusInd Bridge Foundation convenes Australian and Indian leaders to advance diplomacy, "
             "bilateral trade, strategic policy dialogue, and community impact programs."
