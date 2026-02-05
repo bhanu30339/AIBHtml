@@ -177,32 +177,20 @@ PAGES: list[PageMeta] = [
         breadcrumb=[("Home", "https://ausindbridge.org/")],
         schema_name="AusInd Bridge Foundation",
     ),
-    PageMeta(
-        file_name="index.html",
-        title="AusInd Bridge Foundation | Building the Australia–India Partnership",
-        description=(
-            "AusInd Bridge Foundation convenes Australian and Indian leaders to advance diplomacy, "
-            "bilateral trade, strategic policy dialogue, and community impact programs."
-        ),
-        keywords="AusInd Bridge Foundation, Australia India relations, bilateral engagement, diplomacy, trade missions, cultural exchange, strategic partnership",
-        canonical="https://ausindbridge.org/",
-        schema_type="WebPage",
-        breadcrumb=[("Home", "https://ausindbridge.org/")],
-        schema_name="AusInd Bridge Foundation",
-    ),
-    PageMeta(
-        file_name="home1.html",
-        title="AusInd Bridge Foundation | Official Website",
-        description=(
-            "AusInd Bridge Foundation connects institutions across Australia and India through trade missions, "
-            "policy engagement, cultural exchange, and philanthropy."
-        ),
-        keywords="AusInd Bridge Foundation, official website, Australia India partnership, policy engagement, philanthropy",
-        canonical="https://ausindbridge.org/",
-        schema_type="WebPage",
-        breadcrumb=[("Home", "https://ausindbridge.org/")],
-        schema_name="AusInd Bridge Foundation",
-    ),
+    # PageMeta(
+    #     file_name="index.html",
+    #     title="AusInd Bridge Foundation | Building the Australia–India Partnership",
+    #     description=(
+    #         "AusInd Bridge Foundation convenes Australian and Indian leaders to advance diplomacy, "
+    #         "bilateral trade, strategic policy dialogue, and community impact programs."
+    #     ),
+    #     keywords="AusInd Bridge Foundation, Australia India relations, bilateral engagement, diplomacy, trade missions, cultural exchange, strategic partnership",
+    #     canonical="https://ausindbridge.org/",
+    #     schema_type="WebPage",
+    #     breadcrumb=[("Home", "https://ausindbridge.org/")],
+    #     schema_name="AusInd Bridge Foundation",
+    # ),
+    
     PageMeta(
         file_name="about-us.html",
         title="About AusInd Bridge Foundation | Mission & Leadership",
@@ -218,21 +206,7 @@ PAGES: list[PageMeta] = [
         ],
         schema_name="About AusInd Bridge Foundation",
     ),
-    PageMeta(
-        file_name="about.html",
-        title="About Our Work | AusInd Bridge Foundation",
-        description=(
-            "Learn how AusInd Bridge Foundation mobilises cross-sector coalitions to deepen diplomatic, commercial, and community ties between Australia and India."
-        ),
-        keywords="AusInd Bridge mission, cross-sector alliances, diplomacy, bilateral cooperation, governance",
-        canonical="https://ausindbridge.org/about",
-        schema_type="AboutPage",
-        breadcrumb=[
-            ("Home", "https://ausindbridge.org/"),
-            ("About", "https://ausindbridge.org/about"),
-        ],
-        schema_name="About Our Work",
-    ),
+   
     PageMeta(
         file_name="bilateral-trade-business.html",
         title="Bilateral Trade & Business | AusInd Bridge Foundation",
@@ -248,21 +222,21 @@ PAGES: list[PageMeta] = [
         ],
         schema_name="Bilateral Trade & Business",
     ),
-    PageMeta(
-        file_name="charitable-impact.html",
-        title="Charitable Causes & Social Impact | AusInd Bridge Foundation",
-        description=(
-            "Education, healthcare, environmental, and community development initiatives delivering measurable social impact across Australia and India."
-        ),
-        keywords="charitable causes, social impact, philanthropy, education access, community development",
-        canonical="https://ausindbridge.org/charitable-impact",
-        schema_type="CollectionPage",
-        breadcrumb=[
-            ("Home", "https://ausindbridge.org/"),
-            ("Charitable Impact", "https://ausindbridge.org/charitable-impact"),
-        ],
-        schema_name="Charitable Impact",
-    ),
+    # PageMeta(
+    #     file_name="charitable-impact.html",
+    #     title="Charitable Causes & Social Impact | AusInd Bridge Foundation",
+    #     description=(
+    #         "Education, healthcare, environmental, and community development initiatives delivering measurable social impact across Australia and India."
+    #     ),
+    #     keywords="charitable causes, social impact, philanthropy, education access, community development",
+    #     canonical="https://ausindbridge.org/charitable-impact",
+    #     schema_type="CollectionPage",
+    #     breadcrumb=[
+    #         ("Home", "https://ausindbridge.org/"),
+    #         ("Charitable Impact", "https://ausindbridge.org/charitable-impact"),
+    #     ],
+    #     schema_name="Charitable Impact",
+    # ),
     PageMeta(
         file_name="charitable-social-impact.html",
         title="Social & Community Impact Programs | AusInd Bridge Foundation",
@@ -278,21 +252,21 @@ PAGES: list[PageMeta] = [
         ],
         schema_name="Social & Community Impact",
     ),
-    PageMeta(
-        file_name="contact.html",
-        title="Contact AusInd Bridge Foundation | Melbourne & New Delhi",
-        description=(
-            "Connect with AusInd Bridge Foundation’s Melbourne headquarters and New Delhi office for partnerships, media, and programme enquiries."
-        ),
-        keywords="contact AusInd Bridge, Melbourne office, New Delhi office, partnerships, enquiries",
-        canonical="https://ausindbridge.org/contact",
-        schema_type="ContactPage",
-        breadcrumb=[
-            ("Home", "https://ausindbridge.org/"),
-            ("Contact", "https://ausindbridge.org/contact"),
-        ],
-        schema_name="Contact AusInd Bridge Foundation",
-    ),
+    # PageMeta(
+    #     file_name="contact.html",
+    #     title="Contact AusInd Bridge Foundation | Melbourne & New Delhi",
+    #     description=(
+    #         "Connect with AusInd Bridge Foundation’s Melbourne headquarters and New Delhi office for partnerships, media, and programme enquiries."
+    #     ),
+    #     keywords="contact AusInd Bridge, Melbourne office, New Delhi office, partnerships, enquiries",
+    #     canonical="https://ausindbridge.org/contact",
+    #     schema_type="ContactPage",
+    #     breadcrumb=[
+    #         ("Home", "https://ausindbridge.org/"),
+    #         ("Contact", "https://ausindbridge.org/contact"),
+    #     ],
+    #     schema_name="Contact AusInd Bridge Foundation",
+    # ),
     PageMeta(
         file_name="contact-us.html",
         title="Contact AusInd Bridge Foundation | Melbourne & New Delhi",
@@ -322,45 +296,6 @@ PAGES: list[PageMeta] = [
         schema_name="Disclaimer",
     ),
     PageMeta(
-        file_name="focus.html",
-        title="Our Focus Areas | AusInd Bridge Foundation",
-        description="Discover AusInd Bridge Foundation’s focus areas spanning diplomacy, commerce, innovation, education, and philanthropy.",
-        keywords="focus areas, strategic pillars, diplomacy, trade, innovation, philanthropy",
-        canonical="https://ausindbridge.org/focus",
-        schema_type="CollectionPage",
-        breadcrumb=[
-            ("Home", "https://ausindbridge.org/"),
-            ("Focus", "https://ausindbridge.org/focus"),
-        ],
-        schema_name="Our Focus Areas",
-    ),
-    PageMeta(
-        file_name="leadership.html",
-        title="Strategic Partners & Leadership | AusInd Bridge Foundation",
-        description="Meet the strategic partners, advisors, and institutional collaborators powering AusInd Bridge Foundation initiatives.",
-        keywords="strategic partners, leadership network, advisors, collaborators, AusInd Bridge",
-        canonical="https://ausindbridge.org/leadership",
-        schema_type="CollectionPage",
-        breadcrumb=[
-            ("Home", "https://ausindbridge.org/"),
-            ("Strategic Partners", "https://ausindbridge.org/leadership"),
-        ],
-        schema_name="Strategic Partners & Leadership",
-    ),
-    PageMeta(
-        file_name="media.html",
-        title="Media Gallery | AusInd Bridge Foundation",
-        description="Browse media, photos, and highlights from AusInd Bridge Foundation programmes, delegations, and events.",
-        keywords="media gallery, event photos, Australia India events, AusInd Bridge media",
-        canonical="https://ausindbridge.org/media",
-        schema_type="CollectionPage",
-        breadcrumb=[
-            ("Home", "https://ausindbridge.org/"),
-            ("Media", "https://ausindbridge.org/media"),
-        ],
-        schema_name="Media Gallery",
-    ),
-    PageMeta(
         file_name="news.html",
         title="News & Updates | AusInd Bridge Foundation",
         description="Latest announcements, delegations, and impact stories from AusInd Bridge Foundation across Australia and India.",
@@ -372,19 +307,6 @@ PAGES: list[PageMeta] = [
             ("News", "https://ausindbridge.org/news"),
         ],
         schema_name="News & Updates",
-    ),
-    PageMeta(
-        file_name="ourstory.html",
-        title="Our Story | AusInd Bridge Foundation",
-        description="Explore the origin, milestones, and impact journey of AusInd Bridge Foundation’s Australia–India mission.",
-        keywords="AusInd Bridge story, history, milestones, founding, Australia India partnership",
-        canonical="https://ausindbridge.org/ourstory",
-        schema_type="AboutPage",
-        breadcrumb=[
-            ("Home", "https://ausindbridge.org/"),
-            ("Our Story", "https://ausindbridge.org/ourstory"),
-        ],
-        schema_name="Our Story",
     ),
     PageMeta(
         file_name="Political-strategic-engagement.html",
@@ -399,19 +321,7 @@ PAGES: list[PageMeta] = [
         ],
         schema_name="Political & Strategic Engagement",
     ),
-    PageMeta(
-        file_name="political.html",
-        title="Political Strengthening Initiatives | AusInd Bridge Foundation",
-        description="Initiatives that strengthen public policy collaboration, civic leadership, and democratic institutions across Australia and India.",
-        keywords="political strengthening, policy collaboration, civic leadership, democratic partnerships",
-        canonical="https://ausindbridge.org/political",
-        schema_type="CollectionPage",
-        breadcrumb=[
-            ("Home", "https://ausindbridge.org/"),
-            ("Political Strengthening", "https://ausindbridge.org/political"),
-        ],
-        schema_name="Political Strengthening",
-    ),
+    
     PageMeta(
         file_name="privacy-policy.html",
         title="Privacy Policy | AusInd Bridge Foundation",
@@ -425,19 +335,7 @@ PAGES: list[PageMeta] = [
         ],
         schema_name="Privacy Policy",
     ),
-    PageMeta(
-        file_name="strategicapproach.html",
-        title="Strategic Approach | AusInd Bridge Foundation",
-        description="Learn about the strategic framework guiding AusInd Bridge Foundation’s partnerships, stakeholder engagement, and impact measurement.",
-        keywords="strategic approach, engagement framework, stakeholder strategy, impact measurement",
-        canonical="https://ausindbridge.org/strategicapproach",
-        schema_type="AboutPage",
-        breadcrumb=[
-            ("Home", "https://ausindbridge.org/"),
-            ("Strategic Approach", "https://ausindbridge.org/strategicapproach"),
-        ],
-        schema_name="Strategic Approach",
-    ),
+    
     PageMeta(
         file_name="team.html",
         title="Leadership Team | AusInd Bridge Foundation",
