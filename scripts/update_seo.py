@@ -62,7 +62,7 @@ WEBSITE_TEMPLATE = {
     },
 }
 
-RESPONSIVE_STYLESHEET = "    <link rel=\"stylesheet\" href=\"css/responsive-media.css\">"
+# RESPONSIVE_STYLESHEET = "    <link rel=\"stylesheet\" href=\"css/responsive-media.css\">"
 
 
 @dataclass
