@@ -99,7 +99,6 @@ class PageMeta:
             "    <meta name=\"robots\" content=\"index, follow\">",
             "    <meta name=\"author\" content=\"AusInd Bridge Foundation\">",
             "    <meta name=\"publisher\" content=\"AusInd Bridge Foundation\">",
-            "    <meta name=\"theme-color\" content=\"#0C2340\">",
             "    <meta property=\"og:site_name\" content=\"AusInd Bridge Foundation\">",
             "    <meta property=\"og:locale\" content=\"en_AU\">",
             f"    <meta property=\"og:type\" content=\"{og_type}\">",
