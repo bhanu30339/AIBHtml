@@ -1,0 +1,341 @@
+<!-- Floating Chat Widget -->
+<div class="chat-wrapper">
+
+  <!-- Toggle Button -->
+  <button id="chatToggle" class="chat-toggle notranslate" translate="no">
+    💬
+  </button>
+
+  <!-- Chat Box -->
+  <div id="chatBox" class="chat-box">
+
+    <!-- Header -->
+    <div class="chat-header">
+      <span>Send an Enquiry</span>
+      <button id="chatClose" class="chat-close notranslate" translate="no">✕</button>
+    </div>
+
+    <!-- Body - Contact Form -->
+    <div class="chat-body">
+      <p class="chat-text mb-4">For enquiries only. Please fill out the form below.</p>
+      
+      <form id="chatForm" class="chat-form">
+        <input type="hidden" name="enquiryType" value="Chat Enquiry">
+        <!-- Name -->
+        <div class="form-group">
+          <label class="form-label">Full Name *</label>
+          <input type="text" name="name" placeholder="Your full name" required class="form-input">
+          <div class="error-message" id="nameError"></div>
+        </div>
+        
+        <!-- Email -->
+        <div class="form-group">
+          <label class="form-label">Email Address *</label>
+          <input type="email" name="email" placeholder="your@email.com" required class="form-input">
+          <div class="error-message" id="emailError"></div>
+        </div>
+        
+        <!-- Subject -->
+        <div class="form-group">
+          <label class="form-label">Subject *</label>
+          <input type="text" name="subject" placeholder="Brief description of your enquiry" required class="form-input">
+          <div class="error-message" id="subjectError"></div>
+        </div>
+        
+        <!-- Message -->
+        <div class="form-group">
+          <label class="form-label">Your Message *</label>
+          <textarea name="message" placeholder="Please provide details of your enquiry" required rows="4" class="form-textarea"></textarea>
+          <div class="error-message" id="messageError"></div>
+        </div>
+        
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">
+          Submit Enquiry
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="send-icon">
+            <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path>
+            <path d="m21.854 2.147-10.94 10.939"></path>
+          </svg>
+        </button>
+
+        <div id="formError" class="error-message" role="alert"></div>
+        
+        <p class="privacy-note">
+          * Required fields. We respect your privacy and will only use your information to respond to your enquiry.
+        </p>
+      </form>
+      
+      <!-- Success Message (Hidden by default) -->
+      <div id="successMessage" class="success-message" style="display: none;">
+        <div class="success-icon">✓</div>
+        <h3>Thank You!</h3>
+        <p>Your enquiry has been submitted. We will respond within 1-2 business days.</p>
+        <button id="newEnquiry" class="new-enquiry-btn">Send Another Enquiry</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* ================= CHAT WRAPPER ================= */
+.chat-wrapper {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+/* ================= TOGGLE BUTTON ================= */
+.chat-toggle {
+  width: 56px;
+  height: 56px;
+  background: #0C2340;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 22px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  translate: "no";
+}
+
+.chat-toggle:hover {
+  background: #1E3A5F;
+  transform: scale(1.05);
+}
+
+/* ================= CHAT BOX ================= */
+.chat-box {
+  position: absolute;
+  right: 0;
+  bottom: 70px;
+  width: min(380px, calc(100vw - 40px));
+  max-width: 95vw;
+  max-height: 80vh;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+
+  /* Hidden by default */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px) scale(0.95);
+  transition: all 0.3s ease;
+}
+
+/* OPEN STATE */
+.chat-box.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+/* ================= HEADER ================= */
+.chat-header {
+  background: #0C2340;
+  color: white;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 16px 16px 0 0;
+}
+
+.chat-header span {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* CLOSE BUTTON */
+.chat-close {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.chat-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ================= BODY ================= */
+.chat-body {
+  padding: 20px;
+  flex: 1;
+  overflow-y: auto;
+  max-height: calc(80vh - 60px);
+}
+
+.chat-text {
+  font-size: 14px;
+  color: #4B5563;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* ================= FORM STYLES ================= */
+.chat-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0C2340;
+  margin-bottom: 6px;
+}
+
+.form-input, .form-textarea {
+  padding: 10px 12px;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:focus, .form-textarea:focus {
+  outline: none;
+  border-color: #0C2340;
+  box-shadow: 0 0 0 3px rgba(12, 35, 64, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.error-message {
+  color: #DC2626;
+  font-size: 12px;
+  margin-top: 4px;
+  min-height: 16px;
+}
+
+.submit-btn {
+  background: #0C2340;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: 8px;
+}
+
+.submit-btn:hover {
+  background: #1E3A5F;
+  transform: translateY(-1px);
+}
+
+.send-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.privacy-note {
+  font-size: 11px;
+  color: #6B7280;
+  text-align: center;
+  margin-top: 12px;
+  line-height: 1.4;
+}
+
+/* ================= SUCCESS MESSAGE ================= */
+.success-message {
+  text-align: center;
+  padding: 20px;
+  background: #F0F9FF;
+  border-radius: 12px;
+  border: 1px solid #BAE6FD;
+}
+
+.success-icon {
+  width: 50px;
+  height: 50px;
+  background: #10B981;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 auto 16px;
+}
+
+.success-message h3 {
+  color: #0C2340;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.success-message p {
+  color: #4B5563;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.new-enquiry-btn {
+  background: transparent;
+  color: #0C2340;
+  border: 1px solid #0C2340;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.new-enquiry-btn:hover {
+  background: #0C2340;
+  color: white;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 480px) {
+  .chat-box {
+    width: min(340px, calc(100vw - 20px));
+    right: 10px;
+  }
+  
+  .chat-body {
+    padding: 16px;
+  }
+}
+
+@media (max-height: 700px) {
+  .chat-body {
+    max-height: 60vh;
+  }
+}
+</style>
+
+<script src="js/chat-widget.js" defer></script>
