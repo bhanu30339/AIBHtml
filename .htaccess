@@ -9,9 +9,9 @@ SetEnv SMTP_SECURE tls
 RewriteEngine On
 RewriteBase /
 
-SetEnv MAILCHIMP_API_KEY "c4c63be2815c21e43e148cf8a9fae36e-us4"
-SetEnv MAILCHIMP_AUDIENCE_ID "32b2dfcde8"
-SetEnv MAILCHIMP_DC "us4"
+SetEnv MAILCHIMP_API_KEY "Key"
+SetEnv MAILCHIMP_AUDIENCE_ID "AudienceID"
+SetEnv MAILCHIMP_DC "dc"
 
 
 # 🔹 FIX: Redirect /home → /
