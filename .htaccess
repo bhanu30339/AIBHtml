@@ -1,0 +1,49 @@
+Options -MultiViews -Indexes
+
+SetEnv SMTP_HOST smtp.hostinger.com
+SetEnv SMTP_PORT 587
+SetEnv SMTP_USER info@ausindbridge.org
+SetEnv SMTP_PASS Ausindbridge1!
+SetEnv SMTP_SECURE tls
+
+RewriteEngine On
+RewriteBase /
+
+SetEnv MAILCHIMP_API_KEY "c4c63be2815c21e43e148cf8a9fae36e-us4"
+SetEnv MAILCHIMP_AUDIENCE_ID "32b2dfcde8"
+SetEnv MAILCHIMP_DC "us4"
+
+
+# 🔹 FIX: Redirect /home → /
+RewriteRule ^home/?$ / [R=301,L]
+RewriteRule ^home\.html$ / [R=301,L]
+
+# Strategic Pillars: normalize legacy/legacy-encoded and lowercase URLs
+RewriteRule ^political-strategic-engagement/?$ Political-strategic-engagement.html [L]
+RewriteRule ^social-charitable-impact/?$ charitable-social-impact.html [L]
+
+RewriteRule ^Political%20&%20strategic%20engagement\.html$ /Political-strategic-engagement.html [R=301,L,NC]
+RewriteRule ^bilateral%20trade%20&%20business\.html$ /bilateral-trade-business.html [R=301,L,NC]
+RewriteRule ^charitable%20&%20social%20impact\.html$ /charitable-social-impact.html [R=301,L,NC]
+
+
+# 2. Force Remove .html from any URL
+RewriteCond %{THE_REQUEST} \s/+(.*?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# 3. Internally link clean URL to .html file
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access plus 1 year"
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType image/webp "access plus 1 year"
+ExpiresByType text/css "access plus 1 month"
+ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+

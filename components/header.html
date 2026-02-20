@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en" class="transition-colors duration-300 skiptranslate">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AAusInd Bridge Foundation</title>
+   
+
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0C2340",
+                        secondary: "#F5C642",
+                        accent: "#1E3A5F",
+                        light: "#F8F9FA"
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+iframe.goog-te-banner-frame {
+  visibility: hidden !important;
+}
+
+body, html {
+  top: 0px !important;
+  margin-top: 0 !important;
+}
+
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+}
+
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.goog-te-gadget {
+  height: 0 !important;
+  overflow: hidden;
+}
+
+</style>
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Smooth theme fade */
+        .theme-transition {
+            transition: background-color .4s ease, color .4s ease;
+        }
+
+        /* Mobile menu hidden by default */
+        .mobile-menu {
+            display: none;
+        }
+        .mobile-menu.open {
+            display: block;
+            animation: fadeSlide .3s ease-out forwards;
+        }
+
+        @keyframes fadeSlide {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Desktop menu hover underline */
+        .nav-link {
+            color: #0C2340;
+            position: relative;
+            transition: .3s;
+            font-weight: 500;
+        }
+        .nav-link:hover {
+            color: orange;
+        }
+        .underline-hover {
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 0;
+            height: 3px;
+            background: orange;
+            transition: width .3s;
+        }
+        .group:hover .underline-hover {
+            width: 100%;
+        }
+
+        /* Mobile menu items */
+        .mobile-item {
+            display: block;
+            padding: 14px 20px;
+            border-bottom: 1px solid #eee;
+            color: #1f2937;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+        .mobile-item:hover {
+            background: #f5f5f5;
+        }
+
+        /* Theme toggle button */
+        .theme-toggle-btn {
+            background: transparent;
+            border: 1px solid #d1d5db;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: .3s;
+        }
+        .theme-toggle-btn:hover {
+            transform: scale(1.1);
+            background-color: rgba(255,255,255,0.15);
+        }
+
+        .theme-icon-dark {
+            display: none;
+        }
+        .dark .theme-icon-light {
+            display: none;
+        }
+        .dark .theme-icon-dark {
+            display: block;
+        }
+
+        /* Search dropdown */
+        .search-dropdown {
+            display: none;
+        }
+        .search-dropdown.open {
+            display: block;
+            animation: fadeSlide .2s ease-out;
+        }
+
+        /* Language dropdown */
+        .language-dropdown {
+            display: none;
+        }
+        .language-dropdown.open {
+            display: block;
+            animation: fadeSlide .2s ease-out;
+        }
+
+        /* DARK MODE OVERRIDES */
+        .dark body {
+            background-color: #111827 !important;
+            color: #f3f4f6 !important;
+        }
+        .dark nav {
+            background-color: #1f2937 !important;
+        }
+        .dark .mobile-item {
+            background-color: #1f2937 !important;
+            color: #f3f4f6 !important;
+            border-color: #374151 !important;
+        }
+        .dark .mobile-item:hover {
+            background-color: #374151 !important;
+        }
+        .dark .nav-link {
+            color: #e5e7eb !important;
+        }
+        .dark .nav-link:hover {
+            color: #F5C642 !important;
+        }
+
+        /* SSL Certificate Indicator */
+        .ssl-indicator {
+            font-size: 0.7rem;
+            background: linear-gradient(45deg, #10b981, #34d399);
+        }
+
+        /* Domain Badge */
+        .domain-badge {
+            font-size: 0.65rem;
+            background: rgba(255,255,255,0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-white theme-transition font-sans">
+
+    <!-- Google Translate Hidden Container -->
+<div id="google_translate_element" style="display:none;"></div>
+
+
+    
+    <!-- MAIN NAVIGATION BAR -->
+    <nav class="sticky top-0 z-50 bg-white shadow-lg theme-transition">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+
+                <!-- LEFT: Logo with Full Organization Name -->
+                <a href="https://ausindbridge.org/" class="flex items-center space-x-4">
+                    <div class="w-36 h-full rounded-lg overflow-hidden">
+                        <img src="images/LogoHz.png" alt="AIBF Logo" class="w-full h-full object-cover">
+                    </div>
+
+                </a>
+
+                <!-- CENTER: Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-6">
+
+    <a href="https://ausindbridge.org/" class="nav-link group" data-translate="home">
+        Home <span class="underline-hover"></span>
+    </a>
+
+    <a href="https://ausindbridge.org/about-us" class="nav-link group"  data-translate="about">
+        About Us <span class="underline-hover"></span>
+    </a>
+
+    <a href="https://ausindbridge.org/team" class="nav-link group" data-translate="board">
+    Team <span class="underline-hover"></span>
+    </a>
+
+    <!-- Strategic Pillars Dropdown -->
+<div class="relative group">
+    <button class="nav-link group flex items-center gap-1">
+        Strategic Pillars
+        <svg class="w-4 h-4 mt-0.5 transition-transform duration-300 group-hover:rotate-180"
+             fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19 9l-7 7-7-7" />
+        </svg>
+        <span class="underline-hover"></span>
+    </button>
+
+    <!-- Dropdown Menu -->
+    <div class="absolute left-0 mt-3 w-72 bg-white rounded-xl shadow-xl border border-gray-200 
+                opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                transition-all duration-300 z-50">
+
+
+        <a href="https://ausindbridge.org/political-strategic-engagement"
+           class="block px-5 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">
+            Political & Strategic Engagement
+        </a>
+
+        <a href="https://ausindbridge.org/bilateral-trade-business"
+           class="block px-5 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">
+            Bilateral Trade & Business
+        </a>
+
+        <a href="https://ausindbridge.org/social-charitable-impact"
+           class="block px-5 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">
+            Social & Charitable Impact
+        </a>
+    </div>
+</div>
+
+    <a href="https://ausindbridge.org/news" class="nav-link group" data-translate="news">
+        News <span class="underline-hover"></span>
+    </a>
+<!-- <div class="relative group">
+    <button class="nav-link group flex items-center gap-1">
+        Strategic Pillars
+        <svg class="w-4 h-4 mt-0.5 transition-transform duration-300 group-hover:rotate-180"
+             fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19 9l-7 7-7-7" />
+        </svg>
+        <span class="underline-hover"></span>
+    </button>
+
+    
+    <div class="absolute left-0 mt-3 w-72 bg-white rounded-xl shadow-xl border border-gray-200 
+                opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                transition-all duration-300 z-50">
+
+        <a href="https://ausindbridge.org/bilateral-trade-business"
+           class="block px-5 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">
+            Bilateral Trade & Business
+        </a>
+
+        <a href="https://ausindbridge.org/political-strategic-engagement"
+           class="block px-5 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">
+            Political & Strategic Engagement
+        </a>
+
+        <a href="https://ausindbridge.org/social-charitable-impact"
+           class="block px-5 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">
+            Social & Charitable Impact
+        </a>
+    </div>
+</div> -->
+
+
+    <!-- <a href="https://ausindbridge.org/news" class="nav-link group" data-translate="Media">
+        Media <span class="underline-hover"></span>
+    </a>  -->
+
+     <a href="https://ausindbridge.org/contact-us" class="nav-link group" data-translate="contact">
+        Contact Us <span class="underline-hover"></span>
+    </a>
+
+    
+
+</div>
+
+
+                <!-- RIGHT: Search, Translation, and Contact Button -->
+                <div class="flex items-center space-x-4">
+                    <!-- Search Button with Dropdown -->
+                    <div class="relative">
+                        <button id="searchBtn" class="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors" aria-label="Search">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </button>
+                        <div id="searchDropdown" class="search-dropdown absolute mt-2 w-screen sm:w-80 md:w-80 lg:w-80 bg-white dark:bg-gray-800 rounded-lg shadow-xl border dark:border-gray-700 z-50 -left-4 sm:right-0 sm:left-auto sm:w-80">
+                            <div class="p-3 sm:p-4">
+                                <div class="relative">
+                                    <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400 z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                    </svg>
+                                    <input
+  id="searchInput"
+  type="text"
+  placeholder="Search website"
+  class="w-full px-4 py-2 sm:py-3 pl-10 bg-gray-50 dark:bg-gray-900 text-gray-900 border dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary text-sm sm:text-base"
+/>
+                                </div>
+                                <div
+  id="searchResults"
+  class="hidden mt-2 max-h-48 sm:max-h-64 overflow-y-auto bg-white text-gray-900 dark:bg-gray-800 border dark:border-gray-700 rounded-lg shadow"
+></div>
+                                <div class="mt-2 text-xs text-gray-500 dark:text-gray-400">
+                                    Press Enter
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Translation Button with Dropdown -->
+                    <div class="relative">
+                        <button id="languageBtn" class="flex items-center space-x-1 p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+                            </svg>
+                            <span class="text-sm">EN</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="languageDropdown" class="language-dropdown absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-xl border dark:border-gray-700 z-50">
+                            <div class="py-2">
+                                <div class="px-4 py-2 text-xs text-gray-500 dark:text-gray-400 border-b dark:border-gray-700">Select Language</div>
+                                <div id="desktopLanguageList" class="text-gray-900 max-h-80 overflow-y-auto">
+                                    <!-- Languages will be populated by JavaScript -->
+                                </div>
+                                <div class="px-4 py-2 border-t dark:border-gray-700">
+                                    <div id="allLangContainer" class="hidden px-2 py-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Hidden select to store language data -->
+                        <select id="desktopLanguageSelect" class="hidden">
+                            <option value="">Select Language...</option>
+                            <option value="en">English</option>
+                            <option value="af">Afrikaans</option>
+                            <option value="sq">Shqip</option>
+                            <option value="am">አማርኛ</option>
+                            <option value="ar">العربية</option>
+                            <option value="hy">Հայերեն</option>
+                            <option value="az">Azərbaycanca</option>
+                            <option value="eu">Euskara</option>
+                            <option value="be">Беларусь</option>
+                            <option value="bn">বাংলা</option>
+                            <option value="bs">Bosanski</option>
+                            <option value="bg">Български</option>
+                            <option value="ca">Català</option>
+                            <option value="ceb">Cebuano</option>
+                            <option value="ny">Chichewa</option>
+                            <option value="zh-CN">中文 (简体)</option>
+                            <option value="zh-TW">中文 (繁體)</option>
+                            <option value="co">Corsu</option>
+                            <option value="hr">Hrvatski</option>
+                            <option value="cs">Čeština</option>
+                            <option value="da">Dansk</option>
+                            <option value="nl">Nederlands</option>
+                            <option value="eo">Esperanto</option>
+                            <option value="et">Eesti</option>
+                            <option value="tl">Filipino</option>
+                            <option value="fi">Suomi</option>
+                            <option value="fr">Français</option>
+                            <option value="fy">Frisian</option>
+                            <option value="gl">Galego</option>
+                            <option value="ka">ქართული</option>
+                            <option value="de">Deutsch</option>
+                            <option value="el">Ελληνικά</option>
+                            <option value="gu">ગુજરાતી</option>
+                            <option value="ht">Kreyòl Ayisyen</option>
+                            <option value="ha">Hausa</option>
+                            <option value="haw">Hawaiki</option>
+                            <option value="hi">हिन्दी</option>
+                            <option value="hu">Magyar</option>
+                            <option value="is">Íslenska</option>
+                            <option value="ig">Igbo</option>
+                            <option value="id">Bahasa Indonesia</option>
+                            <option value="ga">Gaeilge</option>
+                            <option value="it">Italiano</option>
+                            <option value="ja">日本語</option>
+                            <option value="jw">Basa Jawa</option>
+                            <option value="kk">Қазақ</option>
+                            <option value="km">ខ្មែរ</option>
+                            <option value="rw">Kinyarwanda</option>
+                            <option value="ko">한국어</option>
+                            <option value="ku">کوردی</option>
+                            <option value="ky">Кыргызча</option>
+                            <option value="lo">ລາວ</option>
+                            <option value="la">Latina</option>
+                            <option value="lv">Latviešu</option>
+                            <option value="lt">Lietuvių</option>
+                            <option value="lb">Lëtzebuergesch</option>
+                            <option value="mk">Македонски</option>
+                            <option value="mg">Malagasy</option>
+                            <option value="ms">Bahasa Melayu</option>
+                            <option value="ml">മലയാളം</option>
+                            <option value="mt">Maltese</option>
+                            <option value="mi">Māori</option>
+                            <option value="mr">मराठी</option>
+                            <option value="mn">Монгол</option>
+                            <option value="my">မြန်မာ</option>
+                            <option value="ne">नेपाली</option>
+                            <option value="no">Norsk</option>
+                            <option value="or">ଓଡିଆ</option>
+                            <option value="ps">پښتو</option>
+                            <option value="fa">فارسی</option>
+                            <option value="pl">Polski</option>
+                            <option value="pt">Português</option>
+                            <option value="pt-BR">Português (Brasil)</option>
+                            <option value="pa">ਪੰਜਾਬੀ</option>
+                            <option value="ro">Română</option>
+                            <option value="ru">Русский</option>
+                            <option value="sm">Samoan</option>
+                            <option value="gd">Gàidhlig</option>
+                            <option value="sr">Српски</option>
+                            <option value="st">Sesotho</option>
+                            <option value="sn">Shona</option>
+                            <option value="sd">سنڌي</option>
+                            <option value="si">සිංහල</option>
+                            <option value="sk">Slovenčina</option>
+                            <option value="sl">Slovenščina</option>
+                            <option value="so">Somali</option>
+                            <option value="es">Español</option>
+                            <option value="su">Sundanese</option>
+                            <option value="sw">Swahili</option>
+                            <option value="sv">Svenska</option>
+                            <option value="tg">Тоҷикӣ</option>
+                            <option value="ta">தமிழ்</option>
+                            <option value="te">తెలుగు</option>
+                            <option value="th">ไทย</option>
+                            <option value="tr">Türkçe</option>
+                            <option value="tk">Түркмөнче</option>
+                            <option value="uk">Українська</option>
+                            <option value="ur">اردو</option>
+                            <option value="ug">ئۇيغۇرچە</option>
+                            <option value="uz">O'zbek</option>
+                            <option value="vi">Tiếng Việt</option>
+                            <option value="cy">Cymraeg</option>
+                            <option value="xh">Xhosa</option>
+                            <option value="yi">יידיש</option>
+                            <option value="yo">Yorùbá</option>
+                            <option value="zu">Zulu</option>
+                        </select>
+                    </div>
+
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileBtn" class="lg:hidden p-2 text-primary dark:text-gray-900">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div id="mobileMenu" class="mobile-menu text-gray-900 dark:text-gray-100 fixed top-20 left-0 w-full max-h-[calc(100vh-80px)] overflow-y-auto bg-white dark:bg-gray-800 shadow-lg lg:hidden z-50 theme-transition border-t dark:border-gray-700">
+        <a href="https://ausindbridge.org/" class="mobile-item">Home</a>
+        <a href="https://ausindbridge.org/about-us" class="mobile-item">About Us</a>
+        <a href="https://ausindbridge.org/team" class="mobile-item">Team</a>
+        <!-- Strategic Pillars (Mobile Dropdown) -->
+<div class="border-b">
+    <button
+        id="mobilePillarsBtn"
+        onclick="toggleMobilePillars()"
+        class="mobile-item pl-10 flex items-center justify-between">
+        Strategic Pillars
+        <svg id="pillarsArrow" class="w-4 h-4 transition-transform duration-300"
+             fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19 9l-7 7-7-7"/>
+        </svg>
+    </button>
+
+    <div id="mobilePillarsMenu" class="hidden bg-gray-50 dark:bg-gray-900">
+        <a href="https://ausindbridge.org/political-strategic-engagement" class="mobile-item pl-10">
+            Political & Strategic Engagement
+        </a>
+        <a href="https://ausindbridge.org/bilateral-trade-business" class="mobile-item pl-10">
+            Bilateral Trade & Business
+        </a>
+        <a href="https://ausindbridge.org/social-charitable-impact" class="mobile-item pl-10">
+            Social & Charitable Impact
+        </a>
+    </div>
+</div>
+        
+        
+        <a href="https://ausindbridge.org/news" class="mobile-item">News</a>
+        <a href="https://ausindbridge.org/contact-us" class="mobile-item">Contact Us</a>
+
+        <!-- Mobile Search and Language -->
+        <!-- <div class="p-4 border-t dark:border-gray-700">
+            <div class="mb-4">
+                <label class="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-2">Search</label>
+                <div class="relative">
+                    <input id="mobileSearchInput" type="text" placeholder="Search..." class="w-full px-3 py-2 bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded text-sm text-gray-900 dark:text-gray-100 placeholder-gray-500">
+                    <div id="mobileSearchResults" class="hidden absolute top-full left-0 right-0 mt-1 max-h-48 overflow-y-auto bg-white text-gray-900 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded shadow-lg z-50">
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>   
+</body>
+</html>

@@ -1,0 +1,120 @@
+/*:root {*/
+/*  --media-radius: 1rem;*/
+/*}*/
+
+/*img,*/
+/*picture img,*/
+/*figure img,*/
+/*video,*/
+/*iframe {*/
+/*  width: 100%;*/
+/*  max-width: 100%;*/
+/*  height: auto;*/
+/*  display: block;*/
+/*}*/
+
+/*picture,*/
+/*figure {*/
+/*  display: block;*/
+/*  width: 100%;*/
+/*  margin: 0;*/
+/*}*/
+
+/*.media-cover,*/
+/*.gallery img,*/
+/*.news-card img,*/
+/*.event-card img,*/
+/*.team-card img,*/
+/*.partner-card img,*/
+/*.image-grid img,*/
+/*.media-grid img,*/
+/*.story-card img,*/
+/*.impact-card img,*/
+/*.card img,*/
+/*.timeline-card img,*/
+/*.media-frame img,*/
+/*.logo-grid img,*/
+/*.media-card img,*/
+/*.hero-media img {*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  object-fit: cover;*/
+/*  border-radius: inherit;*/
+/*}*/
+
+/*.media-frame,*/
+/*.news-card figure,*/
+/*.team-card .image-wrapper,*/
+/*.gallery figure,*/
+/*.story-card figure,*/
+/*.media-card figure,*/
+/*.partner-card figure,*/
+/*.hero-media,*/
+/*.video-wrapper {*/
+/*  position: relative;*/
+/*  width: 100%;*/
+/*  overflow: hidden;*/
+/*  border-radius: var(--media-radius);*/
+/*}*/
+
+/*.media-frame,*/
+/*.news-card figure,*/
+/*.team-card .image-wrapper,*/
+/*.gallery figure,*/
+/*.story-card figure,*/
+/*.media-card figure {*/
+/*  aspect-ratio: 4 / 3;*/
+/*}*/
+
+/*.hero-media,*/
+/*.video-wrapper,*/
+/*.video-wrapper iframe,*/
+/*.video-wrapper video {*/
+/*  aspect-ratio: 16 / 9;*/
+/*}*/
+
+/*.responsive-media,*/
+/*.media-fluid {*/
+/*  width: 100%;*/
+/*  height: auto;*/
+/*}*/
+
+/*@media (max-width: 1024px) {*/
+/*  .news-card img,*/
+/*  .event-card img,*/
+/*  .team-card img,*/
+/*  .gallery img,*/
+/*  .story-card img,*/
+/*  .impact-card img,*/
+/*  .media-card img {*/
+/*    min-height: 220px;*/
+/*  }*/
+
+/*  .media-grid,*/
+/*  .gallery,*/
+/*  .image-grid,*/
+/*  .timeline-grid,*/
+/*  .news-gallery {*/
+/*    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));*/
+/*    gap: 1rem;*/
+/*  }*/
+/*}*/
+
+/*@media (max-width: 640px) {*/
+/*  .news-card img,*/
+/*  .event-card img,*/
+/*  .team-card img,*/
+/*  .gallery img,*/
+/*  .story-card img,*/
+/*  .impact-card img,*/
+/*  .media-card img {*/
+/*    min-height: 200px;*/
+/*  }*/
+
+/*  .media-frame,*/
+/*  .gallery figure,*/
+/*  .story-card figure,*/
+/*  .media-card figure {*/
+/*    aspect-ratio: 3 / 4;*/
+/*  }*/
+/*}*/

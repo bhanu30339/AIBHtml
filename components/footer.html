@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AusInd Bridge Foundation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Custom animations and styles */
+        .hover-lift {
+            transition: transform 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-2px);
+        }
+        
+        .social-icon-hover {
+            transition: all 0.3s ease;
+        }
+        .social-icon-hover:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(255, 153, 51, 0.3);
+        }
+        
+        .link-hover-effect {
+            position: relative;
+        }
+        .link-hover-effect::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: #FF9933;
+            transition: width 0.3s ease;
+        }
+        .link-hover-effect:hover::after {
+            width: 100%;
+        }
+        
+        /* First Nations Acknowledgement Styling */
+        .first-nations-acknowledgement {
+            background: linear-gradient(135deg, rgba(12, 35, 64, 0.9) 0%, rgba(30, 58, 95, 0.9) 100%);
+            border-top: 3px solid #FF9933;
+            border-bottom: 3px solid #FF9933;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .first-nations-acknowledgement .icon {
+            color: #FF9933;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+        
+        .first-nations-acknowledgement .text {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        /* Custom colors */
+        .text-saffron {
+            color: #FF9933;
+        }
+        .bg-saffron {
+            background-color: #FF9933;
+        }
+        .border-saffron {
+            border-color: #FF9933;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0C2340",
+                        secondary: "#FF9933",
+                        accent: "#1E3A5F",
+                        light: "#F8F9FA"
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Footer Section -->
+    <footer class="bg-[#0C2340] text-white" id="footer" style="background-color: #0C2340 !important; background-image: none !important;">
+        <!-- FIRST NATIONS ACKNOWLEDGMENT (full-width) -->
+        <div class="first-nations-acknowledgement">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
+                    <div class="icon">
+                        <i class="fas fa-hands-holding text-3xl"></i>
+                    </div>
+                    <div class="text">
+                        <h4 class="font-bold text-lg mb-2 text-white">FIRST NATIONS ACKNOWLEDGEMENT</h4>
+                        <p class="text-gray-300 text-sm leading-relaxed max-w-4xl">
+                            The AusInd Bridge Foundation acknowledges the Traditional Custodians of the lands on which we operate across Australia. We pay our respects to Elders past, present and emerging, and recognise their continuing connection to land, waters and culture. We honour the rich cultural heritage of First Nations peoples and their enduring contribution to Australian society.
+                        </p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-globe text-3xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Main Footer Content - 4 Columns -->
+            <div class="py-16 grid grid-cols-1 lg:grid-cols-4 gap-16">
+                
+                <!-- Column 1: Logo and Description -->
+                <div class="text-center lg:text-left">
+                    <div class="flex justify-center lg:justify-start mb-6 hover-lift">
+                        <a href="https://ausindbridge.org/" class="flex items-center">
+                            <div class="w-56 rounded-lg overflow-hidden">
+                                <img src="images/LogoHz.png" alt="Australia India Bridge Foundation Logo" class="w-full h-full bg-white object-cover p-2">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <p class="text-gray-400 text-sm text-left leading-relaxed">
+                        Building bridges between Australian and Indian leaders through diplomacy, trade, and cultural exchange. Fostering stronger bilateral relations through strategic partnerships and collaborative initiatives.
+                    </p>
+                </div>
+                
+                <!-- Column 2: Quick Links -->
+                <div class="text-left">
+                    <h4 class="font-semibold text-lg mb-6 relative inline-block">
+                        Quick Links
+                        <span class="absolute -bottom-2 left-0 w-12 h-0.5 bg-gradient-to-r from-[#FF9933] to-transparent rounded-full"></span>
+                    </h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="https://ausindbridge.org/">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="https://ausindbridge.org/about-us">
+                                About Us
+                            </a>
+                        </li>
+                         <li>
+                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="https://ausindbridge.org/team">
+                                Team
+                            </a>
+                        </li>
+                        <!-- Strategic Pillars (moved into Quick Links) -->
+                         <li>
+                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="https://ausindbridge.org/political-strategic-engagement">
+                                Political & Strategic Engagement
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="https://ausindbridge.org/bilateral-trade-business">
+                                Bilateral Trade & Business
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="https://ausindbridge.org/social-charitable-impact">
+                                Social & Charitable Impact
+                            </a>
+                        </li>
+                       
+                        <li>
+                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="https://ausindbridge.org/news">
+                                News
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="https://ausindbridge.org/contact-us">
+                                Contact Us
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="https://ausindbridge.org/privacy-policy">
+                                Privacy Policy
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="https://ausindbridge.org/terms-and-conditions">
+                                Terms & Conditions
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="https://ausindbridge.org/disclaimer">
+                                Disclaimer
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-gray-400 hover:text-[#FF9933] transition-colors text-sm link-hover-effect inline-block" href="https://ausindbridge.org/transparency-disclosure">
+                                Transparency & Disclosure
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- removed separate Strategic Pillars column; links moved into Quick Links -->
+                
+                <!-- Column 3: Contact Information -->
+                <div class="text-left">
+    <h4 class="font-semibold text-lg mb-6 relative inline-block">
+        Contact Information
+        <span class="absolute -bottom-2 left-0 w-12 h-0.5 bg-gradient-to-r from-[#FF9933] to-transparent rounded-full"></span>
+    </h4>
+    <ul class="space-y-4 text-sm text-gray-400">
+        <li class="flex items-center gap-3 justify-start">
+            <i class="fas fa-envelope text-[#FF9933] text-base"></i>
+            <a href="mailto:info@ausindbridge.org" class="hover:text-[#FF9933] transition-colors break-words">
+                info@ausindbridge.org
+            </a>
+        </li>
+        <li class="flex items-center gap-3 justify-start">
+            <i class="fas fa-phone-alt text-[#FF9933] text-base"></i>
+            <a href="tel:+61386802586" class="hover:text-[#FF9933] transition-colors">
+                +61 3 8680 2586
+            </a>
+        </li>
+        <li class="flex items-center gap-3 justify-start">
+            <i class="fas fa-map-marker-alt text-[#FF9933] text-base"></i>
+            <span>Level 27, 101 Collins Street, Melbourne, VIC 3000 Australia</span>
+        </li>
+    </ul>
+</div>
+                
+                <!-- Column 4: Social Media -->
+                <div class="text-left">
+                    <h4 class="font-semibold text-lg mb-6 relative inline-block">
+                        Connect With Us
+                        <span class="absolute -bottom-2 left-0 w-12 h-0.5 bg-gradient-to-r from-[#FF9933] to-transparent rounded-full"></span>
+                    </h4>
+                    
+                    <div class="flex flex-wrap justify-start gap-3 mb-8">
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/company/ausindbridgeorg" 
+                           target="_blank"
+                           class="social-icon-hover w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#0077B5] transition-colors"
+                           aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/ausindbridgeorg/?_rdc=1&_rdr" 
+                           target="_blank"
+                           class="social-icon-hover w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#1877F2] transition-colors"
+                           aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <!-- YouTube -->
+                        <a href="https://m.youtube.com/@ausindbridgeorg" 
+                           target="_blank"
+                           class="social-icon-hover w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#FF0000] transition-colors"
+                           aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        
+                        
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/ausindbridgeorgau" 
+                           target="_blank"
+                           class="social-icon-hover w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-gradient-to-r from-purple-500 to-pink-500 transition-colors"
+                           aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                        <!-- X (Twitter) -->
+                        <a href="https://x.com/ausindbridgeorg" 
+                           target="_blank"
+                           class="social-icon-hover w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-black transition-colors"
+                           aria-label="X (Twitter)">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        
+                        <!-- Threads -->
+                        <a href="https://www.threads.com/@ausindbridgeorgau" 
+                           target="_blank"
+                           class="social-icon-hover w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-black transition-colors"
+                           aria-label="Threads">
+                            <i class="fab fa-threads"></i>
+                        </a>
+                        
+                        
+                    </div>
+                    <!-- Newsletter subscription -->
+                    <div class="mt-4 lg:mt-0">
+                        <h5 class="text-sm font-semibold text-white mb-3">Subscribe to our newsletter</h5>
+                        <form id="newsletterForm" class="flex items-center gap-2 max-w-md mx-auto lg:mx-0">
+                            <input type="email" id="newsletterEmail" name="email" placeholder="Enter your email" required class="w-full px-3 py-2 rounded-lg text-xs text-gray-900" />
+                            <button type="submit" class="px-4 py-2 bg-saffron text-white rounded-lg">Subscribe</button>
+                        </form>
+                        <p id="newsletterMsg" class="text-xs text-gray-300 mt-2 hidden" aria-live="polite" role="status"></p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Divider -->
+            <div class="border-t border-white/10"></div>
+            
+            <!-- Bottom Section with Copyright -->
+                <div class="py-8 text-center">
+                <!-- Copyright -->
+                <div class="text-gray-400 text-sm">
+                    Copyright ©️ 2026 AusInd Bridge Foundation | All Rights Reserved
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+            // Set current year in copyright (guarded)
+        function initFooter() {
+            const currentYear = new Date().getFullYear();
+            const el = document.getElementById('currentYear');
+            if (el) el.textContent = currentYear;
+            
+            // Newsletter form handling
+            const newsletterForm = document.getElementById('newsletterForm');
+            const newsletterEmail = document.getElementById('newsletterEmail');
+            const newsletterMsg = document.getElementById('newsletterMsg');
+            if (newsletterForm && newsletterEmail && newsletterMsg) {
+                newsletterForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    const email = newsletterEmail.value.trim();
+                    if (!email) return;
+
+                    const submitBtn = newsletterForm.querySelector('button[type="submit"]');
+                    const originalText = submitBtn ? submitBtn.textContent : '';
+
+                    if (submitBtn) {
+                        submitBtn.disabled = true;
+                        submitBtn.textContent = 'Submitting...';
+                    }
+
+                    newsletterMsg.textContent = '';
+                    newsletterMsg.classList.add('hidden');
+                    newsletterMsg.classList.remove('text-green-300', 'text-red-300');
+
+                    try {
+                        const response = await fetch('newsletter-subscribe.php', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ email })
+                        });
+
+                        const result = await response.json();
+                        if (!response.ok || !result.success) {
+                            throw new Error(result.message || 'Unable to subscribe right now.');
+                        }
+
+                        newsletterMsg.textContent = result.message || 'Thanks you\'re subscribed!';
+                        newsletterMsg.classList.remove('hidden');
+                        newsletterMsg.classList.add('text-green-300');
+                        newsletterForm.reset();
+                        setTimeout(() => newsletterMsg.classList.add('hidden'), 4000);
+                    } catch (error) {
+                        newsletterMsg.textContent = error.message || 'Unable to subscribe right now.';
+                        newsletterMsg.classList.remove('hidden');
+                        newsletterMsg.classList.add('text-red-300');
+                    } finally {
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = originalText || 'Subscribe';
+                        }
+                    }
+                });
+            }
+            
+            // Add click effects to social icons
+            document.querySelectorAll('.social-icon-hover').forEach(icon => {
+                icon.addEventListener('click', function(e) {
+                    // Add click animation
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+            
+            // Add click effects to navigation links
+            document.querySelectorAll('.link-hover-effect').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Add click animation
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initFooter);
+        } else {
+            initFooter();
+        }
+    </script>
+
+</body>
+</html>
